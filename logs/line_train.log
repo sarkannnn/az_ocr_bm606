@@ -1,0 +1,17 @@
+﻿cfg={'mode': 'line', 'gray': True, 'filter': 'none', 'thresh': 'none', 'interp': 'bilinear', 'height': 32, 'width': 512} | cihaz=cpu | parametr=8.23M
+epox   1 | train 3.8421 | val 3.4832 | val CER 100.00%
+epox   2 | train 3.0156 | val 1.6887 | val CER 56.71%
+epox   3 | train 0.7475 | val 1.1875 | val CER 40.82%
+epox   4 | train 0.2139 | val 0.0931 | val CER 12.12%
+epox   5 | train 0.1290 | val 0.0538 | val CER 11.14%
+epox   6 | train 0.0992 | val 0.0563 | val CER 11.32%
+epox   7 | train 0.0786 | val 0.0295 | val CER 10.71%
+epox   8 | train 0.0679 | val 0.0228 | val CER 10.55%
+epox   9 | train 0.0621 | val 0.0336 | val CER 10.88%
+epox  10 | train 0.0550 | val 0.0180 | val CER 10.44%
+epox  11 | train 0.0525 | val 0.8557 | val CER 11.06%
+epox  12 | train 0.0477 | val 0.0163 | val CER 10.46%
+epox  13 | train 0.0445 | val 0.0136 | val CER 10.37%
+epox  14 | train 0.0433 | val 0.0252 | val CER 10.33%
+epox  15 | train 0.0432 | val 0.0091 | val CER 10.24%
+T╔Ölim vaxt─▒: 510.4 d╔Öq | ╔Ön yax┼ƒ─▒ val loss 0.0091 | runs\line\best.pt

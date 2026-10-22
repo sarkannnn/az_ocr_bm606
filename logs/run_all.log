@@ -1,0 +1,26 @@
+﻿[2026-10-21 14:19:41] Pipeline started. Sleep is blocked while this script runs.
+[2026-10-21 14:19:41] Waiting for the running word training (if any)...
+[2026-10-21 14:19:41] runs\word\best.pt not found -> starting word training myself
+[2026-10-21 14:19:41] START: train word
+[2026-10-21 14:23:13] Pipeline started. Sleep is blocked while this script runs.
+[2026-10-21 14:23:13] Waiting for the running word training (if any)...
+[2026-10-21 14:23:13] runs\word\best.pt not found -> starting word training myself
+[2026-10-21 14:23:13] START: train word
+[2026-10-21 14:25:39] Pipeline started. Sleep is blocked while this script runs.
+[2026-10-21 14:25:39] Waiting for the running word training (if any)...
+[2026-10-21 14:25:40] runs\word\best.pt not found -> starting word training myself
+[2026-10-21 14:25:40] START: train word
+[2026-10-21 19:27:02] END:   train word (exit code 0, 301.4 min)
+[2026-10-21 19:27:02] START: eval word synthetic
+[2026-10-21 19:27:44] END:   eval word synthetic (exit code 0, 0.7 min)
+[2026-10-21 19:27:44] No real word test set (data\real_word\test) - skipped
+[2026-10-21 19:27:44] Tesseract not installed - baseline skipped
+[2026-10-21 19:27:44] START: train line
+[2026-10-22 03:58:13] END:   train line (exit code 0, 510.5 min)
+[2026-10-22 03:58:13] START: eval line synthetic
+[2026-10-22 03:59:33] END:   eval line synthetic (exit code 0, 1.3 min)
+[2026-10-22 03:59:33] No real line test set (data\real_line\test) - skipped
+[2026-10-22 03:59:33] Summary written to logs\SUMMARY.txt
+[2026-10-22 03:59:33] line_synth             CER  11.19%  WER  99.75%  n=1000   ms/img=61.08
+[2026-10-22 03:59:33] word_synth             CER   0.50%  WER   3.95%  n=2000   ms/img=16.41
+[2026-10-22 03:59:33] ALL DONE.

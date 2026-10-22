@@ -1,0 +1,13 @@
+﻿
+CER 11.19% | WER 99.75% | 1000 n├╝mun╔Ö
+
+X├╝susi h╔Örf qar─▒┼ƒ─▒ql─▒qlar─▒ (ref -> hyp):
+c├╝t       x├╝susi->╔Ösas  ╔Ösas->x├╝susi   x├╝susi s╔Öhv %
+╔Ö/e                  0             0           0.04%
+─▒/i                  1             0           0.59%
+├╢/o                  0             0           0.56%
+─ƒ/g                  0             0           0.00%
+├╝/u                  0             1           0.00%
+┼ƒ/s                  5             0           1.48%
+├º/c                  0             0           0.00%
+N╔Ötic╔Ö: results\line_synth\metrics.json

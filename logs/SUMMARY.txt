@@ -1,0 +1,2 @@
+﻿line_synth             CER  11.19%  WER  99.75%  n=1000   ms/img=61.08
+word_synth             CER   0.50%  WER   3.95%  n=2000   ms/img=16.41
