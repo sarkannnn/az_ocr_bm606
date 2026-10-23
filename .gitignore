@@ -26,7 +26,7 @@ tasklist
 type
 
 # Heavy generated test/train datasets (keep repo lightweight)
-data/diag_*/
+data/diag*/
 data/sim_preview/
 data/sim_ladder/
 data/synth_word_v2/
