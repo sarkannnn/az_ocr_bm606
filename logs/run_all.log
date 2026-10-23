@@ -24,3 +24,20 @@
 [2026-10-22 03:59:33] line_synth             CER  11.19%  WER  99.75%  n=1000   ms/img=61.08
 [2026-10-22 03:59:33] word_synth             CER   0.50%  WER   3.95%  n=2000   ms/img=16.41
 [2026-10-22 03:59:33] ALL DONE.
+[2026-10-22 17:58:14] Pipeline started. Sleep is blocked while this script runs.
+[2026-10-22 17:58:14] Waiting for the running word training (if any)...
+[2026-10-22 17:58:14] Word model found: runs\word\best.pt
+[2026-10-22 17:58:14] START: eval word synthetic
+[2026-10-22 17:58:29] END:   eval word synthetic (exit code 0, 0.3 min)
+[2026-10-22 17:58:29] No real word test set (data\real_word\test) - skipped
+[2026-10-22 17:58:29] Tesseract not installed - baseline skipped
+[2026-10-22 17:58:29] START: train line
+[2026-10-22 21:03:18] END:   train line (exit code 0, 184.8 min)
+[2026-10-22 21:03:18] START: eval line synthetic
+[2026-10-22 21:03:48] END:   eval line synthetic (exit code 0, 0.5 min)
+[2026-10-22 21:03:48] No real line test set (data\real_line\test) - skipped
+[2026-10-22 21:03:48] Summary written to logs\SUMMARY.txt
+[2026-10-22 21:03:48] line_synth             CER   1.64%  WER  11.64%  n=1000   ms/img=22.78
+[2026-10-22 21:03:48] line_synth_nospace     CER  11.19%  WER  99.75%  n=1000   ms/img=61.08
+[2026-10-22 21:03:48] word_synth             CER   0.50%  WER   3.95%  n=2000   ms/img=5.21
+[2026-10-22 21:03:48] ALL DONE.

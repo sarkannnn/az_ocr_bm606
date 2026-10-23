@@ -1,0 +1,19 @@
+{
+  "cer": 0.4983739837398374,
+  "wer": 0.8654970760233918,
+  "n": 171,
+  "ms_per_image": 5.864203508775844,
+  "params_m": 8.225302,
+  "gpu_mem_mb": null,
+  "train_seconds": 12749.164222955704,
+  "epoch": 12,
+  "cfg": {
+    "mode": "word",
+    "gray": true,
+    "filter": "none",
+    "thresh": "none",
+    "interp": "bilinear",
+    "height": 32,
+    "width": 128
+  }
+}

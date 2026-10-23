@@ -24,3 +24,12 @@ err.txt
 out.txt
 tasklist
 type
+
+# Heavy generated test/train datasets (keep repo lightweight)
+data/diag_*/
+data/sim_preview/
+data/sim_ladder/
+data/synth_word_v2/
+data/synth_line_v2/
+runs/line_nospace/
+runs/smoke_v2/

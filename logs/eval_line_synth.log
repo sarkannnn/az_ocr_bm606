@@ -11,3 +11,16 @@ c├╝t       x├╝susi->╔Ösas  ╔Ösas->x├╝susi   x├╝susi s╔Ö
 ┼ƒ/s                  5             0           1.48%
 ├º/c                  0             0           0.00%
 N╔Ötic╔Ö: results\line_synth\metrics.json
+
+CER 1.64% | WER 11.64% | 1000 n├╝mun╔Ö
+
+X├╝susi h╔Örf qar─▒┼ƒ─▒ql─▒qlar─▒ (ref -> hyp):
+c├╝t       x├╝susi->╔Ösas  ╔Ösas->x├╝susi   x├╝susi s╔Öhv %
+╔Ö/e                  0             0           0.00%
+─▒/i                  0             1           0.23%
+├╢/o                  1             0           0.56%
+─ƒ/g                  0             0           0.00%
+├╝/u                  0             0           0.00%
+┼ƒ/s                  9             0           2.96%
+├º/c                  3             0           2.30%
+N╔Ötic╔Ö: results\line_synth\metrics.json
