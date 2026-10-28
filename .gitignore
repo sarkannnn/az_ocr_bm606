@@ -29,7 +29,10 @@ type
 data/diag*/
 data/sim_preview/
 data/sim_ladder/
+data/sim_unseen/
+data/sim_audit*/
 data/synth_word_v2/
 data/synth_line_v2/
 runs/line_nospace/
 runs/smoke_v2/
+runs/**/last.pt

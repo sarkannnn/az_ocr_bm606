@@ -1,0 +1,20 @@
+2026-10-27 18:03:00 | STEP0_PRECHECK | DONE | word_out=runs\word_v2_20261027_180300 | line_out=runs\line_v2 | word_log=logs\word_v2_train_20261027_180300.log | line_log=logs\line_v2_train.log
+2026-10-27 18:03:24 | STEP1_WORD_TRAIN | START | out=runs/word_v2_20261027_180300 | log=logs\word_v2_train_20261027_180300.log
+2026-10-27 21:35:45 | STEP1_WORD_TRAIN | DONE | exit=0
+2026-10-27 21:36:03 | STEP2_LINE_TRAIN | START | out=runs/line_v2 | log=logs\line_v2_train.log
+2026-10-28 02:16:29 | STEP2_LINE_TRAIN | DONE | exit=0
+2026-10-28 02:17:00 | STEP3_1 | START | out=results/word_v2_synth
+2026-10-28 02:17:19 | STEP3_1 | DONE | exit=0
+2026-10-28 02:17:25 | STEP3_2 | START | out=results/line_v2_synth
+2026-10-28 02:17:49 | STEP3_2 | DONE | exit=0
+2026-10-28 02:17:56 | STEP3_3 | START | out=results/diagw_tahoma_v2
+2026-10-28 02:17:57 | STEP3_3 | DONE | exit=1
+2026-10-28 02:18:53 | STEP3_3 | START | out=results/diagw_tahoma_v2 | data=data/diagw_tahoma/test
+2026-10-28 02:19:01 | STEP3_3 | DONE | exit=0
+2026-10-28 02:19:16 | STEP3_4 | START | out=results/diagw_consola_v2 | data=data/diagw_consola/test
+2026-10-28 02:19:24 | STEP3_4 | DONE | exit=0
+2026-10-28 02:19:30 | STEP3_5 | START | out=results/diag_tahoma_v2 | data=data/diag_tahoma/test
+2026-10-28 02:19:43 | STEP3_5 | DONE | exit=0
+2026-10-28 02:19:51 | STEP3_6 | START | out=results/diag_consola_v2 | data=data/diag_consola/test
+2026-10-28 02:20:04 | STEP3_6 | DONE | exit=0
+2026-10-28 02:21:27 | STEP4_REPORT | DONE | report=results/v2_evaluation_report.md

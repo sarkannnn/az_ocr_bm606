@@ -1,0 +1,163 @@
+{
+  "provenance": {
+    "v2_word_ckpt": "runs/word_v2_20261027_180300/best.pt",
+    "v2_line_ckpt": "runs/line_v2/best.pt",
+    "word_v2_empty": "runs/word_v2 (0 bytes, empty dir)",
+    "train_fonts_v1": [
+      "arial.ttf",
+      "calibri.ttf",
+      "candara.ttf",
+      "corbel.ttf",
+      "cour.ttf",
+      "segoeui.ttf",
+      "times.ttf",
+      "verdana.ttf"
+    ],
+    "train_fonts_v2_added": [
+      "CascadiaCode.ttf",
+      "consolab.ttf",
+      "bahnschrift.ttf",
+      "ebrima.ttf",
+      "l_10646.ttf",
+      "palab.ttf"
+    ],
+    "val_fonts": [
+      "candara.ttf",
+      "times.ttf",
+      "cour.ttf",
+      "segoeui.ttf",
+      "verdana.ttf",
+      "corbel.ttf",
+      "arial.ttf",
+      "calibri.ttf"
+    ],
+    "test_fonts_synth": [
+      "candara.ttf",
+      "times.ttf",
+      "cour.ttf",
+      "segoeui.ttf",
+      "verdana.ttf",
+      "corbel.ttf",
+      "arial.ttf",
+      "calibri.ttf"
+    ],
+    "word_images": "35,000 (20,000 V1 + 15,000 V2 additions)",
+    "line_images": "16,000 (10,000 V1 + 6,000 V2 additions)",
+    "word_epochs_run": 18,
+    "word_best_epoch": 13,
+    "word_best_loss": 0.006268,
+    "word_best_val_cer": 0.002392,
+    "line_epochs_run": 15,
+    "line_best_epoch": 10,
+    "line_best_loss": 0.012473,
+    "line_best_val_cer": 0.002755,
+    "corpus_files": "Original: data/corpus_word/{train,val,test}.txt, data/corpus_line/{train,val,test}.txt; V2 additions sampled strictly from data/corpus_line/train.txt and data/corpus_word/train.txt (0 overlap with val/test)"
+  },
+  "sans_eval": {
+    "L0_word": {
+      "n": 100,
+      "v1_cer": 0.05801526717557252,
+      "v2_cer": 0.007633587786259542,
+      "t_cer": 0.00916030534351145
+    },
+    "L0_line": {
+      "n": 24,
+      "v1_cer": 0.005471956224350205,
+      "v2_cer": 0.0027359781121751026,
+      "t_cer": 0.004103967168262654
+    },
+    "L4_word": {
+      "n": 100,
+      "v1_cer": 0.5984732824427481,
+      "v2_cer": 0.024427480916030534,
+      "t_cer": 0.012213740458015267
+    },
+    "L4_line": {
+      "n": 24,
+      "v1_cer": 0.2421340629274966,
+      "v2_cer": 0.013679890560875513,
+      "t_cer": 0.04514363885088919
+    }
+  },
+  "leakage": {
+    "total_test_lines": 294,
+    "leaked_lines_count": 0,
+    "total_test_words": 1232,
+    "word_overlap_count": 276,
+    "word_overlap_pct": 22.4025974025974
+  },
+  "ci_stats": {
+    "L0_word": {
+      "v2_cer": 0.016196886832141353,
+      "v2_ci": [
+        0.011891644594694948,
+        0.0209345592194782
+      ],
+      "t_cer": 0.012831299957930165,
+      "t_ci": [
+        0.008993303151066258,
+        0.017701336867376054
+      ],
+      "delta": 0.003365586874211188,
+      "delta_ci": [
+        -0.0024837802170100415,
+        0.008823575763568717
+      ],
+      "includes_zero": true
+    },
+    "L0_line": {
+      "v2_cer": 0.007534375588623093,
+      "v2_ci": [
+        0.0044411403412505344,
+        0.01110773800449011
+      ],
+      "t_cer": 0.005839141081182897,
+      "t_ci": [
+        0.0034495479932627536,
+        0.008525192868590685
+      ],
+      "delta": 0.001695234507440196,
+      "delta_ci": [
+        -0.0022412446693075875,
+        0.005754621104802439
+      ],
+      "includes_zero": true
+    },
+    "L4_word": {
+      "v2_cer": 0.01851072780816155,
+      "v2_ci": [
+        0.014246522969830661,
+        0.023222426996360995
+      ],
+      "t_cer": 0.012200252419015565,
+      "t_ci": [
+        0.00823921390910922,
+        0.01716587427581388
+      ],
+      "delta": 0.006310475389145984,
+      "delta_ci": [
+        0.00021581851798225184,
+        0.011879886337953182
+      ],
+      "includes_zero": false
+    },
+    "L4_line": {
+      "v2_cer": 0.013938594838952722,
+      "v2_ci": [
+        0.009474543097428014,
+        0.01897426263385309
+      ],
+      "t_cer": 0.012243360331512526,
+      "t_ci": [
+        0.0038359772637044185,
+        0.02448962571941469
+      ],
+      "delta": 0.001695234507440196,
+      "delta_ci": [
+        -0.011215835250081123,
+        0.011430755953504675
+      ],
+      "includes_zero": true
+    }
+  }
+}

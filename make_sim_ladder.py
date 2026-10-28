@@ -107,9 +107,9 @@ def setup_pages_plan(fonts_info, corpus_lines, seed=7):
                 prefix_w = font.getlength(prefix)
                 w_bbox = font.getbbox(w_text, anchor="lt")
                 w_x0 = x_line + prefix_w + w_bbox[0]
-                w_y0 = y_line + min(0, w_bbox[1])
+                w_y0 = y_line + w_bbox[1]
                 w_x1 = x_line + prefix_w + w_bbox[2]
-                w_y1 = y_line + max(ascent + descent, w_bbox[3])
+                w_y1 = y_line + w_bbox[3]
                 word_boxes.append((w_text, [w_x0, w_y0, w_x1, w_y1], font_name))
 
         # Pre-generate distortion parameters for reproducibility

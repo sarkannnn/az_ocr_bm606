@@ -1,0 +1,22 @@
+model,group,font,level,mode,ref,hyp,ref_char,hyp_char,err_type
+Tess,B,pala.ttf,L0,word,(7,(çi,,ç,->ç
+Tess,C,cambria.ttc,L0,word,dcmokratik,demokratik,c,e,c->e
+V2,B,CascadiaMono.ttf,L0,word,C.,c.,C,c,C->c
+Tess,B,CascadiaMono.ttf,L0,word,C.,c.,C,c,C->c
+V2,B,pala.ttf,L0,line,Gürcüstan baş hakiminin Qarabağda,Cürcüstan baş hakiminin Qarabağda,G,C,G->C
+Tess,C,cambria.ttc,L0,line,"çevrilmiş, dcmokratik ruhlu və","çevrilmiş, demokratik ruhlu və",c,e,c->e
+V2,C,cambria.ttc,L4,word,dcmokratik,demokratik,c,e,c->e
+Tess,C,cambria.ttc,L4,word,dcmokratik,demokratik,c,e,c->e
+V2,B,CascadiaMono.ttf,L4,word,C.,c.,C,c,C->c
+Tess,B,CascadiaMono.ttf,L4,word,C.,c.,C,c,C->c
+V2,B,pala.ttf,L4,line,Gürcüstan baş hakiminin Qarabağda,Cürcüstan baş hakiminin Qarabağda,G,C,G->C
+V2,C,cambria.ttc,L4,line,"çevrilmiş, dcmokratik ruhlu və","çevrilmiş, demokratik ruhlu və",c,e,c->e
+Tess,C,cambria.ttc,L4,line,"çevrilmiş, dcmokratik ruhlu və","çevrilmiş, demokratik ruhlu və",c,e,c->e
+Tess,C,Moba_Fira.ttf,L4,line,Azərbaycan Dövlət Televiziya və,Dövlət Televiziya və,c,,c->
+Tess,C,Moba_Font.ttf,L0,word,son,con,s,c,s->c
+Tess,B,verdanab.ttf,L0,word,c.,rəsi,c,s,c->s
+Tess,B,seguisb.ttf,L0,word,rəssamı:,"raccamı”""",s,c,s->c
+Tess,B,seguisb.ttf,L0,word,rəssamı:,"raccamı”""",s,c,s->c
+Tess,C,tahomabd.ttf,L0,word,movzusuna,movzruscsuna,,c,->c
+V2,B,verdanab.ttf,L4,word,qaçan,qasan,ç,s,ç->s
+Tess,B,seguisb.ttf,L4,word,rəssamı:,racsamı:,s,c,s->c

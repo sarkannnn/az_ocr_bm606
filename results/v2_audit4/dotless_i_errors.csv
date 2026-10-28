@@ -1,0 +1,180 @@
+model,group,font,level,mode,ref,hyp,ref_char,hyp_char,err_type,is_upper
+Tess,B,pala.ttf,L0,word,(7,(çi,7,i,7->i,False
+Tess,C,cambria.ttc,L0,word,inşası,İnşası,i,İ,i->İ,True
+Tess,C,micross.ttf,L0,line,müsəlmanlar tərəfındən fəth,müsəlmanlar tərəfindən fəth,ı,i,ı->i,False
+V2,C,cambria.ttc,L4,word,yüksəliblər.,yüksəlıiblər.,,ı,->ı,True
+V2,C,cambria.ttc,L4,word,indiki,indıki,i,ı,i->ı,False
+V2,C,micross.ttf,L4,word,"İmanquliyeva,","Imanquliyeva,",İ,I,İ->I,True
+V2,B,CascadiaMono.ttf,L4,word,buyurdu:,buyurdui,:,i,:->i,False
+Tess,C,micross.ttf,L4,line,müsəlmanlar tərəfındən fəth,müsəlmanlar tərəfindən fəth,ı,i,ı->i,False
+Tess,C,micross.ttf,L4,line,"- Aida İmanquliyeva, Azərbaycan","- Alda İmanquliyeva, Azərbaycan",i,l,i->l,False
+Tess,C,SansSerifCollection.ttf,L0,word,-yi,-yİ,i,İ,i->İ,True
+Tess,C,SansSerifCollection.ttf,L0,word,III,HI,I,,I->,True
+Tess,C,SansSerifCollection.ttf,L0,word,III,HI,I,H,I->H,True
+V2,C,SansSerifCollection.ttf,L4,word,bəzədilmişdir.,bəzədıilmişdır.,,ı,->ı,True
+V2,C,SansSerifCollection.ttf,L4,word,bəzədilmişdir.,bəzədıilmişdır.,i,ı,i->ı,False
+V2,C,SansSerifCollection.ttf,L4,word,İrəvan,Irəvan,İ,I,İ->I,True
+V2,C,SansSerifCollection.ttf,L4,word,T.İbrahimov,T.lbrahimov,İ,l,İ->l,True
+V2,C,SansSerifCollection.ttf,L4,word,İslamın,lslamın,İ,l,İ->l,True
+V2,C,SansSerifCollection.ttf,L4,word,il,l,i,,i->,True
+Tess,C,SansSerifCollection.ttf,L4,word,il,,i,,i->,True
+Tess,C,SansSerifCollection.ttf,L4,word,III,Hİ,I,,I->,True
+Tess,C,SansSerifCollection.ttf,L4,word,III,Hİ,I,H,I->H,True
+Tess,C,SansSerifCollection.ttf,L4,word,III,Hİ,I,İ,I->İ,True
+V2,C,SansSerifCollection.ttf,L4,word,diametrli,dılametrli,,ı,->ı,True
+V2,C,SansSerifCollection.ttf,L4,word,diametrli,dılametrli,i,l,i->l,False
+V2,C,SansSerifCollection.ttf,L4,word,ilə,lə,i,,i->,True
+V2,C,SansSerifCollection.ttf,L4,word,"şirkət,","şırkət,",i,ı,i->ı,False
+Tess,C,SansSerifCollection.ttf,L4,line,Hadisələr Doğumlar Əbdürrəşid,,i,,i->,True
+Tess,C,SansSerifCollection.ttf,L4,line,Hadisələr Doğumlar Əbdürrəşid,,i,,i->,True
+V2,C,SansSerifCollection.ttf,L4,line,kinofestivalı Film III dərəcəli,kinofestivalı Film II dərəcəli,I,,I->,True
+V2,C,SansSerifCollection.ttf,L4,line,"limanlarına prokat, böyük diametrli","İimanlarına prokat, böyük diametrli",l,İ,l->İ,True
+V2,C,SansSerifCollection.ttf,L4,line,Heraklın şərəfinə böyük qədəhdəki,Herakin şərəfinə böyük qədəhdəki,ı,i,ı->i,False
+V2,C,SansSerifCollection.ttf,L4,line,Bəzən daha qısa köynək-baju kebaya,Bəzən daha qsa köynək bajvu kebaya,ı,,ı->,True
+Tess,C,Moba_Font.ttf,L0,word,Kanci,Kanc1,i,1,i->1,False
+V2,C,Moba_Font.ttf,L0,word,yaranib.,yaranüb.,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,iyirmi,üyirmü,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,iyirmi,üyirmü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,word,ildə,eldə,i,e,i->e,False
+V2,C,Moba_Font.ttf,L0,word,virus,vürus,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,"erPoint,","erPoünt,",i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,word,"erPoint,","erPoünt,",i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,Microsoft,Mücrosoft,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,Fəaliyyəti,Fəaliyyətü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,word,istisna,4stisna,i,4,i->4,False
+V2,C,Moba_Font.ttf,L0,word,Muzeyinin,Muzeyünün,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,Muzeyinin,Muzeyünün,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,word,idarəsindəki,ddarəsindəki,i,d,i->d,False
+Tess,C,Moba_Font.ttf,L0,word,"""Jiquli""dən","""Züquli""dən",i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,əhəmiyyətli,əhəmüyyətlü,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L0,word,əhəmiyyətli,əhəmüyyətlü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,word,kuti,kuütü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,word,namizədi),namizəd1),i,1,i->1,False
+Tess,C,Moba_Fanta.ttf,L0,word,dəstəklənirdi.,dəstəkləntrdi.,i,t,i->t,False
+V2,C,Moba_Fanta.ttf,L0,word,campaigns,campaügns,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,tanınmışdılar.,tanurmıuşdılar.,ı,u,ı->u,False
+Tess,C,Moba_Fanta.ttf,L0,word,tanınmışdılar.,tanınmışdmlar .,ı,m,ı->m,False
+V2,C,Moba_Fanta.ttf,L0,word,"islamşünaslıq,","üslamşünasluq,",i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,"islamşünaslıq,","üslamşünasluq,",ı,u,ı->u,False
+Tess,C,Moba_Fanta.ttf,L0,word,"islamşünaslıq,","üslamşünaslıq,",i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,almışdılar,almuşdular,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L0,word,almışdılar,almuşdular,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L0,word,Respublikasının,Respublükasunun,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,Respublikasının,Respublükasunun,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L0,word,Respublikasının,Respublükasunun,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L0,word,mədəniyyəti,mədənüyyəti,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,word,mədəniyyəti,mədənüyyəti,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,word,rejissor,reitssor,j,i,j->i,False
+Tess,C,Moba_Fanta.ttf,L0,word,rejissor,reitssor,i,t,i->t,False
+V2,C,Moba_Fanta.ttf,L0,word,keçidin,keçüdün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,keçidin,keçüdün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,işləmə,üşləmə,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,word,işləmə,üşləmə,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,prinsipinin,prünsiüpünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,prinsipinin,prünsiüpünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,prinsipinin,prünsiüpünün,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,word,prinsipinin,prünsipinin,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,deputatları,deputatlaru,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L0,word,vuruşmaların,vuruşmalarun,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L0,word,birində,biüründə,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,Kəriminin,Kərümünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,Kəriminin,Kərümünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,Kəriminin,Kərümünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L0,word,tamaşalarında,tamaşalarunda,ı,u,ı->u,False
+V2,B,verdanab.ttf,L0,word,"""Əl","""ƏI",l,I,l->I,True
+Tess,B,verdanab.ttf,L0,word,c.,rəsi,.,i,.->i,False
+Tess,C,Moba_Font.ttf,L0,line,Kanci xətdindın yaranib.,Kanci xətdündın yaranib.,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,line,dünyanın 37-ci ən böyük ölkəsidir.,dünyanın 37-ci ən böyük ölkəsüdfr.,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,line,dünyanın 37-ci ən böyük ölkəsidir.,dünyanın 37-ci ən böyük ölkəsüdfr.,i,f,i->f,False
+Tess,C,Moba_Font.ttf,L0,line,"Po erPoint, Microsoft Excel və","Po erPoünt, Microsoft Excel və",i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,line,din və hüquq komissiyalarının üzvü,dün və hüquq komissiyalarının üzvü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,line,"""Jiquli""dən bəhs edir.","""Tüquli""dən bəhs edir.",i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L0,line,Onlara yaxın olan kuti tayfaları da,Onlara yaxın olan kutt tayfaları da,i,t,i->t,False
+Tess,C,Moba_Font.ttf,L0,line,namizədi) Filmin direktoru:,namizəd1) Filmin dtrektoru:,i,1,i->1,False
+Tess,C,Moba_Font.ttf,L0,line,namizədi) Filmin direktoru:,namizəd1) Filmin dtrektoru:,i,t,i->t,False
+Tess,C,Moba_Fanta.ttf,L0,line,bir din rəsmi dövlət dini olaraq,bir din rəsmt dövlət dünt olaraq,i,t,i->t,False
+Tess,C,Moba_Fanta.ttf,L0,line,bir din rəsmi dövlət dini olaraq,bir din rəsmt dövlət dünt olaraq,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,line,bir din rəsmi dövlət dini olaraq,bir din rəsmt dövlət dünt olaraq,i,t,i->t,False
+Tess,C,Moba_Fanta.ttf,L0,line,"islamşünaslıq, müsəlman","üslamşünaslıq, müsəlman",i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,line,mədəniyyəti Azıx paleolit,mədənüyyəti Azıx paleolit,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,line,sənətkar - quruluşçu rejissor Tofiq,sənətkar - quruluşçu re/iissor Tofiq,j,i,j->i,False
+Tess,C,Moba_Fanta.ttf,L0,line,"""Azərneft"" İstehsalat Birliyi Mənbə","""Azərneft"" İstehsalat Birlüyt Mənbə",i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L0,line,"""Azərneft"" İstehsalat Birliyi Mənbə","""Azərneft"" İstehsalat Birlüyt Mənbə",i,t,i->t,False
+Tess,C,Moba_Fanta.ttf,L0,line,keçidin işləmə prinsipinin fiziki,keçidin işləmə prinsipinin fizikt,i,t,i->t,False
+V2,C,Moba_Fanta.ttf,L0,line,əvvəl abad və əhalisi sıx olan,əvvəl abad və əhalisi Slx olan,ı,l,ı->l,False
+V2,B,verdanab.ttf,L0,line,necə TƏLƏYƏ SALIB?,necə TələYə SAI.IB?,,I,->I,True
+V2,C,Moba_Font.ttf,L4,word,xətdindın,xətdündın,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,iyirmi,üyirmiü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,iyirmi,İyirmi,i,İ,i->İ,True
+V2,C,Moba_Font.ttf,L4,word,final,fünal,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,məqaləsində,məqaləsündə,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Mirzə,Mürzə,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Şəfinin,Şəfünin,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,Şəfinin,Şəfinün,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,"erPoint,","erPoünt,",i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Microsoft,Mücrosoft,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,din,dün,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Muzeyinin,Muzeyünün,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Muzeyinin,Muzeyünün,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,Muzeyinin,Muzeyinün,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,idarəsindəki,üdarəsindəki,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,idarəsindəki,Tdarəsiündəki,i,T,i->T,False
+V2,C,Moba_Font.ttf,L4,word,"""Jiquli""dən","""Jüquli""dən",i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,"""Jiquli""dən","""Qüquli""dən",i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Miması,Müması,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,word,Miması,Müması,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,əhəmiyyətli,əhəmüyyətli,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,Mixaylov,Müxaylov,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,namizədi),namizədü),i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,word,direktoru:,dürektoru:,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,izotonik,üzotonik,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,campaigns,campaügns,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,avşarların,avşarlarun,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,obalarından,obalarundan,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,tanınmışdılar.,tanunmuşdılar.,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,tanınmışdılar.,tanunmuşdılar.,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,dini,düni,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,"islamşünaslıq,","üslamşünaslıuq,",i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L4,word,"islamşünaslıq,","üslamşünaslıq,",i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,almışdılar,almuşdılar,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,Respublikasının,Respublükasınun,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,Respublikasının,Respublükasınun,ı,u,ı->u,False
+Tess,C,Moba_Fanta.ttf,L4,word,rejissor,reiissor,j,i,j->i,False
+V2,C,Moba_Fanta.ttf,L4,word,işləmə,üşləmə,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,prinsipinin,prünsiüpünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,prinsipinin,prünsiüpünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,prinsipinin,prünsiüpünün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,çağırış,çağuruş,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,çağırış,çağuruş,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,vuruşmaların,vuruşmalarun,ı,u,ı->u,False
+V2,C,Moba_Fanta.ttf,L4,word,Kəriminin,Kərümüniün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,Kəriminin,Kərümüniün,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,word,tamaşalarında,tamaşalarunda,ı,u,ı->u,False
+Tess,B,verdanab.ttf,L4,word,il,,i,,i->,True
+Tess,B,verdanab.ttf,L4,word,məni,,i,,i->,True
+Tess,B,verdanab.ttf,L4,word,Həmin,,i,,i->,True
+V2,B,verdanab.ttf,L4,word,"""Əl","""ƏI",l,I,l->I,True
+V2,B,calibrib.ttf,L4,word,(titrlərdə,İtitrlərdə,(,İ,(->İ,True
+Tess,B,calibrib.ttf,L4,word,ilə,,i,,i->,True
+Tess,C,tahomabd.ttf,L4,word,VI,vı,I,ı,I->ı,True
+Tess,C,Moba_Font.ttf,L4,line,1986-cı ildə virus üçün İnsan,1986-cı üldə virus üçün İnsan,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,line,din və hüquq komissiyalarının üzvü,dün və hüquq komissiyalarının üzvü,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,line,istisna olaraq son hecaya düşməsi,İstisna olaraq son hecaya düşməsi,i,İ,i->İ,True
+Tess,C,Moba_Font.ttf,L4,line,Azərbaycan idarəsindəki Əfqanıstana,Azərbaycan üdarəs ündəki Əfqanıstana,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,line,Azərbaycan idarəsindəki Əfqanıstana,Azərbaycan üdarəs ündəki Əfqanıstana,i,ü,i->ü,False
+Tess,C,Moba_Font.ttf,L4,line,"""Jiquli""dən bəhs edir.","""Tüquli""dən bəhs edir.",i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,line,Miması kəşf edənə qədər əhəmiyyətli,Muması kəşf edənə qədər əhəmiyyətli,i,u,i->u,False
+Tess,C,Moba_Font.ttf,L4,line,Miması kəşf edənə qədər əhəmiyyətli,Müması kəşf edənə qədər əhəmiyyətli,i,ü,i->ü,False
+V2,C,Moba_Font.ttf,L4,line,namizədi) Filmin direktoru:,namizədi) Filmin d ırektoru:,i,ı,i->ı,False
+Tess,C,Moba_Font.ttf,L4,line,namizədi) Filmin direktoru:,namizəd1) Filmin direktoru:,i,1,i->1,False
+V2,C,Moba_Fanta.ttf,L4,line,"susuzlaşması zamanı izotonik 0,9","susuzlaşması zananı izotonlk o,3",i,l,i->l,False
+V2,C,Moba_Fanta.ttf,L4,line,emphasis on battles and campaigns,emphasis on battles and campalgns,i,l,i->l,False
+V2,C,Moba_Fanta.ttf,L4,line,avşarların obalarından biri Şamlı,avşarların obalarından büri Şamlı,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,line,beynəlxalq aləmdə tanınmışdılar.,beynəlxalq aləndə tanunmışdılar.,ı,u,ı->u,False
+Tess,C,Moba_Fanta.ttf,L4,line,beynəlxalq aləmdə tanınmışdılar.,beynəlxalq aləmdə tanınmışdtlar .,ı,t,ı->t,False
+V2,C,Moba_Fanta.ttf,L4,line,bir din rəsmi dövlət dini olaraq,bir din rəsmi dövlət dünü olaraq,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,line,bir din rəsmi dövlət dini olaraq,bir din rəsmi dövlət dünü olaraq,i,ü,i->ü,False
+Tess,C,Moba_Fanta.ttf,L4,line,"islamşünaslıq, müsəlman","üslamşünaslıq, müsəlman",i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,line,Şəki rayonunun şimalı Baş Qafqaz,Şəki rayonunun şümalı Baş Qaf qaz,i,ü,i->ü,False
+V2,C,Moba_Fanta.ttf,L4,line,keçidin işləmə prinsipinin fiziki,keçidin işləmə prinsipinin fizüki,i,ü,i->ü,False
+V2,B,seguisb.ttf,L4,line,Qədim Albaniya etnik tərkibinə görə,Qədim Albanya etnik tərkibinə görə,i,,i->,True

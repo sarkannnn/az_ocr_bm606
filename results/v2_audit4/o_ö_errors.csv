@@ -1,0 +1,21 @@
+model,group,font,level,mode,ref,hyp,ref_char,hyp_char,err_type
+V2,C,micross.ttf,L0,word,605-628-948-4,6o5-628-948-4,0,o,0->o
+V2,B,CascadiaMono.ttf,L0,word,Onlayn,onlayn,O,o,O->o
+V2,B,CascadiaMono.ttf,L0,word,Orqanizmin,orqanizmin,O,o,O->o
+Tess,B,CascadiaMono.ttf,L0,word,.lr,olr,.,o,.->o
+V2,C,cambria.ttc,L4,word,2001-ci,zo0l-ci,0,o,0->o
+V2,C,cambria.ttc,L4,word,"Goranboy,","Gəranboy,",o,ə,o->ə
+V2,C,micross.ttf,L4,word,605-628-948-4,6o5-828-948-4,0,o,0->o
+V2,B,CascadiaMono.ttf,L4,word,Onlayn,onlayn,O,o,O->o
+V2,B,CascadiaMono.ttf,L4,word,Orqanizmin,orqanizmin,O,o,O->o
+Tess,B,CascadiaMono.ttf,L4,word,.lr,ölr,.,ö,.->ö
+V2,C,SansSerifCollection.ttf,L4,word,Köpək,Kopək,ö,o,ö->o
+V2,C,SansSerifCollection.ttf,L4,word,köynək-baju,koynək.baju,ö,o,ö->o
+Tess,C,SansSerifCollection.ttf,L4,line,Hadisələr Doğumlar Əbdürrəşid,,o,,o->
+Tess,C,tahomabd.ttf,L0,word,(),O,),O,)->O
+V2,C,tahomabd.ttf,L0,line,"1992-ci ildə Qoqolun ""Dəlinin","1992-ci ildə Qoqelun ""Dəlinin",o,e,o->e
+V2,C,tahomabd.ttf,L4,word,Operator:,operator:,O,o,O->o
+Tess,C,tahomabd.ttf,L4,word,(),O,),O,)->O
+V2,C,Moba_Fanta.ttf,L4,line,"susuzlaşması zamanı izotonik 0,9","susuzlaşması zananı izotonlk o,3",0,o,0->o
+V2,B,verdanab.ttf,L4,line,(0.04 ) isə azlıq təşkil edir.,(O.04 ) isə azlıq təşkil edir.,0,O,0->O
+V2,B,seguisb.ttf,L4,line,"""Böyük dördlük"" ölkələri","""Böyük dordlük"" ölkələri",ö,o,ö->o

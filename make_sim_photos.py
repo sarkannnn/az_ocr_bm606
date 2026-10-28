@@ -149,9 +149,9 @@ def render_page(lines, font_path, font_size, rng):
             prefix_w = font.getlength(prefix)
             w_bbox = font.getbbox(word_text, anchor="lt")
             w_x0 = x_line + prefix_w + w_bbox[0]
-            w_y0 = y_line + min(0, w_bbox[1])
+            w_y0 = y_line + w_bbox[1]
             w_x1 = x_line + prefix_w + w_bbox[2]
-            w_y1 = y_line + max(ascent + descent, w_bbox[3])
+            w_y1 = y_line + w_bbox[3]
             word_records.append((word_text, [w_x0, w_y0, w_x1, w_y1]))
 
     return np.array(pil_img), line_records, word_records
