@@ -17,7 +17,7 @@ from docx.oxml.ns import nsdecls
 sys.stdout.reconfigure(encoding='utf-8')
 
 SRC_PATH = Path("results/Az_OCR_Akademik_Hesabat_DUZELISLER_v5.docx")
-OUT_PATH = Path("results/Az_OCR_Akademik_Hesabat_DUZELISLER_v7_vizual.docx")
+OUT_PATH = Path("results/Az_OCR_Akademik_Hesabat_Final.docx")
 FIG_DIR = Path("results/figures")
 
 doc = docx.Document(SRC_PATH)
@@ -219,6 +219,32 @@ for p in doc.paragraphs:
         )
         for r in p.runs:
             set_run_font(r, size=9.5)
+
+        # Add Section 5.4: Architectural Analysis & Trade-offs
+        p_sec54_title = doc.add_paragraph("5.4. Arxitektura və Mühəndislik Fərqləri: Niyə CRNN Sözdə, Tesseract isə Bütöv Sətirdə Üstündür? (Design Trade-offs)")
+        p_sec54_title.runs[0].font.bold = True
+        p_sec54_title.runs[0].font.size = Pt(11.0)
+
+        p_sec54_body = doc.add_paragraph(
+            "Real sınaq nəticələri iki mühüm mühəndislik faktını və model fəlsəfəsini üzə çıxarır:\n"
+            "1. Diakritik Həssaslıq və Milli Dilə Özəlləşmə (CRNN Üstünlüyü): Google Tesseract 5 qlobal və çoxdilli nəhəng bir mühərrikdir (30 illik HP/Google inkişaf tarixi). "
+            "Lakin onun rəsmi Azərbaycan paketi (`aze.traineddata`) spesifik diakritik simvollar üçün xüsusi dərindən optimallaşdırılmadığı üçün "
+            "real kamera kəsimlərində 'rəngə' -> 'Təngə' (r->T), 'təbii' -> 'təbi' (hərf itkisi) və 'xüsusi' -> 'XÜSuSsi' kimi qrafem xətalarına yol verir. "
+            "Bizim layihələndirdiyimiz milli CRNN arxitekturası isə sırf Azərbaycan əlifbası (32 hərf) və onun unikal qrafemləri (`ə, ı, ö, ğ, ü, ş, ç`, böyük `İ/I`) "
+            "üzrə hədəfləndiyindən, real sənəd sözlərində Tesseract-dan 3 dəfə daha az xəta (Word CER: 0.66% vs 1.97%) göstərmişdir.\n"
+            "2. Sətir Sıxılması və Ölçü Məhdudiyyəti (Tesseract Üstünlüyü): Bütöv, uzun sətirlərdə Tesseract-ın irəlidə olmasının səbəbi arxitektur fərqdir. "
+            "Bizim CRNN modelimiz təlim zamanı sabit 32x512 piksel giriş ölçüsü qəbul edir. 12 Meqapiksellik kameradan kəsilmiş 2200 piksellik bütöv bir cümlə (80+ simvol) "
+            "512 pikselə sıxıldıqda, hər bir simvol cəmi 4–5 piksel eninə daralır və bu daralma BiLSTM-in zaman addımlarını (T=128) həddən artıq yükləyir. "
+            "Tesseract isə daxili xətt seqmentatoru və dinamik pəncərə (sliding-window LSTM) istifadə etdiyi üçün bütöv sətirlərdə sıxılma problemi yaşamır.\n"
+            "3. Yüngüllük, Mobil Çeviklik və Sənaye Tövsiyəsi: Tesseract nəhəng, onlarla asılılığı olan ağır bir C++ mühərrikidir. "
+            "Bizim CRNN şəbəkəmiz isə cəmi 2.5 milyon parametrdən (~8 MB çəki) ibarət kompakt end-to-end modeldir və mobil/edge cihazlarda millisanisiyələrlə işləyir. "
+            "Buna görə də sənaye tətbiqləri üçün ən optimal arxitektura: Sənəd daxilində sözləri tapan yüngül bir Mətn Detektoru (Text Detector / Bounding Box Segmenter) "
+            "və aşkar edilmiş sözləri 0.66% yüksək dəqiqliklə oxuyan milli CRNN tanıma mühərrikimizin (Recognition Engine) hibrid inteqrasiyasıdır."
+        )
+        p_sec54_body.runs[0].font.size = Pt(10.0)
+
+        p._p.addnext(p_sec54_body._p)
+        p._p.addnext(p_sec54_title._p)
         break
 
 # Update Limitation 4
@@ -237,5 +263,5 @@ for p in doc.paragraphs:
         break
 
 doc.save(OUT_PATH)
-print("Saved clean docx v7 to:", OUT_PATH)
+print("Saved clean docx with Section 5.4 in-depth analysis to:", OUT_PATH)
 print("File size:", OUT_PATH.stat().st_size)
