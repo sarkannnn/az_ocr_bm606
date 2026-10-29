@@ -36,3 +36,4 @@ data/synth_line_v2/
 runs/line_nospace/
 runs/smoke_v2/
 runs/**/last.pt
+*.zip

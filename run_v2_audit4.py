@@ -1,20 +1,17 @@
 """Audit 4 Master Script: Comprehensive Evidence Gap Closing & Deep Diagnosis.
 Executes Tasks 1-7 and generates results/v2_audit4/summary.md.
 """
-import os
-import sys
-import json
 import csv
-import time
-import math
+import json
+import os
 import re
-from pathlib import Path
+import sys
 from collections import Counter, defaultdict
+from pathlib import Path
+
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-import torch
-from fontTools.ttLib import TTFont
 
 # Ensure UTF-8 output and set Tesseract environment
 sys.stdout.reconfigure(encoding='utf-8')

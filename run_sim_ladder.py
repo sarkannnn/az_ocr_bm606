@@ -7,7 +7,6 @@ and generates results/sim_ladder/summary.md.
 
 import json
 import os
-import sys
 from pathlib import Path
 
 # Setup required environment variables

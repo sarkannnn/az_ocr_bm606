@@ -11,10 +11,8 @@ Builds 7 controlled distortion levels using the same text lines and layout acros
 """
 
 import argparse
-import csv
 import json
 import math
-import os
 import re
 from pathlib import Path
 

@@ -11,16 +11,14 @@ import time
 from collections import Counter
 from pathlib import Path
 
-import numpy as np
-
-from common import CONFUSION_PAIRS, SPECIAL_LOWER, Vocab, cer_wer, load_labels, normalize
+from common import CONFUSION_PAIRS, Vocab, cer_wer, load_labels, normalize
 
 
 def run_model(ckpt_path, data_dir, batch=128):
     import torch
     from torch.utils.data import DataLoader
     from model import CRNN
-    from train import OCRDataset, collate
+    from training_utils import OCRDataset, collate
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ck = torch.load(ckpt_path, map_location=device)
