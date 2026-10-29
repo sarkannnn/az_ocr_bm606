@@ -1,11 +1,10 @@
-import os
 import sys
 from pathlib import Path
 from fontTools.ttLib import TTFont
 
-sys.stdout.reconfigure(encoding='utf-8')
+from common import SPECIAL_ALL
 
-SPECIAL_ALL = 'ə ı ö ğ ü ş ç Ə İ Ö Ğ Ü Ş Ç'.split()
+sys.stdout.reconfigure(encoding="utf-8")
 
 def get_font_family(path):
     try:

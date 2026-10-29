@@ -1,22 +1,17 @@
-"""Evaluate V2, V1, and Tesseract on the user's uploaded real phone photo.
-"""
-import sys
+"""Evaluate V2, V1, and Tesseract on the user's uploaded real phone photo."""
 import os
-import cv2
-import json
-import numpy as np
+import sys
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
-import torch
+import cv2
+from PIL import Image
+import pytesseract
 
-sys.stdout.reconfigure(encoding='utf-8')
+from common import align, infer_single_crop, load_model_checkpoint, normalize
+
+sys.stdout.reconfigure(encoding="utf-8")
 os.environ["PYTHONUTF8"] = "1"
 os.environ["PATH"] += r";C:\Program Files\Tesseract-OCR"
 os.environ["TESSDATA_PREFIX"] = r"D:\laragon\www\az_ocr_bm606\tessdata"
-import pytesseract
-
-from common import make_cfg, preprocess, Vocab, cer_wer, align, normalize
-from model import CRNN
 
 IMG_PATH = r"C:\Users\serxan.m\.gemini\antigravity-ide\brain\1ece9f72-797d-4105-b45d-b26d0dfbe9ac\.user_uploaded\media_1793193977057.jpg"
 OUT_DIR = Path("results/real_test")
@@ -25,28 +20,13 @@ CROPS_DIR = OUT_DIR / "crops"
 CROPS_DIR.mkdir(parents=True, exist_ok=True)
 
 # 1. Load models
-def load_model(ckpt_path):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    ck = torch.load(ckpt_path, map_location=device)
-    cfg = ck["cfg"]
-    vocab = Vocab(ck["chars"])
-    model = CRNN(1 if cfg["gray"] else 3, vocab.size).to(device)
-    model.load_state_dict(ck["model"])
-    model.eval()
-    return model, cfg, vocab, device
+v1_line_m, v1_line_cfg, v1_line_voc, dev = load_model_checkpoint("runs/line/best.pt")
+v2_line_m, v2_line_cfg, v2_line_voc, dev = load_model_checkpoint("runs/line_v2/best.pt")
+v1_word_m, v1_word_cfg, v1_word_voc, dev = load_model_checkpoint("runs/word/best.pt")
+v2_word_m, v2_word_cfg, v2_word_voc, dev = load_model_checkpoint("runs/word_v2_20261027_180300/best.pt")
 
-v1_line_m, v1_line_cfg, v1_line_voc, dev = load_model("runs/line/best.pt")
-v2_line_m, v2_line_cfg, v2_line_voc, dev = load_model("runs/line_v2/best.pt")
-v1_word_m, v1_word_cfg, v1_word_voc, dev = load_model("runs/word/best.pt")
-v2_word_m, v2_word_cfg, v2_word_voc, dev = load_model("runs/word_v2_20261027_180300/best.pt")
+infer = infer_single_crop
 
-def infer(model, cfg, vocab, img, device):
-    x = preprocess(img, cfg)
-    x_t = torch.from_numpy(x)[None].to(device)
-    with torch.no_grad():
-        out = model(x_t)
-        ids = out.argmax(2).T.cpu().numpy()[0]
-        return vocab.decode_greedy(ids)
 
 def run_tess_crop(img, is_word=False):
     pil_img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))

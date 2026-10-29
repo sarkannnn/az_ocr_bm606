@@ -12,10 +12,11 @@ import cv2
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 
-from common import Vocab, cer_wer, load_labels, make_cfg, preprocess
+from common import Vocab, make_cfg
 from model import CRNN
+from training_utils import OCRDataset, collate, run_epoch
 
 
 def augment(img, rng):
@@ -38,56 +39,6 @@ def augment(img, rng):
         M = cv2.getPerspectiveTransform(src, (src + jit).astype(np.float32))
         img = cv2.warpPerspective(img, M, (w, h), borderMode=cv2.BORDER_REPLICATE)
     return img
-
-
-class OCRDataset(Dataset):
-    def __init__(self, data_dir, cfg, vocab, train=False):
-        self.items, self.cfg, self.vocab, self.train = load_labels(data_dir), cfg, vocab, train
-        self.rng = None
-
-    def __len__(self):
-        return len(self.items)
-
-    def __getitem__(self, i):
-        if self.rng is None:
-            self.rng = np.random.default_rng()
-        path, label = self.items[i]
-        img = cv2.imread(str(path), cv2.IMREAD_COLOR)
-        if img is None:
-            raise FileNotFoundError(path)
-        if self.train:
-            img = augment(img, self.rng)
-        x = torch.from_numpy(preprocess(img, self.cfg))
-        return x, torch.tensor(self.vocab.encode(label), dtype=torch.long), label
-
-
-def collate(batch):
-    xs, ys, labels = zip(*batch)
-    return torch.stack(xs), torch.cat(ys), torch.tensor([len(y) for y in ys]), list(labels)
-
-
-def run_epoch(model, loader, crit, device, vocab, optimizer=None):
-    train = optimizer is not None
-    model.train(train)
-    tot, n, refs, hyps = 0.0, 0, [], []
-    with torch.set_grad_enabled(train):
-        for x, y, yl, labels in loader:
-            out = model(x.to(device))
-            T, B, _ = out.shape
-            loss = crit(out.float(), y, torch.full((B,), T, dtype=torch.long), yl)
-            if train:
-                optimizer.zero_grad()
-                loss.backward()
-                nn.utils.clip_grad_norm_(model.parameters(), 5.0)
-                optimizer.step()
-            tot += loss.item() * B
-            n += B
-            if not train:
-                for p, ref in zip(out.argmax(2).T.cpu().numpy(), labels):
-                    hyps.append(vocab.decode_greedy(p))
-                    refs.append(ref)
-    cer = cer_wer(refs, hyps)[0] if refs else float("nan")
-    return tot / max(n, 1), cer
 
 
 def main():
@@ -119,7 +70,7 @@ def main():
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    tr = OCRDataset(a.train_dir, cfg, vocab, train=not a.no_aug)
+    tr = OCRDataset(a.train_dir, cfg, vocab, train=not a.no_aug, augment_fn=augment)
     va = OCRDataset(a.val_dir, cfg, vocab, train=False)
     kw = dict(collate_fn=collate, num_workers=a.workers, pin_memory=device.type == "cuda")
     tl = DataLoader(tr, batch_size=a.batch_size, shuffle=True, drop_last=True, **kw)

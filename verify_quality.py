@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # Ensure UTF-8 output
 sys.stdout.reconfigure(encoding="utf-8")
 
-from common import load_labels, SPECIAL_ALL
+from common import load_labels
 
 # Target characters for cedilla and descender verification
 TARGET_CHARS = set("şçğəqypŞÇĞƏQYP")
