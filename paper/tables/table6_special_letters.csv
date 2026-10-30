@@ -1,0 +1,8 @@
+Diacritic Letter Pair,Sample Size ($n$),V1 Baseline Error %,V2 Word L0 Error %,Tess Word L0 Error %,V2 Word L4 Error %,Tess Word L4 Error %,V2 Line L4 Error %,Tess Line L4 Error %,Primary Confusion Pattern,Source File
+**ə / e**,394,0.04% (line),**0.00%**,2.03%,**0.00%**,1.78%,**0.00%**,1.02%,Schwa preserved perfectly in V2,"`results/v2_audit3/summary.md:124, 135`"
+**ı / i**,138,0.23% (line),6.52%,**0.72%**,7.25%,**0.00%**,2.17%,**0.72%**,"Dotless-i glyph confusion (ı -> i, i -> ü)","`results/v2_audit3/summary.md:125, 136`"
+**ö / o**,32,0.56% (line),**0.00%**,**0.00%**,6.25%,**0.00%**,3.12%,**0.00%**,Umlaut loss under heavy blur/noise,"`results/v2_audit3/summary.md:126, 137`"
+**ğ / g**,20,0.00% (line),**0.00%**,**0.00%**,**0.00%**,**0.00%**,**0.00%**,5.00%,Breve mark preserved in V2; Tess loses breve,"`results/v2_audit3/summary.md:127, 138`"
+**ü / u**,56,0.00% (line),**0.00%**,**0.00%**,**0.00%**,**0.00%**,**0.00%**,1.79%,High recognition fidelity across models,"`results/v2_audit3/summary.md:128, 139`"
+**ş / s**,56,7.69% (word V1),1.79%,**0.00%**,**0.00%**,**0.00%**,**0.00%**,1.79%,V1 had high cedilla error; V2 resolved to 0%,"`results/v2_audit3/summary.md:129, 140`"
+**ç / c**,23,22.43% (word V1),**0.00%**,**0.00%**,4.35%,**0.00%**,**0.00%**,**0.00%**,V1 had 22.4% collapse; V2 line error is 0.0%,"`results/v2_audit3/summary.md:130, 141`"

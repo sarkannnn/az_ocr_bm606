@@ -1,0 +1,678 @@
+{
+  "raw": {
+    "v2": {
+      "Photo 1 (Times New Roman)": {
+        "leading_edge_insertions": 0,
+        "trailing_edge_insertions": 1,
+        "internal_space_errors": 1,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 7,
+        "internal_letter_errors": 5,
+        "sum_categories": 14,
+        "total_errors": 14,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "p",
+            "hyp": "n",
+            "line_idx": 0
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "y",
+            "hyp": "v",
+            "line_idx": 0
+          },
+          {
+            "category": "Trailing Edge Insertion",
+            "op": "ins",
+            "ref": "",
+            "hyp": ".",
+            "line_idx": 0
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "—",
+            "hyp": "-",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "u",
+            "hyp": "ü",
+            "line_idx": 3
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ".",
+            "hyp": ",",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "—",
+            "hyp": "-",
+            "line_idx": 7
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "—",
+            "hyp": "-",
+            "line_idx": 7
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "—",
+            "hyp": "",
+            "line_idx": 9
+          },
+          {
+            "category": "Internal Spacing Error",
+            "op": "sub",
+            "ref": " ",
+            "hyp": "-",
+            "line_idx": 9
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "l",
+            "hyp": "",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "i",
+            "hyp": "h",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "x",
+            "hyp": "ğ",
+            "line_idx": 12
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ".",
+            "hyp": ",",
+            "line_idx": 14
+          }
+        ]
+      },
+      "Photo 2 (Calibri)": {
+        "leading_edge_insertions": 0,
+        "trailing_edge_insertions": 0,
+        "internal_space_errors": 1,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 6,
+        "internal_letter_errors": 1,
+        "sum_categories": 8,
+        "total_errors": 8,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ",",
+            "hyp": ";",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "f",
+            "hyp": "",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ı",
+            "hyp": "h",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ".",
+            "hyp": ":",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Spacing Error",
+            "op": "del",
+            "ref": " ",
+            "hyp": "",
+            "line_idx": 7
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "—",
+            "hyp": "-",
+            "line_idx": 12
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "—",
+            "hyp": "-",
+            "line_idx": 14
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "!",
+            "hyp": "l",
+            "line_idx": 15
+          }
+        ]
+      }
+    },
+    "tesseract": {
+      "Photo 1 (Times New Roman)": {
+        "leading_edge_insertions": 1,
+        "trailing_edge_insertions": 1,
+        "internal_space_errors": 0,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 4,
+        "internal_letter_errors": 13,
+        "sum_categories": 19,
+        "total_errors": 19,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "y",
+            "hyp": "v",
+            "line_idx": 0
+          },
+          {
+            "category": "Trailing Edge Insertion",
+            "op": "ins",
+            "ref": "",
+            "hyp": ".",
+            "line_idx": 0
+          },
+          {
+            "category": "Leading Edge Insertion",
+            "op": "ins",
+            "ref": "",
+            "hyp": "i",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "M",
+            "hyp": "v",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "d",
+            "hyp": "q",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ş",
+            "hyp": "Ş",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "ins",
+            "ref": "",
+            "hyp": "r",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "ins",
+            "ref": "",
+            "hyp": "n",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "m",
+            "hyp": "ı",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ğ",
+            "hyp": "S",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ı",
+            "hyp": "T",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "r",
+            "hyp": "T",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "y",
+            "hyp": "v",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "u",
+            "hyp": "ü",
+            "line_idx": 3
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "p",
+            "hyp": "n",
+            "line_idx": 4
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "ins",
+            "ref": "",
+            "hyp": "“",
+            "line_idx": 9
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "l",
+            "hyp": "",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "i",
+            "hyp": "h",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "x",
+            "hyp": "ğ",
+            "line_idx": 12
+          }
+        ]
+      },
+      "Photo 2 (Calibri)": {
+        "leading_edge_insertions": 0,
+        "trailing_edge_insertions": 0,
+        "internal_space_errors": 1,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 1,
+        "internal_letter_errors": 0,
+        "sum_categories": 2,
+        "total_errors": 2,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Spacing Error",
+            "op": "del",
+            "ref": " ",
+            "hyp": "",
+            "line_idx": 7
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "!",
+            "hyp": "l",
+            "line_idx": 15
+          }
+        ]
+      }
+    }
+  },
+  "normalized_dashes": {
+    "v2": {
+      "Photo 1 (Times New Roman)": {
+        "leading_edge_insertions": 0,
+        "trailing_edge_insertions": 1,
+        "internal_space_errors": 1,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 3,
+        "internal_letter_errors": 5,
+        "sum_categories": 10,
+        "total_errors": 10,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "p",
+            "hyp": "n",
+            "line_idx": 0
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "y",
+            "hyp": "v",
+            "line_idx": 0
+          },
+          {
+            "category": "Trailing Edge Insertion",
+            "op": "ins",
+            "ref": "",
+            "hyp": ".",
+            "line_idx": 0
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "u",
+            "hyp": "ü",
+            "line_idx": 3
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ".",
+            "hyp": ",",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Spacing Error",
+            "op": "del",
+            "ref": " ",
+            "hyp": "",
+            "line_idx": 9
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "l",
+            "hyp": "",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "i",
+            "hyp": "h",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "x",
+            "hyp": "ğ",
+            "line_idx": 12
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ".",
+            "hyp": ",",
+            "line_idx": 14
+          }
+        ]
+      },
+      "Photo 2 (Calibri)": {
+        "leading_edge_insertions": 0,
+        "trailing_edge_insertions": 0,
+        "internal_space_errors": 1,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 4,
+        "internal_letter_errors": 1,
+        "sum_categories": 6,
+        "total_errors": 6,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ",",
+            "hyp": ";",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "f",
+            "hyp": "",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ı",
+            "hyp": "h",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": ".",
+            "hyp": ":",
+            "line_idx": 6
+          },
+          {
+            "category": "Internal Spacing Error",
+            "op": "del",
+            "ref": " ",
+            "hyp": "",
+            "line_idx": 7
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "!",
+            "hyp": "l",
+            "line_idx": 15
+          }
+        ]
+      }
+    },
+    "tesseract": {
+      "Photo 1 (Times New Roman)": {
+        "leading_edge_insertions": 1,
+        "trailing_edge_insertions": 1,
+        "internal_space_errors": 0,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 4,
+        "internal_letter_errors": 13,
+        "sum_categories": 19,
+        "total_errors": 19,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "y",
+            "hyp": "v",
+            "line_idx": 0
+          },
+          {
+            "category": "Trailing Edge Insertion",
+            "op": "ins",
+            "ref": "",
+            "hyp": ".",
+            "line_idx": 0
+          },
+          {
+            "category": "Leading Edge Insertion",
+            "op": "ins",
+            "ref": "",
+            "hyp": "i",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "M",
+            "hyp": "v",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "d",
+            "hyp": "q",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ş",
+            "hyp": "Ş",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "ins",
+            "ref": "",
+            "hyp": "r",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "ins",
+            "ref": "",
+            "hyp": "n",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "m",
+            "hyp": "ı",
+            "line_idx": 1
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ğ",
+            "hyp": "S",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "ı",
+            "hyp": "T",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "r",
+            "hyp": "T",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "y",
+            "hyp": "v",
+            "line_idx": 2
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "u",
+            "hyp": "ü",
+            "line_idx": 3
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "p",
+            "hyp": "n",
+            "line_idx": 4
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "ins",
+            "ref": "",
+            "hyp": "“",
+            "line_idx": 9
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "del",
+            "ref": "l",
+            "hyp": "",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "i",
+            "hyp": "h",
+            "line_idx": 10
+          },
+          {
+            "category": "Internal Letter Error",
+            "op": "sub",
+            "ref": "x",
+            "hyp": "ğ",
+            "line_idx": 12
+          }
+        ]
+      },
+      "Photo 2 (Calibri)": {
+        "leading_edge_insertions": 0,
+        "trailing_edge_insertions": 0,
+        "internal_space_errors": 1,
+        "internal_o0_errors": 0,
+        "internal_punct_errors": 1,
+        "internal_letter_errors": 0,
+        "sum_categories": 2,
+        "total_errors": 2,
+        "mutually_exclusive_check": true,
+        "details": [
+          {
+            "category": "Internal Spacing Error",
+            "op": "del",
+            "ref": " ",
+            "hyp": "",
+            "line_idx": 7
+          },
+          {
+            "category": "Internal Punctuation Error",
+            "op": "sub",
+            "ref": "!",
+            "hyp": "l",
+            "line_idx": 15
+          }
+        ]
+      }
+    }
+  }
+}

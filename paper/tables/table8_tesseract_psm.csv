@@ -1,0 +1,9 @@
+Test Setting / Crop Type,Tesseract PSM Mode,Total Evaluated,Empty Outputs Count ($n$),Total Errors,Total Characters,Evaluated CER (%),Evaluated WER (%),Exact Matches,Source File
+**Photo 5: Chunks (Cond A)**,PSM 7 (Single text line),33 lines (66 chunks),**9 chunks empty**,303,"2,328",13.02%,19.35%,11 / 33,`results/real_fix9/metrics.json:70-76`
+**Photo 5: Full Line (Cond A)**,PSM 7 (Single text line),33 lines,**2 lines empty**,196,"2,328",8.42%,15.18%,14 / 33,`results/real_fix9/metrics.json:26-32`
+**Photo 5: Chunks (Cond B)**,PSM 7 (Single text line),33 lines (66 chunks),**11 chunks empty**,439,"2,328",18.86%,27.38%,8 / 33,`results/real_fix9/metrics.json:161-167`
+**Photo 5: Full Line (Cond B)**,PSM 7 (Single text line),33 lines,**2 lines empty**,254,"2,328",10.91%,22.92%,8 / 33,`results/real_fix9/metrics.json:117-123`
+**Photo 5: Fallback Chunks**,PSM 13 (Raw single line),9 failed chunks,**0 empty**,~1,~380,<0.3%,<1.0%,8 / 9 chunks,`results/real_fix9/report.md:27`
+**Photo 5: Full Line (Cond A)**,PSM 13 (Raw single line),33 lines,**0 empty**,**2**,"2,328",**0.09%**,**0.60%**,**31 / 33**,`results/real_fix9/metrics.json:37-43`
+**Photo 5: Clean 23 Lines**,PSM 7 (Single text line),23 lines,**0 empty**,20,"1,591",**1.26%**,**7.05%**,11 / 23,`results/real_fix9/metrics.json:290-296`
+**Photo 5: Clean 23 Lines**,PSM 13 (Raw single line),23 lines,**0 empty**,**0**,"1,591",**0.00%**,**0.00%**,**23 / 23**,`results/real_fix9/metrics.json:257-263`

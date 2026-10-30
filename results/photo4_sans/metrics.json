@@ -1,0 +1,80 @@
+{
+  "v1_full": {
+    "cer": 7.057654075546719,
+    "wer": 42.33576642335766,
+    "exact": 2,
+    "total": 23,
+    "cer_errs": 71,
+    "chars": 1006,
+    "wer_errs": 58,
+    "words": 137,
+    "space_errors_char": 20
+  },
+  "v2_full": {
+    "cer": 0.09940357852882703,
+    "wer": 0.7299270072992701,
+    "exact": 22,
+    "total": 23,
+    "cer_errs": 1,
+    "chars": 1006,
+    "wer_errs": 1,
+    "words": 137,
+    "space_errors_char": 0
+  },
+  "tess_full": {
+    "cer": 0.0,
+    "wer": 0.0,
+    "exact": 23,
+    "total": 23,
+    "cer_errs": 0,
+    "chars": 1006,
+    "wer_errs": 0,
+    "words": 137,
+    "space_errors_char": 0
+  },
+  "v1_rule_chunk": {
+    "cer": 5.666003976143141,
+    "wer": 38.68613138686132,
+    "exact": 4,
+    "total": 23,
+    "cer_errs": 57,
+    "chars": 1006,
+    "wer_errs": 53,
+    "words": 137,
+    "space_errors_char": 23
+  },
+  "v2_rule_chunk": {
+    "cer": 0.5964214711729622,
+    "wer": 3.64963503649635,
+    "exact": 20,
+    "total": 23,
+    "cer_errs": 6,
+    "chars": 1006,
+    "wer_errs": 5,
+    "words": 137,
+    "space_errors_char": 2
+  },
+  "tess_rule_chunk": {
+    "cer": 0.5964214711729622,
+    "wer": 3.64963503649635,
+    "exact": 20,
+    "total": 23,
+    "cer_errs": 6,
+    "chars": 1006,
+    "wer_errs": 5,
+    "words": 137,
+    "space_errors_char": 2
+  },
+  "bootstrap_ci_rule_chunk": {
+    "delta_cer": 0.0,
+    "delta_wer": 0.0,
+    "cer_ci": [
+      -0.2935492619759991,
+      0.2909796314258002
+    ],
+    "wer_ci": [
+      -2.1582733812949635,
+      2.1428571428571423
+    ]
+  }
+}

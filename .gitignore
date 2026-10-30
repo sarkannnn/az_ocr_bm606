@@ -39,3 +39,9 @@ runs/line_nospace/
 runs/smoke_v2/
 runs/**/last.pt
 *.zip
+
+# Intermediate development photo fixes
+results/real_fix/
+results/real_fix[2-7]/
+results/photo5_heic_test/
+results/review_pack/

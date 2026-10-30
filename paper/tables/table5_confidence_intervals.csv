@@ -1,0 +1,18 @@
+Evaluation Condition,Sample Size ($n$),Character Count,V2 CER (%),Tess CER (%),Difference $\Delta$CER [95% CI],Difference $\Delta$WER [95% CI],Zero in 95% CI?,Statistical Conclusion,Source File
+**Group A (Seen): Word L0**,378 crops,"2,472",0.81%,2.39%,"**-1.58%** [-2.68%, -0.76%]",NOT AVAIL,**NO (V2 ahead)**,Statistically significant gain on seen words,`results/v2_audit4/summary.md:120`
+**Group A (Seen): Line L0**,95 crops,"2,777",0.11%,0.29%,"**-0.18%** [-0.57%, +0.11%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:121`
+**Group A (Seen): Word L4**,378 crops,"2,472",1.33%,1.70%,"**-0.36%** [-1.25%, +0.50%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:122`
+**Group A (Seen): Line L4**,95 crops,"2,777",1.15%,1.62%,"**-0.47%** [-1.91%, +0.44%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:123`
+**Group B (Sibling): Word L0**,436 crops,"3,012",0.46%,0.96%,"**-0.50%** [-1.28%, +0.09%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:124`
+**Group B (Sibling): Line L0**,114 crops,"3,368",0.30%,0.12%,"**+0.18%** [-0.31%, +0.88%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:125`
+**Group B (Sibling): Word L4**,436 crops,"3,012",0.73%,1.10%,"**-0.37%** [-1.26%, +0.50%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:126`
+**Group B (Sibling): Line L4**,114 crops,"3,368",0.50%,0.18%,"**+0.33%** [-0.18%, +1.06%]",NOT AVAIL,**YES (Tie)**,Statistically indistinguishable,`results/v2_audit4/summary.md:127`
+**Group C (New): Word L0**,609 crops,"4,194",1.62%,1.00%,"**+0.62%** [-0.35%, +2.08%]",NOT AVAIL,**YES (Tie)**,Cluster CI spans across 0.0%,`results/v2_audit4/summary.md:128`
+**Group C (New): Line L0**,158 crops,"4,673",0.71%,0.71%,"**+0.00%** [-0.74%, +0.76%]",NOT AVAIL,**YES (Tie)**,Exact equal median; CI centered at 0,`results/v2_audit4/summary.md:129`
+**Group C (New): Word L4**,609 crops,"4,194",2.36%,0.81%,"**+1.55%** [+0.59%, +2.94%]",NOT AVAIL,**NO (Tess ahead)**,Tesseract superior on distorted single words,`results/v2_audit4/summary.md:130`
+**Group C (New): Line L4**,158 crops,"4,673",1.28%,1.46%,"**-0.17%** [-2.60%, +1.53%]",NOT AVAIL,**YES (Tie)**,"Cluster CI wide [-2.60%, +1.53%], spans 0",`results/v2_audit4/summary.md:131`
+**Photo 1: Trimmed Chunks**,16 lines,"1,442",0.97%,1.32%,"**-0.35%** [-1.52%, +0.50%]","**+0.46%** [-3.69%, +4.02%]",**YES (Tie)**,Statistically indistinguishable,`results/real_fix8/final_tables.md:13`
+**Photo 2: Trimmed Chunks**,16 lines,"1,463",0.55%,0.14%,"**+0.41%** [+0.07%, +0.94%]","**+2.37%** [+0.48%, +5.05%]",**NO (Tess ahead)**,Tesseract marginally ahead on clean Calibri,`results/real_fix8/final_tables.md:19`
+**Photo 5: All 33 Lines (A)**,33 lines,"2,328",2.10%,13.02%,"**-10.91%** [-17.79%, -4.56%]","**-6.55%** [-14.96%, +1.55%]",**NO (Artifact)**,Unfair comparison: Tess 9 empty chunks,`results/real_fix9/metrics.json:80-90`
+**Photo 5: Clean Subset (A)**,23 lines,"1,591",1.32%,1.26%,"**+0.06%** [-0.77%, +0.80%]","**+2.20%** [-1.99%, +6.09%]",**YES (Tie)**,**Hinged Result:** Zero in CI; indistinguishable,`results/real_fix9/metrics.json:301-311`
+**Photo 5: Padded 20px (B)**,33 lines,"2,328",23.32%,18.86%,"**+4.47%** [-1.89%, +10.55%]","**+38.69%** [+30.47%, +46.95%]",**YES on CER**,V2 collapses; severe spacing degradation,`results/real_fix9/metrics.json:172-182`

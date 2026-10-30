@@ -1,0 +1,112 @@
+{
+  "v2": {
+    "leading_edge_insertions": 0,
+    "trailing_edge_insertions": 0,
+    "internal_space_errors": 2,
+    "internal_o0_errors": 0,
+    "internal_punct_errors": 3,
+    "internal_letter_errors": 1,
+    "sum_categories": 6,
+    "total_errors": 6,
+    "mutually_exclusive_check": true,
+    "details": [
+      {
+        "category": "Internal Punctuation Error",
+        "op": "ins",
+        "ref": "",
+        "hyp": "r",
+        "line_idx": 0
+      },
+      {
+        "category": "Internal Spacing Error",
+        "op": "ins",
+        "ref": "",
+        "hyp": " ",
+        "line_idx": 0
+      },
+      {
+        "category": "Internal Letter Error",
+        "op": "sub",
+        "ref": "n",
+        "hyp": "I",
+        "line_idx": 0
+      },
+      {
+        "category": "Internal Punctuation Error",
+        "op": "ins",
+        "ref": "",
+        "hyp": ".",
+        "line_idx": 4
+      },
+      {
+        "category": "Internal Spacing Error",
+        "op": "sub",
+        "ref": "-",
+        "hyp": " ",
+        "line_idx": 4
+      },
+      {
+        "category": "Internal Punctuation Error",
+        "op": "sub",
+        "ref": ".",
+        "hyp": ",",
+        "line_idx": 18
+      }
+    ]
+  },
+  "tesseract": {
+    "leading_edge_insertions": 0,
+    "trailing_edge_insertions": 0,
+    "internal_space_errors": 2,
+    "internal_o0_errors": 0,
+    "internal_punct_errors": 4,
+    "internal_letter_errors": 0,
+    "sum_categories": 6,
+    "total_errors": 6,
+    "mutually_exclusive_check": true,
+    "details": [
+      {
+        "category": "Internal Punctuation Error",
+        "op": "ins",
+        "ref": "",
+        "hyp": "r",
+        "line_idx": 0
+      },
+      {
+        "category": "Internal Spacing Error",
+        "op": "ins",
+        "ref": "",
+        "hyp": " ",
+        "line_idx": 0
+      },
+      {
+        "category": "Internal Punctuation Error",
+        "op": "sub",
+        "ref": "n",
+        "hyp": ")",
+        "line_idx": 0
+      },
+      {
+        "category": "Internal Punctuation Error",
+        "op": "del",
+        "ref": "ı",
+        "hyp": "",
+        "line_idx": 1
+      },
+      {
+        "category": "Internal Punctuation Error",
+        "op": "ins",
+        "ref": "",
+        "hyp": ":",
+        "line_idx": 4
+      },
+      {
+        "category": "Internal Spacing Error",
+        "op": "sub",
+        "ref": "-",
+        "hyp": " ",
+        "line_idx": 4
+      }
+    ]
+  }
+}

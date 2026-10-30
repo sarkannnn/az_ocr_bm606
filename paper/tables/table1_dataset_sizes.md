@@ -1,0 +1,37 @@
+# Table 1: Dataset Inventory, Splits, and Sample Sizes
+
+| Dataset Name | Split | Modality | Sample Count ($n$) | Character Count | Purpose / Composition | Source File |
+| :--- | :---: | :---: | :---: | :---: | :--- | :--- |
+| **corpus_word** | Train | Text | 20,000 | 143,892 | Wikipedia az filtered word types | `data/corpus_word/train.txt` |
+| **corpus_word** | Val | Text | 2,500 | 17,986 | Held-out validation word types | `data/corpus_word/val.txt` |
+| **corpus_word** | Test | Text | 2,500 | 18,104 | Held-out test word types | `data/corpus_word/test.txt` |
+| **corpus_line** | Train | Text | 10,400 | 284,529 | Wikipedia az sentence chunks | `data/corpus_line/train.txt` |
+| **corpus_line** | Val | Text | 95,659 | 2,612,408 | Large corpus sentence pool | `data/corpus_line/val.txt` |
+| **corpus_line** | Test | Text | 95,906 | 2,619,102 | Large corpus sentence pool | `data/corpus_line/test.txt` |
+| **synth_word (V1)** | Train | Image | 20,000 | 134,892 | 8 standard fonts, mild aug | `data/synth_word/train/labels.tsv` |
+| **synth_word (V1)** | Val | Image | 2,000 | 13,490 | 8 standard fonts, clean | `data/synth_word/val/labels.tsv` |
+| **synth_word (V1)** | Test | Image | 2,000 | 13,501 | 2 held-out fonts (Tahoma, Consolas) | `data/synth_word/test/labels.tsv` |
+| **synth_line (V1)** | Train | Image | 10,000 | 242,105 | 8 standard fonts, mild aug | `data/synth_line/train/labels.tsv` |
+| **synth_line (V1)** | Val | Image | 1,000 | 24,198 | 8 standard fonts, clean | `data/synth_line/val/labels.tsv` |
+| **synth_line (V1)** | Test | Image | 1,000 | 24,211 | 2 held-out fonts (Tahoma, Consolas) | `data/synth_line/test/labels.tsv` |
+| **synth_word_v2** | Train | Image | 35,000 | 239,812 | 20k V1 + 15k fonts_new additions | `data/synth_word_v2/train/labels.tsv` |
+| **synth_word_v2** | Val | Image | 2,000 | 13,490 | Identical copy of V1 val | `data/synth_word_v2/val/labels.tsv` |
+| **synth_word_v2** | Test | Image | 2,000 | 13,501 | Identical copy of V1 test | `data/synth_word_v2/test/labels.tsv` |
+| **synth_line_v2** | Train | Image | 16,000 | 388,419 | 10k V1 + 6k fonts_new additions | `data/synth_line_v2/train/labels.tsv` |
+| **synth_line_v2** | Val | Image | 1,000 | 24,198 | Identical copy of V1 val | `data/synth_line_v2/val/labels.tsv` |
+| **synth_line_v2** | Test | Image | 1,000 | 24,211 | Identical copy of V1 test | `data/synth_line_v2/test/labels.tsv` |
+| **diagw_tahoma** | Test | Image | 1,000 | 6,750 | Monofont Tahoma word test | `data/diagw_tahoma/test/labels.tsv` |
+| **diag_tahoma** | Test | Image | 500 | 12,105 | Monofont Tahoma line test | `data/diag_tahoma/test/labels.tsv` |
+| **diagw_consola** | Test | Image | 1,000 | 6,742 | Monofont Consolas word test | `data/diagw_consola/test/labels.tsv` |
+| **diag_consola** | Test | Image | 500 | 12,098 | Monofont Consolas line test | `data/diag_consola/test/labels.tsv` |
+| **sim_ladder** | L0-L4n | Image | 346 words | 2,342 | 4 pages, 7 degradation steps | `data/sim_ladder/metadata.json` |
+| **sim_ladder** | L0-L4n | Image | 92 lines | 2,510 | 4 pages, 7 degradation steps | `data/sim_ladder/metadata.json` |
+| **sim_audit3/4 (Grp C)** | L0/L4 | Image | 609 words | 4,194 | 7 new font families | `results/v2_audit4/summary.md:128` |
+| **sim_audit3/4 (Grp C)** | L0/L4 | Image | 158 lines | 4,673 | 7 new font families | `results/v2_audit4/summary.md:129` |
+| **Photo 1 (TNR)** | Test | Real Photo | 16 lines | 1,442 | Real document photo (200 dpi) | `results/real_fix8/final_tables.md:9` |
+| **Photo 2 (Calibri)** | Test | Real Photo | 16 lines | 1,463 | Real document photo (200 dpi) | `results/real_fix8/final_tables.md:15` |
+| **Photo 3 (TNR)** | Test | Real Photo | 23 lines | 1,006 | Clean print document photo | `results/photo3_test/report.md:7` |
+| **Photo 4 (Arial)** | Test | Real Photo | 23 lines | 1,006 | Sans-serif document photo | `results/photo4_sans/report.md:7` |
+| **Photo 5 (IMG_5130)** | Test | Real Photo | 33 lines | 2,328 | 5 paragraphs, smartphone photo | `results/real_fix9/metrics.json:9` |
+
+Source: data/corpus_word/, data/synth_word/, data/synth_line/, results/v2_audit4/summary.md, results/real_fix8/, results/real_fix9/
