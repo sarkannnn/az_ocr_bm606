@@ -1,0 +1,27 @@
+{
+  "full_line_v2": [
+    {
+      "op": "ins",
+      "ref_char": "",
+      "pred_char": ".",
+      "category": "Punctuation",
+      "line_idx": 7
+    },
+    {
+      "op": "sub",
+      "ref_char": ".",
+      "pred_char": ":",
+      "category": "Punctuation",
+      "line_idx": 18
+    }
+  ],
+  "rule_chunk_v2": [
+    {
+      "op": "del",
+      "ref_char": ".",
+      "pred_char": "",
+      "category": "Punctuation",
+      "line_idx": 5
+    }
+  ]
+}

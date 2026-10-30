@@ -1,0 +1,282 @@
+{
+  "Photo 1 (Times New Roman)::full_line::raw": {
+    "photo": "Photo 1 (Times New Roman)",
+    "condition": "full_line",
+    "mode": "raw",
+    "n_lines": 16,
+    "n_chars": 1442,
+    "v1": {
+      "cer": 77.04576976421636,
+      "wer": 100.0,
+      "exact": 0,
+      "space_errors_char": 138
+    },
+    "v2": {
+      "cer": 53.60610263522885,
+      "wer": 92.62672811059907,
+      "exact": 1,
+      "space_errors_char": 61
+    },
+    "tess": {
+      "cer": 1.3176144244105408,
+      "wer": 5.0691244239631335,
+      "exact": 9,
+      "space_errors_char": 0
+    },
+    "delta_cer": 52.28848821081831,
+    "delta_wer": 87.55760368663594,
+    "delta_cer_ci": [
+      46.1126250471267,
+      57.887610020311435
+    ],
+    "delta_wer_ci": [
+      76.76680168016803,
+      94.23119469026548
+    ]
+  },
+  "Photo 1 (Times New Roman)::rule_based_trimmed::raw": {
+    "photo": "Photo 1 (Times New Roman)",
+    "condition": "rule_based_trimmed",
+    "mode": "raw",
+    "n_lines": 16,
+    "n_chars": 1442,
+    "v1": {
+      "cer": 18.377253814147018,
+      "wer": 73.27188940092167,
+      "exact": 0,
+      "space_errors_char": 98
+    },
+    "v2": {
+      "cer": 0.9708737864077669,
+      "wer": 5.529953917050691,
+      "exact": 7,
+      "space_errors_char": 1
+    },
+    "tess": {
+      "cer": 1.3176144244105408,
+      "wer": 5.0691244239631335,
+      "exact": 8,
+      "space_errors_char": 0
+    },
+    "delta_cer": -0.3467406380027739,
+    "delta_wer": 0.46082949308755783,
+    "delta_cer_ci": [
+      -1.5247074732828727,
+      0.49657571116424337
+    ],
+    "delta_wer_ci": [
+      -3.687493301896903,
+      4.018762065637064
+    ]
+  },
+  "Photo 2 (Calibri)::full_line::raw": {
+    "photo": "Photo 2 (Calibri)",
+    "condition": "full_line",
+    "mode": "raw",
+    "n_lines": 16,
+    "n_chars": 1463,
+    "v1": {
+      "cer": 67.80587833219413,
+      "wer": 99.0521327014218,
+      "exact": 0,
+      "space_errors_char": 128
+    },
+    "v2": {
+      "cer": 36.43198906356801,
+      "wer": 96.2085308056872,
+      "exact": 1,
+      "space_errors_char": 70
+    },
+    "tess": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "exact": 14,
+      "space_errors_char": 1
+    },
+    "delta_cer": 36.295283663704716,
+    "delta_wer": 94.7867298578199,
+    "delta_cer_ci": [
+      32.29245499369338,
+      39.56570646998995
+    ],
+    "delta_wer_ci": [
+      86.49895833333333,
+      100.48332976368958
+    ]
+  },
+  "Photo 2 (Calibri)::rule_based_trimmed::raw": {
+    "photo": "Photo 2 (Calibri)",
+    "condition": "rule_based_trimmed",
+    "mode": "raw",
+    "n_lines": 16,
+    "n_chars": 1463,
+    "v1": {
+      "cer": 9.774436090225564,
+      "wer": 55.45023696682464,
+      "exact": 0,
+      "space_errors_char": 49
+    },
+    "v2": {
+      "cer": 0.5468215994531784,
+      "wer": 3.7914691943127963,
+      "exact": 10,
+      "space_errors_char": 1
+    },
+    "tess": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "exact": 14,
+      "space_errors_char": 1
+    },
+    "delta_cer": 0.4101161995898838,
+    "delta_wer": 2.3696682464454977,
+    "delta_cer_ci": [
+      0.06848847219103225,
+      0.9437511292362489
+    ],
+    "delta_wer_ci": [
+      0.4784119389382548,
+      5.047039585457016
+    ]
+  },
+  "Photo 1 (Times New Roman)::full_line::normalized_dashes": {
+    "photo": "Photo 1 (Times New Roman)",
+    "condition": "full_line",
+    "mode": "normalized_dashes",
+    "n_lines": 16,
+    "n_chars": 1442,
+    "v1": {
+      "cer": 77.04576976421636,
+      "wer": 100.0,
+      "exact": 0,
+      "space_errors_char": 138
+    },
+    "v2": {
+      "cer": 53.32871012482663,
+      "wer": 92.62672811059907,
+      "exact": 1,
+      "space_errors_char": 59
+    },
+    "tess": {
+      "cer": 1.3176144244105408,
+      "wer": 5.0691244239631335,
+      "exact": 9,
+      "space_errors_char": 0
+    },
+    "delta_cer": 52.011095700416085,
+    "delta_wer": 87.55760368663594,
+    "delta_cer_ci": [
+      45.87109623141401,
+      57.519298501742796
+    ],
+    "delta_wer_ci": [
+      76.76680168016803,
+      94.23119469026548
+    ]
+  },
+  "Photo 1 (Times New Roman)::rule_based_trimmed::normalized_dashes": {
+    "photo": "Photo 1 (Times New Roman)",
+    "condition": "rule_based_trimmed",
+    "mode": "normalized_dashes",
+    "n_lines": 16,
+    "n_chars": 1442,
+    "v1": {
+      "cer": 18.377253814147018,
+      "wer": 73.27188940092167,
+      "exact": 0,
+      "space_errors_char": 98
+    },
+    "v2": {
+      "cer": 0.6934812760055479,
+      "wer": 4.147465437788019,
+      "exact": 9,
+      "space_errors_char": 1
+    },
+    "tess": {
+      "cer": 1.3176144244105408,
+      "wer": 5.0691244239631335,
+      "exact": 8,
+      "space_errors_char": 0
+    },
+    "delta_cer": -0.6241331484049929,
+    "delta_wer": -0.9216589861751148,
+    "delta_cer_ci": [
+      -1.7777236422291969,
+      0.27343424029583874
+    ],
+    "delta_wer_ci": [
+      -4.956081081081082,
+      2.59768492377188
+    ]
+  },
+  "Photo 2 (Calibri)::full_line::normalized_dashes": {
+    "photo": "Photo 2 (Calibri)",
+    "condition": "full_line",
+    "mode": "normalized_dashes",
+    "n_lines": 16,
+    "n_chars": 1463,
+    "v1": {
+      "cer": 67.73752563226248,
+      "wer": 99.0521327014218,
+      "exact": 0,
+      "space_errors_char": 128
+    },
+    "v2": {
+      "cer": 36.295283663704716,
+      "wer": 96.2085308056872,
+      "exact": 1,
+      "space_errors_char": 70
+    },
+    "tess": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "exact": 14,
+      "space_errors_char": 1
+    },
+    "delta_cer": 36.15857826384142,
+    "delta_wer": 94.7867298578199,
+    "delta_cer_ci": [
+      32.223203595752615,
+      39.30843969263986
+    ],
+    "delta_wer_ci": [
+      86.49895833333333,
+      100.48332976368958
+    ]
+  },
+  "Photo 2 (Calibri)::rule_based_trimmed::normalized_dashes": {
+    "photo": "Photo 2 (Calibri)",
+    "condition": "rule_based_trimmed",
+    "mode": "normalized_dashes",
+    "n_lines": 16,
+    "n_chars": 1463,
+    "v1": {
+      "cer": 9.774436090225564,
+      "wer": 55.45023696682464,
+      "exact": 0,
+      "space_errors_char": 49
+    },
+    "v2": {
+      "cer": 0.4101161995898838,
+      "wer": 2.843601895734597,
+      "exact": 12,
+      "space_errors_char": 1
+    },
+    "tess": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "exact": 14,
+      "space_errors_char": 1
+    },
+    "delta_cer": 0.2734107997265892,
+    "delta_wer": 1.4218009478672986,
+    "delta_cer_ci": [
+      0.0,
+      0.7989480603698733
+    ],
+    "delta_wer_ci": [
+      0.0,
+      3.885910254552478
+    ]
+  }
+}
