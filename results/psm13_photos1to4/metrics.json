@@ -1,0 +1,206 @@
+{
+  "Photo 1 (Times)": {
+    "n_lines": 16,
+    "tess_full_psm7": {
+      "cer": 1.317614424410541,
+      "wer": 5.0691244239631335,
+      "char_errors": 19,
+      "chars": 1442,
+      "exact_lines": 9,
+      "n_lines": 16
+    },
+    "tess_full_psm13": {
+      "cer": 2.219140083217753,
+      "wer": 8.755760368663594,
+      "char_errors": 32,
+      "chars": 1442,
+      "exact_lines": 4,
+      "n_lines": 16
+    },
+    "tess_chunk_psm7": {
+      "cer": 1.317614424410541,
+      "wer": 5.0691244239631335,
+      "char_errors": 19,
+      "chars": 1442,
+      "exact_lines": 8,
+      "n_lines": 16
+    },
+    "tess_chunk_psm13": {
+      "cer": 1.317614424410541,
+      "wer": 5.529953917050691,
+      "char_errors": 19,
+      "chars": 1442,
+      "exact_lines": 8,
+      "n_lines": 16
+    },
+    "stored_tess_chunk_psm7": {
+      "cer": 1.317614424410541,
+      "wer": 5.0691244239631335,
+      "char_errors": 19,
+      "chars": 1442,
+      "exact_lines": 8,
+      "n_lines": 16
+    },
+    "stored_tess_full_psm7": {
+      "cer": 1.317614424410541,
+      "wer": 5.0691244239631335,
+      "char_errors": 19,
+      "chars": 1442,
+      "exact_lines": 9,
+      "n_lines": 16
+    }
+  },
+  "Photo 2 (Calibri)": {
+    "n_lines": 16,
+    "tess_full_psm7": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "char_errors": 2,
+      "chars": 1463,
+      "exact_lines": 14,
+      "n_lines": 16
+    },
+    "tess_full_psm13": {
+      "cer": 1.9138755980861244,
+      "wer": 8.056872037914692,
+      "char_errors": 28,
+      "chars": 1463,
+      "exact_lines": 5,
+      "n_lines": 16
+    },
+    "tess_chunk_psm7": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "char_errors": 2,
+      "chars": 1463,
+      "exact_lines": 14,
+      "n_lines": 16
+    },
+    "tess_chunk_psm13": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "char_errors": 2,
+      "chars": 1463,
+      "exact_lines": 14,
+      "n_lines": 16
+    },
+    "stored_tess_chunk_psm7": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "char_errors": 2,
+      "chars": 1463,
+      "exact_lines": 14,
+      "n_lines": 16
+    },
+    "stored_tess_full_psm7": {
+      "cer": 0.1367053998632946,
+      "wer": 1.4218009478672986,
+      "char_errors": 2,
+      "chars": 1463,
+      "exact_lines": 14,
+      "n_lines": 16
+    }
+  },
+  "Photo 3 (Times)": {
+    "n_lines": 23,
+    "tess_full_psm7": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1015,
+      "exact_lines": 23,
+      "n_lines": 23
+    },
+    "tess_full_psm13": {
+      "cer": 0.39408866995073893,
+      "wer": 2.898550724637681,
+      "char_errors": 4,
+      "chars": 1015,
+      "exact_lines": 19,
+      "n_lines": 23
+    },
+    "tess_chunk_psm7": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1015,
+      "exact_lines": 23,
+      "n_lines": 23
+    },
+    "tess_chunk_psm13": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1015,
+      "exact_lines": 23,
+      "n_lines": 23
+    },
+    "stored_tess_chunk_psm7": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1015,
+      "exact_lines": 23,
+      "n_lines": 23
+    },
+    "stored_tess_full_psm7": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1015,
+      "exact_lines": 23,
+      "n_lines": 23
+    }
+  },
+  "Photo 4 (Arial)": {
+    "n_lines": 23,
+    "tess_full_psm7": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1006,
+      "exact_lines": 23,
+      "n_lines": 23
+    },
+    "tess_full_psm13": {
+      "cer": 0.3976143141153082,
+      "wer": 2.9197080291970803,
+      "char_errors": 4,
+      "chars": 1006,
+      "exact_lines": 19,
+      "n_lines": 23
+    },
+    "tess_chunk_psm7": {
+      "cer": 0.5964214711729622,
+      "wer": 3.6496350364963503,
+      "char_errors": 6,
+      "chars": 1006,
+      "exact_lines": 20,
+      "n_lines": 23
+    },
+    "tess_chunk_psm13": {
+      "cer": 0.5964214711729622,
+      "wer": 3.6496350364963503,
+      "char_errors": 6,
+      "chars": 1006,
+      "exact_lines": 20,
+      "n_lines": 23
+    },
+    "stored_tess_chunk_psm7": {
+      "cer": 0.5964214711729622,
+      "wer": 3.6496350364963503,
+      "char_errors": 6,
+      "chars": 1006,
+      "exact_lines": 20,
+      "n_lines": 23
+    },
+    "stored_tess_full_psm7": {
+      "cer": 0.0,
+      "wer": 0.0,
+      "char_errors": 0,
+      "chars": 1006,
+      "exact_lines": 23,
+      "n_lines": 23
+    }
+  }
+}

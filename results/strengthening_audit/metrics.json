@@ -1,0 +1,912 @@
+{
+  "n_combined_chars": 54035,
+  "v1_char_audit": {
+    "i_paradox_matrix": {
+      "i": {
+        "i": 4376,
+        "ı": 1,
+        "İ": 1,
+        "I": 0,
+        "OTHER": 7,
+        "DEL": 1
+      },
+      "ı": {
+        "i": 53,
+        "ı": 1626,
+        "İ": 0,
+        "I": 0,
+        "OTHER": 7,
+        "DEL": 2
+      },
+      "İ": {
+        "i": 9,
+        "ı": 0,
+        "İ": 63,
+        "I": 1,
+        "OTHER": 1,
+        "DEL": 0
+      },
+      "I": {
+        "i": 0,
+        "ı": 0,
+        "İ": 0,
+        "I": 18,
+        "OTHER": 3,
+        "DEL": 1
+      }
+    },
+    "special_letters": {
+      "ə": {
+        "total": 3880,
+        "ok": 3868,
+        "errors": 12,
+        "error_rate_pct": 0.31,
+        "accuracy_pct": 99.69,
+        "top_confusions": [
+          [
+            "a",
+            9
+          ],
+          [
+            "i",
+            1
+          ]
+        ]
+      },
+      "ı": {
+        "total": 1688,
+        "ok": 1626,
+        "errors": 62,
+        "error_rate_pct": 3.67,
+        "accuracy_pct": 96.33,
+        "top_confusions": [
+          [
+            "i",
+            53
+          ],
+          [
+            "m",
+            3
+          ]
+        ]
+      },
+      "ö": {
+        "total": 300,
+        "ok": 298,
+        "errors": 2,
+        "error_rate_pct": 0.67,
+        "accuracy_pct": 99.33,
+        "top_confusions": [
+          [
+            "o",
+            1
+          ],
+          [
+            "ğ",
+            1
+          ]
+        ]
+      },
+      "ğ": {
+        "total": 227,
+        "ok": 227,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "ü": {
+        "total": 699,
+        "ok": 688,
+        "errors": 11,
+        "error_rate_pct": 1.57,
+        "accuracy_pct": 98.43,
+        "top_confusions": [
+          [
+            "i",
+            11
+          ]
+        ]
+      },
+      "ş": {
+        "total": 646,
+        "ok": 619,
+        "errors": 27,
+        "error_rate_pct": 4.18,
+        "accuracy_pct": 95.82,
+        "top_confusions": [
+          [
+            "s",
+            26
+          ],
+          [
+            "5",
+            1
+          ]
+        ]
+      },
+      "ç": {
+        "total": 334,
+        "ok": 304,
+        "errors": 30,
+        "error_rate_pct": 8.98,
+        "accuracy_pct": 91.02,
+        "top_confusions": [
+          [
+            "c",
+            27
+          ],
+          [
+            "g",
+            2
+          ]
+        ]
+      },
+      "Ə": {
+        "total": 56,
+        "ok": 52,
+        "errors": 4,
+        "error_rate_pct": 7.14,
+        "accuracy_pct": 92.86,
+        "top_confusions": [
+          [
+            "ə",
+            4
+          ]
+        ]
+      },
+      "İ": {
+        "total": 74,
+        "ok": 63,
+        "errors": 11,
+        "error_rate_pct": 14.86,
+        "accuracy_pct": 85.14,
+        "top_confusions": [
+          [
+            "i",
+            9
+          ],
+          [
+            "I",
+            1
+          ]
+        ]
+      },
+      "Ö": {
+        "total": 12,
+        "ok": 9,
+        "errors": 3,
+        "error_rate_pct": 25.0,
+        "accuracy_pct": 75.0,
+        "top_confusions": [
+          [
+            "ö",
+            3
+          ]
+        ]
+      },
+      "Ğ": {
+        "total": 1,
+        "ok": 0,
+        "errors": 1,
+        "error_rate_pct": 100.0,
+        "accuracy_pct": 0.0,
+        "top_confusions": [
+          [
+            "G",
+            1
+          ]
+        ]
+      },
+      "Ü": {
+        "total": 8,
+        "ok": 5,
+        "errors": 3,
+        "error_rate_pct": 37.5,
+        "accuracy_pct": 62.5,
+        "top_confusions": [
+          [
+            "ü",
+            3
+          ]
+        ]
+      },
+      "Ş": {
+        "total": 53,
+        "ok": 52,
+        "errors": 1,
+        "error_rate_pct": 1.89,
+        "accuracy_pct": 98.11,
+        "top_confusions": [
+          [
+            "S",
+            1
+          ]
+        ]
+      },
+      "Ç": {
+        "total": 18,
+        "ok": 13,
+        "errors": 5,
+        "error_rate_pct": 27.78,
+        "accuracy_pct": 72.22,
+        "top_confusions": [
+          [
+            "C",
+            5
+          ]
+        ]
+      },
+      "I": {
+        "total": 22,
+        "ok": 18,
+        "errors": 4,
+        "error_rate_pct": 18.18,
+        "accuracy_pct": 81.82,
+        "top_confusions": [
+          [
+            "T",
+            2
+          ],
+          [
+            "1",
+            1
+          ]
+        ]
+      }
+    },
+    "class_summary": {
+      "lower_special": {
+        "errors": 144,
+        "total": 7774,
+        "error_rate_pct": 1.85,
+        "accuracy_pct": 98.15
+      },
+      "upper_special": {
+        "errors": 32,
+        "total": 244,
+        "error_rate_pct": 13.11,
+        "accuracy_pct": 86.89
+      },
+      "standard_lower": {
+        "errors": 545,
+        "total": 38073,
+        "error_rate_pct": 1.43,
+        "accuracy_pct": 98.57
+      },
+      "standard_upper": {
+        "errors": 55,
+        "total": 2020,
+        "error_rate_pct": 2.72,
+        "accuracy_pct": 97.28
+      },
+      "digits_punct": {
+        "errors": 102,
+        "total": 2011,
+        "error_rate_pct": 5.07,
+        "accuracy_pct": 94.93
+      },
+      "space": {
+        "errors": 197,
+        "total": 3913,
+        "error_rate_pct": 5.03,
+        "accuracy_pct": 94.97
+      }
+    }
+  },
+  "v2_char_audit": {
+    "i_paradox_matrix": {
+      "i": {
+        "i": 4370,
+        "ı": 0,
+        "İ": 1,
+        "I": 0,
+        "OTHER": 1,
+        "DEL": 14
+      },
+      "ı": {
+        "i": 1,
+        "ı": 1678,
+        "İ": 0,
+        "I": 0,
+        "OTHER": 3,
+        "DEL": 6
+      },
+      "İ": {
+        "i": 1,
+        "ı": 0,
+        "İ": 72,
+        "I": 0,
+        "OTHER": 1,
+        "DEL": 0
+      },
+      "I": {
+        "i": 0,
+        "ı": 0,
+        "İ": 0,
+        "I": 21,
+        "OTHER": 1,
+        "DEL": 0
+      }
+    },
+    "special_letters": {
+      "ə": {
+        "total": 3880,
+        "ok": 3877,
+        "errors": 3,
+        "error_rate_pct": 0.08,
+        "accuracy_pct": 99.92,
+        "top_confusions": [
+          [
+            "Ə",
+            2
+          ],
+          [
+            "a",
+            1
+          ]
+        ]
+      },
+      "ı": {
+        "total": 1688,
+        "ok": 1678,
+        "errors": 10,
+        "error_rate_pct": 0.59,
+        "accuracy_pct": 99.41,
+        "top_confusions": [
+          [
+            "m",
+            2
+          ],
+          [
+            "i",
+            1
+          ]
+        ]
+      },
+      "ö": {
+        "total": 300,
+        "ok": 299,
+        "errors": 1,
+        "error_rate_pct": 0.33,
+        "accuracy_pct": 99.67,
+        "top_confusions": [
+          [
+            "ü",
+            1
+          ]
+        ]
+      },
+      "ğ": {
+        "total": 227,
+        "ok": 227,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "ü": {
+        "total": 699,
+        "ok": 695,
+        "errors": 4,
+        "error_rate_pct": 0.57,
+        "accuracy_pct": 99.43,
+        "top_confusions": [
+          [
+            "i",
+            4
+          ]
+        ]
+      },
+      "ş": {
+        "total": 646,
+        "ok": 643,
+        "errors": 3,
+        "error_rate_pct": 0.46,
+        "accuracy_pct": 99.54,
+        "top_confusions": [
+          [
+            "s",
+            1
+          ],
+          [
+            "Ş",
+            1
+          ]
+        ]
+      },
+      "ç": {
+        "total": 334,
+        "ok": 334,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ə": {
+        "total": 56,
+        "ok": 56,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "İ": {
+        "total": 74,
+        "ok": 72,
+        "errors": 2,
+        "error_rate_pct": 2.7,
+        "accuracy_pct": 97.3,
+        "top_confusions": [
+          [
+            "t",
+            1
+          ],
+          [
+            "i",
+            1
+          ]
+        ]
+      },
+      "Ö": {
+        "total": 12,
+        "ok": 12,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ğ": {
+        "total": 1,
+        "ok": 0,
+        "errors": 1,
+        "error_rate_pct": 100.0,
+        "accuracy_pct": 0.0,
+        "top_confusions": [
+          [
+            "G",
+            1
+          ]
+        ]
+      },
+      "Ü": {
+        "total": 8,
+        "ok": 6,
+        "errors": 2,
+        "error_rate_pct": 25.0,
+        "accuracy_pct": 75.0,
+        "top_confusions": [
+          [
+            "ü",
+            2
+          ]
+        ]
+      },
+      "Ş": {
+        "total": 53,
+        "ok": 53,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ç": {
+        "total": 18,
+        "ok": 18,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "I": {
+        "total": 22,
+        "ok": 21,
+        "errors": 1,
+        "error_rate_pct": 4.55,
+        "accuracy_pct": 95.45,
+        "top_confusions": [
+          [
+            "1",
+            1
+          ]
+        ]
+      }
+    },
+    "class_summary": {
+      "lower_special": {
+        "errors": 21,
+        "total": 7774,
+        "error_rate_pct": 0.27,
+        "accuracy_pct": 99.73
+      },
+      "upper_special": {
+        "errors": 6,
+        "total": 244,
+        "error_rate_pct": 2.46,
+        "accuracy_pct": 97.54
+      },
+      "standard_lower": {
+        "errors": 93,
+        "total": 38073,
+        "error_rate_pct": 0.24,
+        "accuracy_pct": 99.76
+      },
+      "standard_upper": {
+        "errors": 15,
+        "total": 2020,
+        "error_rate_pct": 0.74,
+        "accuracy_pct": 99.26
+      },
+      "digits_punct": {
+        "errors": 31,
+        "total": 2011,
+        "error_rate_pct": 1.54,
+        "accuracy_pct": 98.46
+      },
+      "space": {
+        "errors": 3,
+        "total": 3913,
+        "error_rate_pct": 0.08,
+        "accuracy_pct": 99.92
+      }
+    }
+  },
+  "tess_char_audit": {
+    "i_paradox_matrix": {
+      "i": {
+        "i": 4366,
+        "ı": 1,
+        "İ": 11,
+        "I": 1,
+        "OTHER": 7,
+        "DEL": 0
+      },
+      "ı": {
+        "i": 2,
+        "ı": 1684,
+        "İ": 0,
+        "I": 0,
+        "OTHER": 2,
+        "DEL": 0
+      },
+      "İ": {
+        "i": 0,
+        "ı": 0,
+        "İ": 74,
+        "I": 0,
+        "OTHER": 0,
+        "DEL": 0
+      },
+      "I": {
+        "i": 0,
+        "ı": 0,
+        "İ": 2,
+        "I": 17,
+        "OTHER": 3,
+        "DEL": 0
+      }
+    },
+    "special_letters": {
+      "ə": {
+        "total": 3880,
+        "ok": 3877,
+        "errors": 3,
+        "error_rate_pct": 0.08,
+        "accuracy_pct": 99.92,
+        "top_confusions": [
+          [
+            "Ə",
+            3
+          ]
+        ]
+      },
+      "ı": {
+        "total": 1688,
+        "ok": 1684,
+        "errors": 4,
+        "error_rate_pct": 0.24,
+        "accuracy_pct": 99.76,
+        "top_confusions": [
+          [
+            "i",
+            2
+          ],
+          [
+            "r",
+            2
+          ]
+        ]
+      },
+      "ö": {
+        "total": 300,
+        "ok": 299,
+        "errors": 1,
+        "error_rate_pct": 0.33,
+        "accuracy_pct": 99.67,
+        "top_confusions": [
+          [
+            "Ö",
+            1
+          ]
+        ]
+      },
+      "ğ": {
+        "total": 227,
+        "ok": 226,
+        "errors": 1,
+        "error_rate_pct": 0.44,
+        "accuracy_pct": 99.56,
+        "top_confusions": [
+          [
+            "S",
+            1
+          ]
+        ]
+      },
+      "ü": {
+        "total": 699,
+        "ok": 698,
+        "errors": 1,
+        "error_rate_pct": 0.14,
+        "accuracy_pct": 99.86,
+        "top_confusions": [
+          [
+            "Ü",
+            1
+          ]
+        ]
+      },
+      "ş": {
+        "total": 646,
+        "ok": 641,
+        "errors": 5,
+        "error_rate_pct": 0.77,
+        "accuracy_pct": 99.23,
+        "top_confusions": [
+          [
+            "Ş",
+            3
+          ],
+          [
+            "$",
+            2
+          ]
+        ]
+      },
+      "ç": {
+        "total": 334,
+        "ok": 334,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ə": {
+        "total": 56,
+        "ok": 55,
+        "errors": 1,
+        "error_rate_pct": 1.79,
+        "accuracy_pct": 98.21,
+        "top_confusions": [
+          [
+            "ə",
+            1
+          ]
+        ]
+      },
+      "İ": {
+        "total": 74,
+        "ok": 74,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ö": {
+        "total": 12,
+        "ok": 12,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ğ": {
+        "total": 1,
+        "ok": 0,
+        "errors": 1,
+        "error_rate_pct": 100.0,
+        "accuracy_pct": 0.0,
+        "top_confusions": [
+          [
+            "G",
+            1
+          ]
+        ]
+      },
+      "Ü": {
+        "total": 8,
+        "ok": 8,
+        "errors": 0,
+        "error_rate_pct": 0.0,
+        "accuracy_pct": 100.0,
+        "top_confusions": []
+      },
+      "Ş": {
+        "total": 53,
+        "ok": 52,
+        "errors": 1,
+        "error_rate_pct": 1.89,
+        "accuracy_pct": 98.11,
+        "top_confusions": [
+          [
+            "S",
+            1
+          ]
+        ]
+      },
+      "Ç": {
+        "total": 18,
+        "ok": 17,
+        "errors": 1,
+        "error_rate_pct": 5.56,
+        "accuracy_pct": 94.44,
+        "top_confusions": [
+          [
+            "ç",
+            1
+          ]
+        ]
+      },
+      "I": {
+        "total": 22,
+        "ok": 17,
+        "errors": 5,
+        "error_rate_pct": 22.73,
+        "accuracy_pct": 77.27,
+        "top_confusions": [
+          [
+            "İ",
+            2
+          ],
+          [
+            "U",
+            1
+          ]
+        ]
+      }
+    },
+    "class_summary": {
+      "lower_special": {
+        "errors": 15,
+        "total": 7774,
+        "error_rate_pct": 0.19,
+        "accuracy_pct": 99.81
+      },
+      "upper_special": {
+        "errors": 9,
+        "total": 244,
+        "error_rate_pct": 3.69,
+        "accuracy_pct": 96.31
+      },
+      "standard_lower": {
+        "errors": 174,
+        "total": 38073,
+        "error_rate_pct": 0.46,
+        "accuracy_pct": 99.54
+      },
+      "standard_upper": {
+        "errors": 23,
+        "total": 2020,
+        "error_rate_pct": 1.14,
+        "accuracy_pct": 98.86
+      },
+      "digits_punct": {
+        "errors": 20,
+        "total": 2011,
+        "error_rate_pct": 0.99,
+        "accuracy_pct": 99.01
+      },
+      "space": {
+        "errors": 2,
+        "total": 3913,
+        "error_rate_pct": 0.05,
+        "accuracy_pct": 99.95
+      }
+    }
+  },
+  "real_photos_confidence": {
+    "n_lines": 111,
+    "n_exact_lines": 68,
+    "n_error_lines": 43,
+    "exact_mean_min_conf": 0.7603,
+    "error_mean_min_conf": 0.5475,
+    "exact_mean_char_conf": 0.9912,
+    "error_mean_char_conf": 0.9764,
+    "auroc_min_char_conf": 0.8413,
+    "auroc_mean_char_conf": 0.8475,
+    "hybrid_pareto_curve": [
+      {
+        "fallback_pct": 0,
+        "fallback_lines": 0,
+        "retained_lines": 111,
+        "selective_crnn_cer_pct": 1.08,
+        "hybrid_cer_pct": 1.08,
+        "effective_latency_ms": 127.6,
+        "speedup_vs_tess_psm13": 3.34
+      },
+      {
+        "fallback_pct": 5,
+        "fallback_lines": 6,
+        "retained_lines": 105,
+        "selective_crnn_cer_pct": 0.85,
+        "hybrid_cer_pct": 0.8,
+        "effective_latency_ms": 148.9,
+        "speedup_vs_tess_psm13": 2.86
+      },
+      {
+        "fallback_pct": 10,
+        "fallback_lines": 11,
+        "retained_lines": 100,
+        "selective_crnn_cer_pct": 0.78,
+        "hybrid_cer_pct": 0.7,
+        "effective_latency_ms": 170.2,
+        "speedup_vs_tess_psm13": 2.5
+      },
+      {
+        "fallback_pct": 15,
+        "fallback_lines": 17,
+        "retained_lines": 94,
+        "selective_crnn_cer_pct": 0.62,
+        "hybrid_cer_pct": 0.54,
+        "effective_latency_ms": 191.5,
+        "speedup_vs_tess_psm13": 2.22
+      },
+      {
+        "fallback_pct": 20,
+        "fallback_lines": 22,
+        "retained_lines": 89,
+        "selective_crnn_cer_pct": 0.55,
+        "hybrid_cer_pct": 0.47,
+        "effective_latency_ms": 212.8,
+        "speedup_vs_tess_psm13": 2.0
+      },
+      {
+        "fallback_pct": 25,
+        "fallback_lines": 28,
+        "retained_lines": 83,
+        "selective_crnn_cer_pct": 0.54,
+        "hybrid_cer_pct": 0.43,
+        "effective_latency_ms": 234.1,
+        "speedup_vs_tess_psm13": 1.82
+      },
+      {
+        "fallback_pct": 30,
+        "fallback_lines": 33,
+        "retained_lines": 78,
+        "selective_crnn_cer_pct": 0.54,
+        "hybrid_cer_pct": 0.47,
+        "effective_latency_ms": 255.4,
+        "speedup_vs_tess_psm13": 1.67
+      },
+      {
+        "fallback_pct": 50,
+        "fallback_lines": 56,
+        "retained_lines": 55,
+        "selective_crnn_cer_pct": 0.42,
+        "hybrid_cer_pct": 0.33,
+        "effective_latency_ms": 340.6,
+        "speedup_vs_tess_psm13": 1.25
+      },
+      {
+        "fallback_pct": 100,
+        "fallback_lines": 111,
+        "retained_lines": 0,
+        "selective_crnn_cer_pct": 0.0,
+        "hybrid_cer_pct": 0.32,
+        "effective_latency_ms": 553.6,
+        "speedup_vs_tess_psm13": 0.77
+      }
+    ]
+  },
+  "figure15_path": "C:\\Users\\SERKAN\\Desktop\\BM 606 - Bilgisayar Görmesi Uygulamaları-Final Proje\\paper\\figures\\f15_efficiency_and_calibration.png"
+}

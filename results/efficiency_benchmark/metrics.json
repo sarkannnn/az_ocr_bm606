@@ -1,0 +1,94 @@
+{
+  "cpu_processor": "Intel64 Family 6 Model 142 Stepping 9, GenuineIntel",
+  "n_lines_benchmarked": 33,
+  "crnn_parameters": 8225815,
+  "checkpoints": [
+    {
+      "path": "runs/word/best.pt",
+      "disk_mb": 31.41,
+      "keys": [
+        "model",
+        "cfg",
+        "chars",
+        "epoch",
+        "val_loss",
+        "val_cer",
+        "train_seconds"
+      ],
+      "includes_optimizer_state": false,
+      "weights_only_fp32_mb": 31.41,
+      "weights_only_fp16_mb": 15.71
+    },
+    {
+      "path": "runs/line/best.pt",
+      "disk_mb": 31.41,
+      "keys": [
+        "model",
+        "cfg",
+        "chars",
+        "epoch",
+        "val_loss",
+        "val_cer",
+        "train_seconds"
+      ],
+      "includes_optimizer_state": false,
+      "weights_only_fp32_mb": 31.41,
+      "weights_only_fp16_mb": 15.72
+    },
+    {
+      "path": "runs/word_v2_20261027_180300/best.pt",
+      "disk_mb": 94.2,
+      "keys": [
+        "model",
+        "opt",
+        "cfg",
+        "chars",
+        "epoch",
+        "val_loss",
+        "val_cer",
+        "train_seconds"
+      ],
+      "includes_optimizer_state": true,
+      "weights_only_fp32_mb": 31.41,
+      "weights_only_fp16_mb": 15.72
+    },
+    {
+      "path": "runs/line_v2/best.pt",
+      "disk_mb": 94.2,
+      "keys": [
+        "model",
+        "opt",
+        "cfg",
+        "chars",
+        "epoch",
+        "val_loss",
+        "val_cer",
+        "train_seconds"
+      ],
+      "includes_optimizer_state": true,
+      "weights_only_fp32_mb": 31.41,
+      "weights_only_fp16_mb": 15.72
+    }
+  ],
+  "tesseract_aze_traineddata_mb": 5.99,
+  "latency": {
+    "crnn_line_v2_batch1": {
+      "ms_per_line": 155.35,
+      "lines_per_sec": 6.44,
+      "speedup_vs_tess_psm13": 2.74
+    },
+    "crnn_line_v2_batch16": {
+      "ms_per_line": 127.59,
+      "lines_per_sec": 7.84,
+      "speedup_vs_tess_psm13": 3.34
+    },
+    "tesseract_psm7": {
+      "ms_per_line": 516.53,
+      "lines_per_sec": 1.94
+    },
+    "tesseract_psm13": {
+      "ms_per_line": 425.99,
+      "lines_per_sec": 2.35
+    }
+  }
+}
