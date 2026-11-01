@@ -2,8 +2,8 @@
 
 | Parameter / Configuration | Baseline CRNN (V1) | Photometric-Enhanced CRNN (V2) | Rationale / Reference |
 | :--- | :--- | :--- | :--- |
-| **Input Shape (Word Model)** | $1 	imes 32 	imes 128$ (Grayscale) | $1 	imes 32 	imes 128$ (Grayscale) | `common.py:PRESETS` |
-| **Input Shape (Line Model)** | $1 	imes 32 	imes 512$ (Grayscale) | $1 	imes 32 	imes 512$ (Grayscale) | `common.py:PRESETS` |
+| **Input Shape (Word Model)** | $1 \times 32 \times 128$ (Grayscale) | $1 \times 32 \times 128$ (Grayscale) | `common.py:PRESETS` |
+| **Input Shape (Line Model)** | $1 \times 32 \times 512$ (Grayscale) | $1 \times 32 \times 512$ (Grayscale) | `common.py:PRESETS` |
 | **CNN Backbone Architecture** | 7 Conv layers ($3\times 3$), BatchNorm, ReLU | 7 Conv layers ($3\times 3$), BatchNorm, ReLU | `model.py:CRNN` |
 | **CNN Downsampling Factor** | Vertical: $32 \rightarrow 1$ (32x), Horiz: $W \rightarrow W/4$ | Vertical: $32 \rightarrow 1$ (32x), Horiz: $W \rightarrow W/4$ | `model.py:26-36` |
 | **Recurrent Layers** | 2-layer BiLSTM ($h=256$, dropout=0.2) | 2-layer BiLSTM ($h=256$, dropout=0.2) | `model.py:37-43` |

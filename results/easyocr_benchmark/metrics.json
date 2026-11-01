@@ -1,0 +1,802 @@
+{
+  "easyocr_model_info": {
+    "lang": [
+      "az"
+    ],
+    "model_name": "latin_g2 (Recog) + craft_mlt_25k (Det)",
+    "recognizer_params": 1388416,
+    "detector_params": 20770466,
+    "total_params": 22158882,
+    "recognizer_disk_mb": 14.69,
+    "detector_disk_mb": 79.3,
+    "cpu_latency_photo5_recognize_ms_per_line": 362.78,
+    "cpu_latency_photo5_readtext_ms_per_line": 3354.76
+  },
+  "real_photos": {
+    "Photo 1 (Times)": {
+      "n_lines": 16,
+      "v2_rule_chunk": {
+        "cer": 0.97,
+        "wer": 5.53,
+        "char_errors": 14,
+        "chars": 1442,
+        "word_errors": 12,
+        "words": 217,
+        "exact_lines": 7,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "v2_full_line": {
+        "cer": 53.61,
+        "wer": 92.63,
+        "char_errors": 773,
+        "chars": 1442,
+        "word_errors": 201,
+        "words": 217,
+        "exact_lines": 1,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "tess_rule_chunk": {
+        "cer": 1.32,
+        "wer": 5.07,
+        "char_errors": 19,
+        "chars": 1442,
+        "word_errors": 11,
+        "words": 217,
+        "exact_lines": 8,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "tess_full_line": {
+        "cer": 1.32,
+        "wer": 5.07,
+        "char_errors": 19,
+        "chars": 1442,
+        "word_errors": 11,
+        "words": 217,
+        "exact_lines": 9,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "easyocr_rule_chunk": {
+        "cer": 1.53,
+        "wer": 9.22,
+        "char_errors": 22,
+        "chars": 1442,
+        "word_errors": 20,
+        "words": 217,
+        "exact_lines": 5,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "easyocr_full_line_recog": {
+        "cer": 2.29,
+        "wer": 12.44,
+        "char_errors": 33,
+        "chars": 1442,
+        "word_errors": 27,
+        "words": 217,
+        "exact_lines": 2,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "easyocr_e2e_readtext_cer": 1.73
+    },
+    "Photo 2 (Calibri)": {
+      "n_lines": 16,
+      "v2_rule_chunk": {
+        "cer": 0.55,
+        "wer": 3.79,
+        "char_errors": 8,
+        "chars": 1463,
+        "word_errors": 8,
+        "words": 211,
+        "exact_lines": 10,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "v2_full_line": {
+        "cer": 36.43,
+        "wer": 96.21,
+        "char_errors": 533,
+        "chars": 1463,
+        "word_errors": 203,
+        "words": 211,
+        "exact_lines": 1,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "tess_rule_chunk": {
+        "cer": 0.14,
+        "wer": 1.42,
+        "char_errors": 2,
+        "chars": 1463,
+        "word_errors": 3,
+        "words": 211,
+        "exact_lines": 14,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "tess_full_line": {
+        "cer": 0.14,
+        "wer": 1.42,
+        "char_errors": 2,
+        "chars": 1463,
+        "word_errors": 3,
+        "words": 211,
+        "exact_lines": 14,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "easyocr_rule_chunk": {
+        "cer": 0.89,
+        "wer": 7.11,
+        "char_errors": 13,
+        "chars": 1463,
+        "word_errors": 15,
+        "words": 211,
+        "exact_lines": 9,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "easyocr_full_line_recog": {
+        "cer": 2.12,
+        "wer": 11.85,
+        "char_errors": 31,
+        "chars": 1463,
+        "word_errors": 25,
+        "words": 211,
+        "exact_lines": 2,
+        "empty_outputs": 0,
+        "n_lines": 16
+      },
+      "easyocr_e2e_readtext_cer": 0.75
+    },
+    "Photo 3 (Times)": {
+      "n_lines": 23,
+      "v2_rule_chunk": {
+        "cer": 0.1,
+        "wer": 0.72,
+        "char_errors": 1,
+        "chars": 1015,
+        "word_errors": 1,
+        "words": 138,
+        "exact_lines": 22,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "v2_full_line": {
+        "cer": 0.2,
+        "wer": 1.45,
+        "char_errors": 2,
+        "chars": 1015,
+        "word_errors": 2,
+        "words": 138,
+        "exact_lines": 21,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "tess_rule_chunk": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "char_errors": 0,
+        "chars": 1015,
+        "word_errors": 0,
+        "words": 138,
+        "exact_lines": 23,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "tess_full_line": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "char_errors": 0,
+        "chars": 1015,
+        "word_errors": 0,
+        "words": 138,
+        "exact_lines": 23,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_rule_chunk": {
+        "cer": 0.69,
+        "wer": 5.07,
+        "char_errors": 7,
+        "chars": 1015,
+        "word_errors": 7,
+        "words": 138,
+        "exact_lines": 16,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_full_line_recog": {
+        "cer": 0.79,
+        "wer": 5.8,
+        "char_errors": 8,
+        "chars": 1015,
+        "word_errors": 8,
+        "words": 138,
+        "exact_lines": 15,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_e2e_readtext_cer": 0.69
+    },
+    "Photo 4 (Arial)": {
+      "n_lines": 23,
+      "v2_rule_chunk": {
+        "cer": 0.6,
+        "wer": 3.65,
+        "char_errors": 6,
+        "chars": 1006,
+        "word_errors": 5,
+        "words": 137,
+        "exact_lines": 20,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "v2_full_line": {
+        "cer": 0.1,
+        "wer": 0.73,
+        "char_errors": 1,
+        "chars": 1006,
+        "word_errors": 1,
+        "words": 137,
+        "exact_lines": 22,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "tess_rule_chunk": {
+        "cer": 0.6,
+        "wer": 3.65,
+        "char_errors": 6,
+        "chars": 1006,
+        "word_errors": 5,
+        "words": 137,
+        "exact_lines": 20,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "tess_full_line": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "char_errors": 0,
+        "chars": 1006,
+        "word_errors": 0,
+        "words": 137,
+        "exact_lines": 23,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_rule_chunk": {
+        "cer": 1.39,
+        "wer": 9.49,
+        "char_errors": 14,
+        "chars": 1006,
+        "word_errors": 13,
+        "words": 137,
+        "exact_lines": 13,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_full_line_recog": {
+        "cer": 0.4,
+        "wer": 2.92,
+        "char_errors": 4,
+        "chars": 1006,
+        "word_errors": 4,
+        "words": 137,
+        "exact_lines": 20,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_e2e_readtext_cer": 0.6
+    },
+    "Photo 5 (Times, All 33)": {
+      "n_lines": 33,
+      "v2_rule_chunk": {
+        "cer": 2.1,
+        "wer": 12.8,
+        "char_errors": 49,
+        "chars": 2328,
+        "word_errors": 43,
+        "words": 336,
+        "exact_lines": 9,
+        "empty_outputs": 0,
+        "n_lines": 33
+      },
+      "v2_full_line": {
+        "cer": 3.87,
+        "wer": 21.13,
+        "char_errors": 90,
+        "chars": 2328,
+        "word_errors": 71,
+        "words": 336,
+        "exact_lines": 5,
+        "empty_outputs": 0,
+        "n_lines": 33
+      },
+      "tess_rule_chunk": {
+        "cer": 13.02,
+        "wer": 19.35,
+        "char_errors": 303,
+        "chars": 2328,
+        "word_errors": 65,
+        "words": 336,
+        "exact_lines": 11,
+        "empty_outputs": 0,
+        "n_lines": 33
+      },
+      "tess_full_line": {
+        "cer": 0.09,
+        "wer": 0.6,
+        "char_errors": 2,
+        "chars": 2328,
+        "word_errors": 2,
+        "words": 336,
+        "exact_lines": 31,
+        "empty_outputs": 0,
+        "n_lines": 33
+      },
+      "easyocr_rule_chunk": {
+        "cer": 1.68,
+        "wer": 11.01,
+        "char_errors": 39,
+        "chars": 2328,
+        "word_errors": 37,
+        "words": 336,
+        "exact_lines": 9,
+        "empty_outputs": 0,
+        "n_lines": 33
+      },
+      "easyocr_full_line_recog": {
+        "cer": 1.42,
+        "wer": 8.93,
+        "char_errors": 33,
+        "chars": 2328,
+        "word_errors": 30,
+        "words": 336,
+        "exact_lines": 12,
+        "empty_outputs": 0,
+        "n_lines": 33
+      },
+      "easyocr_e2e_readtext_cer": 17.27
+    },
+    "Photo 5 (Clean 23)": {
+      "n_lines": 23,
+      "v2_rule_chunk": {
+        "cer": 1.32,
+        "wer": 9.25,
+        "char_errors": 21,
+        "chars": 1591,
+        "word_errors": 21,
+        "words": 227,
+        "exact_lines": 9,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_rule_chunk": {
+        "cer": 1.57,
+        "wer": 10.13,
+        "char_errors": 25,
+        "chars": 1591,
+        "word_errors": 23,
+        "words": 227,
+        "exact_lines": 7,
+        "empty_outputs": 0,
+        "n_lines": 23
+      },
+      "easyocr_full_line_recog": {
+        "cer": 1.32,
+        "wer": 7.93,
+        "char_errors": 21,
+        "chars": 1591,
+        "word_errors": 18,
+        "words": 227,
+        "exact_lines": 10,
+        "empty_outputs": 0,
+        "n_lines": 23
+      }
+    },
+    "Aggregate All 5 Photos (n=111)": {
+      "n_lines": 111,
+      "v2_rule_chunk": {
+        "cer": 1.08,
+        "wer": 6.64,
+        "char_errors": 78,
+        "chars": 7254,
+        "word_errors": 69,
+        "words": 1039,
+        "exact_lines": 68,
+        "empty_outputs": 0,
+        "n_lines": 111
+      },
+      "tess_rule_chunk": {
+        "cer": 4.55,
+        "wer": 8.08,
+        "char_errors": 330,
+        "chars": 7254,
+        "word_errors": 84,
+        "words": 1039,
+        "exact_lines": 76,
+        "empty_outputs": 0,
+        "n_lines": 111
+      },
+      "easyocr_rule_chunk": {
+        "cer": 1.31,
+        "wer": 8.85,
+        "char_errors": 95,
+        "chars": 7254,
+        "word_errors": 92,
+        "words": 1039,
+        "exact_lines": 52,
+        "empty_outputs": 0,
+        "n_lines": 111
+      },
+      "easyocr_full_line_recog": {
+        "cer": 1.5,
+        "wer": 9.05,
+        "char_errors": 109,
+        "chars": 7254,
+        "word_errors": 94,
+        "words": 1039,
+        "exact_lines": 51,
+        "empty_outputs": 0,
+        "n_lines": 111
+      },
+      "easyocr_e2e_readtext_cer": 6.22
+    }
+  },
+  "sim_ladder": {
+    "L0_line": {
+      "cer": 1.17,
+      "wer": 9.19,
+      "char_errors": 32,
+      "chars": 2732,
+      "word_errors": 33,
+      "words": 359,
+      "exact_lines": 65,
+      "empty_outputs": 0,
+      "n_lines": 92
+    },
+    "L0_word": {
+      "cer": 3.02,
+      "wer": 18.79,
+      "char_errors": 74,
+      "chars": 2452,
+      "word_errors": 65,
+      "words": 346,
+      "exact_lines": 286,
+      "empty_outputs": 0,
+      "n_lines": 346
+    },
+    "L4_line": {
+      "cer": 3.81,
+      "wer": 23.12,
+      "char_errors": 104,
+      "chars": 2732,
+      "word_errors": 83,
+      "words": 359,
+      "exact_lines": 43,
+      "empty_outputs": 0,
+      "n_lines": 92
+    },
+    "L4_word": {
+      "cer": 7.54,
+      "wer": 41.33,
+      "char_errors": 185,
+      "chars": 2452,
+      "word_errors": 143,
+      "words": 346,
+      "exact_lines": 208,
+      "empty_outputs": 0,
+      "n_lines": 346
+    }
+  },
+  "group_c_unseen_ladder": {
+    "GroupC_L0_line": {
+      "cer": 1.59,
+      "wer": 12.57,
+      "char_errors": 22,
+      "chars": 1383,
+      "word_errors": 23,
+      "words": 183,
+      "exact_lines": 29,
+      "empty_outputs": 0,
+      "n_lines": 46
+    },
+    "GroupC_L0_word": {
+      "cer": 3.7,
+      "wer": 21.79,
+      "char_errors": 46,
+      "chars": 1242,
+      "word_errors": 39,
+      "words": 179,
+      "exact_lines": 142,
+      "empty_outputs": 0,
+      "n_lines": 179
+    },
+    "GroupC_L4_line": {
+      "cer": 1.52,
+      "wer": 12.57,
+      "char_errors": 21,
+      "chars": 1383,
+      "word_errors": 23,
+      "words": 183,
+      "exact_lines": 30,
+      "empty_outputs": 0,
+      "n_lines": 46
+    },
+    "GroupC_L4_word": {
+      "cer": 3.54,
+      "wer": 24.02,
+      "char_errors": 44,
+      "chars": 1242,
+      "word_errors": 43,
+      "words": 179,
+      "exact_lines": 139,
+      "empty_outputs": 0,
+      "n_lines": 179
+    }
+  },
+  "synth_line_test": {
+    "mixed_1000": {
+      "cer": 0.81,
+      "wer": 7.53,
+      "char_errors": 240,
+      "chars": 29719,
+      "word_errors": 300,
+      "words": 3985,
+      "exact_lines": 804,
+      "empty_outputs": 0,
+      "n_lines": 1000
+    },
+    "tahoma_unseen_500": {
+      "cer": 1.09,
+      "wer": 8.33,
+      "char_errors": 1,
+      "chars": 92,
+      "word_errors": 1,
+      "words": 12,
+      "exact_lines": 2,
+      "empty_outputs": 0,
+      "n_lines": 3
+    },
+    "consolas_500": {
+      "cer": 0.81,
+      "wer": 7.53,
+      "char_errors": 239,
+      "chars": 29627,
+      "word_errors": 299,
+      "words": 3973,
+      "exact_lines": 802,
+      "empty_outputs": 0,
+      "n_lines": 997
+    }
+  },
+  "real_photos_special_char_audit": {
+    "crnn_v2_chunk": {
+      "lower_special": {
+        "errors": 9,
+        "total": 1268,
+        "error_rate_pct": 0.71
+      },
+      "upper_special": {
+        "errors": 0,
+        "total": 10,
+        "error_rate_pct": 0.0
+      },
+      "standard_lower": {
+        "errors": 33,
+        "total": 4770,
+        "error_rate_pct": 0.69
+      },
+      "standard_upper": {
+        "errors": 0,
+        "total": 84,
+        "error_rate_pct": 0.0
+      },
+      "schwa_lower_ə": {
+        "errors": 0,
+        "total": 658,
+        "error_rate_pct": 0.0
+      },
+      "dotless_ı": {
+        "errors": 3,
+        "total": 263,
+        "error_rate_pct": 1.14
+      },
+      "dotted_İ": {
+        "errors": 0,
+        "total": 0,
+        "error_rate_pct": 0.0
+      }
+    },
+    "tesseract_chunk": {
+      "lower_special": {
+        "errors": 42,
+        "total": 1268,
+        "error_rate_pct": 3.31
+      },
+      "upper_special": {
+        "errors": 1,
+        "total": 10,
+        "error_rate_pct": 10.0
+      },
+      "standard_lower": {
+        "errors": 203,
+        "total": 4770,
+        "error_rate_pct": 4.26
+      },
+      "standard_upper": {
+        "errors": 6,
+        "total": 84,
+        "error_rate_pct": 7.14
+      },
+      "schwa_lower_ə": {
+        "errors": 17,
+        "total": 658,
+        "error_rate_pct": 2.58
+      },
+      "dotless_ı": {
+        "errors": 12,
+        "total": 263,
+        "error_rate_pct": 4.56
+      },
+      "dotted_İ": {
+        "errors": 0,
+        "total": 0,
+        "error_rate_pct": 0.0
+      }
+    },
+    "easyocr_chunk": {
+      "lower_special": {
+        "errors": 15,
+        "total": 1268,
+        "error_rate_pct": 1.18
+      },
+      "upper_special": {
+        "errors": 0,
+        "total": 10,
+        "error_rate_pct": 0.0
+      },
+      "standard_lower": {
+        "errors": 15,
+        "total": 4770,
+        "error_rate_pct": 0.31
+      },
+      "standard_upper": {
+        "errors": 2,
+        "total": 84,
+        "error_rate_pct": 2.38
+      },
+      "schwa_lower_ə": {
+        "errors": 4,
+        "total": 658,
+        "error_rate_pct": 0.61
+      },
+      "dotless_ı": {
+        "errors": 3,
+        "total": 263,
+        "error_rate_pct": 1.14
+      },
+      "dotted_İ": {
+        "errors": 0,
+        "total": 0,
+        "error_rate_pct": 0.0
+      }
+    },
+    "easyocr_full": {
+      "lower_special": {
+        "errors": 11,
+        "total": 1268,
+        "error_rate_pct": 0.87
+      },
+      "upper_special": {
+        "errors": 0,
+        "total": 10,
+        "error_rate_pct": 0.0
+      },
+      "standard_lower": {
+        "errors": 14,
+        "total": 4770,
+        "error_rate_pct": 0.29
+      },
+      "standard_upper": {
+        "errors": 1,
+        "total": 84,
+        "error_rate_pct": 1.19
+      },
+      "schwa_lower_ə": {
+        "errors": 1,
+        "total": 658,
+        "error_rate_pct": 0.15
+      },
+      "dotless_ı": {
+        "errors": 2,
+        "total": 263,
+        "error_rate_pct": 0.76
+      },
+      "dotted_İ": {
+        "errors": 0,
+        "total": 0,
+        "error_rate_pct": 0.0
+      }
+    }
+  },
+  "synth_line_special_char_audit": {
+    "lower_special": {
+      "errors": 98,
+      "total": 4359,
+      "error_rate_pct": 2.25
+    },
+    "upper_special": {
+      "errors": 5,
+      "total": 169,
+      "error_rate_pct": 2.96
+    },
+    "standard_lower": {
+      "errors": 23,
+      "total": 19388,
+      "error_rate_pct": 0.12
+    },
+    "standard_upper": {
+      "errors": 5,
+      "total": 1001,
+      "error_rate_pct": 0.5
+    },
+    "schwa_lower_ə": {
+      "errors": 52,
+      "total": 2294,
+      "error_rate_pct": 2.27
+    },
+    "dotless_ı": {
+      "errors": 15,
+      "total": 852,
+      "error_rate_pct": 1.76
+    },
+    "dotted_İ": {
+      "errors": 4,
+      "total": 58,
+      "error_rate_pct": 6.9
+    }
+  },
+  "ladder_l4_special_char_audit": {
+    "lower_special": {
+      "errors": 83,
+      "total": 421,
+      "error_rate_pct": 19.71
+    },
+    "upper_special": {
+      "errors": 6,
+      "total": 19,
+      "error_rate_pct": 31.58
+    },
+    "standard_lower": {
+      "errors": 6,
+      "total": 1770,
+      "error_rate_pct": 0.34
+    },
+    "standard_upper": {
+      "errors": 1,
+      "total": 108,
+      "error_rate_pct": 0.93
+    },
+    "schwa_lower_ə": {
+      "errors": 43,
+      "total": 221,
+      "error_rate_pct": 19.46
+    },
+    "dotless_ı": {
+      "errors": 3,
+      "total": 87,
+      "error_rate_pct": 3.45
+    },
+    "dotted_İ": {
+      "errors": 4,
+      "total": 5,
+      "error_rate_pct": 80.0
+    }
+  }
+}
