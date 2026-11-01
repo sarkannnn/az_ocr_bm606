@@ -591,9 +591,11 @@ def make_f7():
     # Callout badge on Panel A positioned safely at top-right (above Std Upper which is <2.8%)
     ax1.text(0.98, 0.96,
              "★ Orthographic Superiority:\n"
-             "• Lowercase specials: V2 error is 8.3× lower than EasyOCR (0.27% vs 2.25%)\n"
-             "• Uppercase specials: V2 has lowest error (2.46% vs 2.96% EasyOCR, 3.69% Tess)",
-             transform=ax1.transAxes, ha="right", va="top", fontsize=8.4, color="#15803D", fontweight="bold",
+             "• Lowercase specials: V2 error is 8.3× lower\n"
+             "  than EasyOCR (0.27% vs 2.25%)\n"
+             "• Uppercase specials: V2 has lowest error\n"
+             "  (2.46% vs 2.96% EasyOCR, 3.69% Tess)",
+             transform=ax1.transAxes, ha="right", va="top", fontsize=7.8, color="#15803D", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.35", fc="#ECFDF5", ec="#10B981", lw=1.0))
 
     # Panel B: EasyOCR Degradation under Camera Distortion (L4)
@@ -623,11 +625,11 @@ def make_f7():
     # Callout badge on Panel B positioned safely in top-right white space above x=2,3 (where bars are <1%)
     ax2.text(0.98, 0.96,
              "Why EasyOCR Collapses at L4:\n"
-             "• Diacritic capacity is lost across 341 Latin classes\n"
-             "• Lowercase specials surge to 19.7% error (8.8× increase)\n"
-             "• Uppercase specials surge to 31.6% error (10.7× increase)\n"
-             "• CRNN V2 retains 0.00% error on distorted ə, ğ, ş at L4",
-             transform=ax2.transAxes, ha="right", va="top", fontsize=8.2,
+             "• Diacritic capacity lost across 341 Latin classes\n"
+             "• Lower specials surge to 19.7% error (8.8× increase)\n"
+             "• Upper specials surge to 31.6% error (10.7× increase)\n"
+             "• CRNN V2 retains 0.00% error on distorted ə, ğ, ş",
+             transform=ax2.transAxes, ha="right", va="top", fontsize=7.8,
              color="#7E22CE", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.35", fc="#FAF5FF", ec="#C084FC", lw=1.0))
 
@@ -637,6 +639,102 @@ def make_f7():
 
     fig.tight_layout(rect=[0, 0.04, 1, 0.95])
     save_figure(fig, "f7_special_letters.png")
+
+
+# =========================================================================
+# FIGURE 8: Real Document Line Detection & Projection-Based Chunking (f8_real_photos_detection_v2.png)
+# =========================================================================
+def make_f8():
+    print("Generating Figure 8 (Real Photo Detection & Chunking)...")
+    fig = plt.figure(figsize=(17, 8.8), dpi=200)
+    gs = GridSpec(1, 3, width_ratios=[1.0, 1.0, 1.45], wspace=0.22)
+
+    ax1 = fig.add_subplot(gs[0])
+    ax2 = fig.add_subplot(gs[1])
+    ax3 = fig.add_subplot(gs[2])
+
+    fig.suptitle("Figure 8: Real Document Processing: Line Detection & Projection-Based Chunking Boundaries",
+                 fontsize=13, weight="bold", y=0.98, color=C_INK)
+
+    # Panel A: Photo 1 (TNR, 16 lines)
+    p1_path = ROOT / "data" / "real_docs" / "photo1_times.jpg"
+    g8_path = ROOT / "results" / "real_fix8" / "crop_geometry.json"
+
+    if p1_path.exists() and g8_path.exists():
+        im1 = Image.open(p1_path)
+        g8 = json.load(open(g8_path, encoding="utf-8"))
+        scale1 = 0.32
+        im1_disp = im1.resize((int(im1.width * scale1), int(im1.height * scale1)), Image.Resampling.LANCZOS)
+        dr1 = ImageDraw.Draw(im1_disp)
+        for item in g8.get("photo1", []):
+            x0, y0, x1, y1 = item["x0"] * scale1, item["y0"] * scale1, item["x1"] * scale1, item["y1"] * scale1
+            dr1.rectangle([x0, y0, x1, y1], outline="#E74C3C", width=3)
+            l_num = str(item["line_idx"] + 1)
+            dr1.rectangle([x0 - 2, y0 - 18, x0 + 26, y0 + 1], fill="#C0392B")
+            dr1.text((x0 + 3, y0 - 17), f"{int(l_num):02d}", fill="white")
+        ax1.imshow(im1_disp)
+        ax1.set_title("Panel A: Photo 1 (Times New Roman)\nEvaluated Region of 16 Lines",
+                      fontsize=10, weight="bold", color=C_INK, pad=8)
+        ax1.axis("off")
+        ax1.text(0.5, -0.04, "Note: Photo 1 shows only the evaluated region (16 lines)",
+                 ha="center", va="top", transform=ax1.transAxes, fontsize=8, color="#64748B", style="italic")
+    else:
+        ax1.text(0.5, 0.5, "Photo 1 image not found", ha="center")
+        ax1.axis("off")
+
+    # Panel B: Photo 5 (IMG_5130, 33 lines) - Clean cropped photo without duplicate embedded headers
+    p5_detected_path = ROOT / "paper/archive/superseded_figures/_panel_b_photo5_detected.png"
+    if p5_detected_path.exists():
+        raw_b = Image.open(p5_detected_path)
+        # Crop away the legacy embedded title (0..75) and footer (955..1018)
+        im5_clean = raw_b.crop((0, 75, raw_b.width, 955))
+        ax2.imshow(im5_clean)
+        ax2.set_title("Panel B: Photo 5 (IMG_5130, 33 Lines)\nFull Page Layout (5 Paragraphs)",
+                      fontsize=10, weight="bold", color=C_INK, pad=8)
+        ax2.axis("off")
+        ax2.text(0.5, -0.04, "Tesseract image_to_data grouping (33 line boxes)",
+                 ha="center", va="top", transform=ax2.transAxes, fontsize=8, color="#64748B", style="italic")
+
+    # Panel C: Zoomed split boundaries on 5 lines
+    ax3.set_title("Panel C: Projection Split Boundaries (5 Lines)\nInter-Word Valleys (k=25, 35th percentile ink)",
+                  fontsize=10, weight="bold", color=C_INK, pad=8)
+    ax3.axis("off")
+
+    split_lines_data = [
+        (0, 1186, "Line 01 (w=1969 px): Split at x=1186 px between 'qədim' and 'sənət'"),
+        (1, 1238, "Line 02 (w=2185 px): Split at x=1238 px between 'özündə' and 'yaşadır.'"),
+        (2, 1202, "Line 03 (w=2098 px): Split at x=1202 px between 'sahələri' and 'nəsildən-nəslə,'"),
+        (3, 1257, "Line 04 (w=2161 px): Split at x=1257 px between 'gəlib' and 'çatmışdır.'"),
+        (4, 1058, "Line 05 (w=1982 px): Split at x=1058 px between 'dərin' and 'fəlsəfə'")
+    ]
+
+    sub_height = 0.150
+    sub_spacing = 0.045
+
+    for idx, (l_idx, split_x, desc) in enumerate(split_lines_data):
+        crop_path = ROOT / "results" / "real_fix9" / "crops" / f"line_{l_idx:02d}.png"
+        y_pos = 1.0 - (idx + 1) * (sub_height + sub_spacing) + 0.015
+        crop_ax = ax3.inset_axes([0.02, y_pos, 0.96, sub_height])
+        if crop_path.exists():
+            im_c = Image.open(crop_path)
+            crop_ax.imshow(im_c, cmap="gray")
+            crop_ax.axvline(split_x, color=C_V1, lw=2.2, linestyle="--")
+            crop_ax.text(split_x * 0.40, im_c.height * 0.85, "◄ Chunk 1", color="#1B5E20",
+                         fontsize=8, weight="bold", bbox=dict(facecolor="white", alpha=0.85, edgecolor="none", pad=1.5))
+            crop_ax.text(split_x + (im_c.width - split_x) * 0.40, im_c.height * 0.85, "Chunk 2 ►", color="#0D47A1",
+                         fontsize=8, weight="bold", bbox=dict(facecolor="white", alpha=0.85, edgecolor="none", pad=1.5))
+        crop_ax.set_title(desc, fontsize=8, weight="bold", loc="left", pad=3, color=C_INK)
+        crop_ax.set_xticks([]); crop_ax.set_yticks([])
+        for spine in crop_ax.spines.values():
+            spine.set_edgecolor("#CBD5E1")
+            spine.set_linewidth(0.8)
+
+    fig.text(0.04, 0.015,
+             "Source: data/real_docs/photo1_times.jpg, results/real_fix8/crop_geometry.json, "
+             "results/real_fix9/crop_geometry.json, results/real_fix9/crops/line_00.png..line_04.png",
+             fontsize=8.0, color="#64748B", style="italic")
+
+    save_figure(fig, "f8_real_photos_detection_v2.png")
 
 
 # =========================================================================
@@ -945,6 +1043,7 @@ if __name__ == "__main__":
     make_f5()
     make_f6()
     make_f7()
+    make_f8()
     make_f11()
     make_f13()
     make_f15()
