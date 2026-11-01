@@ -242,7 +242,7 @@ def make_f4():
     ax1.set_xticks(x)
     ax1.set_xticklabels(["Word Level (n = 1,000)", "Line Level (n = 500)"], fontsize=9.5)
     ax1.set_ylabel("Character Error Rate (CER %)", fontsize=9.8)
-    ax1.set_ylim(0, 4.4)
+    ax1.set_ylim(0, 5.2)
     ax1.grid(axis="y", zorder=0)
     ax1.legend(loc="upper left", fontsize=8.6, frameon=True, facecolor="white", edgecolor="#CBD5E1")
 
@@ -262,15 +262,16 @@ def make_f4():
                   fontsize=10.0, fontweight="bold", loc="left", pad=10)
     ax2.set_xticks(x)
     ax2.set_xticklabels(["Word Level (n = 1,000)", "Line Level (n = 500)"], fontsize=9.5)
+    ax2.set_ylim(0, 5.2)
     ax2.grid(axis="y", zorder=0)
 
-    # Highlight Callout on Consolas
-    ax2.text(0.98, 0.88,
+    # Highlight Callout on Consolas (High headroom, completely clear of the 3.48% bar)
+    ax2.text(0.98, 0.96,
              "★ Superiority & Disclosure:\n"
              "• CRNN V2 beats EasyOCR by 66.7% (0.27% vs. 0.81% line CER)\n"
              "• CRNN V2 beats Tesseract by 42.6% (0.27% vs. 0.47%)\n"
              "• Warning: consolab.ttf was in training; not zero-shot!",
-             transform=ax2.transAxes, ha="right", va="top", fontsize=8.6,
+             transform=ax2.transAxes, ha="right", va="top", fontsize=8.5,
              color="#15803D", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.4", facecolor="#ECFDF5", edgecolor="#10B981", lw=1.0))
 
@@ -286,6 +287,61 @@ def make_f4():
 # =========================================================================
 # FIGURE 5: Simulation Ladder (f5_sim_ladder.png)
 # =========================================================================
+def make_ladder_sample_strip(lvl_idx, w=520, h=56):
+    import io
+    from PIL import ImageFilter
+    text = "Azərbaycan Respublikasının Dövlət Dili"
+    img = Image.new("RGB", (w, h), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    font_path = Path("C:/Windows/Fonts/times.ttf")
+    if not font_path.exists():
+        font_path = Path("C:/Windows/Fonts/arial.ttf")
+    font = ImageFont.truetype(str(font_path), 24)
+    bbox = draw.textbbox((0, 0), text, font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    tx, ty = (w - tw) // 2, (h - th) // 2 - 2
+    draw.text((tx, ty), text, font=font, fill=(25, 30, 40))
+
+    arr = np.array(img, dtype=np.float32)
+
+    if lvl_idx == 0:
+        pass
+    elif lvl_idx == 1:
+        # Illumination gradient + soft corner shadow
+        grad = np.linspace(0.72, 1.05, w)[None, :, None]
+        arr = arr * grad
+        arr = np.clip(arr, 0, 255)
+        img = Image.fromarray(arr.astype(np.uint8))
+    elif lvl_idx == 2:
+        # Blur + sensor noise
+        img = img.filter(ImageFilter.GaussianBlur(radius=0.9))
+        arr = np.array(img, dtype=np.float32)
+        noise = np.random.normal(0, 8.0, arr.shape)
+        arr = np.clip(arr + noise, 0, 255)
+        img = Image.fromarray(arr.astype(np.uint8))
+    elif lvl_idx == 3:
+        # Downscale + JPEG compression
+        small = img.resize((int(w * 0.52), int(h * 0.52)), Image.Resampling.BILINEAR)
+        buf = io.BytesIO()
+        small.save(buf, format="JPEG", quality=40)
+        buf.seek(0)
+        jpeg_img = Image.open(buf)
+        img = jpeg_img.resize((w, h), Image.Resampling.BICUBIC)
+    elif lvl_idx == 4:
+        # Full phone sim: slight rotation/perspective + blur + gradient + noise
+        img = img.rotate(1.8, resample=Image.Resampling.BICUBIC, expand=False, fillcolor=(245, 240, 230))
+        img = img.filter(ImageFilter.GaussianBlur(radius=0.7))
+        arr = np.array(img, dtype=np.float32)
+        grad = np.linspace(0.80, 1.02, w)[None, :, None]
+        v_grad = np.linspace(0.86, 1.02, h)[:, None, None]
+        arr = arr * grad * v_grad
+        noise = np.random.normal(0, 7.0, arr.shape)
+        arr = np.clip(arr + noise, 0, 255)
+        img = Image.fromarray(arr.astype(np.uint8))
+
+    return img
+
+
 def make_f5():
     print("Generating Figure 5 (Simulation Ladder)...")
     fig = plt.figure(figsize=(16.5, 9.0), dpi=200)
@@ -304,16 +360,11 @@ def make_f5():
         "L4: + Perspective tilt & rotation (Full phone sim)"
     ]
 
-    # Column 0: Visual Sample progression
+    # Column 0: Clean procedural sample progression
     for r, (lvl, desc) in enumerate(zip(ladder_5, descs)):
         ax = fig.add_subplot(gs[r, 0])
-        p = ROOT / f"data/sim_ladder/{lvl}/line/test/images/0000000.png"
-        if p.exists():
-            ax.imshow(Image.open(p), cmap="gray", aspect="auto")
-        else:
-            old = Image.open(ROOT / "paper/figures/f5_sim_ladder.png").convert("RGB")
-            y0 = [299, 413, 528, 643, 758][r]
-            ax.imshow(old.crop((303, y0, 942, y0 + 64)), aspect="auto")
+        sample_img = make_ladder_sample_strip(r)
+        ax.imshow(sample_img, aspect="auto")
         ax.set_xticks([]); ax.set_yticks([])
         for s in ax.spines.values():
             s.set_visible(True); s.set_color("#CBD5E1")
@@ -338,7 +389,7 @@ def make_f5():
         ax.plot(levels, data["V1"], "o--", color=C_V1, lw=2.0, ms=6, label="CRNN V1 (baseline collapses)")
         ax.plot(levels, data["V2"], "s-", color=C_V2, lw=2.6, ms=7, label="CRNN V2 (ours - augmented)")
         ax.plot(levels, data["Tess"], "^:", color=C_TESS, lw=2.0, ms=6, label="Tesseract 5 (aze)")
-        
+
         # EasyOCR Points
         ax.plot([0, 4], [ez_dict[0], ez_dict[4]], "D", color=C_EASY, ms=8, label="EasyOCR ('az') [L0 & L4]")
         ax.annotate(f"EasyOCR: {ez_dict[0]:.2f}%", (0, ez_dict[0]), xytext=(10, 8), textcoords="offset points",
@@ -346,13 +397,13 @@ def make_f5():
         ax.annotate(f"EasyOCR: {ez_dict[4]:.2f}%", (4, ez_dict[4]), xytext=(-15, 10), textcoords="offset points",
                     fontsize=8.3, fontweight="bold", color=C_EASY)
 
-        # Annotate V2 at L4
+        # Annotate V2 at L4 neatly above marker
         v2_l4 = data["V2"][4]
-        ax.annotate(f"V2: {v2_l4:.2f}%", (4, v2_l4), xytext=(8, -14), textcoords="offset points",
-                    fontsize=8.5, fontweight="bold", color="#15803D")
+        ax.annotate(f"V2: {v2_l4:.2f}%", (4, v2_l4), xytext=(0, 10), textcoords="offset points",
+                    ha="center", fontsize=8.5, fontweight="bold", color="#15803D")
 
         ax.set_yscale("log")
-        ax.set_ylim(0.04, 75)
+        ax.set_ylim(0.04, 85)
         ax.set_yticks([0.1, 1, 10])
         ax.set_yticklabels(["0.10%", "1.00%", "10.0%"], fontsize=9.0)
         ax.set_ylabel("Character Error Rate (CER %, log scale)", fontsize=9.5)
@@ -364,26 +415,26 @@ def make_f5():
     # Column 1: Word CER
     ax_word = fig.add_subplot(gs[0:5, 1])
     plot_ladder(ax_word, word_data, ez_w, "Word-Level CER (n = 346 words)", is_word=True)
-    # Highlight badge Word
-    ax_word.text(0.03, 0.05,
+    # Highlight badge Word (Clear padding at bottom)
+    ax_word.text(0.03, 0.04,
                  "★ L4 Camera Distortion (Word):\n"
                  "• CRNN V2 = 1.35% CER\n"
                  "• 82.1% lower error than EasyOCR (7.54%, 5.6× lower)\n"
                  "• 26.5× lower error than CRNN V1 (35.77%)",
-                 transform=ax_word.transAxes, fontsize=8.5, color="#15803D", fontweight="bold",
-                 bbox=dict(boxstyle="round,pad=0.4", fc="#ECFDF5", ec="#10B981", lw=1.0))
+                 transform=ax_word.transAxes, fontsize=8.3, color="#15803D", fontweight="bold",
+                 bbox=dict(boxstyle="round,pad=0.35", fc="#ECFDF5", ec="#10B981", lw=1.0))
 
     # Column 2: Line CER
     ax_line = fig.add_subplot(gs[0:5, 2])
     plot_ladder(ax_line, line_data, ez_l, "Line-Level CER (n = 92 lines)", is_word=False)
-    # Highlight badge Line
-    ax_line.text(0.03, 0.05,
+    # Highlight badge Line (Clear padding at bottom)
+    ax_line.text(0.03, 0.04,
                  "★ L4 Camera Distortion (Line):\n"
                  "• CRNN V2 = 0.11% CER\n"
                  "• 97.1% lower error than EasyOCR (3.81%, 34.6× lower)\n"
                  "• 118× lower error than CRNN V1 (12.96%)",
-                 transform=ax_line.transAxes, fontsize=8.5, color="#15803D", fontweight="bold",
-                 bbox=dict(boxstyle="round,pad=0.4", fc="#ECFDF5", ec="#10B981", lw=1.0))
+                 transform=ax_line.transAxes, fontsize=8.3, color="#15803D", fontweight="bold",
+                 bbox=dict(boxstyle="round,pad=0.35", fc="#ECFDF5", ec="#10B981", lw=1.0))
 
     fig.text(0.05, 0.012,
              "Source: results/sim_ladder/summary.md, results/v2_audit/summary.md, results/easyocr_benchmark/metrics.json.",
@@ -465,21 +516,21 @@ def make_f6():
     ax2.axvline(0, color=C_INK, lw=1.2, zorder=2)
     ax2.set_yticks(y2)
     ax2.set_yticklabels([it[0] for it in ez_items], fontsize=9.0)
-    ax2.set_xlim(-8, 130)
+    ax2.set_xlim(-8, 135)
     ax2.set_xlabel("Relative Error Reduction over EasyOCR (%)\n(Green = CRNN V2 Lower Error / Win)", fontsize=9.2)
     ax2.set_title("Panel B: CRNN V2 vs. EasyOCR: 50%–60%+ Error Reductions across Core Tasks",
                   loc="left", fontsize=10.5, pad=8)
     ax2.grid(axis="x", zorder=0)
 
-    # Highlight Banner on Panel B
-    ax2.text(0.98, 0.10,
+    # Highlight Banner on Panel B positioned safely at y=0.28 (rows Photo 5 Clean 23 & All Photos, where bars are only 15%-17%)
+    ax2.text(0.98, 0.28,
              "★ CRNN V2 Wins in 11 of 11 Core Benchmarks:\n"
-             "• 50%–60%+ error reductions across synthetic, unseen fonts, and photos\n"
-             "• Up to 85.5% lower error on Photo 3 and 97.1% on distorted L4 lines\n"
-             "• EasyOCR generalist head suffers on specialized Azerbaijani characters",
-             transform=ax2.transAxes, ha="right", va="bottom", fontsize=8.4,
+             "• 50%–60%+ error cuts on synth, unseen fonts & photos\n"
+             "• Up to 85.5% lower error on Photo 3; 97.1% on L4 lines\n"
+             "• EasyOCR generalist head suffers on Azerbaijani diacritics",
+             transform=ax2.transAxes, ha="right", va="center", fontsize=8.2,
              color="#15803D", fontweight="bold",
-             bbox=dict(boxstyle="round,pad=0.4", fc="#ECFDF5", ec="#10B981", lw=1.0))
+             bbox=dict(boxstyle="round,pad=0.35", fc="#ECFDF5", ec="#10B981", lw=1.0))
 
     fig.text(0.04, 0.015,
              "Source: results/v2_audit4/summary.md, results/real_fix9/metrics.json, results/easyocr_benchmark/metrics.json.",
@@ -531,18 +582,18 @@ def make_f7():
     ax1.set_xticks(x)
     ax1.set_xticklabels(labels, fontsize=8.8)
     ax1.set_ylabel("Character Error Rate (%)", fontsize=9.5)
-    ax1.set_ylim(0, 7.6)
+    ax1.set_ylim(0, 8.8)
     ax1.grid(axis="y", zorder=0)
-    ax1.legend(loc="upper right", fontsize=8.6, frameon=True, facecolor="white", edgecolor="#CBD5E1")
-    ax1.text(0.02, 0.96, "▲ = Bar clipped at 6.2% (CRNN V1 uppercase special error is 13.11%)",
+    ax1.legend(loc="upper left", fontsize=8.6, frameon=True, facecolor="white", edgecolor="#CBD5E1")
+    ax1.text(0.02, 0.82, "▲ = Bar clipped at 6.2% (CRNN V1 uppercase special error is 13.11%)",
              transform=ax1.transAxes, fontsize=8.0, color="#64748B", style="italic", va="top")
 
-    # Callout badge on Panel A
-    ax1.text(0.02, 0.76,
+    # Callout badge on Panel A positioned safely at top-right (above Std Upper which is <2.8%)
+    ax1.text(0.98, 0.96,
              "★ Orthographic Superiority:\n"
              "• Lowercase specials: V2 error is 8.3× lower than EasyOCR (0.27% vs 2.25%)\n"
              "• Uppercase specials: V2 has lowest error (2.46% vs 2.96% EasyOCR, 3.69% Tess)",
-             transform=ax1.transAxes, fontsize=8.4, color="#15803D", fontweight="bold",
+             transform=ax1.transAxes, ha="right", va="top", fontsize=8.4, color="#15803D", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.35", fc="#ECFDF5", ec="#10B981", lw=1.0))
 
     # Panel B: EasyOCR Degradation under Camera Distortion (L4)
@@ -565,18 +616,18 @@ def make_f7():
     ax2.set_xticks(x)
     ax2.set_xticklabels(["Lower\nSpecial", "Upper\nSpecial", "Std\nLower", "Std\nUpper"], fontsize=9.0)
     ax2.set_ylabel("EasyOCR Error Rate (%)", fontsize=9.5)
-    ax2.set_ylim(0, 36.0)
+    ax2.set_ylim(0, 37.0)
     ax2.grid(axis="y", zorder=0)
     ax2.legend(loc="upper left", fontsize=8.6, frameon=True, facecolor="white", edgecolor="#CBD5E1")
 
-    # Callout badge on Panel B
-    ax2.text(0.98, 0.50,
+    # Callout badge on Panel B positioned safely in top-right white space above x=2,3 (where bars are <1%)
+    ax2.text(0.98, 0.96,
              "Why EasyOCR Collapses at L4:\n"
              "• Diacritic capacity is lost across 341 Latin classes\n"
              "• Lowercase specials surge to 19.7% error (8.8× increase)\n"
              "• Uppercase specials surge to 31.6% error (10.7× increase)\n"
              "• CRNN V2 retains 0.00% error on distorted ə, ğ, ş at L4",
-             transform=ax2.transAxes, ha="right", va="center", fontsize=8.2,
+             transform=ax2.transAxes, ha="right", va="top", fontsize=8.2,
              color="#7E22CE", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.35", fc="#FAF5FF", ec="#C084FC", lw=1.0))
 
@@ -612,28 +663,37 @@ def make_f13():
     b3 = ax1.bar(x + 0.5 * w, tess_13, w, color=C_TESS_13, label="Tesseract 5 (--psm 13, full line)", zorder=3)
     b4 = ax1.bar(x + 1.5 * w, easy_c, w, color=C_EASY, label="EasyOCR ('az', chunk)", zorder=3)
 
-    for bars, col in [(b1, "#15803D"), (b2, "#B45309"), (b3, "#78350F"), (b4, "#7E22CE")]:
-        for bar in bars:
-            h = bar.get_height()
-            ax1.text(bar.get_x() + bar.get_width() / 2, h + 0.08, f"{h:.2f}%",
-                     ha="center", va="bottom", fontsize=7.8, fontweight="bold", color=col)
+    for i in range(len(x)):
+        # b1: V2
+        ax1.text(x[i] - 1.5 * w, v2_p[i] + 0.08, f"{v2_p[i]:.2f}%", ha="center", va="bottom", fontsize=7.8, fontweight="bold", color="#15803D")
+        # b2 & b3: Tesseract 7 and 13 - vertically stagger if identical to avoid horizontal collision
+        h2 = tess_7[i]
+        h3 = tess_13[i]
+        if abs(h2 - h3) < 0.15:
+            ax1.text(x[i] - 0.5 * w, h2 + 0.08, f"{h2:.2f}%", ha="center", va="bottom", fontsize=7.8, fontweight="bold", color="#B45309")
+            ax1.text(x[i] + 0.5 * w, h3 + 0.38, f"{h3:.2f}%", ha="center", va="bottom", fontsize=7.8, fontweight="bold", color="#78350F")
+        else:
+            ax1.text(x[i] - 0.5 * w, h2 + 0.08, f"{h2:.2f}%", ha="center", va="bottom", fontsize=7.8, fontweight="bold", color="#B45309")
+            ax1.text(x[i] + 0.5 * w, h3 + 0.08, f"{h3:.2f}%", ha="center", va="bottom", fontsize=7.8, fontweight="bold", color="#78350F")
+        # b4: EasyOCR
+        ax1.text(x[i] + 1.5 * w, easy_c[i] + 0.08, f"{easy_c[i]:.2f}%", ha="center", va="bottom", fontsize=7.8, fontweight="bold", color="#7E22CE")
 
     ax1.set_title("Panel A: Character Error Rate across Real Smartphone Photos (1–5)", loc="left", fontsize=10.5, pad=10)
     ax1.set_xticks(x)
     ax1.set_xticklabels(doc_labels, fontsize=8.8)
     ax1.set_ylabel("Character Error Rate (CER %, lower is better)", fontsize=9.5)
-    ax1.set_ylim(0, 5.3)
+    ax1.set_ylim(0, 6.0)
     ax1.grid(axis="y", zorder=0)
-    ax1.legend(loc="upper left", fontsize=8.4, frameon=True, facecolor="white", edgecolor="#CBD5E1")
+    ax1.legend(loc="upper right", fontsize=8.4, frameon=True, facecolor="white", edgecolor="#CBD5E1")
 
-    # Callout badge on Panel A
-    ax1.text(0.98, 0.88,
+    # Callout badge on Panel A positioned safely at top-left/center above Photos 1-3 (where bars are <1.6%)
+    ax1.text(0.03, 0.96,
              "★ Real Document Wins over EasyOCR:\n"
              "• CRNN V2 beats EasyOCR on ALL 5 document captures\n"
              "• Photo 3: 85.5% error reduction (0.10% vs. 0.69%)\n"
              "• Photo 4: 56.8% error reduction (0.60% vs. 1.39%)\n"
              "• Photo 1: CRNN V2 beats BOTH Tesseract (0.97% vs 1.32%) and EasyOCR (1.53%)",
-             transform=ax1.transAxes, ha="right", va="top", fontsize=8.4,
+             transform=ax1.transAxes, ha="left", va="top", fontsize=8.3,
              color="#15803D", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.35", fc="#ECFDF5", ec="#10B981", lw=1.0))
 
@@ -654,25 +714,26 @@ def make_f13():
     y2 = np.arange(len(fail_models))[::-1]
     ax2.barh(y2, cer_photo5, height=0.60, color=cols_fail, zorder=3)
 
-    for yi, (cnt, cer, c) in enumerate(zip(empty_counts, cer_photo5, cols_fail)):
+    # EXACT 1-to-1 ALIGNMENT: match each label with its exact y position and bar
+    for y_pos, cnt, cer, c in zip(y2, empty_counts, cer_photo5, cols_fail):
         status = f"{cer:.2f}% CER" + (f"  ({cnt} empty/failed)" if cnt > 0 else "  (0 empty)")
-        ax2.annotate(status, (cer + 0.3, yi), va="center", fontsize=8.4, fontweight="bold", color=c)
+        ax2.annotate(status, (cer + 0.4, y_pos), va="center", fontsize=8.4, fontweight="bold", color=c)
 
     ax2.set_title("Panel B: Stress Test: Layout Failures on Narrow Line Strips (Photo 5, 33 lines)",
                   loc="left", fontsize=10.5, pad=10)
     ax2.set_yticks(y2)
     ax2.set_yticklabels(fail_models, fontsize=8.8)
     ax2.set_xlabel("Photo 5 Character Error Rate (%)", fontsize=9.5)
-    ax2.set_xlim(0, 24.0)
+    ax2.set_xlim(0, 24.5)
     ax2.grid(axis="x", zorder=0)
 
-    # Callout badge on Panel B
-    ax2.text(0.98, 0.15,
+    # Callout badge on Panel B placed safely in top-right white space above bars which are only <4%
+    ax2.text(0.98, 0.95,
              "Off-The-Shelf Integration Breakdown:\n"
              "• Tesseract PSM 7 produces 9 empty chunks (13.02% CER)\n"
              "• EasyOCR CRAFT text detector truncates words (17.27% CER)\n"
              "• CRNN V2 projection pipeline produces ZERO empty outputs",
-             transform=ax2.transAxes, ha="right", va="bottom", fontsize=8.2,
+             transform=ax2.transAxes, ha="right", va="top", fontsize=8.2,
              color="#991B1B", fontweight="bold",
              bbox=dict(boxstyle="round,pad=0.35", fc="#FEF2F2", ec="#F87171", lw=1.0))
 
@@ -754,16 +815,20 @@ def make_f15():
     b_e = ax2.bar(x2 + 1.5 * w2, e_c, w2, label="EasyOCR ('az')", color=C_EASY, zorder=3)
 
     for bars, col in [(b_v1, "#475569"), (b_v2, "#15803D"), (b_t, "#B45309"), (b_e, "#7E22CE")]:
-        for bar in bars:
+        for idx, bar in enumerate(bars):
             h = bar.get_height()
-            ax2.text(bar.get_x() + bar.get_width() / 2, h + 0.10, f"{h:.2f}%",
+            y_offset = 0.10
+            # Stagger Tesseract on Lower Special so it doesn't collide horizontally with V2
+            if col == "#B45309" and idx == 0:
+                y_offset = 0.32
+            ax2.text(bar.get_x() + bar.get_width() / 2, h + y_offset, f"{h:.2f}%",
                      ha="center", va="bottom", fontsize=7.2, fontweight="bold", color=col)
 
     ax2.set_title("Panel B: Character Class Error Rates (n=50,122)", loc="left", fontsize=10.5, pad=8)
     ax2.set_xticks(x2)
     ax2.set_xticklabels(cats, fontsize=8.0)
     ax2.set_ylabel("Error Rate (%)", fontsize=9.5)
-    ax2.set_ylim(0, 6.8)
+    ax2.set_ylim(0, 7.5)
     ax2.grid(axis="y", zorder=0)
     ax2.legend(loc="upper right", fontsize=7.8, frameon=True, facecolor="white", edgecolor="#CBD5E1")
 
@@ -777,12 +842,14 @@ def make_f15():
     ax3.plot(pcts, sel_cers, "o-", color=C_V2, lw=2.2, ms=6, label="Selective CRNN V2 (confident lines)")
     ax3.plot(pcts, hyb_cers, "s-", color="#2563EB", lw=2.2, ms=6, label="Confidence Hybrid (V2 + Tess)")
 
+    # Annotation placed cleanly in upper-right white space above curve, pointing down
     ax3.annotate(f"80% V2 + 20% Tess\nCER: {h20['hybrid_cer_pct']:.2f}% (from 1.08%)",
-                 (80, h20["hybrid_cer_pct"]), xytext=(88, 0.28),
+                 (80, h20["hybrid_cer_pct"]), xytext=(78, 0.88),
                  arrowprops=dict(arrowstyle="->", color=C_INK, lw=1.0),
                  fontsize=8.4, fontweight="bold",
                  bbox=dict(boxstyle="round,pad=0.25", fc="#EFF6FF", ec="#2563EB", lw=0.8))
 
+    # Calibration Summary Box placed safely at bottom-left
     ax3.text(0.04, 0.08,
              f"Zero-Snooping CTC Calibration:\n"
              f"• AUROC (mean-char): {STR['real_photos_confidence']['auroc_mean_char_conf']:.3f}\n"
