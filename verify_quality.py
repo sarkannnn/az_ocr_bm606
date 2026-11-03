@@ -18,12 +18,14 @@ TARGET_CHARS = set("şçğəqypŞÇĞƏQYP")
 random.seed(42)
 
 splits = [
-    ("synth_word/train", "data/synth_word/train"),
-    ("synth_word/val",   "data/synth_word/val"),
-    ("synth_word/test",  "data/synth_word/test"),
-    ("synth_line/train", "data/synth_line/train"),
-    ("synth_line/val",   "data/synth_line/val"),
-    ("synth_line/test",  "data/synth_line/test"),
+    ("synth_word_v2/train", "data/synth_word_v2/train"),
+    ("synth_word_v2/val",   "data/synth_word_v2/val"),
+    ("synth_word_v2/test",  "data/synth_word_v2/test"),
+    ("synth_line_v2/train", "data/synth_line_v2/train"),
+    ("synth_line_v2/val",   "data/synth_line_v2/val"),
+    ("synth_line_v2/test",  "data/synth_line_v2/test"),
+    ("synth_word/train",    "data/synth_word/train"),
+    ("synth_line/train",    "data/synth_line/train"),
 ]
 
 def check_edge_ink(img_path, threshold=128):
