@@ -13,7 +13,9 @@ os.environ["PYTHONUTF8"] = "1"
 os.environ["PATH"] += r";C:\Program Files\Tesseract-OCR"
 os.environ["TESSDATA_PREFIX"] = r"D:\laragon\www\az_ocr_bm606\tessdata"
 
-IMG_PATH = r"C:\Users\serxan.m\.gemini\antigravity-ide\brain\1ece9f72-797d-4105-b45d-b26d0dfbe9ac\.user_uploaded\media_1793193977057.jpg"
+IMG_PATH = Path("data/real_docs/photo1_times.jpg")
+if not IMG_PATH.exists():
+    IMG_PATH = Path(r"C:\Users\serxan.m\.gemini\antigravity-ide\brain\1ece9f72-797d-4105-b45d-b26d0dfbe9ac\.user_uploaded\media_1793193977057.jpg")
 OUT_DIR = Path("results/real_test")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 CROPS_DIR = OUT_DIR / "crops"

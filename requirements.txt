@@ -7,4 +7,9 @@ tqdm
 matplotlib
 trdg            # sintetik məlumat (pip install trdg)
 datasets        # yalnız --hf-wiki üçün
-pytesseract     # yalnız Tesseract baseline üçün (+ sistemdə tesseract-ocr, tesseract-ocr-aze)
+pytesseract     # Tesseract baseline üçün (+ sistemdə tesseract-ocr, tesseract-ocr-aze)
+pandas          # cədvəl analizi, benchmark və hesabat generasiyası
+symspellpy      # Azərbaycan dili lüğət korreksiyası (postprocess.py)
+python-docx     # Word formatında elmi monaqrafiya və hesabatların qurulması
+scipy           # statistik analiz və konfidens intervalları
+easyocr         # çoxdilli müqayisəli OCR baseline

@@ -14,7 +14,9 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
 WORKSPACE = Path(__file__).resolve().parent.parent
-PAPER_FILE = WORKSPACE / "paper" / "paper.md"
+PAPER_FILE = WORKSPACE / "paper" / "paper_v4.md"
+if not PAPER_FILE.exists():
+    PAPER_FILE = WORKSPACE / "paper" / "paper.md"
 
 def sha256_file(p):
     if not p.exists():
