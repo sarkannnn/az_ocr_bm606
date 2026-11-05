@@ -98,15 +98,18 @@ def extract_tight_text_lines(img_bgr: np.ndarray) -> list:
     if img_bgr is None or img_bgr.size == 0:
         return []
     H, W = img_bgr.shape[:2]
-    if H < 12 or W < 12:
+    if H < 18 or W < 18:
         return [img_bgr]
 
     gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if img_bgr.ndim == 3 else img_bgr
-    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=max(5, H // 4))
-    ink = (bg.astype(np.int16) - gray.astype(np.int16)) > 14
+    k = max(9, (min(H, W) // 5) | 1)
+    bg = cv2.medianBlur(gray, k)
+    diff = bg.astype(np.int16) - gray.astype(np.int16)
+    thresh = max(10, np.percentile(diff, 85))
+    ink = diff > thresh
     row_counts = ink.sum(axis=1)
 
-    thresh_pixels = max(8, int(W * 0.015))
+    thresh_pixels = max(5, int(W * 0.02))
     active_rows = row_counts >= thresh_pixels
 
     bands = []
@@ -134,7 +137,8 @@ def extract_tight_text_lines(img_bgr: np.ndarray) -> list:
         line_strip = img_bgr[cy0:cy1, :]
 
         strip_gray = gray[cy0:cy1, :]
-        strip_ink = (bg[cy0:cy1, :].astype(np.int16) - strip_gray.astype(np.int16)) > 14
+        strip_bg = bg[cy0:cy1, :]
+        strip_ink = (strip_bg.astype(np.int16) - strip_gray.astype(np.int16)) > thresh
         valid_cols = np.where(strip_ink.sum(axis=0) > 0)[0]
         if len(valid_cols) > 0:
             cx0 = max(0, int(valid_cols.min()) - 4)
@@ -314,17 +318,26 @@ LIVE_CAMERA_HTML = """
     </button>
   </div>
 
+  <!-- Native Phone Camera Shutter for Ultra-sharp Focus -->
+  <div style="margin-top: 8px;">
+    <label style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #334155; color: #f8fafc; border: 1.5px dashed #64748b; border-radius: 10px; padding: 10px 14px; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center;">
+      🎯 <span>Telefonun Doğma Kamerası ilə Çək (Tam Aydın / Makro Fokus)</span>
+      <input type="file" accept="image/*" capture="environment" onchange="window.azHandleNativeFile(this)" style="display: none;" />
+    </label>
+  </div>
+
   <!-- Live Result Display right below camera -->
   <div style="margin-top: 12px; background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-      <span id="az-live-status" style="font-size: 12px; color: #94a3b8;">Hazırdır — "📸 Çək və Oxu" və ya "🔄 Canlı Oxu" seçin</span>
+      <span id="az-live-status" style="font-size: 12px; color: #94a3b8;">Hazırdır — "📸 Çək və Oxu" və ya "🎯 Doğma Kamera" seçin</span>
       <button type="button" onclick="window.azCopyResult()" id="az-btn-copy" style="background: #3b82f6; color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; cursor: pointer;">
         📋 Kopyala
       </button>
     </div>
     <textarea id="az-live-result" rows="3" placeholder="Kameradan oxunan Azərbaycan dilindəki mətn dərhal burada görünəcək..." style="width: 100%; background: #0f172a; color: #f8fafc; border: 1px solid #475569; border-radius: 8px; padding: 10px; font-size: 18px; font-weight: 600; line-height: 1.4; resize: vertical; box-sizing: border-box;"></textarea>
-    <div style="display: flex; align-items: center; gap: 10px; margin-top: 8px;">
-      <canvas id="az-crop-preview" style="height: 36px; max-width: 100%; border-radius: 4px; border: 1px solid #475569; display: none;"></canvas>
+    <div style="margin-top: 8px;">
+      <div style="font-size: 11px; color: #64748b; margin-bottom: 3px;">Modelin gördüyü son kəsim:</div>
+      <canvas id="az-crop-preview" style="height: 48px; max-width: 100%; border-radius: 6px; border: 1px solid #475569; background: #000; display: block;"></canvas>
     </div>
   </div>
 </div>
@@ -385,7 +398,8 @@ window.azStartCamera = async function() {
       video: {
         facingMode: { ideal: window.azState.facingMode },
         width: { ideal: 1920 },
-        height: { ideal: 1080 }
+        height: { ideal: 1080 },
+        advanced: [{ focusMode: "continuous" }]
       }
     };
     var stream = await navigator.mediaDevices.getUserMedia(constraints);
@@ -534,6 +548,41 @@ window.azCopyResult = function() {
   }
 };
 
+window.azHandleNativeFile = function(input) {
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  var reader = new FileReader();
+  var statusEl = document.getElementById("az-live-status");
+  if (statusEl) statusEl.innerText = "⏳ HD Şəkil oxunur...";
+  reader.onload = async function(e) {
+    var b64 = e.target.result;
+    try {
+      var resp = await fetch("/api/ocr", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          image: b64,
+          engine: window.azState.engine || "crnn_v2",
+          multi_line: true,
+          postprocess: true
+        })
+      });
+      var data = await resp.json();
+      var resArea = document.getElementById("az-live-result");
+      if (resArea && data.text !== undefined) {
+        resArea.value = data.text || "(Mətn tapılmadı)";
+      }
+      if (statusEl) {
+        var engLabel = data.engine || (window.azState.engine === "tesseract" ? "Tesseract" : "CRNN V2");
+        statusEl.innerText = "✅ " + engLabel + " (" + (data.ms || 0) + " ms | " + (data.lines || 1) + " sətir)";
+      }
+    } catch (err) {
+      if (statusEl) statusEl.innerText = "⚠️ Xəta: " + err.message;
+    }
+  };
+  reader.readAsDataURL(file);
+};
+
 // Auto-launch camera as soon as the video element mounts in DOM
 (function() {
   var booted = false;
@@ -642,6 +691,11 @@ def register_api_routes(fastapi_app):
             img_bgr = cv2.imdecode(arr, cv2.IMREAD_COLOR)
             if img_bgr is None:
                 return JSONResponse({"error": "Invalid image"}, status_code=400)
+
+            # Debug save to inspect exact user mobile input
+            cv2.imwrite("scratch/last_mobile_request.jpg", img_bgr)
+            h_in, w_in = img_bgr.shape[:2]
+            print(f"[*] /api/ocr gələn şəkil: {w_in}x{h_in}, model: {engine_req}")
 
             model_choice = TESSERACT_MODEL_KEY if engine_req == "tesseract" else DEFAULT_MODEL_KEY
             final_pred, raw_pred, elapsed_ms, n_lines = run_ocr_on_bgr(
