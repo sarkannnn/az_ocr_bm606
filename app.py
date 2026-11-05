@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Azərbaycan Dili üçün OCR Veb və Mobil İstifadəçi Arayüzü (Gradio).
+"""Azərbaycan Dili üçün Canlı Kamera və Veb OCR Arayüzü (Gradio + HTML5 Live Camera).
 
-Bu tətbiq həm masaüstü brauzerlərdən, həm də smartfonlardan (kamera ilə sənəd çəkərək)
-birbaşa istifadə oluna bilir.
-
-İstifadə qaydası:
-    python app.py                # Yalnız lokal şəbəkə və kompüter üçün (http://localhost:7860)
-    python app.py --share        # Telefonda istifadə üçün 72 saatlıq pulsuz ictimai link yaradır
-    python app.py --port 8080    # Xüsusi port təyin etmək üçün
+Xüsusiyyətlər:
+- Telefonda açıldıqda avtomatik Arxa Kameranı (canlı video) işə salır.
+- Kamera üzərində hədəf oxuma çərçivəsi (Tək Sətir / Paraqraf / Tam Ekran).
+- Həm "📸 Çək və Oxu", həm də "🔄 Canlı Avto-Oxu" (fasiləsiz real-vaxt OCR) rejimi.
+- Uzun sətirlər üçün avtomatik sözarası bölmə (smart chunking) və çoxsətirli seqmentasiya.
+- SymSpell (116,000+ söz) ilə Azərbaycan dili lüğət korreksiyası.
 """
 
 import argparse
+import base64
+import os
 import socket
 import sys
 import time
@@ -20,26 +21,40 @@ from typing import Optional, Tuple
 import cv2
 import gradio as gr
 import numpy as np
+import pytesseract
 import torch
+from fastapi import Request
+from fastapi.responses import JSONResponse
+from PIL import Image
 
-from common import infer_single_crop, load_model_checkpoint
+# Setup Tesseract Environment
+os.environ["PATH"] = os.environ.get("PATH", "") + r";C:\Program Files\Tesseract-OCR"
+os.environ["TESSDATA_PREFIX"] = r"D:\laragon\www\az_ocr_bm606\tessdata"
+
+from common import (
+    infer_line_smart,
+    load_model_checkpoint,
+    normalize,
+    segment_lines_opencv,
+)
 from postprocess import AzerbaijaniPostProcessor
 
 # Ensure UTF-8 output
 sys.stdout.reconfigure(encoding="utf-8")
 
 # Model definitions
+TESSERACT_MODEL_KEY = "Tesseract OCR (aze - Baseline)"
+DEFAULT_MODEL_KEY = "CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]"
+
 MODEL_CONFIGS = {
-    "CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]": "runs/line_v2/best.pt",
+    DEFAULT_MODEL_KEY: "runs/line_v2/best.pt",
+    TESSERACT_MODEL_KEY: "tesseract",
     "CRNN Söz Modeli (V2 - 32x128)": "runs/word_v2_20261027_180300/best.pt",
     "CRNN Sətir Modeli (V1 - Baza)": "runs/line/best.pt",
     "CRNN Söz Modeli (V1 - Baza)": "runs/word/best.pt",
 }
-
-# Cache for loaded models
 LOADED_MODELS = {}
 
-# Initialize post-processor
 print("[*] Lüğət bazası yüklənir...")
 postprocessor = AzerbaijaniPostProcessor()
 if postprocessor.loaded:
@@ -50,10 +65,11 @@ else:
 
 def get_model(choice: str):
     """Lazily load and cache the requested model."""
+    if choice not in MODEL_CONFIGS:
+        choice = DEFAULT_MODEL_KEY
     if choice not in LOADED_MODELS:
         ckpt_path = MODEL_CONFIGS[choice]
         if not Path(ckpt_path).exists():
-            # Fallback
             ckpt_path = "runs/line_v2/best.pt" if "Sətir" in choice else "runs/word_v2_20261027_180300/best.pt"
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model, cfg, vocab, device = load_model_checkpoint(ckpt_path, device=device)
@@ -61,9 +77,8 @@ def get_model(choice: str):
     return LOADED_MODELS[choice]
 
 
-# Preload the default model for fast first inference
 print("[*] Standart V2 Sətir modeli yüklənir...")
-get_model("CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]")
+get_model(DEFAULT_MODEL_KEY)
 
 
 def get_local_ip():
@@ -78,12 +93,73 @@ def get_local_ip():
         return "127.0.0.1"
 
 
-def ocr_recognize(img: Optional[np.ndarray], model_choice: str, use_postprocess: bool) -> Tuple[str, str, str]:
-    """Main OCR pipeline function for Gradio."""
-    if img is None:
-        return "Zəhmət olmasa bir şəkil yükləyin və ya kamera ilə çəkin.", "", ""
+def run_tesseract_ocr(img_bgr: np.ndarray, multi_line: bool = True) -> str:
+    """Tesseract baseline OCR execution on BGR image."""
+    rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+    pil_img = Image.fromarray(rgb)
+    psm = 6 if multi_line else 7
+    try:
+        txt = pytesseract.image_to_string(pil_img, lang="aze", config=f"--psm {psm}")
+        return normalize(txt.strip())
+    except Exception as e:
+        return f"Tesseract xətası: {e}"
 
-    # Convert RGB/RGBA from Gradio to BGR for OpenCV processing
+
+def run_ocr_on_bgr(
+    img_bgr: np.ndarray,
+    model_choice: str = DEFAULT_MODEL_KEY,
+    use_postprocess: bool = True,
+    multi_line: bool = True,
+) -> Tuple[str, str, float, int]:
+    """Run smart line/multi-line OCR on a BGR numpy image."""
+    start_time = time.perf_counter()
+
+    if model_choice == TESSERACT_MODEL_KEY:
+        tess_text = run_tesseract_ocr(img_bgr, multi_line=multi_line)
+        elapsed_ms = (time.perf_counter() - start_time) * 1000
+        n_lines = len([l for l in tess_text.splitlines() if l.strip()]) or 1
+        final_text = tess_text
+        if use_postprocess and postprocessor and postprocessor.loaded:
+            lines = []
+            for l in tess_text.splitlines():
+                toks = [postprocessor.correct_word(t, max_edit_distance=1) for t in l.split()]
+                lines.append(postprocessor.clean_punctuation(" ".join(toks)))
+            final_text = "\n".join(lines)
+        return final_text, tess_text, elapsed_ms, n_lines
+
+    model, cfg, vocab, device = get_model(model_choice)
+
+    is_word_model = cfg.get("width", 512) <= 128
+    if is_word_model or not multi_line:
+        line_crops = [img_bgr]
+    else:
+        line_crops = segment_lines_opencv(img_bgr)
+
+    raw_lines = []
+    final_lines = []
+    for lc in line_crops:
+        rp = infer_line_smart(model, cfg, vocab, lc, device)
+        if not rp:
+            continue
+        raw_lines.append(rp)
+        if use_postprocess and postprocessor and postprocessor.loaded:
+            tokens = rp.split()
+            corrected_tokens = [postprocessor.correct_word(t, max_edit_distance=1) for t in tokens]
+            final_lines.append(postprocessor.clean_punctuation(" ".join(corrected_tokens)))
+        else:
+            final_lines.append(rp)
+
+    elapsed_ms = (time.perf_counter() - start_time) * 1000
+    raw_pred = "\n".join(raw_lines)
+    final_pred = "\n".join(final_lines)
+    return final_pred, raw_pred, elapsed_ms, len(line_crops)
+
+
+def ocr_recognize(img: Optional[np.ndarray], model_choice: str, use_postprocess: bool) -> Tuple[str, str, str]:
+    """Gradio callback for uploaded/example images."""
+    if img is None:
+        return "Zəhmət olmasa bir şəkil yükləyin və ya yuxarıdakı canlı kameradan istifadə edin.", "", ""
+
     if img.ndim == 3 and img.shape[2] == 3:
         img_bgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     elif img.ndim == 3 and img.shape[2] == 4:
@@ -91,125 +167,435 @@ def ocr_recognize(img: Optional[np.ndarray], model_choice: str, use_postprocess:
     else:
         img_bgr = img
 
-    # Load requested model
-    model, cfg, vocab, device = get_model(model_choice)
+    final_pred, raw_pred, elapsed_ms, n_lines = run_ocr_on_bgr(
+        img_bgr, model_choice=model_choice, use_postprocess=use_postprocess, multi_line=True
+    )
 
-    # Perform inference
-    start_time = time.perf_counter()
-    raw_pred = infer_single_crop(model, cfg, vocab, img_bgr, device)
-    elapsed_ms = (time.perf_counter() - start_time) * 1000
+    device_name = "CPU"
+    if model_choice != TESSERACT_MODEL_KEY:
+        _, _, _, device = get_model(model_choice)
+        device_name = device.type.upper()
 
-    # Post-process with Azerbaijani dictionary if requested
-    final_pred = raw_pred
-    postprocess_applied = False
-    if use_postprocess and postprocessor and postprocessor.loaded:
-        tokens = raw_pred.split()
-        corrected_tokens = [postprocessor.correct_word(t, max_edit_distance=1) for t in tokens]
-        final_pred = postprocessor.clean_punctuation(" ".join(corrected_tokens))
-        postprocess_applied = True
-
-    # Info summary
     info_lines = [
-        f"⚡ **İnferens Sürəti:** {elapsed_ms:.1f} ms",
-        f"🖥️ **Hesablama Cihazı:** {device.type.upper()}",
-        f"📐 **Giriş Ölçüsü:** {cfg.get('height', 32)}×{cfg.get('width', 512)} px",
-        f"📚 **Lüğət Düzəlişi:** {'Tətbiq edildi' if postprocess_applied else 'Söndürülüb'}"
+        f"⚡ **Sürət:** {elapsed_ms:.1f} ms",
+        f"📏 **Aşkarlanan sətir:** {n_lines}",
+        f"🖥️ **Mühərrik:** {model_choice.split()[0]} ({device_name})",
+        f"📚 **Lüğət Düzəlişi:** {'Aktiv' if use_postprocess else 'Söndürülüb'}",
     ]
-    info_md = " | ".join(info_lines)
-
-    return final_pred, raw_pred, info_md
+    return final_pred, raw_pred, " | ".join(info_lines)
 
 
-# Build Custom Gradio Interface
+def ocr_from_base64_bridge(b64_payload: str, model_choice: str, use_postprocess: bool) -> Tuple[str, str, str]:
+    """Fallback bridge if triggered via Gradio state."""
+    if not b64_payload or "," not in b64_payload:
+        return "", "", ""
+    try:
+        header, encoded = b64_payload.split(",", 1)
+        multi = "mode=multi" in header
+        img_bytes = base64.b64decode(encoded)
+        arr = np.frombuffer(img_bytes, dtype=np.uint8)
+        img_bgr = cv2.imdecode(arr, cv2.IMREAD_COLOR)
+        if img_bgr is None:
+            return "Şəkil oxunmadı.", "", ""
+        final_pred, raw_pred, elapsed_ms, n_lines = run_ocr_on_bgr(
+            img_bgr, model_choice=model_choice, use_postprocess=use_postprocess, multi_line=multi
+        )
+        info = f"⚡ **Canlı Kamera Sürəti:** {elapsed_ms:.0f} ms | 📏 **Sətir:** {n_lines}"
+        return final_pred, raw_pred, info
+    except Exception as e:
+        return f"Xəta: {e}", "", ""
+
+
+LIVE_CAMERA_HTML = """
+<div id="az-cam-wrapper" style="background: #0f172a; color: #f8fafc; border-radius: 16px; padding: 14px; margin-bottom: 18px; box-shadow: 0 10px 25px rgba(0,0,0,0.25);">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span id="az-cam-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block; box-shadow: 0 0 8px #22c55e;"></span>
+      <strong style="font-size: 16px;">📹 Canlı Mobil Kamera Skaneri</strong>
+    </div>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+      <button type="button" onclick="window.azSetBoxMode('line')" id="btn-mode-line" style="background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 5px 10px; font-size: 12px; font-weight: 600; cursor: pointer;">📏 Tək Sətir</button>
+      <button type="button" onclick="window.azSetBoxMode('para')" id="btn-mode-para" style="background: #334155; color: #cbd5e1; border: none; border-radius: 8px; padding: 5px 10px; font-size: 12px; font-weight: 600; cursor: pointer;">📄 Paraqraf</button>
+      <button type="button" onclick="window.azSetBoxMode('full')" id="btn-mode-full" style="background: #334155; color: #cbd5e1; border: none; border-radius: 8px; padding: 5px 10px; font-size: 12px; font-weight: 600; cursor: pointer;">🖼️ Tam Ekran</button>
+      <select id="az-cam-engine-select" onchange="window.azState.engine = this.value" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; border-radius: 8px; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">
+        <option value="crnn_v2" selected>⚡ Bizim CRNN Modelimiz (V2)</option>
+        <option value="tesseract">🔍 Tesseract OCR (aze)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Live Video Container -->
+  <div id="az-video-stage" style="position: relative; width: 100%; max-height: 52vh; background: #020617; border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 220px;">
+    <video id="az-cam-video" autoplay playsinline muted style="width: 100%; height: 100%; max-height: 52vh; object-fit: cover; display: block;"></video>
+
+    <!-- Darkened mask outside target box & glowing green guide box -->
+    <div id="az-scan-box" style="position: absolute; left: 4%; right: 4%; top: 38%; height: 24%; border: 2.5px solid #22c55e; border-radius: 10px; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.48), inset 0 0 15px rgba(34, 197, 94, 0.35); pointer-events: none; transition: all 0.2s ease;">
+      <div style="position: absolute; top: -22px; left: 8px; background: #22c55e; color: #022c22; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
+        MƏTNİ BU ÇƏRÇİVƏDƏ SAXLAYIN
+      </div>
+    </div>
+
+    <div id="az-cam-msg" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(2,6,23,0.85); color: #fff; padding: 16px; text-align: center; z-index: 5;">
+      <div style="font-size: 15px; margin-bottom: 10px;" id="az-cam-msg-text">📷 Kamera icazəsi gözlənilir...</div>
+      <button type="button" onclick="window.azStartCamera()" style="background: #22c55e; color: #022c22; font-weight: 700; border: none; padding: 10px 20px; border-radius: 10px; font-size: 15px; cursor: pointer;">
+        📹 Kameranı İndi Aç
+      </button>
+    </div>
+  </div>
+
+  <!-- Camera Action Buttons -->
+  <div style="display: grid; grid-template-columns: 2fr 1.4fr auto auto; gap: 8px; margin-top: 12px;">
+    <button type="button" onclick="window.azSnapNow()" id="az-btn-snap" style="background: linear-gradient(135deg, #22c55e, #16a34a); color: #022c22; border: none; border-radius: 10px; padding: 13px 12px; font-size: 16px; font-weight: 800; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(34,197,94,0.35);">
+      📸 Çək və Oxu
+    </button>
+    <button type="button" onclick="window.azToggleAuto()" id="az-btn-auto" style="background: #1e293b; color: #f8fafc; border: 1.5px solid #475569; border-radius: 10px; padding: 13px 10px; font-size: 14px; font-weight: 700; cursor: pointer;">
+      🔄 Canlı Oxu: OFF
+    </button>
+    <button type="button" onclick="window.azSwitchCam()" title="Arxa/Ön Kamera" style="background: #1e293b; color: #f8fafc; border: 1px solid #334155; border-radius: 10px; padding: 12px; font-size: 16px; cursor: pointer;">
+      🔁
+    </button>
+    <button type="button" onclick="window.azToggleTorch()" id="az-btn-torch" title="Fənər (Flash)" style="background: #1e293b; color: #f8fafc; border: 1px solid #334155; border-radius: 10px; padding: 12px; font-size: 16px; cursor: pointer;">
+      🔦
+    </button>
+  </div>
+
+  <!-- Live Result Display right below camera -->
+  <div style="margin-top: 12px; background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span id="az-live-status" style="font-size: 12px; color: #94a3b8;">Hazırdır — "📸 Çək və Oxu" və ya "🔄 Canlı Oxu" seçin</span>
+      <button type="button" onclick="window.azCopyResult()" id="az-btn-copy" style="background: #3b82f6; color: #fff; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; cursor: pointer;">
+        📋 Kopyala
+      </button>
+    </div>
+    <textarea id="az-live-result" rows="3" placeholder="Kameradan oxunan Azərbaycan dilindəki mətn dərhal burada görünəcək..." style="width: 100%; background: #0f172a; color: #f8fafc; border: 1px solid #475569; border-radius: 8px; padding: 10px; font-size: 18px; font-weight: 600; line-height: 1.4; resize: vertical; box-sizing: border-box;"></textarea>
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 8px;">
+      <canvas id="az-crop-preview" style="height: 36px; max-width: 100%; border-radius: 4px; border: 1px solid #475569; display: none;"></canvas>
+    </div>
+  </div>
+</div>
+"""
+
+CUSTOM_HEAD_SCRIPT = """
+<script>
+window.azState = {
+  stream: null,
+  facingMode: "environment",
+  boxMode: "line",
+  engine: "crnn_v2",
+  autoTimer: null,
+  busy: false,
+  torchOn: false
+};
+
+window.azSetBoxMode = function(mode) {
+  window.azState.boxMode = mode;
+  var box = document.getElementById("az-scan-box");
+  if (!box) return;
+  var modes = {
+    line: { top: "38%", height: "24%" },
+    para: { top: "22%", height: "56%" },
+    full: { top: "6%",  height: "88%" }
+  };
+  var m = modes[mode] || modes.line;
+  box.style.top = m.top;
+  box.style.height = m.height;
+  ["line", "para", "full"].forEach(function(k) {
+    var b = document.getElementById("btn-mode-" + k);
+    if (b) {
+      b.style.background = (k === mode) ? "#2563eb" : "#334155";
+      b.style.color = (k === mode) ? "#fff" : "#cbd5e1";
+    }
+  });
+};
+
+window.azStartCamera = async function() {
+  var video = document.getElementById("az-cam-video");
+  var msgBox = document.getElementById("az-cam-msg");
+  var msgText = document.getElementById("az-cam-msg-text");
+  if (!video) return;
+
+  if (window.azState.stream) {
+    window.azState.stream.getTracks().forEach(function(t) { t.stop(); });
+  }
+
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    if (msgBox) msgBox.style.display = "flex";
+    if (msgText) msgText.innerText = "⚠️ Brauzer kameranı dəstəkləmir və ya HTTPS linki lazımdır (gradio.live linkindən istifadə edin).";
+    return;
+  }
+
+  try {
+    var constraints = {
+      audio: false,
+      video: {
+        facingMode: { ideal: window.azState.facingMode },
+        width: { ideal: 1920 },
+        height: { ideal: 1080 }
+      }
+    };
+    var stream = await navigator.mediaDevices.getUserMedia(constraints);
+    window.azState.stream = stream;
+    video.srcObject = stream;
+    await video.play();
+    if (msgBox) msgBox.style.display = "none";
+  } catch (err) {
+    console.warn("Camera start error:", err);
+    if (msgBox) msgBox.style.display = "flex";
+    if (msgText) msgText.innerText = "📷 Kameranı açmaq üçün aşağıdakı düyməyə toxunun və icazə (Allow) verin:";
+  }
+};
+
+window.azSwitchCam = function() {
+  window.azState.facingMode = (window.azState.facingMode === "environment") ? "user" : "environment";
+  window.azStartCamera();
+};
+
+window.azToggleTorch = async function() {
+  if (!window.azState.stream) return;
+  var track = window.azState.stream.getVideoTracks()[0];
+  if (!track) return;
+  try {
+    window.azState.torchOn = !window.azState.torchOn;
+    await track.applyConstraints({ advanced: [{ torch: window.azState.torchOn }] });
+    var btn = document.getElementById("az-btn-torch");
+    if (btn) btn.style.background = window.azState.torchOn ? "#eab308" : "#1e293b";
+  } catch (e) {
+    var status = document.getElementById("az-live-status");
+    if (status) status.innerText = "Bu cihazda fənər brauzerdən idarə olunmur.";
+  }
+};
+
+window.azCaptureAndSend = async function() {
+  if (window.azState.busy) return;
+  var video = document.getElementById("az-cam-video");
+  if (!video || !video.videoWidth || !video.videoHeight) {
+    await window.azStartCamera();
+    return;
+  }
+
+  window.azState.busy = true;
+  var statusEl = document.getElementById("az-live-status");
+  if (statusEl) statusEl.innerText = "⏳ Oxunur...";
+
+  try {
+    var vw = video.videoWidth;
+    var vh = video.videoHeight;
+    var mode = window.azState.boxMode;
+
+    var topFrac = 0.38, hFrac = 0.24;
+    if (mode === "para") { topFrac = 0.22; hFrac = 0.56; }
+    else if (mode === "full") { topFrac = 0.06; hFrac = 0.88; }
+
+    var sx = Math.round(vw * 0.04);
+    var sw = Math.round(vw * 0.92);
+    var sy = Math.round(vh * topFrac);
+    var sh = Math.round(vh * hFrac);
+
+    var canvas = document.getElementById("az-crop-preview");
+    if (!canvas) {
+      canvas = document.createElement("canvas");
+    }
+    canvas.width = sw;
+    canvas.height = sh;
+    canvas.style.display = "block";
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(video, sx, sy, sw, sh, 0, 0, sw, sh);
+
+    var b64 = canvas.toDataURL("image/jpeg", 0.88);
+    var resp = await fetch("/api/ocr", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        image: b64,
+        engine: window.azState.engine || "crnn_v2",
+        multi_line: (mode !== "line"),
+        postprocess: true
+      })
+    });
+    var data = await resp.json();
+    var resArea = document.getElementById("az-live-result");
+    if (resArea && data.text !== undefined) {
+      resArea.value = data.text || "(Mətn tapılmadı — yazını yaşıl çərçivəyə gətirin)";
+    }
+    if (statusEl) {
+      statusEl.innerText = "✅ Oxundu (" + (data.ms || 0) + " ms | " + (data.lines || 1) + " sətir)";
+    }
+  } catch (err) {
+    if (statusEl) statusEl.innerText = "⚠️ Xəta: " + err.message;
+  } finally {
+    window.azState.busy = false;
+  }
+};
+
+window.azSnapNow = function() {
+  window.azCaptureAndSend();
+};
+
+window.azToggleAuto = function() {
+  var btn = document.getElementById("az-btn-auto");
+  if (window.azState.autoTimer) {
+    clearInterval(window.azState.autoTimer);
+    window.azState.autoTimer = null;
+    if (btn) {
+      btn.innerText = "🔄 Canlı Oxu: OFF";
+      btn.style.background = "#1e293b";
+      btn.style.borderColor = "#475569";
+    }
+  } else {
+    window.azCaptureAndSend();
+    window.azState.autoTimer = setInterval(window.azCaptureAndSend, 1100);
+    if (btn) {
+      btn.innerText = "🔄 Canlı Oxu: ON";
+      btn.style.background = "#dc2626";
+      btn.style.borderColor = "#f87171";
+    }
+  }
+};
+
+window.azCopyResult = function() {
+  var resArea = document.getElementById("az-live-result");
+  var btn = document.getElementById("az-btn-copy");
+  if (!resArea || !resArea.value) return;
+  navigator.clipboard.writeText(resArea.value);
+  if (btn) {
+    var old = btn.innerText;
+    btn.innerText = "✓ Kopyalandı!";
+    setTimeout(function() { btn.innerText = old; }, 1500);
+  }
+};
+
+// Auto-launch camera as soon as the video element mounts in DOM
+(function() {
+  var booted = false;
+  var checkTimer = setInterval(function() {
+    var v = document.getElementById("az-cam-video");
+    if (v && !booted) {
+      booted = true;
+      clearInterval(checkTimer);
+      window.azStartCamera();
+    }
+  }, 300);
+})();
+</script>
+"""
+
 custom_css = """
-.main-title { text-align: center; margin-bottom: 5px; }
-.sub-title { text-align: center; color: #555; margin-bottom: 20px; font-size: 15px; }
-.output-box textarea { font-size: 1.25rem !important; font-weight: 500 !important; }
+.main-title { text-align: center; margin-bottom: 4px; }
+.sub-title { text-align: center; color: #64748b; margin-bottom: 12px; font-size: 14px; }
+.output-box textarea { font-size: 1.2rem !important; font-weight: 500 !important; }
 """
 
 with gr.Blocks(title="Azərbaycan Dili OCR (BM 606)") as demo:
     gr.HTML("""
         <div class="main-title">
-            <h2>🇦🇿 Azərbaycan Dili üçün Optik Mətn Tanıma (CRNN + CTC)</h2>
+            <h2 style="margin: 0;">🇦🇿 Azərbaycan Dili üçün Optik Mətn Tanıma (CRNN + CTC)</h2>
         </div>
         <div class="sub-title">
-            BM 606 Magistr Tədqiqatı: Telefon kamerası şəkilləri, çap sənədləri və SymSpell lüğət korreksiyası
+            Canlı Mobil Kamera Skaneri və Sənəd Oxuma Sistemi (SymSpell Lüğət Dəstəyi ilə)
         </div>
     """)
 
-    with gr.Row():
-        with gr.Column(scale=1):
-            image_input = gr.Image(
-                label="📷 Sənəd / Sətir Şəkli (Kamera və ya Qalereya)",
-                sources=["upload", "webcam", "clipboard"],
-                type="numpy"
-            )
-            
-            with gr.Accordion("⚙️ Model və Emal Parametrləri", open=True):
+    # 1. Top Live Mobile Camera Scanner (Auto-opens on phone!)
+    gr.HTML(LIVE_CAMERA_HTML)
+
+    # 2. File Upload & Examples Section
+    with gr.Accordion("📁 Qalereyadan Şəkil Yüklə və ya Hazır Nümunələri Sına", open=False):
+        with gr.Row():
+            with gr.Column(scale=1):
+                image_input = gr.Image(
+                    label="🖼️ Qalereyadan Şəkil Seçin",
+                    sources=["upload", "clipboard"],
+                    type="numpy"
+                )
                 model_dropdown = gr.Dropdown(
                     label="OCR Modeli",
                     choices=list(MODEL_CONFIGS.keys()),
-                    value="CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]"
+                    value=DEFAULT_MODEL_KEY
                 )
                 postprocess_chk = gr.Checkbox(
                     label="Azərbaycan dili lüğət korreksiyasını tətbiq et (SymSpell)",
                     value=True
                 )
+                submit_btn = gr.Button("🔍 Yüklənmiş Şəkli Oxu", variant="primary", size="lg")
 
-            submit_btn = gr.Button("🔍 Mətni Tanı (OCR)", variant="primary", size="lg")
-
-        with gr.Column(scale=1):
-            output_text = gr.Textbox(
-                label="✅ Tanınmış Mətn (Düzəldilmiş)",
-                placeholder="Oxunmuş mətn burada görünəcək...",
-                lines=4,
-                elem_classes=["output-box"]
-            )
-            
-            with gr.Accordion("📝 Ətraflı Məlumat və Xam Çıxış", open=False):
+            with gr.Column(scale=1):
+                output_text = gr.Textbox(
+                    label="✅ Tanınmış Mətn (Düzəldilmiş)",
+                    placeholder="Oxunmuş mətn burada görünəcək...",
+                    lines=4,
+                    elem_classes=["output-box"]
+                )
                 raw_text = gr.Textbox(
                     label="Xam Model Çıxışı (Lüğət düzəlişsiz)",
-                    lines=3,
+                    lines=2,
                     interactive=False
                 )
-            
-            info_box = gr.Markdown("Emal üçün sənəd şəkli təqdim edin.")
+                info_box = gr.Markdown("Emal üçün şəkil seçin.")
 
-    # Examples gallery
-    example_paths = [
-        ["results/real_fix8/crops_calibri/line_00.png", "CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]", True],
-        ["results/real_fix8/crops_times/line_00.png", "CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]", True],
-        ["results/real_fix9/crops/line_00.png", "CRNN Sətir Modeli (V2 - 32x512) [Tövsiyə olunan]", True]
-    ]
-    
-    # Filter examples that actually exist
-    valid_examples = [ex for ex in example_paths if Path(ex[0]).exists()]
-    if valid_examples:
-        gr.Examples(
-            examples=valid_examples,
-            inputs=[image_input, model_dropdown, postprocess_chk],
-            outputs=[output_text, raw_text, info_box],
+        example_paths = [
+            ["results/real_fix8/crops_calibri/line_00.png", DEFAULT_MODEL_KEY, True],
+            ["results/real_fix8/crops_times/line_00.png", DEFAULT_MODEL_KEY, True],
+            ["results/real_fix9/crops/line_00.png", DEFAULT_MODEL_KEY, True],
+        ]
+        valid_examples = [ex for ex in example_paths if Path(ex[0]).exists()]
+        if valid_examples:
+            gr.Examples(
+                examples=valid_examples,
+                inputs=[image_input, model_dropdown, postprocess_chk],
+                outputs=[output_text, raw_text, info_box],
+                fn=ocr_recognize,
+                cache_examples=False,
+                label="💡 Hazır Test Nümunələri"
+            )
+
+        submit_btn.click(
             fn=ocr_recognize,
-            cache_examples=False,
-            label="💡 Hazır Test Nümunələri (Bir kliklə sınaqdan keçirin)"
+            inputs=[image_input, model_dropdown, postprocess_chk],
+            outputs=[output_text, raw_text, info_box]
         )
 
-    submit_btn.click(
-        fn=ocr_recognize,
-        inputs=[image_input, model_dropdown, postprocess_chk],
-        outputs=[output_text, raw_text, info_box]
-    )
 
-    gr.HTML("""
-        <div style="text-align: center; margin-top: 25px; font-size: 13px; color: #777;">
-            📱 <b>Telefonda istifadə qaydası:</b> Kompüterlə eyni Wi-Fi şəbəkəsinə qoşulun və telefonun brauzerində yuxarıda göstərilən yerli IP ünvanını açın.<br>
-            Həmçinin <code>python app.py --share</code> komandası ilə hər yerdən açıla bilən ictimai link əldə edə bilərsiniz.
-        </div>
-    """)
+def register_api_routes(fastapi_app):
+    """Attach the fast /api/ocr JSON endpoint to the underlying FastAPI server."""
+    @fastapi_app.post("/api/ocr")
+    async def api_ocr_endpoint(req: Request):
+        try:
+            body = await req.json()
+            b64_str = body.get("image", "")
+            engine_req = body.get("engine", "crnn_v2")
+            multi_line = bool(body.get("multi_line", False))
+            use_post = bool(body.get("postprocess", True))
+            if "," in b64_str:
+                b64_str = b64_str.split(",", 1)[1]
+            img_bytes = base64.b64decode(b64_str)
+            arr = np.frombuffer(img_bytes, dtype=np.uint8)
+            img_bgr = cv2.imdecode(arr, cv2.IMREAD_COLOR)
+            if img_bgr is None:
+                return JSONResponse({"error": "Invalid image"}, status_code=400)
+
+            model_choice = TESSERACT_MODEL_KEY if engine_req == "tesseract" else DEFAULT_MODEL_KEY
+            final_pred, raw_pred, elapsed_ms, n_lines = run_ocr_on_bgr(
+                img_bgr,
+                model_choice=model_choice,
+                use_postprocess=use_post,
+                multi_line=multi_line,
+            )
+            return JSONResponse({
+                "text": final_pred,
+                "raw": raw_pred,
+                "engine": "Tesseract (aze)" if engine_req == "tesseract" else "CRNN V2",
+                "ms": round(elapsed_ms, 1),
+                "lines": n_lines,
+            })
+        except Exception as e:
+            return JSONResponse({"error": str(e)}, status_code=500)
+
+    # Put /api/ocr at the beginning of router routes so catch-all routes don't shadow it
+    fastapi_app.router.routes.insert(0, fastapi_app.router.routes.pop())
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Azərbaycan Dili OCR Gradio Tətbiqi")
+    parser = argparse.ArgumentParser(description="Azərbaycan Dili OCR Canlı Kamera və Veb Tətbiqi")
     parser.add_argument("--share", action="store_true", help="Telefonda istifadə üçün ictimai Gradio linki yaradın")
     parser.add_argument("--port", type=int, default=7860, help="Server portu (default: 7860)")
     parser.add_argument("--host", type=str, default="0.0.0.0", help="Dinləniləcək IP (default: 0.0.0.0)")
@@ -218,23 +604,31 @@ def main():
 
     local_ip = get_local_ip()
     print("=" * 65)
-    print("🚀 AZƏRBAYCAN DİLİ OCR VEB VƏ MOBİL ARAYÜZÜ İŞƏ SALINIR")
+    print("🚀 AZƏRBAYCAN DİLİ CANLI KAMERA OCR SERVERİ İŞƏ SALINIR")
     print("=" * 65)
     print(f"💻 Kompüterdə açmaq üçün:     http://localhost:{args.port}")
     print(f"📱 Eyni Wi-Fi ilə telefonda:   http://{local_ip}:{args.port}")
     if args.share:
-        print("🌐 İctimai internet linki hazırlanır (Gradio Share)...")
-    else:
-        print("💡 Qeyd: Əgər hər yerdən telefonda açmaq istəsəniz: python app.py --share")
+        print("🌐 İctimai HTTPS linki hazırlanır (Canlı Kamera üçün)...")
     print("=" * 65)
 
-    demo.launch(
+    app_instance, local_url, share_url = demo.launch(
         server_name=args.host,
         server_port=args.port,
         share=args.share,
+        ssr_mode=False,
         css=custom_css,
-        pwa=True
+        head=CUSTOM_HEAD_SCRIPT,
+        pwa=True,
+        prevent_thread_lock=True,
     )
+    register_api_routes(app_instance)
+
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\n[*] Server dayandırıldı.")
 
 
 if __name__ == "__main__":
