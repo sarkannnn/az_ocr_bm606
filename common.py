@@ -205,3 +205,135 @@ def infer_single_crop(model: nn.Module, cfg: Dict[str, Any], vocab: Vocab, img: 
         out = model(x_tensor)
         best_ids = out.argmax(2).T.cpu().numpy()[0]
         return vocab.decode_greedy(best_ids)
+
+
+def split_line_into_chunks(crop_bgr: np.ndarray, n_chunks: int) -> List[np.ndarray]:
+    """Uzun sətirləri sözarası ağ boşluqlardan optimal hissələrə (chunk) bölür."""
+    if n_chunks <= 1:
+        return [crop_bgr]
+    gray = cv2.cvtColor(crop_bgr, cv2.COLOR_BGR2GRAY) if crop_bgr.ndim == 3 else crop_bgr
+    w = gray.shape[1]
+    if w < 60:
+        return [crop_bgr]
+    ink = (gray < np.percentile(gray, 35)).astype(np.float32)
+    proj = ink.sum(axis=0)
+    ksize = min(25, max(5, w // 20))
+    smooth_proj = np.convolve(proj, np.ones(ksize) / ksize, mode="same")
+    nominal_w = w / n_chunks
+    search_radius = int(nominal_w * 0.35)
+    splits = []
+    for k in range(1, n_chunks):
+        ideal_x = int(k * nominal_w)
+        x0 = max(15, ideal_x - search_radius)
+        x1 = min(w - 15, ideal_x + search_radius)
+        if x1 <= x0:
+            splits.append(ideal_x)
+            continue
+        window = smooth_proj[x0:x1]
+        min_val = window.min()
+        candidates = np.where(window == min_val)[0] + x0
+        best_x = candidates[np.argmin(np.abs(candidates - ideal_x))]
+        splits.append(int(best_x))
+    chunks = []
+    prev_x = 0
+    for sx in splits:
+        chunks.append(crop_bgr[:, prev_x:sx])
+        prev_x = sx
+    chunks.append(crop_bgr[:, prev_x:])
+    return chunks
+
+
+def robust_trim_chunk(chunk_bgr: np.ndarray) -> np.ndarray:
+    """Kənar kölgə zolaqlarını və xırda ləkələri təmizləyib mürəkkəb sərhədinə sıxır."""
+    gray = cv2.cvtColor(chunk_bgr, cv2.COLOR_BGR2GRAY) if chunk_bgr.ndim == 3 else chunk_bgr
+    h_chunk, w_chunk = gray.shape
+    if h_chunk < 5 or w_chunk < 5:
+        return chunk_bgr
+    # İşıqlanmaya davamlı lokal fon fərqi
+    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=max(5, h_chunk // 2))
+    ink = ((bg.astype(np.int16) - gray.astype(np.int16)) > 18).astype(np.uint8)
+    num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(ink, connectivity=8)
+    clean_ink = np.zeros_like(ink)
+    for i in range(1, num_labels):
+        x = stats[i, cv2.CC_STAT_LEFT]
+        w = stats[i, cv2.CC_STAT_WIDTH]
+        h = stats[i, cv2.CC_STAT_HEIGHT]
+        area = stats[i, cv2.CC_STAT_AREA]
+        touches_border = (x == 0) or (x + w >= w_chunk)
+        if area < 8 or (touches_border and h >= 0.70 * h_chunk):
+            continue
+        clean_ink[labels == i] = 1
+    col_counts = clean_ink.sum(axis=0)
+    valid_cols = np.where(col_counts > 0)[0]
+    if len(valid_cols) == 0:
+        return chunk_bgr
+    x0 = max(0, int(valid_cols[0]) - 4)
+    x1 = min(w_chunk, int(valid_cols[-1]) + 5)
+    return chunk_bgr[:, x0:x1]
+
+
+def infer_line_smart(model: nn.Module, cfg: Dict[str, Any], vocab: Vocab, line_bgr: np.ndarray, device: torch.device) -> str:
+    """Uzun sətirləri avtomatik hissələrə bölərək (squeeze olmadan) yüksək dəqiqliklə oxuyur."""
+    h_c, w_c = line_bgr.shape[:2]
+    if h_c == 0 or w_c == 0:
+        return ""
+    target_h = cfg.get("height", 32)
+    target_w = cfg.get("width", 512)
+    if target_w <= 128:
+        # Söz modeli üçün birbaşa oxu
+        return infer_single_crop(model, cfg, vocab, robust_trim_chunk(line_bgr), device)
+    import math
+    squeeze_ratio = (w_c * target_h) / (h_c * target_w)
+    n_chunks = max(1, math.ceil(squeeze_ratio)) if squeeze_ratio > 1.05 else 1
+    raw_chunks = split_line_into_chunks(line_bgr, n_chunks)
+    preds = []
+    for ch in raw_chunks:
+        ch_trimmed = robust_trim_chunk(ch)
+        p = infer_single_crop(model, cfg, vocab, ch_trimmed, device).strip()
+        if p:
+            preds.append(p)
+    return " ".join(preds)
+
+
+def segment_lines_opencv(img_bgr: np.ndarray) -> List[np.ndarray]:
+    """Çoxsətirli şəkildən sətirləri horizontal mürəkkəb proyeksiyası ilə avtomatik ayırır."""
+    gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if img_bgr.ndim == 3 else img_bgr
+    H, W = gray.shape
+    # Əgər təsvir artıq tək sətir nisbətindədirsə, bölməyə ehtiyac yoxdur
+    if H < 90 or (W / max(1, H)) > 4.2:
+        return [img_bgr]
+
+    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=21)
+    ink = ((bg.astype(np.int16) - gray.astype(np.int16)) > 16).astype(np.uint8)
+    # Kənar 3% kölgələri nəzərə alma
+    margin_x = max(2, int(W * 0.03))
+    row_proj = ink[:, margin_x:W - margin_x].sum(axis=1).astype(np.float32)
+    row_smooth = np.convolve(row_proj, np.ones(3) / 3.0, mode="same")
+    thresh = max(3.0, (W - 2 * margin_x) * 0.012)
+    active = row_smooth > thresh
+
+    bands = []
+    in_band = False
+    start_y = 0
+    for y, val in enumerate(active):
+        if val and not in_band:
+            in_band = True
+            start_y = y
+        elif not val and in_band:
+            in_band = False
+            if (y - start_y) >= 10:
+                bands.append((start_y, y))
+    if in_band and (H - start_y) >= 10:
+        bands.append((start_y, H))
+
+    if len(bands) <= 1:
+        return [img_bgr]
+
+    crops = []
+    for y0, y1 in bands:
+        pad = max(3, int((y1 - y0) * 0.14))
+        cy0 = max(0, y0 - pad)
+        cy1 = min(H, y1 + pad)
+        crops.append(img_bgr[cy0:cy1, :])
+    return crops
+

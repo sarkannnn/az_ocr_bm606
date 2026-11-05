@@ -6,6 +6,40 @@ import re
 from pathlib import Path
 from symspellpy import SymSpell, Verbosity
 
+AZ_SUFFIXES = [
+    "larımızdan", "lərimizdən", "larımızda", "lərimizdə", "larımızla", "lərimizlə",
+    "larından", "lərindən", "larında", "lərində", "larının", "lərinin", "larına", "lərinə",
+    "mışdır", "mişdir", "muşdur", "müşdür", "acağam", "əcəyəm", "acaqsan", "əcəksən",
+    "malıdır", "məlidir", "maqdadır", "məkdədir",
+    "ımızdan", "imizdən", "umuzdan", "ümüzdən",
+    "larımız", "lərimiz", "larınız", "ləriniz",
+    "sınız", "siniz", "sunuz", "sünüz",
+    "mağa", "məyə", "maqla", "məklə",
+    "acaq", "əcək", "saq", "sək", "san", "sən", "saydı", "səydi",
+    "ından", "indən", "undan", "ündən",
+    "yından", "yindən", "yundan", "yündən",
+    "sından", "sindən", "sundan", "sündən",
+    "mız", "miz", "muz", "müz", "nız", "niz", "nuz", "nüz",
+    "ımız", "imiz", "umuz", "ümüz", "ınız", "iniz", "unuz", "ünüz",
+    "dan", "dən", "tan", "tən",
+    "nın", "nin", "nun", "nün",
+    "yın", "yin", "yun", "yün",
+    "sın", "sin", "sun", "sün",
+    "lar", "lər",
+    "dır", "dir", "dur", "dür", "tır", "tir", "tur", "tür",
+    "dım", "dim", "dum", "düm", "dıq", "dik", "duq", "dük",
+    "dın", "din", "dun", "dün",
+    "mış", "miş", "muş", "müş",
+    "ya", "yə", "na", "nə", "sa", "sə",
+    "da", "də", "ta", "tə",
+    "ın", "in", "un", "ün",
+    "nı", "ni", "nu", "nü",
+    "yı", "yi", "yu", "yü",
+    "sı", "si", "su", "sü",
+    "m", "n", "q", "k", "a", "ə", "ı", "i", "u", "ü"
+]
+
+
 class AzerbaijaniPostProcessor:
     def __init__(self, dict_path=None, max_edit_distance=2):
         if dict_path is None:
@@ -13,13 +47,26 @@ class AzerbaijaniPostProcessor:
         
         self.dict_path = Path(dict_path)
         self.sym_spell = SymSpell(max_dictionary_edit_distance=max_edit_distance, prefix_length=7)
+        self.base_vocab = set()
         
         if self.dict_path.exists():
             # Pass encoding="utf-8" for proper Azerbaijani diacritics support
             self.sym_spell.load_dictionary(str(self.dict_path), term_index=0, count_index=1, separator=" ", encoding="utf-8")
+            self.base_vocab = set(self.sym_spell.words.keys())
             self.loaded = True
         else:
             self.loaded = False
+
+    def is_valid_morphologically(self, word_lower: str) -> bool:
+        """Returns True if word is in vocabulary directly or by removing a valid Azerbaijani suffix."""
+        if word_lower in self.base_vocab:
+            return True
+        for suf in AZ_SUFFIXES:
+            if word_lower.endswith(suf) and len(word_lower) - len(suf) >= 2:
+                stem = word_lower[:-len(suf)]
+                if stem in self.base_vocab:
+                    return True
+        return False
 
     def clean_punctuation(self, text: str) -> str:
         """Fix repeated punctuation and OCR trailing artifacts."""
@@ -65,6 +112,8 @@ class AzerbaijaniPostProcessor:
             return token
 
         core_lower = core.lower()
+        if self.is_valid_morphologically(core_lower):
+            return token
 
         # Look up with SymSpell
         suggestions = self.sym_spell.lookup(

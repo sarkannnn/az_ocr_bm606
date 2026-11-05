@@ -93,16 +93,72 @@ def get_local_ip():
         return "127.0.0.1"
 
 
+def extract_tight_text_lines(img_bgr: np.ndarray) -> list:
+    """Ağ boşluqları kənarlaşdırıb mürəkkəb olan sətirləri sıx kəsimlə çıxarır."""
+    if img_bgr is None or img_bgr.size == 0:
+        return []
+    H, W = img_bgr.shape[:2]
+    if H < 12 or W < 12:
+        return [img_bgr]
+
+    gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if img_bgr.ndim == 3 else img_bgr
+    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=max(5, H // 4))
+    ink = (bg.astype(np.int16) - gray.astype(np.int16)) > 14
+    row_counts = ink.sum(axis=1)
+
+    thresh_pixels = max(8, int(W * 0.015))
+    active_rows = row_counts >= thresh_pixels
+
+    bands = []
+    in_b = False
+    start_y = 0
+    for y, val in enumerate(active_rows):
+        if val and not in_b:
+            in_b = True
+            start_y = y
+        elif not val and in_b:
+            in_b = False
+            if (y - start_y) >= 8:
+                bands.append((start_y, y))
+    if in_b and (H - start_y) >= 8:
+        bands.append((start_y, H))
+
+    if not bands:
+        return [img_bgr]
+
+    crops = []
+    for y0, y1 in bands:
+        pad = max(2, int((y1 - y0) * 0.15))
+        cy0 = max(0, y0 - pad)
+        cy1 = min(H, y1 + pad)
+        line_strip = img_bgr[cy0:cy1, :]
+
+        strip_gray = gray[cy0:cy1, :]
+        strip_ink = (bg[cy0:cy1, :].astype(np.int16) - strip_gray.astype(np.int16)) > 14
+        valid_cols = np.where(strip_ink.sum(axis=0) > 0)[0]
+        if len(valid_cols) > 0:
+            cx0 = max(0, int(valid_cols.min()) - 4)
+            cx1 = min(W, int(valid_cols.max()) + 5)
+            if cx1 > cx0 + 5:
+                line_strip = line_strip[:, cx0:cx1]
+        crops.append(line_strip)
+    return crops
+
+
 def run_tesseract_ocr(img_bgr: np.ndarray, multi_line: bool = True) -> str:
     """Tesseract baseline OCR execution on BGR image."""
-    rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-    pil_img = Image.fromarray(rgb)
-    psm = 6 if multi_line else 7
-    try:
-        txt = pytesseract.image_to_string(pil_img, lang="aze", config=f"--psm {psm}")
-        return normalize(txt.strip())
-    except Exception as e:
-        return f"Tesseract xətası: {e}"
+    lines = extract_tight_text_lines(img_bgr) if multi_line else [img_bgr]
+    out_lines = []
+    for line in lines:
+        rgb = cv2.cvtColor(line, cv2.COLOR_BGR2RGB)
+        pil_img = Image.fromarray(rgb)
+        try:
+            txt = pytesseract.image_to_string(pil_img, lang="aze", config="--psm 7").strip()
+            if txt:
+                out_lines.append(normalize(txt))
+        except Exception as e:
+            out_lines.append(f"Tess xətası: {e}")
+    return "\n".join(out_lines)
 
 
 def run_ocr_on_bgr(
@@ -113,6 +169,9 @@ def run_ocr_on_bgr(
 ) -> Tuple[str, str, float, int]:
     """Run smart line/multi-line OCR on a BGR numpy image."""
     start_time = time.perf_counter()
+
+    # Avtomatik boşluqları kəsib hər sətri sıxlaşdır
+    line_crops = extract_tight_text_lines(img_bgr)
 
     if model_choice == TESSERACT_MODEL_KEY:
         tess_text = run_tesseract_ocr(img_bgr, multi_line=multi_line)
@@ -128,12 +187,6 @@ def run_ocr_on_bgr(
         return final_text, tess_text, elapsed_ms, n_lines
 
     model, cfg, vocab, device = get_model(model_choice)
-
-    is_word_model = cfg.get("width", 512) <= 128
-    if is_word_model or not multi_line:
-        line_crops = [img_bgr]
-    else:
-        line_crops = segment_lines_opencv(img_bgr)
 
     raw_lines = []
     final_lines = []
@@ -229,9 +282,11 @@ LIVE_CAMERA_HTML = """
     <video id="az-cam-video" autoplay playsinline muted style="width: 100%; height: 100%; max-height: 52vh; object-fit: cover; display: block;"></video>
 
     <!-- Darkened mask outside target box & glowing green guide box -->
-    <div id="az-scan-box" style="position: absolute; left: 4%; right: 4%; top: 38%; height: 24%; border: 2.5px solid #22c55e; border-radius: 10px; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.48), inset 0 0 15px rgba(34, 197, 94, 0.35); pointer-events: none; transition: all 0.2s ease;">
-      <div style="position: absolute; top: -22px; left: 8px; background: #22c55e; color: #022c22; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
-        MƏTNİ BU ÇƏRÇİVƏDƏ SAXLAYIN
+    <div id="az-scan-box" style="position: absolute; left: 4%; right: 4%; top: 40%; height: 18%; border: 2.5px solid #22c55e; border-radius: 10px; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.52), inset 0 0 15px rgba(34, 197, 94, 0.25); pointer-events: none; transition: all 0.2s ease;">
+      <!-- Laser horizontal guide line -->
+      <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; background: rgba(239, 68, 68, 0.85); box-shadow: 0 0 8px #ef4444;"></div>
+      <div style="position: absolute; top: -24px; left: 6px; background: #22c55e; color: #022c22; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
+        🎯 MƏTNİ QIRMIZI XƏTTƏ GƏTİRİN
       </div>
     </div>
 
@@ -292,8 +347,8 @@ window.azSetBoxMode = function(mode) {
   var box = document.getElementById("az-scan-box");
   if (!box) return;
   var modes = {
-    line: { top: "38%", height: "24%" },
-    para: { top: "22%", height: "56%" },
+    line: { top: "40%", height: "18%" },
+    para: { top: "24%", height: "50%" },
     full: { top: "6%",  height: "88%" }
   };
   var m = modes[mode] || modes.line;
@@ -368,7 +423,9 @@ window.azToggleTorch = async function() {
 window.azCaptureAndSend = async function() {
   if (window.azState.busy) return;
   var video = document.getElementById("az-cam-video");
-  if (!video || !video.videoWidth || !video.videoHeight) {
+  var stage = document.getElementById("az-video-stage");
+  var box = document.getElementById("az-scan-box");
+  if (!video || !video.videoWidth || !video.videoHeight || !stage || !box) {
     await window.azStartCamera();
     return;
   }
@@ -378,47 +435,60 @@ window.azCaptureAndSend = async function() {
   if (statusEl) statusEl.innerText = "⏳ Oxunur...";
 
   try {
-    var vw = video.videoWidth;
-    var vh = video.videoHeight;
-    var mode = window.azState.boxMode;
+    var vW = video.videoWidth;
+    var vH = video.videoHeight;
+    var sRect = stage.getBoundingClientRect();
+    var bRect = box.getBoundingClientRect();
 
-    var topFrac = 0.38, hFrac = 0.24;
-    if (mode === "para") { topFrac = 0.22; hFrac = 0.56; }
-    else if (mode === "full") { topFrac = 0.06; hFrac = 0.88; }
+    var stageAspect = sRect.width / sRect.height;
+    var videoAspect = vW / vH;
 
-    var sx = Math.round(vw * 0.04);
-    var sw = Math.round(vw * 0.92);
-    var sy = Math.round(vh * topFrac);
-    var sh = Math.round(vh * hFrac);
+    var renderW, renderH, offsetX, offsetY;
+    if (stageAspect > videoAspect) {
+      renderW = sRect.width;
+      renderH = sRect.width / videoAspect;
+      offsetX = 0;
+      offsetY = (sRect.height - renderH) / 2;
+    } else {
+      renderH = sRect.height;
+      renderW = sRect.height * videoAspect;
+      offsetY = 0;
+      offsetX = (sRect.width - renderW) / 2;
+    }
+
+    var scale = vW / renderW;
+    var sx = Math.max(0, (bRect.left - sRect.left - offsetX) * scale);
+    var sy = Math.max(0, (bRect.top - sRect.top - offsetY) * scale);
+    var sw = Math.min(vW - sx, bRect.width * scale);
+    var sh = Math.min(vH - sy, bRect.height * scale);
 
     var canvas = document.getElementById("az-crop-preview");
-    if (!canvas) {
-      canvas = document.createElement("canvas");
-    }
-    canvas.width = sw;
-    canvas.height = sh;
+    if (!canvas) canvas = document.createElement("canvas");
+    canvas.width = Math.round(sw);
+    canvas.height = Math.round(sh);
     canvas.style.display = "block";
     var ctx = canvas.getContext("2d");
-    ctx.drawImage(video, sx, sy, sw, sh, 0, 0, sw, sh);
+    ctx.drawImage(video, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
 
-    var b64 = canvas.toDataURL("image/jpeg", 0.88);
+    var b64 = canvas.toDataURL("image/jpeg", 0.90);
     var resp = await fetch("/api/ocr", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         image: b64,
         engine: window.azState.engine || "crnn_v2",
-        multi_line: (mode !== "line"),
+        multi_line: (window.azState.boxMode !== "line"),
         postprocess: true
       })
     });
     var data = await resp.json();
     var resArea = document.getElementById("az-live-result");
     if (resArea && data.text !== undefined) {
-      resArea.value = data.text || "(Mətn tapılmadı — yazını yaşıl çərçivəyə gətirin)";
+      resArea.value = data.text || "(Çərçivədə mətn tapılmadı — kameranı yazıya yaxınlaşdırın)";
     }
     if (statusEl) {
-      statusEl.innerText = "✅ Oxundu (" + (data.ms || 0) + " ms | " + (data.lines || 1) + " sətir)";
+      var engLabel = data.engine || (window.azState.engine === "tesseract" ? "Tesseract" : "CRNN V2");
+      statusEl.innerText = "✅ " + engLabel + " (" + (data.ms || 0) + " ms | " + (data.lines || 1) + " sətir)";
     }
   } catch (err) {
     if (statusEl) statusEl.innerText = "⚠️ Xəta: " + err.message;
