@@ -4,7 +4,24 @@ Azərbaycan dili çap və telefon şəkli sənədləri üçün Söz və Sətir s
 
 ---
 
-## 🚀 Sürətli Başlanğıc (İnferens / Tanıma)
+## 📱 Veb və Mobil İstifadəçi Arayüzü (UI)
+
+Həm kompüter brauzerində, həm də **telefonda kamera ilə sənəd çəkib oxutmaq** üçün interaktiv Gradio arayüzü:
+
+```bash
+# 1. Kompüterdə və yerli Wi-Fi şəbəkəsində açmaq üçün:
+python app.py
+# (və ya Windows-da sadəcə run_ui.bat faylına iki dəfə klikləyin)
+
+# 2. Telefonda hər yerdən (mobil internetlə) açmaq üçün:
+python app.py --share
+```
+* **Kompüterdə:** Brauzerdə `http://localhost:7860` ünvanını açın.
+* **Telefonda:** Eyni Wi-Fi-a qoşulub ekranda çıxan yerli IP-ni (məs: `http://192.168.1.X:7860`) və ya `--share` ilə yaranan ictimai linki açın. Telefon kamerası ilə birbaşa sənədi çəkib mətni dərhal əldə edin.
+
+---
+
+## 🚀 Sürətli Başlanğıc (CLI İnferens / Tanıma)
 
 Quraşdırılmış ən yaxşı model (`runs/line_v2/best.pt`) və Azərbaycan dili lüğəti ilə istənilən sətir şəkli üzərində birbaşa mətn tanıma aparın:
 
