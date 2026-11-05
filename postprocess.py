@@ -112,6 +112,15 @@ class AzerbaijaniPostProcessor:
             return token
 
         core_lower = core.lower()
+        # Deterministic Azerbaijani phonotactic OCR fix: -ləvirdi / -lavırdı -> -ləyirdi / -layırdı
+        if re.search(r"(lə|la)v(ir|ır)(di|dı|dilər|dılar)$", core_lower):
+            fixed_core = re.sub(r"(lə|la)v(ir|ır)(di|dı|dilər|dılar)$", r"\1y\2\3", core_lower)
+            if core.isupper():
+                fixed_core = fixed_core.upper()
+            elif core[0].isupper():
+                fixed_core = fixed_core.capitalize()
+            return prefix + fixed_core + suffix
+
         if self.is_valid_morphologically(core_lower):
             return token
 
