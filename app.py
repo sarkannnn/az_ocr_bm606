@@ -102,10 +102,10 @@ def extract_tight_text_lines(img_bgr: np.ndarray) -> list:
         return [img_bgr]
 
     gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if img_bgr.ndim == 3 else img_bgr
-    k = max(9, (min(H, W) // 5) | 1)
-    bg = cv2.medianBlur(gray, k)
+    sigma = max(3.0, min(25.0, H / 4.0))
+    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=sigma, sigmaY=sigma)
     diff = bg.astype(np.int16) - gray.astype(np.int16)
-    thresh = max(10, np.percentile(diff, 85))
+    thresh = 14
     ink = diff > thresh
     row_counts = ink.sum(axis=1)
 
@@ -151,15 +151,23 @@ def extract_tight_text_lines(img_bgr: np.ndarray) -> list:
 
 def run_tesseract_ocr(img_bgr: np.ndarray, multi_line: bool = True) -> str:
     """Tesseract baseline OCR execution on BGR image."""
-    lines = extract_tight_text_lines(img_bgr) if multi_line else [img_bgr]
+    rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+    pil_img = Image.fromarray(rgb)
+    if multi_line and img_bgr.shape[0] > 90:
+        try:
+            txt = pytesseract.image_to_string(pil_img, lang="aze", config="--psm 6").strip()
+            return normalize(txt)
+        except Exception as e:
+            return f"Tess xətası: {e}"
+
+    lines = extract_tight_text_lines(img_bgr)
     out_lines = []
     for line in lines:
-        rgb = cv2.cvtColor(line, cv2.COLOR_BGR2RGB)
-        pil_img = Image.fromarray(rgb)
+        r = cv2.cvtColor(line, cv2.COLOR_BGR2RGB)
         try:
-            txt = pytesseract.image_to_string(pil_img, lang="aze", config="--psm 7").strip()
-            if txt:
-                out_lines.append(normalize(txt))
+            t = pytesseract.image_to_string(Image.fromarray(r), lang="aze", config="--psm 7").strip()
+            if t:
+                out_lines.append(normalize(t))
         except Exception as e:
             out_lines.append(f"Tess xətası: {e}")
     return "\n".join(out_lines)
@@ -174,8 +182,10 @@ def run_ocr_on_bgr(
     """Run smart line/multi-line OCR on a BGR numpy image."""
     start_time = time.perf_counter()
 
-    # Avtomatik boşluqları kəsib hər sətri sıxlaşdır
-    line_crops = extract_tight_text_lines(img_bgr)
+    if multi_line and img_bgr.shape[0] > 90:
+        line_crops = segment_lines_opencv(img_bgr)
+    else:
+        line_crops = extract_tight_text_lines(img_bgr)
 
     if model_choice == TESSERACT_MODEL_KEY:
         tess_text = run_tesseract_ocr(img_bgr, multi_line=multi_line)
