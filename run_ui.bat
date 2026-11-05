@@ -1,10 +1,10 @@
 @echo off
-title Azerbaycan Dili OCR - Arayuz
+title Azerbaycan Dili OCR - Canli Mobil Kamera ve Veb Arayuzu
 echo ======================================================================
-echo   AZERBAYCAN DILI OCR (CRNN + CTC) - VEB VE MOBIL ARAYUZ
+echo   AZERBAYCAN DILI OCR (CRNN + CTC) - CANLI KAMERA VE VEB ARAYUZU
 echo ======================================================================
 echo.
-echo Server ise salinir...
+echo Server ve Mobil HTTPS Canli Kamera linki ise salinir...
 echo.
-.\.venv\Scripts\python.exe app.py %*
+.\.venv\Scripts\python.exe -u app.py --share %*
 pause

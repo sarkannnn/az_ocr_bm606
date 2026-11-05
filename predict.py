@@ -18,7 +18,7 @@ from pathlib import Path
 import cv2
 import torch
 
-from common import infer_single_crop, load_model_checkpoint
+from common import infer_line_smart, load_model_checkpoint, segment_lines_opencv
 from postprocess import AzerbaijaniPostProcessor
 
 # Ensure UTF-8 output in Windows terminal
@@ -91,12 +91,20 @@ def main():
             print(f"[!] Oxunmadı (skip): {img_path}")
             continue
 
-        raw_pred = infer_single_crop(model, cfg, vocab, img, device)
-        final_pred = raw_pred
-        if postprocessor and postprocessor.loaded:
-            tokens = raw_pred.split()
-            corrected_tokens = [postprocessor.correct_word(t, max_edit_distance=1) for t in tokens]
-            final_pred = postprocessor.clean_punctuation(" ".join(corrected_tokens))
+        line_crops = segment_lines_opencv(img) if cfg.get("width", 512) > 128 else [img]
+        raw_lines = []
+        final_lines = []
+        for lc in line_crops:
+            rp = infer_line_smart(model, cfg, vocab, lc, device)
+            raw_lines.append(rp)
+            if postprocessor and postprocessor.loaded:
+                tokens = rp.split()
+                corrected_tokens = [postprocessor.correct_word(t, max_edit_distance=1) for t in tokens]
+                final_lines.append(postprocessor.clean_punctuation(" ".join(corrected_tokens)))
+            else:
+                final_lines.append(rp)
+        raw_pred = "\n".join(raw_lines)
+        final_pred = "\n".join(final_lines)
 
         results.append((img_path.name, raw_pred, final_pred))
 
