@@ -14,3 +14,4 @@ python-docx     # Word formatında elmi monaqrafiya və hesabatların qurulması
 scipy           # statistik analiz və konfidens intervalları
 easyocr         # çoxdilli müqayisəli OCR baseline
 gradio          # veb və mobil üçün interaktiv istifadəçi arayüzü (UI)
+segno
