@@ -4,20 +4,42 @@ Azərbaycan dili çap və telefon şəkli sənədləri üçün Söz və Sətir s
 
 ---
 
-## 📱 Veb və Mobil İstifadəçi Arayüzü (UI)
+## 📱 İstənilən Kompüterdə 1 Kliklə Quraşdırma və İşə Salma (Veb və Mobil UI)
 
-Həm kompüter brauzerində, həm də **telefonda kamera ilə sənəd çəkib oxutmaq** üçün interaktiv Gradio arayüzü:
+Layihənin bütün öyrədilmiş model çəkiləri (`runs/line_v2/best.pt`, `runs/line/best.pt`), 116,143 sözlük morfoloji lüğət (`data/az_lexicon.txt`) və Azərbaycan dili Tesseract dil faylı (`tessdata/aze.traineddata`) birbaşa repozitoriyaya daxildir.
 
+### 🪟 Windows-da Quraşdırma və Başlatma:
+1. Kompüterdə **Python 3.10+** quraşdırıldığından əmin olun ([python.org](https://www.python.org/downloads/) — quraşdırarkən *"Add Python to PATH"* seçimini işarələyin).
+2. Layihəni endirin və **`run_ui.bat`** faylına iki dəfə klikləyin (və ya terminalda işə salın):
+   ```bat
+   git clone https://github.com/sarkannnn/az_ocr_bm606.git
+   cd az_ocr_bm606
+   run_ui.bat
+   ```
+   > `run_ui.bat` ilk dəfə işə düşdükdə avtomatik olaraq `.venv` virtual mühitini yaradır, `requirements.txt` paketlərini quraşdırır, `.HEIC` dəstəyini aktivləşdirir və həm lokal (`http://localhost:7860`), həm də mobil telefon üçün ictimai HTTPS linkini + QR kodu işə salır.
+
+### 🍎 macOS / 🐧 Linux-da Quraşdırma və Başlatma:
 ```bash
-# 1. Kompüterdə və yerli Wi-Fi şəbəkəsində açmaq üçün:
-python app.py
-# (və ya Windows-da sadəcə run_ui.bat faylına iki dəfə klikləyin)
+git clone https://github.com/sarkannnn/az_ocr_bm606.git
+cd az_ocr_bm606
+chmod +x run_ui.sh
+./run_ui.sh
+```
 
-# 2. Telefonda hər yerdən (mobil internetlə) açmaq üçün:
+### ⚙️ Əl ilə (Manual) Quraşdırma:
+```bash
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS / Linux:
+# source .venv/bin/activate
+
+pip install -r requirements.txt
 python app.py --share
 ```
 * **Kompüterdə:** Brauzerdə `http://localhost:7860` ünvanını açın.
-* **Telefonda:** Eyni Wi-Fi-a qoşulub ekranda çıxan yerli IP-ni (məs: `http://192.168.1.X:7860`) və ya `--share` ilə yaranan ictimai linki açın. Telefon kamerası ilə birbaşa sənədi çəkib mətni dərhal əldə edin.
+* **Telefonda:** Ekranda yaranan **QR kodu** telefon kamerası ilə oxudun və ya `https://*.gradio.live` linkinə toxunun.
+* *(Opsional)* **Tesseract 5 müqayisəsi üçün:** Sistemdə Tesseract-OCR quraşdırılıbsa (`winget install UB-Mannheim.TesseractOCR` və ya `sudo apt install tesseract-ocr`), proqram onu və daxili `tessdata/aze.traineddata` faylını avtomatik tanıyır.
 
 ---
 

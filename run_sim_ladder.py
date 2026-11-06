@@ -12,7 +12,7 @@ from pathlib import Path
 # Setup required environment variables
 os.environ["PYTHONUTF8"] = "1"
 os.environ["PATH"] = os.environ.get("PATH", "") + ";C:\\Program Files\\Tesseract-OCR"
-os.environ["TESSDATA_PREFIX"] = r"D:\laragon\www\az_ocr_bm606\tessdata"
+os.environ["TESSDATA_PREFIX"] = str(Path(__file__).resolve().parent / "tessdata")
 
 from common import cer_wer
 from evaluate import run_model, run_tesseract

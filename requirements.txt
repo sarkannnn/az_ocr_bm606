@@ -2,16 +2,18 @@ torch
 opencv-python
 numpy
 pillow
+pillow-heif     # iPhone/iOS .HEIC / .HEIF təsvir dəstəyi
 fonttools
 tqdm
 matplotlib
-trdg            # sintetik məlumat (pip install trdg)
-datasets        # yalnız --hf-wiki üçün
-pytesseract     # Tesseract baseline üçün (+ sistemdə tesseract-ocr, tesseract-ocr-aze)
+datasets        # korpus hazırlığı (--hf-wiki) üçün
+pytesseract     # Tesseract 5 LSTM baseline üçün (tessdata/aze.traineddata daxildir)
 pandas          # cədvəl analizi, benchmark və hesabat generasiyası
 symspellpy      # Azərbaycan dili lüğət korreksiyası (postprocess.py)
 python-docx     # Word formatında elmi monaqrafiya və hesabatların qurulması
 scipy           # statistik analiz və konfidens intervalları
-easyocr         # çoxdilli müqayisəli OCR baseline
 gradio          # veb və mobil üçün interaktiv istifadəçi arayüzü (UI)
-segno
+segno           # mobil keçid üçün QR kod generasiyası
+# Opsional (yalnız sıfırdan sintetik dataset və ya əlavə xarici baseline üçün):
+# trdg
+# easyocr

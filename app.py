@@ -16,11 +16,16 @@ import argparse
 import base64
 import html
 import os
+import shutil
 import socket
 import sys
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+
+# Ensure working directory is always the repository root on any PC
+BASE_DIR = Path(__file__).resolve().parent
+os.chdir(BASE_DIR)
 
 import cv2
 import gradio as gr
@@ -30,12 +35,60 @@ import torch
 from fastapi import Request
 from fastapi.responses import JSONResponse
 from PIL import Image
-import pillow_heif
-pillow_heif.register_heif_opener()
 
-# Setup Tesseract Environment
-os.environ["PATH"] = os.environ.get("PATH", "") + r";C:\Program Files\Tesseract-OCR"
-os.environ["TESSDATA_PREFIX"] = r"D:\laragon\www\az_ocr_bm606\tessdata"
+try:
+    import pillow_heif
+    pillow_heif.register_heif_opener()
+except ImportError:
+    pass
+
+
+def setup_tesseract_env() -> None:
+    """Automatically configure TESSDATA_PREFIX and locate the Tesseract binary across Windows/macOS/Linux."""
+    local_tessdata = BASE_DIR / "tessdata"
+    if local_tessdata.exists():
+        os.environ["TESSDATA_PREFIX"] = str(local_tessdata)
+
+    # Check if tesseract is already on PATH
+    tess_bin = shutil.which("tesseract")
+    if not tess_bin:
+        candidate_dirs = [
+            Path(r"C:\Program Files\Tesseract-OCR"),
+            Path(r"C:\Program Files (x86)\Tesseract-OCR"),
+            Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "Tesseract-OCR",
+            Path(os.environ.get("LOCALAPPDATA", "")) / "Tesseract-OCR",
+            Path("/opt/homebrew/bin"),
+            Path("/usr/local/bin"),
+            Path("/usr/bin"),
+        ]
+        for d in candidate_dirs:
+            exe = d / ("tesseract.exe" if os.name == "nt" else "tesseract")
+            if exe.exists():
+                tess_bin = str(exe)
+                os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + str(d)
+                break
+    if tess_bin:
+        pytesseract.pytesseract.tesseract_cmd = tess_bin
+
+
+def ensure_gradio_heic_support() -> None:
+    """Ensure the local Gradio frontend bundle accepts .heic/.heif drag-and-drop on any freshly installed PC."""
+    try:
+        assets_dir = Path(gr.__file__).resolve().parent / "templates" / "frontend" / "assets"
+        if not assets_dir.exists():
+            return
+        needle = 'if(n.has("image/*"))'
+        patch = 'if(n.has("image/*")){n.add(".heic"),n.add(".heif"),n.add("image/heic"),n.add("image/heif")}if(n.has("image/*"))'
+        for js_file in assets_dir.glob("*.js"):
+            txt = js_file.read_text(encoding="utf-8", errors="ignore")
+            if needle in txt and 'n.add(".heic")' not in txt:
+                js_file.write_text(txt.replace(needle, patch), encoding="utf-8")
+    except Exception:
+        pass
+
+
+setup_tesseract_env()
+ensure_gradio_heic_support()
 
 from common import (
     cer_wer,
@@ -2970,6 +3023,7 @@ def register_api_routes(fastapi_app):
             if img_bgr is None:
                 return JSONResponse({"error": "Invalid image"}, status_code=400)
 
+            Path("scratch").mkdir(exist_ok=True)
             cv2.imwrite("scratch/last_mobile_request.jpg", img_bgr)
             h_in, w_in = img_bgr.shape[:2]
             print(f"[*] /api/ocr gələn şəkil: {w_in}x{h_in}, model: {engine_req}")
