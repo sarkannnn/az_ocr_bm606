@@ -400,8 +400,29 @@ SHARE_URL = ""
 LAN_URL = f"http://{get_local_ip()}:7860"
 
 
-def build_qr_html() -> str:
-    """Inline-SVG QR code (public Gradio link if available, else LAN link) for opening the app on a phone."""
+QR_I18N = {
+    "az": {
+        "pub": "📱 Telefonda Aç — İctimai Mobil Link (HTTPS):",
+        "lan": "📱 Telefonda Aç — Yerli Wi-Fi Linki (LAN):",
+        "hint": "Telefon kamerası ilə QR kodu oxudun və ya linkə klikləyin:",
+    },
+    "tr": {
+        "pub": "📱 Telefonda Aç — Genel Mobil Bağlantı (HTTPS):",
+        "lan": "📱 Telefonda Aç — Yerel Wi-Fi Bağlantısı (LAN):",
+        "hint": "Telefon kamerası ile QR kodu okutun veya bağlantıya tıklayın:",
+    },
+    "en": {
+        "pub": "📱 Open on Phone — Public Mobile Link (HTTPS):",
+        "lan": "📱 Open on Phone — Local Wi-Fi Link (LAN):",
+        "hint": "Scan QR code with your phone camera or click the link:",
+    },
+}
+
+
+def build_qr_html(lang: Optional[str] = None) -> str:
+    """Compact inline-SVG QR code strip (localized in AZ / TR / EN) for opening the app on a phone."""
+    lang = lang or ACTIVE_LANG or "az"
+    Q = QR_I18N.get(lang, QR_I18N["az"])
     url = SHARE_URL or LAN_URL
     if not url:
         return ""
@@ -409,23 +430,25 @@ def build_qr_html() -> str:
         import io
         import segno
         buf = io.BytesIO()
-        segno.make(url, error="m").save(buf, kind="svg", scale=4, border=2, dark="#1b365d", xmldecl=False, svgns=True)
+        segno.make(url, error="m").save(buf, kind="svg", scale=3, border=1, dark="#1b365d", xmldecl=False, svgns=True)
         svg = buf.getvalue().decode("utf-8")
     except Exception as exc:
         svg = f"<em>QR error: {html.escape(str(exc))}</em>"
-    kind = "İctimai Gradio Linki (Public HTTPS)" if SHARE_URL else "Yerli Şəbəkə (Wi-Fi LAN)"
+    kind_key = "pub" if SHARE_URL else "lan"
+    kind_txt = Q[kind_key]
     return f"""
-    <details class="az-qr-box" id="az-qr-box" open>
-        <summary>📱 Telefonda Aç / Open on Phone (QR Kod)</summary>
+    <div class="az-qr-box" id="az-qr-box" data-is-public="{1 if SHARE_URL else 0}">
         <div class="az-qr-inner">
             <div class="az-qr-svg">{svg}</div>
             <div class="az-qr-text">
-                <div style="font-weight:700; color:#1b365d; margin-bottom:4px;">{kind}</div>
-                <div style="font-size:12px; color:#475569; margin-bottom:6px;">Telefon kamerası ilə QR kodu oxudun və ya linkə toxunun:</div>
-                <a href="{html.escape(url)}" target="_blank" rel="noopener" style="font-weight:700; color:#1b365d; text-decoration:underline;">{html.escape(url)}</a>
+                <div class="az-qr-row-top">
+                    <span id="az-qr-kind" style="font-weight:700; color:#1b365d;">{html.escape(kind_txt)}</span>
+                    <span id="az-qr-hint" style="font-size:12px; color:#475569;">{html.escape(Q["hint"])}</span>
+                </div>
+                <a id="az-qr-link" href="{html.escape(url)}" target="_blank" rel="noopener">{html.escape(url)}</a>
             </div>
         </div>
-    </details>
+    </div>
     """
 
 
@@ -1054,8 +1077,16 @@ window.azSetUiLang = function(lang) {
   var elGuide = document.getElementById("az-ui-cam-guide");
   if (elGuide) elGuide.innerText = S.guide;
 
+  var elWait = document.getElementById("az-cam-msg-text");
+  if (elWait) elWait.innerText = S.waiting;
+
   var elStart = document.getElementById("az-ui-cam-start-btn");
   if (elStart) elStart.innerText = S.start_btn;
+
+  var elStatus = document.getElementById("az-live-status");
+  if (elStatus && (elStatus.innerText.indexOf("Hazır") !== -1 || elStatus.innerText.indexOf("Ready") !== -1)) {
+    elStatus.innerText = S.status_ready;
+  }
 
   var elSnap = document.getElementById("az-btn-snap");
   if (elSnap) elSnap.innerText = S.snap;
@@ -1706,6 +1737,35 @@ window.azSwitchLang = function(code) {
 
   azApplySection2(code);
 
+  // 5b. Compact QR Strip Localization & HTML lang attribute (prevents dotted-İ uppercase in English)
+  if (document.documentElement) {
+    document.documentElement.lang = code;
+  }
+  var qrMap = {
+    az: {
+      pub: "📱 Telefonda Aç — İctimai Mobil Link (HTTPS):",
+      lan: "📱 Telefonda Aç — Yerli Wi-Fi Linki (LAN):",
+      hint: "Telefon kamerası ilə QR kodu oxudun və ya linkə klikləyin:"
+    },
+    tr: {
+      pub: "📱 Telefonda Aç — Genel Mobil Bağlantı (HTTPS):",
+      lan: "📱 Telefonda Aç — Yerel Wi-Fi Bağlantısı (LAN):",
+      hint: "Telefon kamerası ile QR kodu okutun veya bağlantıya tıklayın:"
+    },
+    en: {
+      pub: "📱 Open on Phone — Public Mobile Link (HTTPS):",
+      lan: "📱 Open on Phone — Local Wi-Fi Link (LAN):",
+      hint: "Scan QR code with your phone camera or click the link:"
+    }
+  };
+  var Q = qrMap[code] || qrMap.az;
+  var qrBoxEl = document.getElementById("az-qr-box");
+  var isPubQr = qrBoxEl && (qrBoxEl.getAttribute("data-is-public") === "1" || qrBoxEl.innerHTML.indexOf("gradio.live") !== -1);
+  var qrKindEl = document.getElementById("az-qr-kind");
+  if (qrKindEl) qrKindEl.innerText = isPubQr ? Q.pub : Q.lan;
+  var qrHintEl = document.getElementById("az-qr-hint");
+  if (qrHintEl) qrHintEl.innerText = Q.hint;
+
   // 6. Section 3 (Real-Time Camera Module)
   if (window.azSetUiLang) {
     window.azSetUiLang(code);
@@ -1740,10 +1800,7 @@ setInterval(function() {
         if (d && d.html) {
           var cur = document.getElementById("az-qr-box");
           if (cur && (!cur.innerHTML.includes(d.url))) {
-            var wasOpen = cur.hasAttribute("open");
             cur.outerHTML = d.html;
-            var next = document.getElementById("az-qr-box");
-            if (next && !wasOpen) next.removeAttribute("open");
           }
           if (d.is_public) window._azQrPublicLoaded = true;
         }
@@ -1753,6 +1810,38 @@ setInterval(function() {
   if (!window.azActiveLang) return;
   var T = window.azI18N[window.azActiveLang];
   if (!T) return;
+  if (document.documentElement && document.documentElement.lang !== window.azActiveLang) {
+    document.documentElement.lang = window.azActiveLang;
+  }
+  var qrMap = {
+    az: {
+      pub: "📱 Telefonda Aç — İctimai Mobil Link (HTTPS):",
+      lan: "📱 Telefonda Aç — Yerli Wi-Fi Linki (LAN):",
+      hint: "Telefon kamerası ilə QR kodu oxudun və ya linkə klikləyin:"
+    },
+    tr: {
+      pub: "📱 Telefonda Aç — Genel Mobil Bağlantı (HTTPS):",
+      lan: "📱 Telefonda Aç — Yerel Wi-Fi Bağlantısı (LAN):",
+      hint: "Telefon kamerası ile QR kodu okutun veya bağlantıya tıklayın:"
+    },
+    en: {
+      pub: "📱 Open on Phone — Public Mobile Link (HTTPS):",
+      lan: "📱 Open on Phone — Local Wi-Fi Link (LAN):",
+      hint: "Scan QR code with your phone camera or click the link:"
+    }
+  };
+  var Q = qrMap[window.azActiveLang] || qrMap.az;
+  var qrBoxEl = document.getElementById("az-qr-box");
+  var isPubQr = qrBoxEl && (qrBoxEl.getAttribute("data-is-public") === "1" || qrBoxEl.innerHTML.indexOf("gradio.live") !== -1);
+  var qrKindEl = document.getElementById("az-qr-kind");
+  if (qrKindEl) {
+    var wantKind = isPubQr ? Q.pub : Q.lan;
+    if (qrKindEl.innerText !== wantKind) qrKindEl.innerText = wantKind;
+  }
+  var qrHintEl = document.getElementById("az-qr-hint");
+  if (qrHintEl && qrHintEl.innerText !== Q.hint) {
+    qrHintEl.innerText = Q.hint;
+  }
   var tabBtns = document.querySelectorAll("button[role='tab']");
   if (tabBtns.length >= 3) {
     if (tabBtns[0].innerText !== T.tab1) tabBtns[0].innerText = T.tab1;
@@ -1943,34 +2032,52 @@ custom_css = """
     word-break: break-word !important;
 }
 .az-qr-box {
-    margin: 8px 0 10px 0;
-    border: 1px solid #cbd5e1;
-    background: #ffffff;
-    padding: 6px 12px;
-}
-.az-qr-box summary {
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 13px;
-    color: #1b365d;
+    margin: 4px 0 8px 0 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-left: 4px solid #1b365d !important;
+    background: #f8fafc !important;
+    padding: 5px 12px !important;
 }
 .az-qr-inner {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    padding: 10px 0 4px 0;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    padding: 0 !important;
+}
+.az-qr-svg {
+    flex: 0 0 auto !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 2px !important;
+    line-height: 0 !important;
 }
 .az-qr-svg svg {
-    width: 170px;
-    height: 170px;
-    display: block;
+    width: 60px !important;
+    height: 60px !important;
+    display: block !important;
 }
 .az-qr-text {
-    font-size: 13px;
-    color: #0f172a;
-    word-break: break-all;
-    max-width: 100%;
+    font-size: 12.5px !important;
+    color: #0f172a !important;
+    word-break: break-word !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    line-height: 1.35 !important;
+}
+.az-qr-row-top {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: baseline !important;
+    gap: 4px 8px !important;
+    margin-bottom: 2px !important;
+}
+#az-qr-link {
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    color: #1b365d !important;
+    text-decoration: underline !important;
+    word-break: break-all !important;
 }
 .tab-nav button.selected, [role="tab"][aria-selected="true"] {
     background: #1b365d !important;
@@ -2552,8 +2659,8 @@ gradio-app, .main, .wrap, .contain, .column, .tabs, .tabitem, .tab-wrapper, .tab
         font-size: 11px !important;
     }
     .az-qr-svg svg {
-        width: 130px !important;
-        height: 130px !important;
+        width: 52px !important;
+        height: 52px !important;
     }
     .az-spec-table tr {
         grid-template-columns: 1fr !important;
@@ -2946,6 +3053,7 @@ with gr.Blocks(title="AzOCR-V2 — Multilingual Academic OCR Studio") as demo:
         return (
             build_top_bar_html(target_lang),
             build_hero_html(target_lang),
+            build_qr_html(target_lang),
             build_diff_html("", "", target_lang),
             build_telemetry_html(0.0, 0, "", DEFAULT_MODEL_KEY, True, target_lang),
             T["bench_desc"],
@@ -2970,6 +3078,7 @@ with gr.Blocks(title="AzOCR-V2 — Multilingual Academic OCR Studio") as demo:
     common_lang_outputs = [
         top_bar_html,
         hero_html,
+        qr_html,
         studio_diff_html,
         studio_metrics_html,
         bench_desc_md,
