@@ -250,25 +250,30 @@ def robust_trim_chunk(chunk_bgr: np.ndarray) -> np.ndarray:
     if h_chunk < 5 or w_chunk < 5:
         return chunk_bgr
     # İşıqlanmaya davamlı lokal fon fərqi
-    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=max(5, h_chunk // 2))
+    sigma = min(25, max(5, h_chunk // 2))
+    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=sigma)
     ink = ((bg.astype(np.int16) - gray.astype(np.int16)) > 18).astype(np.uint8)
     num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(ink, connectivity=8)
-    clean_ink = np.zeros_like(ink)
+    min_x = w_chunk
+    max_x = 0
+    found = False
     for i in range(1, num_labels):
-        x = stats[i, cv2.CC_STAT_LEFT]
-        w = stats[i, cv2.CC_STAT_WIDTH]
-        h = stats[i, cv2.CC_STAT_HEIGHT]
-        area = stats[i, cv2.CC_STAT_AREA]
+        x = int(stats[i, cv2.CC_STAT_LEFT])
+        w = int(stats[i, cv2.CC_STAT_WIDTH])
+        h = int(stats[i, cv2.CC_STAT_HEIGHT])
+        area = int(stats[i, cv2.CC_STAT_AREA])
         touches_border = (x == 0) or (x + w >= w_chunk)
         if area < 8 or (touches_border and h >= 0.70 * h_chunk):
             continue
-        clean_ink[labels == i] = 1
-    col_counts = clean_ink.sum(axis=0)
-    valid_cols = np.where(col_counts > 0)[0]
-    if len(valid_cols) == 0:
+        found = True
+        if x < min_x:
+            min_x = x
+        if x + w > max_x:
+            max_x = x + w
+    if not found:
         return chunk_bgr
-    x0 = max(0, int(valid_cols[0]) - 4)
-    x1 = min(w_chunk, int(valid_cols[-1]) + 5)
+    x0 = max(0, min_x - 4)
+    x1 = min(w_chunk, max_x + 4)
     return chunk_bgr[:, x0:x1]
 
 
@@ -295,45 +300,113 @@ def infer_line_smart(model: nn.Module, cfg: Dict[str, Any], vocab: Vocab, line_b
     return " ".join(preds)
 
 
+def _ink_mask(gray: np.ndarray) -> np.ndarray:
+    """Kölgəyə davamlı lokal-adaptiv mürəkkəb maskası (0/1)."""
+    h, w = gray.shape
+    bs = int(max(15, (min(h, w) // 40) | 1))
+    return cv2.adaptiveThreshold(gray, 1, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, bs, 12)
+
+
+def estimate_skew_angle(gray: np.ndarray, max_angle: float = 8.0, step: float = 0.25) -> float:
+    """Sətir proyeksiyasının dispersiyasını maksimallaşdıran maillik bucağı (dərəcə)."""
+    h, w = gray.shape
+    scale = 700.0 / max(h, w)
+    small = cv2.resize(gray, (max(1, int(w * scale)), max(1, int(h * scale))), interpolation=cv2.INTER_AREA)
+    ink = _ink_mask(small).astype(np.float32)
+    ink = cv2.dilate(ink, np.ones((1, 5), np.uint8))
+    hs, ws = ink.shape
+    best_a, best_v = 0.0, -1.0
+    for a in np.arange(-max_angle, max_angle + 1e-6, step):
+        M = cv2.getRotationMatrix2D((ws / 2, hs / 2), float(a), 1.0)
+        r = cv2.warpAffine(ink, M, (ws, hs), flags=cv2.INTER_NEAREST)
+        v = float(np.var(r.sum(axis=1)))
+        if v > best_v:
+            best_v, best_a = v, float(a)
+    return best_a
+
+
 def segment_lines_opencv(img_bgr: np.ndarray) -> List[np.ndarray]:
-    """Çoxsətirli şəkildən sətirləri horizontal mürəkkəb proyeksiyası ilə avtomatik ayırır."""
+    """Tam səhifə şəkli üçün: mailliyi düzəldir (deskew), sətirləri ayırır, birləşmiş sətirləri bölür."""
     gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if img_bgr.ndim == 3 else img_bgr
     H, W = gray.shape
     # Əgər təsvir artıq tək sətir nisbətindədirsə, bölməyə ehtiyac yoxdur
     if H < 90 or (W / max(1, H)) > 4.2:
         return [img_bgr]
 
-    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=21)
-    ink = ((bg.astype(np.int16) - gray.astype(np.int16)) > 16).astype(np.uint8)
-    # Kənar 3% kölgələri nəzərə alma
+    ang = estimate_skew_angle(gray)
+    if abs(ang) > 0.15:
+        M = cv2.getRotationMatrix2D((W / 2, H / 2), ang, 1.0)
+        fill = int(np.median(gray))
+        img_bgr = cv2.warpAffine(img_bgr, M, (W, H), flags=cv2.INTER_CUBIC,
+                                 borderMode=cv2.BORDER_CONSTANT, borderValue=(fill, fill, fill))
+        gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if img_bgr.ndim == 3 else img_bgr
+
+    ink = _ink_mask(gray).astype(np.float32)
     margin_x = max(2, int(W * 0.03))
-    row_proj = ink[:, margin_x:W - margin_x].sum(axis=1).astype(np.float32)
-    row_smooth = np.convolve(row_proj, np.ones(3) / 3.0, mode="same")
-    thresh = max(3.0, (W - 2 * margin_x) * 0.012)
+    row_proj = ink[:, margin_x:W - margin_x].sum(axis=1)
+    row_smooth = np.convolve(row_proj, np.ones(5) / 5.0, mode="same")
+    ref = float(np.percentile(row_smooth, 95))
+    thresh = max(3.0, ref * 0.14)
     active = row_smooth > thresh
 
     bands = []
-    in_band = False
-    start_y = 0
+    in_band, start_y = False, 0
     for y, val in enumerate(active):
         if val and not in_band:
-            in_band = True
-            start_y = y
+            in_band, start_y = True, y
         elif not val and in_band:
             in_band = False
             if (y - start_y) >= 10:
                 bands.append((start_y, y))
     if in_band and (H - start_y) >= 10:
         bands.append((start_y, H))
-
     if len(bands) <= 1:
         return [img_bgr]
 
-    crops = []
+    # Birləşmiş (çox hündür) zolaqları proyeksiya dərələrindən bölmək
+    heights = np.array([b[1] - b[0] for b in bands])
+    med_h = float(np.median(heights))
+    final_bands = []
     for y0, y1 in bands:
-        pad = max(3, int((y1 - y0) * 0.14))
-        cy0 = max(0, y0 - pad)
-        cy1 = min(H, y1 + pad)
-        crops.append(img_bgr[cy0:cy1, :])
-    return crops
+        h_b = y1 - y0
+        if h_b > 1.7 * med_h:
+            n = int(round(h_b / med_h))
+            seg = row_smooth[y0:y1]
+            cuts = [0]
+            for k in range(1, n):
+                ideal = int(k * h_b / n)
+                lo = max(cuts[-1] + 8, ideal - int(med_h * 0.45))
+                hi = min(h_b - 8, ideal + int(med_h * 0.45))
+                if hi <= lo:
+                    continue
+                cuts.append(lo + int(np.argmin(seg[lo:hi])))
+            cuts.append(h_b)
+            for a, b in zip(cuts[:-1], cuts[1:]):
+                if b - a >= 10:
+                    final_bands.append((y0 + a, y0 + b))
+        else:
+            final_bands.append((y0, y1))
 
+    crops = []
+    for y0, y1 in final_bands:
+        pad = max(3, int((y1 - y0) * 0.14))
+        cy0, cy1 = max(0, y0 - pad), min(H, y1 + pad)
+        strip = img_bgr[cy0:cy1, :]
+        # Kağız sərhədindən kənardakı fonu (masa, kölgə) at: ən uzun parlaq zolaq = kağız
+        sg = gray[cy0:cy1, :]
+        col = cv2.GaussianBlur(sg.mean(axis=0).reshape(1, -1).astype(np.float32), (0, 0), sigmaX=6).ravel()
+        paper = col > 0.78 * float(np.percentile(col, 90))
+        best_len, best_s, cur_s = 0, 0, None
+        for x, v in enumerate(list(paper) + [False]):
+            if v and cur_s is None:
+                cur_s = x
+            elif not v and cur_s is not None:
+                if x - cur_s > best_len:
+                    best_len, best_s = x - cur_s, cur_s
+                cur_s = None
+        if best_len > 0.3 * W:
+            strip = strip[:, best_s + 4:best_s + best_len - 4]
+        elif best_len < 0.1 * W:
+            continue  # kağız deyil (fon zolağı)
+        crops.append(strip)
+    return crops

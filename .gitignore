@@ -25,6 +25,9 @@ err.txt
 out.txt
 tasklist
 type
+.gradio/
+public_url.txt
+scratch/edge_prof*/
 
 # Heavy generated test/train datasets (keep repo lightweight)
 data/diag*/
