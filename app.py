@@ -2845,24 +2845,28 @@ gradio-app, .main, .wrap, .contain, .column, .tabs, .tabitem, .tab-wrapper, .tab
 
 BENCHMARK_SAMPLES = [
     [
-        "results/real_fix8/crops_calibri/line_00.png",
+        "data/phone_photos_15/crops/IMG_5124/line_00.png",
+        "Qobustan dövlət tarixi-bədii qoruğu Bakının cənub-qərbində yerləşən açıq səma altındakı muzeydir.",
+    ],
+    [
+        "data/phone_photos_15/crops/IMG_5125/line_02.png",
+        "İşıqlanma qeyri-bərabər olduqda hərf ştrixlərinin kontrastı zəifləyir və diakritik işarələr itə bilir.",
+    ],
+    [
+        "data/phone_photos_15/crops/IMG_5126/line_00.png",
+        "Şəki Xan Sarayı XVIII əsr Azərbaycan memarlığının ən nadir və möhtəşəm incilərindən biridir.",
+    ],
+    [
+        "data/phone_photos_15/crops/IMG_5128/line_04.png",
+        "Böyük İ və nöqtəsiz I hərflərinin fərqləndirilməsi optik tanıma modelləri üçün sınaq meyarlarıdır.",
+    ],
+    [
+        "data/phone_photos_15/crops/IMG_5130/line_00.png",
+        "İçərişəhər Bakının ən qədim hissəsi olub əsrlər boyu formalaşmış unikal şəhərsalma nümunəsidir.",
+    ],
+    [
+        "data/phone_photos_15/crops/IMG_5122/line_00.png",
         "Gəncə çayının kənarında, qədim ağacların kölgəsinə sığınmış balaca bir dulusçu emalatxanası var",
-    ],
-    [
-        "results/real_fix8/crops_times/line_01.png",
-        "Murad şəhərdə oxusa da, hər tətil otağında kəndə, bu torpağın qoxusuna qayıdırdı. Amma bu",
-    ],
-    [
-        "results/real_fix8/crops_times/line_02.png",
-        "dəfə qayıdışı başqa idi. O, hiss edirdi ki, babası təkdir və onun daşıdığı bu ağır yük -",
-    ],
-    [
-        "results/real_fix8/crops_times/line_00.png",
-        "Çöldə isə nəvəsi Murad səhərin sərin havasında babasının köhnə velosipedini təmizləyirdi.",
-    ],
-    [
-        "results/real_fix8/crops_calibri/line_03.png",
-        "sənəti, nəsildən-nəslə keçən gizli bir məharət yaşatdırdığı hiss olunurdu. Divarlardan asılmış gil",
     ],
 ]
 
