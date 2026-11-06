@@ -14,7 +14,7 @@ from common import align, infer_single_crop, load_model_checkpoint, normalize
 sys.stdout.reconfigure(encoding="utf-8")
 os.environ["PYTHONUTF8"] = "1"
 os.environ["PATH"] += r";C:\Program Files\Tesseract-OCR"
-os.environ["TESSDATA_PREFIX"] = r"D:\laragon\www\az_ocr_bm606\tessdata"
+os.environ["TESSDATA_PREFIX"] = str(Path(__file__).resolve().parent / "tessdata")
 
 IMG_PATH = Path("data/real_docs/photo2_calibri.jpg")
 if not IMG_PATH.exists():

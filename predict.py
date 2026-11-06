@@ -79,7 +79,7 @@ def main():
         if not dp.exists():
             print(f"XƏTA: Qovluq tapılmadı: {dp}", file=sys.stderr)
             sys.exit(1)
-        valid_exts = {".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".webp"}
+        valid_exts = {".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".webp", ".heic", ".heif"}
         all_imgs = [f for f in sorted(dp.iterdir()) if f.suffix.lower() in valid_exts]
         images_to_process.extend(all_imgs[:args.limit])
         print(f"[*] Qovluqda {len(all_imgs)} şəkil tapıldı, {len(images_to_process)} ədədi emal edilir...")
@@ -87,6 +87,19 @@ def main():
     results = []
     for img_path in images_to_process:
         img = cv2.imread(str(img_path))
+        if img is None:
+            try:
+                import numpy as np
+                from PIL import Image
+                try:
+                    import pillow_heif
+                    pillow_heif.register_heif_opener()
+                except ImportError:
+                    pass
+                pil_img = Image.open(img_path).convert("RGB")
+                img = cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
+            except Exception:
+                img = None
         if img is None:
             print(f"[!] Oxunmadı (skip): {img_path}")
             continue
