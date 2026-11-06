@@ -28,6 +28,7 @@ type
 .gradio/
 public_url.txt
 scratch/edge_prof*/
+scratch/last_mobile_request.jpg
 
 # Heavy generated test/train datasets (keep repo lightweight)
 data/diag*/

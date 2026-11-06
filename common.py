@@ -208,19 +208,36 @@ def infer_single_crop(model: nn.Module, cfg: Dict[str, Any], vocab: Vocab, img: 
 
 
 def split_line_into_chunks(crop_bgr: np.ndarray, n_chunks: int) -> List[np.ndarray]:
-    """Uzun sətirləri sözarası ağ boşluqlardan optimal hissələrə (chunk) bölür."""
+    """Uzun sətirləri sözarası ağ boşluqlardan (kölgəyə davamlı 0-mürəkkəb aralıqlarından) optimal hissələrə bölür."""
     if n_chunks <= 1:
         return [crop_bgr]
     gray = cv2.cvtColor(crop_bgr, cv2.COLOR_BGR2GRAY) if crop_bgr.ndim == 3 else crop_bgr
-    w = gray.shape[1]
+    h, w = gray.shape[:2]
     if w < 60:
         return [crop_bgr]
-    ink = (gray < np.percentile(gray, 35)).astype(np.float32)
+    sigma = min(25, max(5, h // 2))
+    bg = cv2.GaussianBlur(gray, (0, 0), sigmaX=sigma)
+    ink = ((bg.astype(np.int16) - gray.astype(np.int16)) > 18).astype(np.float32)
     proj = ink.sum(axis=0)
-    ksize = min(25, max(5, w // 20))
+
+    # Sözarası tam boş (proj == 0) zolaqları tapırıq (hərfarası 4-5px kerning deyil, həqiqi sözarası boşluq)
+    min_gap_w = max(6, int(h * 0.21))
+    zero_runs = []
+    in_z = False
+    z_start = 0
+    for x_idx, val in enumerate(proj):
+        if val == 0 and not in_z:
+            in_z = True
+            z_start = x_idx
+        elif val > 0 and in_z:
+            in_z = False
+            if (x_idx - z_start) >= min_gap_w and z_start > 10 and x_idx < (w - 10):
+                zero_runs.append((z_start, x_idx, (z_start + x_idx) // 2))
+
+    ksize = max(5, min(15, h // 3))
     smooth_proj = np.convolve(proj, np.ones(ksize) / ksize, mode="same")
     nominal_w = w / n_chunks
-    search_radius = int(nominal_w * 0.35)
+    search_radius = int(nominal_w * 0.38)
     splits = []
     for k in range(1, n_chunks):
         ideal_x = int(k * nominal_w)
@@ -229,10 +246,15 @@ def split_line_into_chunks(crop_bgr: np.ndarray, n_chunks: int) -> List[np.ndarr
         if x1 <= x0:
             splits.append(ideal_x)
             continue
-        window = smooth_proj[x0:x1]
-        min_val = window.min()
-        candidates = np.where(window == min_val)[0] + x0
-        best_x = candidates[np.argmin(np.abs(candidates - ideal_x))]
+        # Əvvəlcə axtarış pəncərəsi daxilindəki həqiqi sözarası boşluqları yoxla
+        cand_gaps = [mid for (gs, ge, mid) in zero_runs if x0 <= mid <= x1]
+        if cand_gaps:
+            best_x = min(cand_gaps, key=lambda m: abs(m - ideal_x))
+        else:
+            window = smooth_proj[x0:x1]
+            min_val = window.min()
+            candidates = np.where(window == min_val)[0] + x0
+            best_x = int(candidates[np.argmin(np.abs(candidates - ideal_x))])
         splits.append(int(best_x))
     chunks = []
     prev_x = 0

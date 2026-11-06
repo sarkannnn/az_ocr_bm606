@@ -40,10 +40,47 @@ AZ_SUFFIXES = [
 ]
 
 
+def az_lower(s: str) -> str:
+    """Proper Azerbaijani lowercase conversion (İ -> i, I -> ı)."""
+    return s.replace("İ", "i").replace("I", "ı").lower().replace("i\u0307", "i")
+
+
+def az_capitalize(s: str) -> str:
+    """Proper Azerbaijani capitalization (i -> İ, ı -> I)."""
+    if not s:
+        return s
+    first = s[0]
+    if first == "i":
+        first_up = "İ"
+    elif first == "ı":
+        first_up = "I"
+    else:
+        first_up = first.upper()
+    return first_up + az_lower(s[1:])
+
+
+OCR_CONFUSION_PAIRS = {
+    ("ş", "s"), ("s", "ş"),
+    ("h", "f"), ("f", "h"), ("t", "f"), ("f", "t"),
+    ("x", "s"), ("s", "x"), ("x", "ç"), ("ç", "x"),
+    ("c", "ç"), ("ç", "c"),
+    ("i", "ı"), ("ı", "i"), ("i", "l"), ("l", "i"), ("ı", "l"), ("l", "ı"),
+    ("e", "ə"), ("ə", "e"), ("a", "ə"), ("ə", "a"),
+    ("n", "m"), ("m", "n"), ("n", "r"), ("r", "n"),
+    ("u", "ü"), ("ü", "u"), ("u", "n"), ("n", "u"),
+    ("o", "ö"), ("ö", "o"),
+    ("l", "t"), ("t", "l"),
+    ("v", "y"), ("y", "v"),
+    ("k", "g"), ("g", "k"), ("q", "g"), ("g", "q"), ("ğ", "g"), ("g", "ğ"),
+    ("b", "d"), ("d", "b"), ("p", "b"), ("b", "p"),
+}
+
+
 class AzerbaijaniPostProcessor:
     def __init__(self, dict_path=None, max_edit_distance=2):
+        base_dir = Path(__file__).resolve().parent
         if dict_path is None:
-            dict_path = Path(__file__).parent / "data" / "az_lexicon.txt"
+            dict_path = base_dir / "data" / "az_lexicon.txt"
         
         self.dict_path = Path(dict_path)
         self.sym_spell = SymSpell(max_dictionary_edit_distance=max_edit_distance, prefix_length=7)
@@ -52,13 +89,23 @@ class AzerbaijaniPostProcessor:
         if self.dict_path.exists():
             # Pass encoding="utf-8" for proper Azerbaijani diacritics support
             self.sym_spell.load_dictionary(str(self.dict_path), term_index=0, count_index=1, separator=" ", encoding="utf-8")
-            self.base_vocab = set(self.sym_spell.words.keys())
+            self.base_vocab = {az_lower(w) for w in self.sym_spell.words.keys()}
+            # Expand valid stems with training corpus vocabulary (Section 6.8 of manuscript)
+            for cp in [base_dir / "data" / "corpus_line" / "train.txt", base_dir / "data" / "corpus_word" / "train.txt"]:
+                if cp.exists():
+                    try:
+                        with open(cp, encoding="utf-8", errors="ignore") as f:
+                            for line in f:
+                                for w in re.findall(r"[a-zA-ZçəğıöşüÇƏĞIİÖŞÜ]+", line):
+                                    self.base_vocab.add(az_lower(w))
+                    except Exception:
+                        pass
             self.loaded = True
         else:
             self.loaded = False
 
     def is_valid_morphologically(self, word_lower: str) -> bool:
-        """Returns True if word is in vocabulary directly or by removing a valid Azerbaijani suffix."""
+        """Returns True if word is in vocabulary directly or by removing up to 2 valid Azerbaijani suffixes."""
         if word_lower in self.base_vocab:
             return True
         for suf in AZ_SUFFIXES:
@@ -66,6 +113,11 @@ class AzerbaijaniPostProcessor:
                 stem = word_lower[:-len(suf)]
                 if stem in self.base_vocab:
                     return True
+                for suf2 in AZ_SUFFIXES:
+                    if stem.endswith(suf2) and len(stem) - len(suf2) >= 2:
+                        stem2 = stem[:-len(suf2)]
+                        if stem2 in self.base_vocab:
+                            return True
         return False
 
     def clean_punctuation(self, text: str) -> str:
@@ -111,20 +163,20 @@ class AzerbaijaniPostProcessor:
         if len(core) <= 2:
             return token
 
-        core_lower = core.lower()
+        core_lower = az_lower(core)
         # Deterministic Azerbaijani phonotactic OCR fix: -ləvirdi / -lavırdı -> -ləyirdi / -layırdı
         if re.search(r"(lə|la)v(ir|ır)(di|dı|dilər|dılar)$", core_lower):
             fixed_core = re.sub(r"(lə|la)v(ir|ır)(di|dı|dilər|dılar)$", r"\1y\2\3", core_lower)
             if core.isupper():
                 fixed_core = fixed_core.upper()
             elif core[0].isupper():
-                fixed_core = fixed_core.capitalize()
+                fixed_core = az_capitalize(fixed_core)
             return prefix + fixed_core + suffix
 
         if self.is_valid_morphologically(core_lower):
             return token
 
-        # Look up with SymSpell
+        # Look up with SymSpell (safe OCR confusion filter per Section 6.8)
         suggestions = self.sym_spell.lookup(
             core_lower,
             Verbosity.CLOSEST,
@@ -134,17 +186,24 @@ class AzerbaijaniPostProcessor:
 
         if suggestions:
             best = suggestions[0]
-            # If a correction was found within distance
-            if best.distance > 0 and best.term != core_lower:
+            if best.distance == 1 and best.term != core_lower and best.count >= 5:
                 corrected_term = best.term
-                # Match original capitalization
-                if core.isupper():
-                    core_out = corrected_term.upper()
-                elif core[0].isupper():
-                    core_out = corrected_term.capitalize()
-                else:
-                    core_out = corrected_term
-                return prefix + core_out + suffix
+                # Ensure substitution is a plausible OCR visual confusion
+                plausible = False
+                if len(core_lower) == len(corrected_term):
+                    diffs = [(a, b) for a, b in zip(core_lower, corrected_term) if a != b]
+                    if len(diffs) == 1 and diffs[0] in OCR_CONFUSION_PAIRS:
+                        plausible = True
+                elif abs(len(core_lower) - len(corrected_term)) == 1 and not core[0].isupper() and len(core_lower) <= 8:
+                    plausible = True
+                if plausible:
+                    if core.isupper():
+                        core_out = corrected_term.upper()
+                    elif core[0].isupper():
+                        core_out = az_capitalize(corrected_term)
+                    else:
+                        core_out = corrected_term
+                    return prefix + core_out + suffix
 
         return token
 

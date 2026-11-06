@@ -1,0 +1,824 @@
+{
+  "total_documents": 15,
+  "total_lines": 295,
+  "total_chars": 26805,
+  "overall_models": {
+    "v2_pp": {
+      "cer_pct": 0.29,
+      "wer_pct": 1.37,
+      "word_acc_pct": 98.63,
+      "acc_pct": 99.71,
+      "exact_lines": "259/295",
+      "exact_pct": 87.8,
+      "ms_per_line": 86.4
+    },
+    "v2_raw": {
+      "cer_pct": 0.3,
+      "wer_pct": 1.64,
+      "word_acc_pct": 98.36,
+      "acc_pct": 99.7,
+      "exact_lines": "253/295",
+      "exact_pct": 85.8,
+      "ms_per_line": 86.3
+    },
+    "v1_raw": {
+      "cer_pct": 12.37,
+      "wer_pct": 42.49,
+      "word_acc_pct": 57.51,
+      "acc_pct": 87.63,
+      "exact_lines": "37/295",
+      "exact_pct": 12.5,
+      "ms_per_line": 85.2
+    },
+    "tess_psm7": {
+      "cer_pct": 0.31,
+      "wer_pct": 1.55,
+      "word_acc_pct": 98.45,
+      "acc_pct": 99.69,
+      "exact_lines": "250/295",
+      "exact_pct": 84.7,
+      "ms_per_line": 182.2
+    },
+    "tess_psm13": {
+      "cer_pct": 0.47,
+      "wer_pct": 2.4,
+      "word_acc_pct": 97.6,
+      "acc_pct": 99.53,
+      "exact_lines": "230/295",
+      "exact_pct": 78.0,
+      "ms_per_line": 141.4
+    }
+  },
+  "diacritic_audit": {
+    "Kiçik Xüsusi Hərflər (ə,ı,ö,ğ,ü,ş,ç)": {
+      "count": 4429,
+      "v2_pp_acc_pct": 99.77,
+      "v2_pp_err_pct": 0.23,
+      "v1_acc_pct": 88.33,
+      "v1_err_pct": 11.67,
+      "tess7_acc_pct": 99.82,
+      "tess7_err_pct": 0.18,
+      "v2_pp_errors": 10,
+      "v1_errors": 517,
+      "tess7_errors": 8
+    },
+    "Böyük Xüsusi Hərflər (Ə,İ,Ö,Ğ,Ü,Ş,Ç,I)": {
+      "count": 58,
+      "v2_pp_acc_pct": 100.0,
+      "v2_pp_err_pct": 0.0,
+      "v1_acc_pct": 81.03,
+      "v1_err_pct": 18.97,
+      "tess7_acc_pct": 98.28,
+      "tess7_err_pct": 1.72,
+      "v2_pp_errors": 0,
+      "v1_errors": 11,
+      "tess7_errors": 1
+    },
+    "4-Tərəfli i / ı / İ / I Ailəsi": {
+      "count": 3382,
+      "v2_pp_acc_pct": 99.35,
+      "v2_pp_err_pct": 0.65,
+      "v1_acc_pct": 88.68,
+      "v1_err_pct": 11.32,
+      "tess7_acc_pct": 99.65,
+      "tess7_err_pct": 0.35,
+      "v2_pp_errors": 22,
+      "v1_errors": 383,
+      "tess7_errors": 12
+    },
+    "Ə hərfi (ə / Ə)": {
+      "count": 2263,
+      "v2_pp_acc_pct": 99.96,
+      "v2_pp_err_pct": 0.04,
+      "v1_acc_pct": 94.03,
+      "v1_err_pct": 5.97,
+      "tess7_acc_pct": 100.0,
+      "tess7_err_pct": 0.0,
+      "v2_pp_errors": 1,
+      "v1_errors": 135,
+      "tess7_errors": 0
+    }
+  },
+  "documents": [
+    {
+      "photo_num": 1,
+      "img_code": "IMG_5121",
+      "short_name": "Photo 1 (IMG_5121 — Xalçaçı Usta Əli və Murad)",
+      "topic": "Xalçaçı Usta Əli və Nəvəsi Murad (Real Smartfon Fotosu)",
+      "level": "Real Phone (L2)",
+      "font": "Times New Roman (Real Print)",
+      "page_path": "data/phone_photos_15/IMG_5121.jpg",
+      "n_lines": 16,
+      "n_chars": 1442,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.62,
+          "wer_pct": 3.23,
+          "acc_pct": 99.38,
+          "exact_lines": "11/16",
+          "ms_per_line": 111.1
+        },
+        "v2_raw": {
+          "cer_pct": 0.76,
+          "wer_pct": 3.69,
+          "acc_pct": 99.24,
+          "exact_lines": "10/16",
+          "ms_per_line": 110.9
+        },
+        "v1_raw": {
+          "cer_pct": 18.17,
+          "wer_pct": 72.81,
+          "acc_pct": 81.83,
+          "exact_lines": "0/16",
+          "ms_per_line": 112.7
+        },
+        "tess_psm7": {
+          "cer_pct": 1.32,
+          "wer_pct": 5.07,
+          "acc_pct": 98.68,
+          "exact_lines": "9/16",
+          "ms_per_line": 225.9
+        },
+        "tess_psm13": {
+          "cer_pct": 2.22,
+          "wer_pct": 8.76,
+          "acc_pct": 97.78,
+          "exact_lines": "4/16",
+          "ms_per_line": 179.2
+        }
+      }
+    },
+    {
+      "photo_num": 2,
+      "img_code": "IMG_5122",
+      "short_name": "Photo 2 (IMG_5122 — Dulusçu Səməndər və Taryel)",
+      "topic": "Gəncə Çayı və Dulusçu Qoca Səməndər (Real Smartfon Fotosu)",
+      "level": "Real Phone (L2)",
+      "font": "Calibri (Real Print)",
+      "page_path": "data/phone_photos_15/IMG_5122.jpg",
+      "n_lines": 16,
+      "n_chars": 1463,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.41,
+          "wer_pct": 2.84,
+          "acc_pct": 99.59,
+          "exact_lines": "12/16",
+          "ms_per_line": 103.9
+        },
+        "v2_raw": {
+          "cer_pct": 0.48,
+          "wer_pct": 3.32,
+          "acc_pct": 99.52,
+          "exact_lines": "11/16",
+          "ms_per_line": 103.8
+        },
+        "v1_raw": {
+          "cer_pct": 9.36,
+          "wer_pct": 53.08,
+          "acc_pct": 90.64,
+          "exact_lines": "0/16",
+          "ms_per_line": 109.7
+        },
+        "tess_psm7": {
+          "cer_pct": 0.14,
+          "wer_pct": 1.42,
+          "acc_pct": 99.86,
+          "exact_lines": "14/16",
+          "ms_per_line": 204.2
+        },
+        "tess_psm13": {
+          "cer_pct": 1.85,
+          "wer_pct": 8.06,
+          "acc_pct": 98.15,
+          "exact_lines": "5/16",
+          "ms_per_line": 159.0
+        }
+      }
+    },
+    {
+      "photo_num": 3,
+      "img_code": "IMG_5123",
+      "short_name": "Photo 3 (IMG_5123 — Milli Sənətkarlıq İrsi)",
+      "topic": "Milli Sənətkarlıq İrsi və Tarixi Yaddaş (Real Smartfon Fotosu)",
+      "level": "Real Phone (L3)",
+      "font": "Times New Roman (Real Print)",
+      "page_path": "data/phone_photos_15/IMG_5123.jpg",
+      "n_lines": 23,
+      "n_chars": 1015,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.89,
+          "wer_pct": 2.17,
+          "acc_pct": 99.11,
+          "exact_lines": "20/23",
+          "ms_per_line": 32.4
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "23/23",
+          "ms_per_line": 32.3
+        },
+        "v1_raw": {
+          "cer_pct": 4.33,
+          "wer_pct": 31.16,
+          "acc_pct": 95.67,
+          "exact_lines": "4/23",
+          "ms_per_line": 28.4
+        },
+        "tess_psm7": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "23/23",
+          "ms_per_line": 129.6
+        },
+        "tess_psm13": {
+          "cer_pct": 0.39,
+          "wer_pct": 2.9,
+          "acc_pct": 99.61,
+          "exact_lines": "19/23",
+          "ms_per_line": 114.3
+        }
+      }
+    },
+    {
+      "photo_num": 4,
+      "img_code": "IMG_5124",
+      "short_name": "Photo 4 (IMG_5124 — Qobustan Qayaüstü İrsi)",
+      "topic": "Qobustan Qayaüstü Rəsmləri və İbtidai İncəsənət",
+      "level": "L2",
+      "font": "Arial (Sans-Serif)",
+      "page_path": "data/phone_photos_15/IMG_5124.jpg",
+      "n_lines": 20,
+      "n_chars": 1943,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 85.0
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 84.9
+        },
+        "v1_raw": {
+          "cer_pct": 11.43,
+          "wer_pct": 36.91,
+          "acc_pct": 88.57,
+          "exact_lines": "6/20",
+          "ms_per_line": 84.6
+        },
+        "tess_psm7": {
+          "cer_pct": 0.15,
+          "wer_pct": 1.29,
+          "acc_pct": 99.85,
+          "exact_lines": "17/20",
+          "ms_per_line": 164.3
+        },
+        "tess_psm13": {
+          "cer_pct": 0.15,
+          "wer_pct": 1.29,
+          "acc_pct": 99.85,
+          "exact_lines": "17/20",
+          "ms_per_line": 129.4
+        }
+      }
+    },
+    {
+      "photo_num": 5,
+      "img_code": "IMG_5125",
+      "short_name": "Photo 5 (IMG_5125 — Süni İntellekt və OCR)",
+      "topic": "Rəqəmsal İdarəetmə və Süni İntellekt Texnologiyaları",
+      "level": "L1",
+      "font": "Tahoma (Unseen Group C)",
+      "page_path": "data/phone_photos_15/IMG_5125.jpg",
+      "n_lines": 20,
+      "n_chars": 1865,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.05,
+          "wer_pct": 0.48,
+          "acc_pct": 99.95,
+          "exact_lines": "19/20",
+          "ms_per_line": 70.7
+        },
+        "v2_raw": {
+          "cer_pct": 0.05,
+          "wer_pct": 0.48,
+          "acc_pct": 99.95,
+          "exact_lines": "19/20",
+          "ms_per_line": 70.5
+        },
+        "v1_raw": {
+          "cer_pct": 0.43,
+          "wer_pct": 3.33,
+          "acc_pct": 99.57,
+          "exact_lines": "13/20",
+          "ms_per_line": 69.5
+        },
+        "tess_psm7": {
+          "cer_pct": 0.11,
+          "wer_pct": 0.95,
+          "acc_pct": 99.89,
+          "exact_lines": "18/20",
+          "ms_per_line": 163.9
+        },
+        "tess_psm13": {
+          "cer_pct": 0.11,
+          "wer_pct": 0.95,
+          "acc_pct": 99.89,
+          "exact_lines": "18/20",
+          "ms_per_line": 131.9
+        }
+      }
+    },
+    {
+      "photo_num": 6,
+      "img_code": "IMG_5126",
+      "short_name": "Photo 6 (IMG_5126 — Şəki Xan Sarayı)",
+      "topic": "Şəki Xan Sarayı və Memarlıq İrsi",
+      "level": "L2",
+      "font": "Cambria (Unseen Group C)",
+      "page_path": "data/phone_photos_15/IMG_5126.jpg",
+      "n_lines": 20,
+      "n_chars": 1917,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 83.6
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 83.5
+        },
+        "v1_raw": {
+          "cer_pct": 14.81,
+          "wer_pct": 44.87,
+          "acc_pct": 85.19,
+          "exact_lines": "0/20",
+          "ms_per_line": 81.5
+        },
+        "tess_psm7": {
+          "cer_pct": 0.1,
+          "wer_pct": 0.85,
+          "acc_pct": 99.9,
+          "exact_lines": "18/20",
+          "ms_per_line": 164.2
+        },
+        "tess_psm13": {
+          "cer_pct": 0.1,
+          "wer_pct": 0.85,
+          "acc_pct": 99.9,
+          "exact_lines": "18/20",
+          "ms_per_line": 126.9
+        }
+      }
+    },
+    {
+      "photo_num": 7,
+      "img_code": "IMG_5127",
+      "short_name": "Photo 7 (IMG_5127 — Göygöl Milli Parkı)",
+      "topic": "Göygöl Milli Parkı və Biomüxtəliflik",
+      "level": "L3",
+      "font": "MS Sans Serif (Unseen Group C)",
+      "page_path": "data/phone_photos_15/IMG_5127.jpg",
+      "n_lines": 20,
+      "n_chars": 1847,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 81.1
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 80.9
+        },
+        "v1_raw": {
+          "cer_pct": 8.23,
+          "wer_pct": 34.35,
+          "acc_pct": 91.77,
+          "exact_lines": "2/20",
+          "ms_per_line": 78.4
+        },
+        "tess_psm7": {
+          "cer_pct": 0.22,
+          "wer_pct": 1.74,
+          "acc_pct": 99.78,
+          "exact_lines": "16/20",
+          "ms_per_line": 165.2
+        },
+        "tess_psm13": {
+          "cer_pct": 0.22,
+          "wer_pct": 1.74,
+          "acc_pct": 99.78,
+          "exact_lines": "16/20",
+          "ms_per_line": 129.5
+        }
+      }
+    },
+    {
+      "photo_num": 8,
+      "img_code": "IMG_5128",
+      "short_name": "Photo 8 (IMG_5128 — Azərbaycan Əlifbası)",
+      "topic": "Azərbaycan Əlifbası və Fonetik Sistem",
+      "level": "L4",
+      "font": "Tahoma (Unseen Group C)",
+      "page_path": "data/phone_photos_15/IMG_5128.jpg",
+      "n_lines": 20,
+      "n_chars": 1878,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 72.7
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 72.6
+        },
+        "v1_raw": {
+          "cer_pct": 6.6,
+          "wer_pct": 39.01,
+          "acc_pct": 93.4,
+          "exact_lines": "0/20",
+          "ms_per_line": 71.0
+        },
+        "tess_psm7": {
+          "cer_pct": 0.16,
+          "wer_pct": 1.35,
+          "acc_pct": 99.84,
+          "exact_lines": "17/20",
+          "ms_per_line": 163.2
+        },
+        "tess_psm13": {
+          "cer_pct": 0.16,
+          "wer_pct": 1.35,
+          "acc_pct": 99.84,
+          "exact_lines": "17/20",
+          "ms_per_line": 129.4
+        }
+      }
+    },
+    {
+      "photo_num": 9,
+      "img_code": "IMG_5129",
+      "short_name": "Photo 9 (IMG_5129 — Kibertəhlükəsizlik)",
+      "topic": "Kibertəhlükəsizlik və Kriptoqrafik Şifrələmə Standartları",
+      "level": "L1",
+      "font": "Consolas (Held-Out Monospace)",
+      "page_path": "data/phone_photos_15/IMG_5129.jpg",
+      "n_lines": 20,
+      "n_chars": 1919,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.73,
+          "wer_pct": 1.49,
+          "acc_pct": 99.27,
+          "exact_lines": "17/20",
+          "ms_per_line": 87.6
+        },
+        "v2_raw": {
+          "cer_pct": 0.73,
+          "wer_pct": 1.49,
+          "acc_pct": 99.27,
+          "exact_lines": "17/20",
+          "ms_per_line": 87.4
+        },
+        "v1_raw": {
+          "cer_pct": 7.45,
+          "wer_pct": 44.55,
+          "acc_pct": 92.55,
+          "exact_lines": "1/20",
+          "ms_per_line": 86.7
+        },
+        "tess_psm7": {
+          "cer_pct": 0.78,
+          "wer_pct": 1.49,
+          "acc_pct": 99.22,
+          "exact_lines": "17/20",
+          "ms_per_line": 195.5
+        },
+        "tess_psm13": {
+          "cer_pct": 0.78,
+          "wer_pct": 1.49,
+          "acc_pct": 99.22,
+          "exact_lines": "17/20",
+          "ms_per_line": 144.8
+        }
+      }
+    },
+    {
+      "photo_num": 10,
+      "img_code": "IMG_5130",
+      "short_name": "Photo 10 (IMG_5130 — İçərişəhər və Qız Qalası)",
+      "topic": "İçərişəhər Memarlıq Kompleksi və Qız Qalası Müdafiə Sistemi",
+      "level": "L2",
+      "font": "Cambria (Unseen Group C)",
+      "page_path": "data/phone_photos_15/IMG_5130.jpg",
+      "n_lines": 20,
+      "n_chars": 1891,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 77.3
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 77.2
+        },
+        "v1_raw": {
+          "cer_pct": 13.17,
+          "wer_pct": 40.51,
+          "acc_pct": 86.83,
+          "exact_lines": "4/20",
+          "ms_per_line": 75.7
+        },
+        "tess_psm7": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 162.1
+        },
+        "tess_psm13": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 127.5
+        }
+      }
+    },
+    {
+      "photo_num": 11,
+      "img_code": "IMG_5131",
+      "short_name": "Photo 11 (IMG_5131 — Xəzər Dənizi Ekologiyası)",
+      "topic": "Xəzər Dənizinin Ekoloji Problemləri və Su Hövzəsi Monitorinqi",
+      "level": "L3",
+      "font": "Verdana (Sans-Serif)",
+      "page_path": "data/phone_photos_15/IMG_5131.jpg",
+      "n_lines": 20,
+      "n_chars": 1903,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.58,
+          "wer_pct": 4.93,
+          "acc_pct": 99.42,
+          "exact_lines": "12/20",
+          "ms_per_line": 86.4
+        },
+        "v2_raw": {
+          "cer_pct": 1.05,
+          "wer_pct": 8.97,
+          "acc_pct": 98.95,
+          "exact_lines": "6/20",
+          "ms_per_line": 86.3
+        },
+        "v1_raw": {
+          "cer_pct": 18.18,
+          "wer_pct": 61.88,
+          "acc_pct": 81.82,
+          "exact_lines": "0/20",
+          "ms_per_line": 88.4
+        },
+        "tess_psm7": {
+          "cer_pct": 0.42,
+          "wer_pct": 3.59,
+          "acc_pct": 99.58,
+          "exact_lines": "13/20",
+          "ms_per_line": 179.4
+        },
+        "tess_psm13": {
+          "cer_pct": 0.42,
+          "wer_pct": 3.59,
+          "acc_pct": 99.58,
+          "exact_lines": "13/20",
+          "ms_per_line": 136.9
+        }
+      }
+    },
+    {
+      "photo_num": 12,
+      "img_code": "IMG_5132",
+      "short_name": "Photo 12 (IMG_5132 — Naxçıvan Abidələri)",
+      "topic": "Naxçıvan Muxtar Respublikasının Tarixi Abidələri və Möminə Xatun Türbəsi",
+      "level": "L2",
+      "font": "Courier New (Monospace)",
+      "page_path": "data/phone_photos_15/IMG_5132.jpg",
+      "n_lines": 20,
+      "n_chars": 1868,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 1.39,
+          "wer_pct": 5.6,
+          "acc_pct": 98.61,
+          "exact_lines": "9/20",
+          "ms_per_line": 130.4
+        },
+        "v2_raw": {
+          "cer_pct": 1.34,
+          "wer_pct": 5.6,
+          "acc_pct": 98.66,
+          "exact_lines": "9/20",
+          "ms_per_line": 130.3
+        },
+        "v1_raw": {
+          "cer_pct": 41.97,
+          "wer_pct": 61.64,
+          "acc_pct": 58.03,
+          "exact_lines": "0/20",
+          "ms_per_line": 125.2
+        },
+        "tess_psm7": {
+          "cer_pct": 1.12,
+          "wer_pct": 3.45,
+          "acc_pct": 98.88,
+          "exact_lines": "12/20",
+          "ms_per_line": 227.8
+        },
+        "tess_psm13": {
+          "cer_pct": 1.12,
+          "wer_pct": 3.45,
+          "acc_pct": 98.88,
+          "exact_lines": "12/20",
+          "ms_per_line": 167.6
+        }
+      }
+    },
+    {
+      "photo_num": 13,
+      "img_code": "IMG_5133",
+      "short_name": "Photo 13 (IMG_5133 — Muğam və Musiqi İrsi)",
+      "topic": "Azərbaycan Muğam Sənəti və Milli Musiqi Alətləri İrsi",
+      "level": "L3",
+      "font": "Segoe UI (Sans-Serif)",
+      "page_path": "data/phone_photos_15/IMG_5133.jpg",
+      "n_lines": 20,
+      "n_chars": 1910,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 96.1
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 96.0
+        },
+        "v1_raw": {
+          "cer_pct": 12.2,
+          "wer_pct": 43.39,
+          "acc_pct": 87.8,
+          "exact_lines": "2/20",
+          "ms_per_line": 94.8
+        },
+        "tess_psm7": {
+          "cer_pct": 0.1,
+          "wer_pct": 0.83,
+          "acc_pct": 99.9,
+          "exact_lines": "18/20",
+          "ms_per_line": 197.6
+        },
+        "tess_psm13": {
+          "cer_pct": 0.16,
+          "wer_pct": 1.24,
+          "acc_pct": 99.84,
+          "exact_lines": "17/20",
+          "ms_per_line": 147.8
+        }
+      }
+    },
+    {
+      "photo_num": 14,
+      "img_code": "IMG_5134",
+      "short_name": "Photo 14 (IMG_5134 — Kosmik Sənaye və Peyklər)",
+      "topic": "Azərbaycan Kosmik Sənayesi və Peyk Müşahidə Sistemləri",
+      "level": "L4",
+      "font": "MS Sans Serif (Unseen Group C)",
+      "page_path": "data/phone_photos_15/IMG_5134.jpg",
+      "n_lines": 20,
+      "n_chars": 1987,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 103.8
+        },
+        "v2_raw": {
+          "cer_pct": 0.0,
+          "wer_pct": 0.0,
+          "acc_pct": 100.0,
+          "exact_lines": "20/20",
+          "ms_per_line": 103.6
+        },
+        "v1_raw": {
+          "cer_pct": 11.47,
+          "wer_pct": 45.16,
+          "acc_pct": 88.53,
+          "exact_lines": "2/20",
+          "ms_per_line": 103.2
+        },
+        "tess_psm7": {
+          "cer_pct": 0.05,
+          "wer_pct": 0.46,
+          "acc_pct": 99.95,
+          "exact_lines": "19/20",
+          "ms_per_line": 208.6
+        },
+        "tess_psm13": {
+          "cer_pct": 0.1,
+          "wer_pct": 0.92,
+          "acc_pct": 99.9,
+          "exact_lines": "18/20",
+          "ms_per_line": 160.4
+        }
+      }
+    },
+    {
+      "photo_num": 15,
+      "img_code": "IMG_5135",
+      "short_name": "Photo 15 (IMG_5135 — Qarabağ Xalçaçılıq Məktəbi)",
+      "topic": "Qarabağ Xalçaçılıq Məktəbi və Ornamental Kompozisiyalar",
+      "level": "L4",
+      "font": "Candara (Humanist Sans)",
+      "page_path": "data/phone_photos_15/IMG_5135.jpg",
+      "n_lines": 20,
+      "n_chars": 1957,
+      "models": {
+        "v2_pp": {
+          "cer_pct": 0.05,
+          "wer_pct": 0.41,
+          "acc_pct": 99.95,
+          "exact_lines": "19/20",
+          "ms_per_line": 90.3
+        },
+        "v2_raw": {
+          "cer_pct": 0.1,
+          "wer_pct": 0.81,
+          "acc_pct": 99.9,
+          "exact_lines": "18/20",
+          "ms_per_line": 90.1
+        },
+        "v1_raw": {
+          "cer_pct": 5.16,
+          "wer_pct": 21.54,
+          "acc_pct": 94.84,
+          "exact_lines": "3/20",
+          "ms_per_line": 87.7
+        },
+        "tess_psm7": {
+          "cer_pct": 0.05,
+          "wer_pct": 0.41,
+          "acc_pct": 99.95,
+          "exact_lines": "19/20",
+          "ms_per_line": 202.9
+        },
+        "tess_psm13": {
+          "cer_pct": 0.05,
+          "wer_pct": 0.41,
+          "acc_pct": 99.95,
+          "exact_lines": "19/20",
+          "ms_per_line": 151.9
+        }
+      }
+    }
+  ]
+}
