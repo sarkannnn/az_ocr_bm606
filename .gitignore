@@ -20,15 +20,15 @@ Thumbs.db
 desktop.ini
 ~$*
 
-# Temporary process/log dumps
+# Temporary process/log dumps & scratchpad
 err.txt
 out.txt
 tasklist
 type
 .gradio/
 public_url.txt
-scratch/edge_prof*/
-scratch/last_mobile_request.jpg
+scratch/
+archive/scratch/
 
 # Heavy generated test/train datasets (keep repo lightweight)
 data/diag*/
@@ -53,7 +53,12 @@ results/real_fix[2-7]/
 results/photo5_heic_test/
 results/review_pack/
 
-# Paper / monograph material - never publish to GitHub
+# Paper, monograph & internal audit materials - never publish to GitHub
 paper/
 *.docx
+*.doc
+*.pdf
 docx_analysis_preview.txt
+results/archive/
+*AUTHORITATIVE*.md
+*AUDIT*.md
