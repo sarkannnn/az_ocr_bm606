@@ -52,3 +52,8 @@ results/real_fix/
 results/real_fix[2-7]/
 results/photo5_heic_test/
 results/review_pack/
+
+# Paper / monograph material - never publish to GitHub
+paper/
+*.docx
+docx_analysis_preview.txt
