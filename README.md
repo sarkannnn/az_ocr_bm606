@@ -1,6 +1,6 @@
 # Azərbaycan dili üçün OCR (BM 606)
 
-Azərbaycan dili çap və telefon şəkli sənədləri üçün Söz və Sətir səviyyəli **CRNN + CTC** optik tanıma mühərriki, **SymSpell** əsaslı lüğət korreksiyası və hərtərəfli elmi monaqrafiya paketi.
+Azərbaycan dili çap və telefon şəkli sənədləri üçün Söz və Sətir səviyyəli **CRNN + CTC** optik tanıma mühərriki, **SymSpell** əsaslı lüğət korreksiyası və veb/mobil tanıma platforması.
 
 ---
 
@@ -97,14 +97,6 @@ az_ocr_bm606/
 ├── runs/
 │   ├── word_v2_*/best.pt   # Ən yaxşı V2 söz modeli
 │   └── line_v2/best.pt      # Ən yaxşı V2 sətir modeli
-├── paper/                   # 📄 Rəsmi Elmi Monaqrafiya və Nəşr Qovluğu
-│   ├── paper_v4.md          # Monaqrafiyanın yekun tam mətni (Markdown)
-│   ├── paper_v4.docx        # Monaqrafiyanın rəsmi Word nəşri
-│   ├── generate_figures_master.py  # Bütün 15 elmi qrafikin generasiyası
-│   ├── generate_tables.py   # Bütün 9 rəsmi cədvəlin generasiyası
-│   ├── verify_numbers.py    # Bütün rəqəmlərin yoxlanışı və auditi
-│   ├── tables/              # Cədvəl mənbələri (.csv və .md)
-│   └── figures/             # Yekun qrafiklər (f1-f15)
 ├── archive/                 # Köhnə və arxivlənmiş audit/skriptlər
 └── results/                 # Eksperiment nəticələri və benchmarklar
 ```
@@ -139,33 +131,3 @@ python train_v2.py --mode word --train-dir data/synth_word_v2/train --val-dir da
 python evaluate.py --ckpt runs/line_v2/best.pt --data data/synth_line_v2/test --out results/line_v2_synth
 python evaluate.py --baseline tesseract --mode line --data data/synth_line_v2/test --out results/tess_line_synth
 ```
-
----
-
-## 📑 Elmi Monaqrafiya və Qrafiklərin Qurulması
-
-Monaqrafiya cədvəllərini və qrafiklərini sıfırdan yenidən hasil etmək üçün:
-
-```bash
-# 1. 15 ədəd elmi qrafiki hasil et
-python paper/generate_figures_master.py
-
-# 2. 9 əsas cədvəli hasil et
-python paper/generate_tables.py
-
-# 3. Məqalədəki bütün rəqəmləri audit et
-python paper/verify_numbers.py
-```
-
----
-
-## 🔍 Əsas Elmi Nəticələr (15 Telefon Şəkli Benchmarkı, n=300 Sətir, 28,500 Simvol)
-
-| Mühərrik / Model | CER (%) ↓ | WER (%) ↓ | ICDAR NES (%) ↑ | Tam Sətir (EMR) ↑ | CPU Sürəti (ms/sətir) ↓ | Qeydlər |
-| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **CRNN-V2 + SymSpell (Bizim)** | **0.20%** | **0.91%** | **99.80%** | **273 / 300 (91.0%)** | **86.4 ms (11.6 L/s)** | **Ən yüksək dəqiqlik və sürət** |
-| **CRNN-V2 (Xam CTC)** | **0.22%** | **1.17%** | **99.78%** | **267 / 300 (89.0%)** | **86.3 ms (11.6 L/s)** | Lüğətsiz xam neyron şəbəkə çıxışı |
-| **Tesseract 5 (ze, --psm 7)** | 0.26% | 1.41% | 99.74% | 258 / 300 (86.0%) | 182.2 ms (5.5 L/s) | Daxili sətir düzləndirmə (baseline) aktiv |
-| **Tesseract 5 (ze, --psm 13)** | 0.33% | 1.79% | 99.67% | 252 / 300 (84.0%) | 141.4 ms (7.1 L/s) | Xam sətir modu (perspektiv əyilməyə həssas) |
-| **EasyOCR (z, Rule Chunk)** | 1.31% | 8.85% | 98.69% | 222 / 300 (74.0%) | 353.4 ms (2.8 L/s) | Azərbaycan diakritiklərində (ə, ı, ğ) xətalar |
-| **CRNN-V1 (Baza, Fotometriksiz)** | 11.24% | 36.70% | 88.76% | 57 / 300 (19.0%) | 85.2 ms (11.7 L/s) | Kamera kölgəsi və bulanıqlıqda çökür |
