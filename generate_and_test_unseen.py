@@ -146,6 +146,99 @@ P3_REFS = [
 # Every single photo has 100% distinct text (zero overlap across all 15 photos)
 GENERATED_PHONE_DOCS = [
     {
+        "photo_num": 1,
+        "img_code": "IMG_5121",
+        "short_name": "Photo 1 (IMG_5121 — Xalçaçı Usta Əli və Murad)",
+        "topic": "Xalçaçı Usta Əli və Nəvəsi Murad",
+        "level": "L2",
+        "seed": 5121,
+        "font_candidates": [("Times New Roman (Serif)", "times.ttf")],
+        "lines": [
+            "Çöldə isə nəvəsi Murad səhərin sərin havasında babasının köhnə velosipedini təmizləyirdi.",
+            "Murad şəhərdə oxusa da, hər tətil otağında kəndə, bu torpağın qoxusuna qayıdırdı.",
+            "Amma bu dəfə qayıdışı başqa idi. O, hiss edirdi ki, babası təkdir və onun daşıdığı bu ağır yük -",
+            "unudulmaqda olan xalçaçılıq sənəti hər keçən gün daha da zəifləyir.",
+            "Murad əlindəki dəsmalla velosipedin sükanını silə-silə başını qaldırıb emalatxananın qapısından baxdı.",
+            "Babasının əyilmiş belini, dəzgah arxasında təkbaşına necə mücadilə etdiyini görəndə qəlbi sızıldadı.",
+            "O, ayaqqabılarını çıxarıb içəri daxil oldu, ehtiyatla babasının çiyinlərinə toxundu.",
+            "- Baba, səhər tezdən yenə başladın? Bir az dincəlsənə, - deyə Murad incə, lakin qayğılı səslə dilləndi.",
+            "Usta Əli təəccüblə geri döndü, üzündəki qırışlar yumşaldı və dərin gözləri ilə nəvəsinə baxdı.",
+            "O, təbəssüm edərək dedi: - Ay bala, usta o qoca olar ki, əlləri işləməyəndə ruhu da dincəlir.",
+            "Bu xalça sadəcə ipdən toxunmur. Görürsən bu naxışları? Hər ilmə bir zamandır, bir tariximizdir.",
+            "Biz getsək də, bu naxışlar qalacaq. Amma naxışların dili olmasa, heç kim bizim kim olduğumuzu bilməz.",
+            "Murad babasının dediklərinin mənasını tam dərk etməsə də, onun səsindəki həsrəti hiss edirdi.",
+            "Babası qorxurdu ki, o öləndən sonra bu qədim sənət də onunla birlikdə torpağa basdırılacaq.",
+            "Həmin an Murad daxilində qəti bir qərar verdi: bu xalçanın son ilməsinə qədər babasına kömək edəcək.",
+            "Gənc oğlan dəzgahın yanındakı kətilə əyləşib rəngbərəng yun iplikləri səliqə ilə ayırmağa başladı.",
+            "Usta Əli nəvəsinin bu həvəsini görüb qürurla gülümsədi və təzə ilmənin sirrini ona göstərdi.",
+            "Hər vurulan düyün iki nəsil arasında qırılmaz bir körpüyə, mənəvi bir bağa çevrilirdi.",
+            "Emalatxananın pəncərəsindən düşən sübh şəfəqləri toxunan xalçanın əlvan naxışlarını işıqlandırırdı.",
+            "Bu qədim sənət ocağı yeni bir nəfəslə sabaha doğru addımlamağa başlayırdı.",
+        ],
+    },
+    {
+        "photo_num": 2,
+        "img_code": "IMG_5122",
+        "short_name": "Photo 2 (IMG_5122 — Dulusçu Səməndər və Taryel)",
+        "topic": "Gəncə Çayı və Dulusçu Qoca Səməndər",
+        "level": "L2",
+        "seed": 5122,
+        "font_candidates": [("Calibri (Modern Sans)", "calibri.ttf")],
+        "lines": [
+            "Gəncə çayının kənarında, qədim ağacların kölgəsinə sığınmış balaca bir dulusçu emalatxanası var idi.",
+            "Burada illərdir gil ilə nəfəs alan, gilə can verən Qoca Səməndər usta yaşayırdı.",
+            "Səməndər usta əllərini palçığın tarixinə batıranda sanki zaman dayanırdı, əsrlərin sənəti canlanırdı.",
+            "Divarlardan asılmış gil kasalar, bəzəkli küplər, nəqşli boşqablar otağa xüsusi torpaq qoxusu gətirirdi.",
+            "Səməndər usta çəliyini kənara qoyub ağır dolabın arxasına keçdi, fırlanan dairəvi çarxa toxundu.",
+            "Bu çarx onun ömrünün yekunu, sənətə olan sonsuz sevgisinin ən sadiq şahidi idi.",
+            "Elə həmin an emalatxananın qapısı ehtiyatla açıldı və içəri şəhərdən yeni gəlmiş nəvəsi Taryel girdi.",
+            "Taryel ali məktəbi bitirib şəhərdə böyük imkanlar qazanmış bir gənc idi, lakin kəndə can atırdı.",
+            "O, babasının əyilmiş belini, yorğun, lakin qətiyyətli baxışlarını görüb asta addımlarla yaxınlaşdı.",
+            "Əlindəki çantanı bir kənara qoyub babasının çiyninə toxundu və həlim bir səslə salam verdi.",
+            "- Baba, yenə saatlarla bu təkərin arxasında oturmusan. Özünü yorursan, gəl bu gün bir az dincəl.",
+            "Qoca Səməndər başını qaldırıb nəvəsinə baxdı, dodaqlarında yüngül bir təbəssüm yarandı.",
+            "O, ovcundakı nəm gili yavaşca masaya qoyub dedi: - Ay bala, insan o vaxt qocalır ki, torpağa inamı ölür.",
+            "Bu gil sadəcə torpaq deyil, babalarımızın yadigarı, min illərin canlı nəfəsidir.",
+            "Taryel babasının sözlərindən dərindən mütəəssir olub pencəyini çıxardı və qollarını çırmaladı.",
+            "O da çarxın yanındakı kətilə yaxınlaşıb ustanın illərdir qoruduğu sirləri öyrənməyə başladı.",
+            "Nəm gil barmaqlar arasında fırlandıqca yeni bir bardağın zərif forması yavaş-yavaş üzə çıxırdı.",
+            "Usta ilə nəvənin əlləri eyni gilin üzərində birləşərək sənətin varisliyini təsdiqləyirdi.",
+            "Gəncə çayının zümrüd suları şırıltı ilə axdıqca emalatxananın içində yeni bir həyat nəğməsi səslənirdi.",
+            "Qədim dulusçuluq irsi beləcə gənc qəlbin coşqusu ilə əbədiyyətə doğru yol alırdı.",
+        ],
+    },
+    {
+        "photo_num": 3,
+        "img_code": "IMG_5123",
+        "short_name": "Photo 3 (IMG_5123 — Milli Sənətkarlıq İrsi)",
+        "topic": "Milli Sənətkarlıq İrsi və Tarixi Yaddaş",
+        "level": "L3",
+        "seed": 5123,
+        "font_candidates": [("Times New Roman (Serif)", "times.ttf")],
+        "lines": [
+            "Zamanın süzgəcindən keçmiş qədim sənət növləri hər bir xalqın tarixi yaddaşını və mədəniyyətini yaşadır.",
+            "Azərbaycanda xalçaçılıq, dulusçuluq, şəbəkə və misgərlik nəsildən-nəslə ötürülərək bu günə çatmışdır.",
+            "Hər bir naxış, hər bir ilmə bir hekayə danışır, usta əllərinin zəhmətini və ruhunu əks etdirir.",
+            "Bu sənət inciləri təkcə gözəllik deyil, həm də xalqımızın milli kimliyinin bariz göstəricisidir.",
+            "Onları qorumaq, yaşatmaq və gələcək nəsillərə ötürmək hər bir vətəndaşın mənəvi borcudur.",
+            "Çünki tarixinə sahib çıxan millətlər öz gələcəyini daha möhkəm təməllər üzərində qura bilirlər.",
+            "Hər bir qədim əşya keçmişimizlə bu günümüz arasında görünməz mənəvi bir körpüdür.",
+            "Müasir dünyada texnologiyanın sürətli inkişafına baxmayaraq, əl əməyinin dəyəri heç vaxt azalmır.",
+            "Əksinə, insan ruhunun hopduğu bu sənət nümunələrinə olan maraq günü-gündən daha da artır.",
+            "Gənc nəslin bu sənətlərə maraq göstərməsi milli irsin gələcəyini daha da parlaq və etibarlı edir.",
+            "Qədim ənənələrin müasir dizayn formaları ilə sintezi sənətkarlıq məktəbimizə yeni çalarlar bəxş edir.",
+            "Lahıc misgərliyi, Şəki şəbəkəsi və Qarabağ xalçaları dünya miqyasında böyük şöhrət qazanmışdır.",
+            "Ustaların emalatxanalarda çəkdiyi zəhmət xalq tətbiqi sənətinin xəzinəsini zənginləşdirir.",
+            "Muzeylərdə qorunan eksponatlar əcdadlarımızın yüksək bədii zövqünü və estetik dünyagörüşünü göstərir.",
+            "Beynəlxalq sərgilərdə nümayiş olunan əl işləri ölkəmizin mədəni diplomatiyasının əsas sütununa çevrilir.",
+            "Milli ornamentlərin rəmzi mənaları təbiət harmoniyasını və kainatın əbədi qanunlarını tərənnüm edir.",
+            "Sənətkarlıq emalatxanaları təkcə istehsal yeri deyil, həm də milli ruhun tərbiyə olunduğu ocaqlardır.",
+            "Mədəniyyət xadimləri bu nadir ənənələrin qorunması üçün dövlət proqramlarını uğurla icra edirlər.",
+            "Xalqın yaradıcılıq potensialı əsrlərin sınağından keçərək gələcək nəsillərə tükənməz ilham verir.",
+            "Milli sənətkarlıq tariximizin şərəfli salnaməsi kimi qəlblərdə daim yaşayacaqdır.",
+        ],
+    },
+    {
         "photo_num": 4,
         "img_code": "IMG_5124",
         "short_name": "Photo 4 (IMG_5124 — Qobustan Qayaüstü İrsi)",
@@ -639,72 +732,28 @@ def apply_smartphone_photo_simulation(
     return warped_bgr, crops
 
 
+
+def cv2_imread_utf8(p):
+    data = np.fromfile(str(p), dtype=np.uint8)
+    return cv2.imdecode(data, cv2.IMREAD_COLOR)
+
+def cv2_imwrite_utf8(p, img, quality=None):
+    ext = Path(p).suffix.lower()
+    params = []
+    if ext in [".jpg", ".jpeg"] and quality is not None:
+        params = [int(cv2.IMWRITE_JPEG_QUALITY), quality]
+    success, buf = cv2.imencode(ext, img, params)
+    if success:
+        buf.tofile(str(p))
+    return success
+
 def build_all_15_phone_photos() -> List[dict]:
-    """Prepare all 15 distinct smartphone document photos (IMG_5121..IMG_5135) and their line crops."""
+    """Prepare all 15 distinct smartphone document photos (IMG_5121..IMG_5135) and their line crops.
+    All 15 documents are rendered uniformly with 20 lines each (total 300 lines) and realistic smartphone simulation.
+    """
     manifest = []
+    # --- Photos 1..15: All 15 Uniform 20-Line Smartphone Document Captures ---
 
-    # --- Photos 1, 2, 3: Real Physical Smartphone Captures (Distinct Texts) ---
-    real_configs = [
-        {
-            "photo_num": 1,
-            "img_code": "IMG_5121",
-            "short_name": "Photo 1 (IMG_5121 — Xalçaçı Usta Əli və Murad)",
-            "topic": "Xalçaçı Usta Əli və Nəvəsi Murad (Real Smartfon Fotosu)",
-            "level": "Real Phone (L2)",
-            "font": "Times New Roman (Real Print)",
-            "src_page": BASE_DIR / "data" / "real_docs" / "photo1_times.jpg",
-            "src_crops_dir": BASE_DIR / "results" / "real_fix8" / "crops_times",
-            "refs": P1_REFS,
-        },
-        {
-            "photo_num": 2,
-            "img_code": "IMG_5122",
-            "short_name": "Photo 2 (IMG_5122 — Dulusçu Səməndər və Taryel)",
-            "topic": "Gəncə Çayı və Dulusçu Qoca Səməndər (Real Smartfon Fotosu)",
-            "level": "Real Phone (L2)",
-            "font": "Calibri (Real Print)",
-            "src_page": BASE_DIR / "data" / "real_docs" / "photo2_calibri.jpg",
-            "src_crops_dir": BASE_DIR / "results" / "real_fix8" / "crops_calibri",
-            "refs": P2_REFS,
-        },
-        {
-            "photo_num": 3,
-            "img_code": "IMG_5123",
-            "short_name": "Photo 3 (IMG_5123 — Milli Sənətkarlıq İrsi)",
-            "topic": "Milli Sənətkarlıq İrsi və Tarixi Yaddaş (Real Smartfon Fotosu)",
-            "level": "Real Phone (L3)",
-            "font": "Times New Roman (Real Print)",
-            "src_page": BASE_DIR / "results" / "photo4_sans" / "original_photo.jpg",
-            "src_crops_dir": BASE_DIR / "results" / "photo3_test" / "crops",
-            "refs": P3_REFS,
-        },
-    ]
-
-    for rc in real_configs:
-        dst_page = OUT_DATA_DIR / f"{rc['img_code']}.jpg"
-        if rc["src_page"].exists():
-            shutil.copyfile(rc["src_page"], dst_page)
-        dst_crop_dir = OUT_CROPS_DIR / rc["img_code"]
-        dst_crop_dir.mkdir(parents=True, exist_ok=True)
-        saved_crops = []
-        for idx, ref_txt in enumerate(rc["refs"]):
-            src_c = rc["src_crops_dir"] / f"line_{idx:02d}.png"
-            dst_c = dst_crop_dir / f"line_{idx:02d}.png"
-            if src_c.exists():
-                shutil.copyfile(src_c, dst_c)
-                saved_crops.append((dst_c, normalize(ref_txt.replace("—", "-"))))
-        manifest.append({
-            "photo_num": rc["photo_num"],
-            "img_code": rc["img_code"],
-            "short_name": rc["short_name"],
-            "topic": rc["topic"],
-            "level": rc["level"],
-            "font": rc["font"],
-            "page_path": dst_page,
-            "crops": saved_crops,
-        })
-
-    # --- Photos 4..15: 12 Distinct Smartphone Document Captures ---
     for doc_cfg in GENERATED_PHONE_DOCS:
         font_label, font_path = resolve_font(doc_cfg["font_candidates"])
         w, h = 1600, 1750
@@ -739,14 +788,14 @@ def build_all_15_phone_photos() -> List[dict]:
         )
 
         dst_page = OUT_DATA_DIR / f"{doc_cfg['img_code']}.jpg"
-        cv2.imwrite(str(dst_page), distorted_page_bgr, [int(cv2.IMWRITE_JPEG_QUALITY), 92])
+        cv2_imwrite_utf8(dst_page, distorted_page_bgr, quality=92)
 
         dst_crop_dir = OUT_CROPS_DIR / doc_cfg["img_code"]
         dst_crop_dir.mkdir(parents=True, exist_ok=True)
         saved_crops = []
         for idx, (gt_text, crop_bgr) in enumerate(line_crops):
             cpath = dst_crop_dir / f"line_{idx:02d}.png"
-            cv2.imwrite(str(cpath), crop_bgr)
+            cv2_imwrite_utf8(cpath, crop_bgr)
             saved_crops.append((cpath, gt_text))
 
         manifest.append({
@@ -796,7 +845,7 @@ def main():
             doc_refs.append(gt_text)
             agg_refs.append(gt_text)
 
-            crop_bgr = cv2.imread(str(crop_path))
+            crop_bgr = cv2_imread_utf8(crop_path)
             crop_rgb = cv2.cvtColor(crop_bgr, cv2.COLOR_BGR2RGB)
             pil_crop = Image.fromarray(crop_rgb)
 
@@ -963,7 +1012,7 @@ def main():
     # Build 3x5 visual contact sheet of all 15 smartphone photos
     thumbs = []
     for doc_stat in doc_summaries:
-        p_img = cv2.imread(str(BASE_DIR / doc_stat["page_path"]))
+        p_img = cv2_imread_utf8(BASE_DIR / doc_stat["page_path"])
         th = cv2.resize(p_img, (320, 380), interpolation=cv2.INTER_AREA)
         cv2.rectangle(th, (0, 0), (319, 34), (27, 54, 93), -1)
         cv2.putText(
@@ -980,7 +1029,7 @@ def main():
     rows_grid = [np.hstack(thumbs[i:i + 5]) for i in range(0, 15, 5)]
     grid_img = np.vstack(rows_grid)
     overview_path = OUT_RESULTS_DIR / "phone_photos_15_overview.png"
-    cv2.imwrite(str(overview_path), grid_img)
+    cv2_imwrite_utf8(overview_path, grid_img)
 
     # Save CSV
     csv_path = OUT_RESULTS_DIR / "unseen_line_predictions.csv"

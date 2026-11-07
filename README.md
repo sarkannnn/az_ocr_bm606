@@ -159,11 +159,13 @@ python paper/verify_numbers.py
 
 ---
 
-## 🔍 Əsas Elmi Nəticələr (Xülasə)
+## 🔍 Əsas Elmi Nəticələr (15 Telefon Şəkli Benchmarkı, n=300 Sətir, 28,500 Simvol)
 
-| Mühərrik / Model | Sintetik Test CER | Təhrif Pilləkəni (L4) CER | Real Sənəd CER | Qeydlər |
-| :--- | :---: | :---: | :---: | :--- |
-| **Tesseract (aze)** | 1.83% | 29.84% | 15.65% | seqmentasiya və küyə həssasdır |
-| **EasyOCR** | 1.25% | 14.20% | 8.40% | xüsusi hərflərdə (`ə`, `ğ`) boşluqlar |
-| **Bizim CRNN (V2)** | **0.87%** | **4.98%** | **2.62%** | Domain-gap kəskin azaldılıb |
-| **CRNN (V2) + Lüğət** | **0.65%** | **3.82%** | **1.89%** | `postprocess.py` ilə optimal dəqiqlik |
+| Mühərrik / Model | CER (%) ↓ | WER (%) ↓ | ICDAR NES (%) ↑ | Tam Sətir (EMR) ↑ | CPU Sürəti (ms/sətir) ↓ | Qeydlər |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **CRNN-V2 + SymSpell (Bizim)** | **0.20%** | **0.91%** | **99.80%** | **273 / 300 (91.0%)** | **86.4 ms (11.6 L/s)** | **Ən yüksək dəqiqlik və sürət** |
+| **CRNN-V2 (Xam CTC)** | **0.22%** | **1.17%** | **99.78%** | **267 / 300 (89.0%)** | **86.3 ms (11.6 L/s)** | Lüğətsiz xam neyron şəbəkə çıxışı |
+| **Tesseract 5 (ze, --psm 7)** | 0.26% | 1.41% | 99.74% | 258 / 300 (86.0%) | 182.2 ms (5.5 L/s) | Daxili sətir düzləndirmə (baseline) aktiv |
+| **Tesseract 5 (ze, --psm 13)** | 0.33% | 1.79% | 99.67% | 252 / 300 (84.0%) | 141.4 ms (7.1 L/s) | Xam sətir modu (perspektiv əyilməyə həssas) |
+| **EasyOCR (z, Rule Chunk)** | 1.31% | 8.85% | 98.69% | 222 / 300 (74.0%) | 353.4 ms (2.8 L/s) | Azərbaycan diakritiklərində (ə, ı, ğ) xətalar |
+| **CRNN-V1 (Baza, Fotometriksiz)** | 11.24% | 36.70% | 88.76% | 57 / 300 (19.0%) | 85.2 ms (11.7 L/s) | Kamera kölgəsi və bulanıqlıqda çökür |
