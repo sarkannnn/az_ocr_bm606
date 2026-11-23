@@ -42,9 +42,12 @@ data/synth_word/
 data/synth_line/
 data/synth_word_v2/
 data/synth_line_v2/
+data/synth_line_v2_standard_aug/
 runs/line_nospace/
 runs/smoke_v2/
+runs/ablation_*/
 runs/**/last.pt
+logs/
 *.zip
 
 # Intermediate development photo fixes
