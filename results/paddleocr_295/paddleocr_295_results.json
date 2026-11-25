@@ -1,0 +1,295 @@
+{
+  "paddleocr_info": {
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "model_name": "PP-OCRv6_medium_rec",
+    "device": "CPU (oneDNN)",
+    "dictionary_size": 18708,
+    "has_azerbaijani_letters": true,
+    "architecture": "SVTR / Attention CTC Multilingual Recognizer",
+    "model_disk_mb": 72.92,
+    "technical_notes": "PP-OCRv6 full-pipeline detector crashes on Windows x64 CPU under PaddlePaddle 3.3.1 due to NotImplementedError in onednn_instruction.cc. However, PP-OCRv6_medium_rec line recognition runs successfully directly on line crops."
+  },
+  "overall_295": {
+    "n_lines": 295,
+    "total_chars": 26805,
+    "cer_pct": 0.91,
+    "accuracy_char_pct": 99.09,
+    "wer_pct": 5.19,
+    "accuracy_word_pct": 94.81,
+    "exact_match": "205/295 (69.5%)",
+    "mean_latency_ms_per_line": 1888.1
+  },
+  "subsets": {
+    "real_photos_55": {
+      "n_lines": 55,
+      "total_chars": 3920,
+      "cer_pct": 0.41,
+      "accuracy_char_pct": 99.59,
+      "wer_pct": 2.65,
+      "exact_match": "42/55 (76.4%)"
+    },
+    "simulated_photos_240": {
+      "n_lines": 240,
+      "total_chars": 22885,
+      "cer_pct": 0.99,
+      "accuracy_char_pct": 99.01,
+      "wer_pct": 5.72,
+      "exact_match": "163/240 (67.9%)"
+    }
+  },
+  "per_document": {
+    "B1": {
+      "n_lines": 16,
+      "cer_pct": 0.62,
+      "wer_pct": 3.23,
+      "accuracy_char_pct": 99.38,
+      "exact_match": "10/16 (62.5%)",
+      "mean_latency_ms": 1851.3
+    },
+    "B2": {
+      "n_lines": 16,
+      "cer_pct": 0.41,
+      "wer_pct": 3.32,
+      "accuracy_char_pct": 99.59,
+      "exact_match": "10/16 (62.5%)",
+      "mean_latency_ms": 1646.1
+    },
+    "B3": {
+      "n_lines": 23,
+      "cer_pct": 0.1,
+      "wer_pct": 0.72,
+      "accuracy_char_pct": 99.9,
+      "exact_match": "22/23 (95.7%)",
+      "mean_latency_ms": 1183.7
+    },
+    "B4": {
+      "n_lines": 20,
+      "cer_pct": 0.0,
+      "wer_pct": 0.0,
+      "accuracy_char_pct": 100.0,
+      "exact_match": "20/20 (100.0%)",
+      "mean_latency_ms": 1718.2
+    },
+    "B5": {
+      "n_lines": 20,
+      "cer_pct": 0.0,
+      "wer_pct": 0.0,
+      "accuracy_char_pct": 100.0,
+      "exact_match": "20/20 (100.0%)",
+      "mean_latency_ms": 1748.3
+    },
+    "B6": {
+      "n_lines": 20,
+      "cer_pct": 0.0,
+      "wer_pct": 0.0,
+      "accuracy_char_pct": 100.0,
+      "exact_match": "20/20 (100.0%)",
+      "mean_latency_ms": 1780.3
+    },
+    "B7": {
+      "n_lines": 20,
+      "cer_pct": 0.7,
+      "wer_pct": 4.78,
+      "accuracy_char_pct": 99.3,
+      "exact_match": "14/20 (70.0%)",
+      "mean_latency_ms": 1832.9
+    },
+    "B8": {
+      "n_lines": 20,
+      "cer_pct": 0.27,
+      "wer_pct": 2.24,
+      "accuracy_char_pct": 99.73,
+      "exact_match": "15/20 (75.0%)",
+      "mean_latency_ms": 1990.1
+    },
+    "B9": {
+      "n_lines": 20,
+      "cer_pct": 4.06,
+      "wer_pct": 22.77,
+      "accuracy_char_pct": 95.94,
+      "exact_match": "1/20 (5.0%)",
+      "mean_latency_ms": 2205.4
+    },
+    "B10": {
+      "n_lines": 20,
+      "cer_pct": 0.11,
+      "wer_pct": 0.84,
+      "accuracy_char_pct": 99.89,
+      "exact_match": "18/20 (90.0%)",
+      "mean_latency_ms": 1950.0
+    },
+    "B11": {
+      "n_lines": 20,
+      "cer_pct": 1.21,
+      "wer_pct": 8.97,
+      "accuracy_char_pct": 98.79,
+      "exact_match": "7/20 (35.0%)",
+      "mean_latency_ms": 2131.2
+    },
+    "B12": {
+      "n_lines": 20,
+      "cer_pct": 4.01,
+      "wer_pct": 20.69,
+      "accuracy_char_pct": 95.99,
+      "exact_match": "2/20 (10.0%)",
+      "mean_latency_ms": 2317.0
+    },
+    "B13": {
+      "n_lines": 20,
+      "cer_pct": 0.21,
+      "wer_pct": 1.65,
+      "accuracy_char_pct": 99.79,
+      "exact_match": "17/20 (85.0%)",
+      "mean_latency_ms": 2040.3
+    },
+    "B14": {
+      "n_lines": 20,
+      "cer_pct": 0.7,
+      "wer_pct": 5.99,
+      "accuracy_char_pct": 99.3,
+      "exact_match": "10/20 (50.0%)",
+      "mean_latency_ms": 2019.8
+    },
+    "B15": {
+      "n_lines": 20,
+      "cer_pct": 0.66,
+      "wer_pct": 2.85,
+      "accuracy_char_pct": 99.34,
+      "exact_match": "19/20 (95.0%)",
+      "mean_latency_ms": 1956.1
+    }
+  },
+  "special_characters_audit": {
+    "lower_special": {
+      "errors": 198,
+      "total": 4429,
+      "accuracy_pct": 95.53,
+      "error_rate_pct": 4.47
+    },
+    "upper_special": {
+      "errors": 1,
+      "total": 58,
+      "accuracy_pct": 98.28,
+      "error_rate_pct": 1.72
+    },
+    "i_family": {
+      "errors": 176,
+      "total": 3382,
+      "accuracy_pct": 94.8,
+      "error_rate_pct": 5.2
+    },
+    "schwa": {
+      "errors": 12,
+      "total": 2263,
+      "accuracy_pct": 99.47,
+      "error_rate_pct": 0.53
+    },
+    "standard_lower": {
+      "errors": 23,
+      "total": 18543,
+      "accuracy_pct": 99.88,
+      "error_rate_pct": 0.12
+    },
+    "standard_upper": {
+      "errors": 0,
+      "total": 352,
+      "accuracy_pct": 100.0,
+      "error_rate_pct": 0.0
+    },
+    "digits_punct": {
+      "errors": 16,
+      "total": 427,
+      "accuracy_pct": 96.25,
+      "error_rate_pct": 3.75
+    }
+  },
+  "real_special_characters_audit": {
+    "lower_special": {
+      "errors": 4,
+      "total": 668,
+      "accuracy_pct": 99.4,
+      "error_rate_pct": 0.6
+    },
+    "upper_special": {
+      "errors": 0,
+      "total": 5,
+      "accuracy_pct": 100.0,
+      "error_rate_pct": 0.0
+    },
+    "i_family": {
+      "errors": 5,
+      "total": 444,
+      "accuracy_pct": 98.87,
+      "error_rate_pct": 1.13
+    },
+    "schwa": {
+      "errors": 0,
+      "total": 349,
+      "accuracy_pct": 100.0,
+      "error_rate_pct": 0.0
+    },
+    "standard_lower": {
+      "errors": 5,
+      "total": 2580,
+      "accuracy_pct": 99.81,
+      "error_rate_pct": 0.19
+    },
+    "standard_upper": {
+      "errors": 0,
+      "total": 50,
+      "accuracy_pct": 100.0,
+      "error_rate_pct": 0.0
+    },
+    "digits_punct": {
+      "errors": 5,
+      "total": 106,
+      "accuracy_pct": 95.28,
+      "error_rate_pct": 4.72
+    }
+  },
+  "sim_special_characters_audit": {
+    "lower_special": {
+      "errors": 194,
+      "total": 3761,
+      "accuracy_pct": 94.84,
+      "error_rate_pct": 5.16
+    },
+    "upper_special": {
+      "errors": 1,
+      "total": 53,
+      "accuracy_pct": 98.11,
+      "error_rate_pct": 1.89
+    },
+    "i_family": {
+      "errors": 171,
+      "total": 2938,
+      "accuracy_pct": 94.18,
+      "error_rate_pct": 5.82
+    },
+    "schwa": {
+      "errors": 12,
+      "total": 1914,
+      "accuracy_pct": 99.37,
+      "error_rate_pct": 0.63
+    },
+    "standard_lower": {
+      "errors": 18,
+      "total": 15963,
+      "accuracy_pct": 99.89,
+      "error_rate_pct": 0.11
+    },
+    "standard_upper": {
+      "errors": 0,
+      "total": 302,
+      "accuracy_pct": 100.0,
+      "error_rate_pct": 0.0
+    },
+    "digits_punct": {
+      "errors": 11,
+      "total": 321,
+      "accuracy_pct": 96.57,
+      "error_rate_pct": 3.43
+    }
+  }
+}

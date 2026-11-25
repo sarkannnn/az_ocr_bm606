@@ -37,12 +37,12 @@ try {
     }
 
     # -------------------------------------------------------------
-    # ADIM 2: GRUP B TƏLİMİ (Standart Fontlar + V2 Augmentasiyası)
+    # ADIM 2: GRUP B TƏLİMİ (Standart 8 Font + V2 Augmentasiyası)
     # -------------------------------------------------------------
     if (-not (Test-Path "runs\ablation_group_b_aug\best.pt")) {
-        Write-NightLog "ADIM 2: GRUP B Təlimi Başlayır (Standart 8 font, V2 Augmentasiya VAR)..."
+        Write-NightLog "ADIM 2: GRUP B Təlimi Başlayır (Standart 8 font: Arial, Calibri, Candara, Corbel, Courier New, Segoe UI, Times New Roman, Verdana | V2 Augmentasiya VAR)..."
         $swB = [Diagnostics.Stopwatch]::StartNew()
-        & $py -u train_v2.py --mode line --train-dir data/synth_line_v1/train --val-dir data/synth_line_v1/val --out runs/ablation_group_b_aug --seed 42 --epochs 25 --workers 0 2>&1 | Out-File -FilePath logs\ablation_group_b_aug.log -Encoding utf8
+        & $py -u train_v2.py --mode line --train-dir data/synth_line_v1/train --val-dir data/synth_line_v1/val --out runs/ablation_group_b_aug --aug-mode v2 --seed 42 --epochs 15 --patience 5 --workers 0 2>&1 | Out-File -FilePath logs\ablation_group_b_aug.log -Encoding utf8
         if ($LASTEXITCODE -ne 0) { throw "Grup B təlimində xəta baş verdi! Bax: logs\ablation_group_b_aug.log" }
         Write-NightLog ("ADIM 2 TAMAMLANDI: Grup B modeli runs\ablation_group_b_aug\best.pt ({0:N1} dəq)" -f $swB.Elapsed.TotalMinutes)
     } else {
@@ -50,16 +50,16 @@ try {
     }
 
     # -------------------------------------------------------------
-    # ADIM 3: GRUP C TƏLİMİ (Genişletilmiş 18 Font + Augmentasiya YOK)
+    # ADIM 3: GRUP C TƏLİMİ (Genişletilmiş 18 Font + V1 Augmentasiyası)
     # -------------------------------------------------------------
-    if (-not (Test-Path "runs\ablation_group_c_noaug\best.pt")) {
-        Write-NightLog "ADIM 3: GRUP C Təlimi Başlayır (Geniş 18 font, Augmentasiya YOK)..."
+    if (-not (Test-Path "runs\ablation_group_c_v1aug\best.pt")) {
+        Write-NightLog "ADIM 3: GRUP C Təlimi Başlayır (Geniş 18 font | V1 Əsas Augmentasiya VAR)..."
         $swC = [Diagnostics.Stopwatch]::StartNew()
-        & $py -u train_v2.py --mode line --train-dir data/synth_line_v2/train --val-dir data/synth_line_v2/val --out runs/ablation_group_c_noaug --no-aug --seed 42 --epochs 25 --workers 0 2>&1 | Out-File -FilePath logs\ablation_group_c_noaug.log -Encoding utf8
-        if ($LASTEXITCODE -ne 0) { throw "Grup C təlimində xəta baş verdi! Bax: logs\ablation_group_c_noaug.log" }
-        Write-NightLog ("ADIM 3 TAMAMLANDI: Grup C modeli runs\ablation_group_c_noaug\best.pt ({0:N1} dəq)" -f $swC.Elapsed.TotalMinutes)
+        & $py -u train_v2.py --mode line --train-dir data/synth_line_v2/train --val-dir data/synth_line_v2/val --out runs/ablation_group_c_v1aug --aug-mode v1 --seed 42 --epochs 15 --patience 5 --workers 0 2>&1 | Out-File -FilePath logs\ablation_group_c_v1aug.log -Encoding utf8
+        if ($LASTEXITCODE -ne 0) { throw "Grup C təlimində xəta baş verdi! Bax: logs\ablation_group_c_v1aug.log" }
+        Write-NightLog ("ADIM 3 TAMAMLANDI: Grup C modeli runs\ablation_group_c_v1aug\best.pt ({0:N1} dəq)" -f $swC.Elapsed.TotalMinutes)
     } else {
-        Write-NightLog "ADIM 3 KEÇİLDİ: runs\ablation_group_c_noaug\best.pt artıq mövcuddur."
+        Write-NightLog "ADIM 3 KEÇİLDİ: runs\ablation_group_c_v1aug\best.pt artıq mövcuddur."
     }
 
     # -------------------------------------------------------------

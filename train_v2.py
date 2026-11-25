@@ -47,6 +47,28 @@ AUG_CONFIG = {
 }
 
 
+def augment_v1(img, rng):
+    """V1 basic augmentations: ±5° rotation, Gaussian blur, salt-pepper noise, perspective jitter."""
+    h, w = img.shape[:2]
+    if rng.random() < 0.5:
+        M = cv2.getRotationMatrix2D((w / 2, h / 2), rng.uniform(-5, 5), 1.0)
+        img = cv2.warpAffine(img, M, (w, h), borderMode=cv2.BORDER_REPLICATE)
+    if rng.random() < 0.3:
+        k = int(rng.choice([3, 5]))
+        img = cv2.GaussianBlur(img, (k, k), 0)
+    if rng.random() < 0.3:
+        img = img.copy()
+        m = rng.random(img.shape[:2])
+        img[m < 0.005] = 0
+        img[m > 0.995] = 255
+    if rng.random() < 0.3:
+        src = np.float32([[0, 0], [w, 0], [w, h], [0, h]])
+        jit = rng.uniform(-1, 1, (4, 2)) * np.array([w * 0.02, h * 0.08])
+        M = cv2.getPerspectiveTransform(src, (src + jit).astype(np.float32))
+        img = cv2.warpPerspective(img, M, (w, h), borderMode=cv2.BORDER_REPLICATE)
+    return img
+
+
 def augment(img, rng):
     """Photo-realistic data augmentation simulating phone cameras and diverse lighting."""
     h, w = img.shape[:2]
@@ -215,6 +237,8 @@ def main():
     ap.add_argument("--patience", type=int, default=5)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--no-aug", action="store_true")
+    ap.add_argument("--aug-mode", choices=["v2", "v1", "none"], default="v2",
+                    help="Augmentation mode: 'v2' (photorealistic phone aug), 'v1' (basic V1 aug), 'none' (no aug).")
     ap.add_argument("--color", choices=["gray", "rgb"], default="gray")
     ap.add_argument("--filter", choices=["none", "gaussian", "median"], default="none")
     ap.add_argument("--thresh", choices=["none", "otsu", "adaptive"], default="none")
@@ -236,7 +260,18 @@ def main():
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    tr = OCRDataset(a.train_dir, cfg, vocab, train=not a.no_aug, augment_fn=augment)
+    effective_aug_mode = "none" if a.no_aug else a.aug_mode
+    if effective_aug_mode == "none":
+        aug_fn = None
+        train_aug = False
+    elif effective_aug_mode == "v1":
+        aug_fn = augment_v1
+        train_aug = True
+    else:
+        aug_fn = augment
+        train_aug = True
+
+    tr = OCRDataset(a.train_dir, cfg, vocab, train=train_aug, augment_fn=aug_fn)
     va = OCRDataset(a.val_dir, cfg, vocab, train=False)
     kw = dict(collate_fn=collate, num_workers=a.workers, pin_memory=device.type == "cuda")
     tl = DataLoader(tr, batch_size=a.batch_size, shuffle=True, drop_last=True, **kw)

@@ -30,6 +30,10 @@ public_url.txt
 scratch/
 archive/scratch/
 
+# Staging & transfer packages
+staging/
+AzOCR_ChatGPT_Transfer/
+
 # Heavy generated test/train datasets (keep repo lightweight)
 data/diag*/
 data/sim_preview/
@@ -38,11 +42,9 @@ data/sim_unseen/
 data/sim_audit*/
 data/real_test*/
 data/smoke_word/
-data/synth_word/
-data/synth_line/
-data/synth_word_v2/
-data/synth_line_v2/
-data/synth_line_v2_standard_aug/
+data/synth_*/
+data/corpus_line_clean/
+data/real30_evaluation/
 runs/line_nospace/
 runs/smoke_v2/
 runs/ablation_*/
@@ -50,11 +52,15 @@ runs/**/last.pt
 logs/
 *.zip
 
-# Intermediate development photo fixes
-results/real_fix/
-results/real_fix[2-7]/
+# Intermediate development photo fixes & heavy visual inspection dumps
+results/real_fix*/
 results/photo5_heic_test/
 results/review_pack/
+results/data_check.png
+results/**/p15_inspection/
+results/**/segmentation_failure_examples/
+results/**/visual_inspection_targets/
+results/**/*_backup*.csv
 
 # Paper, monograph & internal audit materials - never publish to GitHub
 paper/

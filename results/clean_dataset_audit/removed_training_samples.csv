@@ -1,0 +1,406 @@
+dataset,image_path,text,in_val_corpus,in_test_corpus
+synth_line_v1,images/0000197.png,işləyənlər Rejissor: Zeynəb,False,True
+synth_line_v1,images/0000285.png,İstinadlar Xarici keçidlər Maykl,True,False
+synth_line_v1,images/0000310.png,Cümədən başlayan uzun il.,False,True
+synth_line_v1,images/0000354.png,"Parisi partladır (film, 1976)",False,True
+synth_line_v1,images/0000769.png,kinooperator.,False,True
+synth_line_v1,images/0000801.png,kafedrasının professoru vəzifəsində,False,True
+synth_line_v1,images/0000815.png,Hadisələr Monqolların Yaxın Şərq,False,True
+synth_line_v1,images/0000827.png,rəğbətlə qarşılanmışdır.,True,False
+synth_line_v1,images/0001034.png,ildə Azərbaycan Respublikasının,True,True
+synth_line_v1,images/0001060.png,keçirməyi qərara aldı.,True,False
+synth_line_v1,images/0001095.png,Nazirliyi tərəfindən,True,False
+synth_line_v1,images/0001099.png,Bayramlar və xüsusi günlər,True,True
+synth_line_v1,images/0001241.png,filmləri 1997-ci ilin Azərbaycan,False,True
+synth_line_v1,images/0001306.png,tərəfindən ucaldılmışdır.,True,False
+synth_line_v1,images/0001380.png,Müsabiqəsidir.,True,False
+synth_line_v1,images/0001390.png,"Gədəbəyin sərvəti (film, 1950) Gənc",False,True
+synth_line_v1,images/0001424.png,"kəndinin, habelə Kilit kəndinin",True,False
+synth_line_v1,images/0001433.png,Partiyasının baş katibi Əli,True,True
+synth_line_v1,images/0001500.png,"(bütövün) hissəsini, ya da tam və",False,True
+synth_line_v1,images/0001502.png,izahlı lüğəti.,False,True
+synth_line_v1,images/0001554.png,filmləri Bakı haqqında filmlər,True,False
+synth_line_v1,images/0001779.png,"İlyas Əfəndiyevin ""Sən həmişə",False,True
+synth_line_v1,images/0001808.png,kənarlaşdırdı.,True,False
+synth_line_v1,images/0001856.png,III minilliyin sonu - II minilliyin,False,True
+synth_line_v1,images/0001914.png,filmlər Ədəbi əsərlərin,True,True
+synth_line_v1,images/0001950.png,Elə həmin ildən də Azərbaycan,False,True
+synth_line_v1,images/0001999.png,Komediya filmləri Ramiz,False,True
+synth_line_v1,images/0002023.png,çağırış deputatları Azərbaycan SSR,True,False
+synth_line_v1,images/0002053.png,Televiziya tamaşası üzərində,False,True
+synth_line_v1,images/0002061.png,fakültəsinin magistratura,False,True
+synth_line_v1,images/0002095.png,məruz qaldılar.,False,True
+synth_line_v1,images/0002121.png,"Karmen, operatorlar Cavanşir",True,False
+synth_line_v1,images/0002195.png,daxil edilib.,False,True
+synth_line_v1,images/0002268.png,2011-ci ildən Azərbaycan,False,True
+synth_line_v1,images/0002346.png,"O, bu ada layiq görülən ilk",True,False
+synth_line_v1,images/0002373.png,mükafatlandırılıb.,True,False
+synth_line_v1,images/0002461.png,Ədəmi-Mərkəziyyət Firqəsi ilə,False,True
+synth_line_v1,images/0002525.png,mənşəyi haqqında müxtəlif fikirlər,False,True
+synth_line_v1,images/0002589.png,Həmçinin bax Azərbaycan filmlərinin,True,True
+synth_line_v1,images/0002593.png,haqqında danışılır.,False,True
+synth_line_v1,images/0002600.png,qeyd edilir.,True,True
+synth_line_v1,images/0002608.png,dastanının motivləri əsasında,True,False
+synth_line_v1,images/0002709.png,"dərəcəli ""Vətənə xidmətə görə""",True,False
+synth_line_v1,images/0002945.png,İstinadlar Mənbə Azərbaycanın Aşıq,False,True
+synth_line_v1,images/0002949.png,daxil edilir.,False,True
+synth_line_v1,images/0002951.png,kömək etməli idilər.,True,False
+synth_line_v1,images/0003007.png,Mahmudbəyovun filmləri,False,True
+synth_line_v1,images/0003076.png,olduqları ehtimal edilir.,False,True
+synth_line_v1,images/0003088.png,kompüterdir.,False,True
+synth_line_v1,images/0003134.png,1991-ci ildə Sovet İttifaqının,True,False
+synth_line_v1,images/0003167.png,şəhərində anadan olmuşdur.,True,True
+synth_line_v1,images/0003436.png,Azərbaycan Dövlət İncəsənət,True,True
+synth_line_v1,images/0003550.png,olunurdular.,False,True
+synth_line_v1,images/0003566.png,təklif etmişdir.,False,True
+synth_line_v1,images/0003603.png,2014.- 25 aprel.- S.,True,False
+synth_line_v1,images/0003710.png,"""Qoca"", ""Torpaqlarımız uğrunda"",",True,False
+synth_line_v1,images/0003855.png,"- ""Bibiheybətdə neft fontanı",True,False
+synth_line_v1,images/0003872.png,Azərbaycana aid hadisələr 2008 -,True,False
+synth_line_v1,images/0003878.png,görə də fərqlənir.,False,True
+synth_line_v1,images/0004144.png,Azərbaycan filmləri Azərbaycanca,True,True
+synth_line_v1,images/0004250.png,"Əbussuud Əfəndi, Osmanlı",False,True
+synth_line_v1,images/0004261.png,Kontinental şelfin neftqaz,True,False
+synth_line_v1,images/0004443.png,tamaşaçıların böyük rəğbətini,True,False
+synth_line_v1,images/0004557.png,sahibi oldu.,True,False
+synth_line_v1,images/0004574.png,Tokioda keçən 2020 Yay Olimpiya,True,False
+synth_line_v1,images/0004590.png,da istifadə edilmişdir.,True,False
+synth_line_v1,images/0004615.png,bəstəkarları,True,False
+synth_line_v1,images/0004721.png,"adı - 1 dekabr 1982 ""Şöhrət"" ordeni",True,False
+synth_line_v1,images/0004917.png,tərəfindən 1949-cu ildə,False,True
+synth_line_v1,images/0004922.png,idman jurnalistlərinin Ümumdünya,True,False
+synth_line_v1,images/0004957.png,"polkovnik-leytenantı, Vətən",False,True
+synth_line_v1,images/0005053.png,adına Azərbaycan Dövlət Akademik,False,True
+synth_line_v1,images/0005128.png,İstinadlar Azərbaycan aktyorları,True,False
+synth_line_v1,images/0005145.png,çatmışdılar.,False,True
+synth_line_v1,images/0005203.png,İncəsənət Universitetini bitirib.,True,False
+synth_line_v1,images/0005204.png,Azərbaycan SSR və Azərbaycan,True,False
+synth_line_v1,images/0005273.png,rəhbəri olub.,True,True
+synth_line_v1,images/0005323.png,mübahisəli məsələdir.,False,True
+synth_line_v1,images/0005346.png,vacib deyil.,True,True
+synth_line_v1,images/0005460.png,yaradıcılarındandır.,True,False
+synth_line_v1,images/0005489.png,mükafatlandırıldı.,True,True
+synth_line_v1,images/0005571.png,Azərbaycan Dövlət Elmi-Tədqiqat,True,False
+synth_line_v1,images/0005784.png,təqdim etməkdədir.,True,False
+synth_line_v1,images/0005883.png,Azərbaycanın Milli Qəhrəmanı 1971 -,True,False
+synth_line_v1,images/0005904.png,əhəmiyyətlidir.,True,True
+synth_line_v1,images/0005923.png,xadimi və diplomat Bencamin,True,False
+synth_line_v1,images/0005942.png,Materiklər Qitələr,False,True
+synth_line_v1,images/0005972.png,dəyərləndirdi.,True,False
+synth_line_v1,images/0005977.png,"(film, 1942) (qısametrajlı sənədli",True,False
+synth_line_v1,images/0006013.png,yaradıcılığı haqqındadır.,False,True
+synth_line_v1,images/0006049.png,Operator: Vaqif Behbudov Səs,True,False
+synth_line_v1,images/0006229.png,Qax Rayon İcra Hakimiyyətin,True,False
+synth_line_v1,images/0006240.png,münasibətini bildirmişdi.,False,True
+synth_line_v1,images/0006253.png,1923-cü ildə Bakı şəhərində anadan,False,True
+synth_line_v1,images/0006326.png,etnik qruplar,True,False
+synth_line_v1,images/0006366.png,parlamentinin 20 fevral 1988-ci,True,False
+synth_line_v1,images/0006509.png,formalaşdırmışlar.,False,True
+synth_line_v1,images/0006516.png,"style ""border:1px solid ddd;",True,False
+synth_line_v1,images/0006518.png,hansıki barbarlar kamos adlandırır,True,False
+synth_line_v1,images/0006519.png,yaradılmışdır .,False,True
+synth_line_v1,images/0006912.png,"Qara Mustafayev, Azərbaycan bioloqu",False,True
+synth_line_v1,images/0006978.png,1947) (qısametrajlı sənədli film),True,False
+synth_line_v1,images/0006993.png,ssenaristləri Azərbaycan Dövlət,False,True
+synth_line_v1,images/0007018.png,uğursuzluqla nəticələnmişdir.,True,False
+synth_line_v1,images/0007049.png,ildən ömrünün sonunadək isə,True,False
+synth_line_v1,images/0007072.png,İstinadlar Azərbaycan,True,True
+synth_line_v1,images/0007081.png,məcburiyyətində qalmışdır.,True,False
+synth_line_v1,images/0007206.png,Afrikada dövlət.,True,False
+synth_line_v1,images/0007207.png,"Filmoqrafiya Bismillah (film, 1925)",True,False
+synth_line_v1,images/0007238.png,Dünya müharibəsi haqqında filmlər,True,False
+synth_line_v1,images/0007244.png,"rəssamı, Azərbaycan və SSRİ Dövlət",True,False
+synth_line_v1,images/0007264.png,Beynəlxalq Memarlıq Akademiyasının,True,False
+synth_line_v1,images/0007352.png,burada üç ayrı ailənin,True,False
+synth_line_v1,images/0007415.png,maraq doğurur.,False,True
+synth_line_v1,images/0007463.png,keçməli idi.,True,False
+synth_line_v1,images/0007474.png,düzənliklərdir.,False,True
+synth_line_v1,images/0007707.png,astronomiya və xarici dilləri,True,False
+synth_line_v1,images/0007776.png,"Filmoqrafiya Qafqaz (film, 2007)",False,True
+synth_line_v1,images/0007790.png,konserti olub.,True,False
+synth_line_v1,images/0007894.png,Albaniya ilə həmsərhəddir.,True,False
+synth_line_v1,images/0007964.png,Ermənistan Silahlı Qüvvələri,True,True
+synth_line_v1,images/0008092.png,açılış mərasimi olub.,True,False
+synth_line_v1,images/0008216.png,hüququ əldə edirlər.,True,False
+synth_line_v1,images/0008238.png,İstinadlar Ədəbiyyat Həmçinin bax,False,True
+synth_line_v1,images/0008239.png,məktəbini bitirmişdir.,True,True
+synth_line_v1,images/0008577.png,"Əkbərov, Azərbaycan baş çavuşu,",True,False
+synth_line_v1,images/0008594.png,formalaşdırır.,True,True
+synth_line_v1,images/0008608.png,kilometrdir.,True,True
+synth_line_v1,images/0008648.png,"Azərbaycan SSR xalq artisti (1978),",True,False
+synth_line_v1,images/0008659.png,ilin Azərbaycan filmləri Komediya,True,True
+synth_line_v1,images/0008864.png,çətinlik çəkir.,True,False
+synth_line_v1,images/0008902.png,dayandırmışdır.,False,True
+synth_line_v1,images/0008946.png,kimi qəbul oluna bilər.,True,False
+synth_line_v1,images/0009046.png,digərlərini qeyd etmək olar.,False,True
+synth_line_v1,images/0009120.png,Azərbaycan Mədəniyyət Nazirliyinin,True,True
+synth_line_v1,images/0009158.png,heyvandarlıqla məşğul olmuşlar.,False,True
+synth_line_v1,images/0009163.png,Əliyev tərəfindən Azərbaycan,True,True
+synth_line_v1,images/0009178.png,təmsil olunmuşdur.,False,True
+synth_line_v1,images/0009194.png,quruluş verib.,False,True
+synth_line_v1,images/0009204.png,Manuvaxova Quraşdırılmış səhnələrin,True,False
+synth_line_v1,images/0009236.png,Rusiya rejissorları Rusiya,True,False
+synth_line_v1,images/0009353.png,kinooperatorları Ümumrusiya Dövlət,False,True
+synth_line_v1,images/0009464.png,açılışı olub.,False,True
+synth_line_v1,images/0009535.png,tərəfindən Sərdar Cəlaloğlunun,True,False
+synth_line_v1,images/0009559.png,1962) (tammetrajlı bədii film),True,False
+synth_line_v1,images/0009605.png,işləyənlər Rejissor: Ruslan,True,True
+synth_line_v1,images/0009671.png,Məhəmməd Əmin Rəsulzadənin,True,True
+synth_line_v1,images/0009715.png,İstinadlar Xarici keçidlər Şəxsi,True,True
+synth_line_v1,images/0009786.png,Xarici keçidlər SSRİ film,False,True
+synth_line_v1,images/0009836.png,sintez edilmişdir.,True,False
+synth_line_v1,images/0009856.png,bitkilərində 100 qram quru maddəyə,False,True
+synth_line_v1,images/0009900.png,Quruluşçu operator: Yuri Varnovski,False,True
+synth_line_v1,images/0009924.png,gətirmişlər.,True,False
+synth_line_v1,images/0010020.png,"Filmoqrafiya Nəğməkar torpaq (film,",True,False
+synth_line_v1,images/0010059.png,kitabın müəllifidir.,True,True
+synth_line_v1,images/0010120.png,Azərbaycan teatrının inkişafındakı,True,False
+synth_line_v1,images/0010165.png,(titrlərdə yoxdur) Sadıq Hüseynov -,True,False
+synth_line_v1,images/0010334.png,müəyyən edilmişdi.,False,True
+synth_line_v1,images/0010365.png,9Eeirl C9 99ri 2C 20Hekay C9 99l C9,True,False
+synth_line_v2,images/0000004.png,"kəndinin, habelə Kilit kəndinin",True,False
+synth_line_v2,images/0000005.png,"Qara Mustafayev, Azərbaycan bioloqu",False,True
+synth_line_v2,images/0000013.png,sahibi oldu.,True,False
+synth_line_v2,images/0000033.png,"(film, 1942) (qısametrajlı sənədli",True,False
+synth_line_v2,images/0000128.png,Azərbaycana aid hadisələr 2008 -,True,False
+synth_line_v2,images/0000246.png,Dünya müharibəsi haqqında filmlər,True,False
+synth_line_v2,images/0000337.png,uğursuzluqla nəticələnmişdir.,True,False
+synth_line_v2,images/0000446.png,yaradıcılarındandır.,True,False
+synth_line_v2,images/0000587.png,Materiklər Qitələr,False,True
+synth_line_v2,images/0000626.png,münasibətini bildirmişdi.,False,True
+synth_line_v2,images/0000639.png,Bayramlar və xüsusi günlər,True,True
+synth_line_v2,images/0000688.png,Qax Rayon İcra Hakimiyyətin,True,False
+synth_line_v2,images/0000740.png,qeyd edilir.,True,True
+synth_line_v2,images/0000789.png,izahlı lüğəti.,False,True
+synth_line_v2,images/0000851.png,kinooperatorları Ümumrusiya Dövlət,False,True
+synth_line_v2,images/0000900.png,Televiziya tamaşası üzərində,False,True
+synth_line_v2,images/0000927.png,Həmçinin bax Azərbaycan filmlərinin,True,True
+synth_line_v2,images/0000990.png,Cümədən başlayan uzun il.,False,True
+synth_line_v2,images/0001038.png,açılış mərasimi olub.,True,False
+synth_line_v2,images/0001103.png,kompüterdir.,False,True
+synth_line_v2,images/0001219.png,1923-cü ildə Bakı şəhərində anadan,False,True
+synth_line_v2,images/0001275.png,mübahisəli məsələdir.,False,True
+synth_line_v2,images/0001338.png,daxil edilib.,False,True
+synth_line_v2,images/0001345.png,mənşəyi haqqında müxtəlif fikirlər,False,True
+synth_line_v2,images/0001363.png,maraq doğurur.,False,True
+synth_line_v2,images/0001375.png,fakültəsinin magistratura,False,True
+synth_line_v2,images/0001429.png,İstinadlar Mənbə Azərbaycanın Aşıq,False,True
+synth_line_v2,images/0001544.png,yaradılmışdır .,False,True
+synth_line_v2,images/0001571.png,heyvandarlıqla məşğul olmuşlar.,False,True
+synth_line_v2,images/0001759.png,əhəmiyyətlidir.,True,True
+synth_line_v2,images/0001761.png,"Filmoqrafiya Bismillah (film, 1925)",True,False
+synth_line_v2,images/0001869.png,ildən ömrünün sonunadək isə,True,False
+synth_line_v2,images/0001953.png,Azərbaycan teatrının inkişafındakı,True,False
+synth_line_v2,images/0001965.png,rəğbətlə qarşılanmışdır.,True,False
+synth_line_v2,images/0002121.png,Ermənistan Silahlı Qüvvələri,True,True
+synth_line_v2,images/0002155.png,"Əkbərov, Azərbaycan baş çavuşu,",True,False
+synth_line_v2,images/0002156.png,açılışı olub.,False,True
+synth_line_v2,images/0002246.png,keçirməyi qərara aldı.,True,False
+synth_line_v2,images/0002280.png,məruz qaldılar.,False,True
+synth_line_v2,images/0002282.png,1947) (qısametrajlı sənədli film),True,False
+synth_line_v2,images/0002300.png,müəyyən edilmişdi.,False,True
+synth_line_v2,images/0002307.png,"style ""border:1px solid ddd;",True,False
+synth_line_v2,images/0002373.png,konserti olub.,True,False
+synth_line_v2,images/0002543.png,dəyərləndirdi.,True,False
+synth_line_v2,images/0002633.png,xadimi və diplomat Bencamin,True,False
+synth_line_v2,images/0002682.png,idman jurnalistlərinin Ümumdünya,True,False
+synth_line_v2,images/0002709.png,gətirmişlər.,True,False
+synth_line_v2,images/0002786.png,1991-ci ildə Sovet İttifaqının,True,False
+synth_line_v2,images/0002847.png,burada üç ayrı ailənin,True,False
+synth_line_v2,images/0002856.png,kömək etməli idilər.,True,False
+synth_line_v2,images/0002899.png,Quruluşçu operator: Yuri Varnovski,False,True
+synth_line_v2,images/0002929.png,İstinadlar Azərbaycan,True,True
+synth_line_v2,images/0002958.png,kinooperator.,False,True
+synth_line_v2,images/0002989.png,filmləri Bakı haqqında filmlər,True,False
+synth_line_v2,images/0002997.png,Azərbaycan filmləri Azərbaycanca,True,True
+synth_line_v2,images/0003025.png,məcburiyyətində qalmışdır.,True,False
+synth_line_v2,images/0003042.png,daxil edilir.,False,True
+synth_line_v2,images/0003074.png,Azərbaycan Dövlət Elmi-Tədqiqat,True,False
+synth_line_v2,images/0003077.png,mükafatlandırılıb.,True,False
+synth_line_v2,images/0003133.png,quruluş verib.,False,True
+synth_line_v2,images/0003195.png,olunurdular.,False,True
+synth_line_v2,images/0003240.png,"Azərbaycan SSR xalq artisti (1978),",True,False
+synth_line_v2,images/0003445.png,"- ""Bibiheybətdə neft fontanı",True,False
+synth_line_v2,images/0003530.png,İstinadlar Xarici keçidlər Maykl,True,False
+synth_line_v2,images/0003546.png,kafedrasının professoru vəzifəsində,False,True
+synth_line_v2,images/0003575.png,keçməli idi.,True,False
+synth_line_v2,images/0003663.png,Elə həmin ildən də Azərbaycan,False,True
+synth_line_v2,images/0003675.png,Azərbaycan Dövlət İncəsənət,True,True
+synth_line_v2,images/0003783.png,kitabın müəllifidir.,True,True
+synth_line_v2,images/0003888.png,tərəfindən Sərdar Cəlaloğlunun,True,False
+synth_line_v2,images/0003889.png,"Parisi partladır (film, 1976)",False,True
+synth_line_v2,images/0003941.png,Nazirliyi tərəfindən,True,False
+synth_line_v2,images/0004047.png,çağırış deputatları Azərbaycan SSR,True,False
+synth_line_v2,images/0004060.png,tamaşaçıların böyük rəğbətini,True,False
+synth_line_v2,images/0004155.png,"""Qoca"", ""Torpaqlarımız uğrunda"",",True,False
+synth_line_v2,images/0004325.png,"Filmoqrafiya Nəğməkar torpaq (film,",True,False
+synth_line_v2,images/0004376.png,Məhəmməd Əmin Rəsulzadənin,True,True
+synth_line_v2,images/0004378.png,Manuvaxova Quraşdırılmış səhnələrin,True,False
+synth_line_v2,images/0004466.png,filmləri 1997-ci ilin Azərbaycan,False,True
+synth_line_v2,images/0004585.png,hüququ əldə edirlər.,True,False
+synth_line_v2,images/0004676.png,ildə Azərbaycan Respublikasının,True,True
+synth_line_v2,images/0004768.png,işləyənlər Rejissor: Zeynəb,False,True
+synth_line_v2,images/0004819.png,ssenaristləri Azərbaycan Dövlət,False,True
+synth_line_v2,images/0005138.png,təklif etmişdir.,False,True
+synth_line_v2,images/0005143.png,İstinadlar Ədəbiyyat Həmçinin bax,False,True
+synth_line_v2,images/0005191.png,Operator: Vaqif Behbudov Səs,True,False
+synth_line_v2,images/0005200.png,görə də fərqlənir.,False,True
+synth_line_v2,images/0005205.png,dastanının motivləri əsasında,True,False
+synth_line_v2,images/0005246.png,"rəssamı, Azərbaycan və SSRİ Dövlət",True,False
+synth_line_v2,images/0005277.png,Afrikada dövlət.,True,False
+synth_line_v2,images/0005508.png,çətinlik çəkir.,True,False
+synth_line_v2,images/0005556.png,Albaniya ilə həmsərhəddir.,True,False
+synth_line_v2,images/0005585.png,Beynəlxalq Memarlıq Akademiyasının,True,False
+synth_line_v2,images/0005669.png,Hadisələr Monqolların Yaxın Şərq,False,True
+synth_line_v2,images/0005678.png,adına Azərbaycan Dövlət Akademik,False,True
+synth_line_v2,images/0005778.png,məktəbini bitirmişdir.,True,True
+synth_line_v2,images/0005791.png,Rusiya rejissorları Rusiya,True,False
+synth_line_v2,images/0005794.png,etnik qruplar,True,False
+synth_line_v2,images/0005811.png,digərlərini qeyd etmək olar.,False,True
+synth_line_v2,images/0006036.png,mükafatlandırıldı.,True,True
+synth_line_v2,images/0006057.png,bitkilərində 100 qram quru maddəyə,False,True
+synth_line_v2,images/0006118.png,"İlyas Əfəndiyevin ""Sən həmişə",False,True
+synth_line_v2,images/0006133.png,Ədəmi-Mərkəziyyət Firqəsi ilə,False,True
+synth_line_v2,images/0006138.png,İstinadlar Azərbaycan aktyorları,True,False
+synth_line_v2,images/0006321.png,"polkovnik-leytenantı, Vətən",False,True
+synth_line_v2,images/0006413.png,hansıki barbarlar kamos adlandırır,True,False
+synth_line_v2,images/0006608.png,formalaşdırmışlar.,False,True
+synth_line_v2,images/0006681.png,çatmışdılar.,False,True
+synth_line_v2,images/0006692.png,2011-ci ildən Azərbaycan,False,True
+synth_line_v2,images/0006725.png,"O, bu ada layiq görülən ilk",True,False
+synth_line_v2,images/0006827.png,1962) (tammetrajlı bədii film),True,False
+synth_line_v2,images/0006840.png,işləyənlər Rejissor: Ruslan,True,True
+synth_line_v2,images/0006893.png,İstinadlar Xarici keçidlər Şəxsi,True,True
+synth_line_v2,images/0006953.png,(titrlərdə yoxdur) Sadıq Hüseynov -,True,False
+synth_line_v2,images/0007393.png,düzənliklərdir.,False,True
+synth_line_v2,images/0007529.png,kimi qəbul oluna bilər.,True,False
+synth_line_v2,images/0007575.png,kənarlaşdırdı.,True,False
+synth_line_v2,images/0007654.png,2014.- 25 aprel.- S.,True,False
+synth_line_v2,images/0007665.png,sintez edilmişdir.,True,False
+synth_line_v2,images/0007771.png,Partiyasının baş katibi Əli,True,True
+synth_line_v2,images/0007856.png,da istifadə edilmişdir.,True,False
+synth_line_v2,images/0007897.png,"Filmoqrafiya Qafqaz (film, 2007)",False,True
+synth_line_v2,images/0007929.png,Azərbaycan Mədəniyyət Nazirliyinin,True,True
+synth_line_v2,images/0007943.png,parlamentinin 20 fevral 1988-ci,True,False
+synth_line_v2,images/0007995.png,Mahmudbəyovun filmləri,False,True
+synth_line_v2,images/0008156.png,İncəsənət Universitetini bitirib.,True,False
+synth_line_v2,images/0008243.png,təmsil olunmuşdur.,False,True
+synth_line_v2,images/0008492.png,III minilliyin sonu - II minilliyin,False,True
+synth_line_v2,images/0008550.png,9Eeirl C9 99ri 2C 20Hekay C9 99l C9,True,False
+synth_line_v2,images/0008555.png,formalaşdırır.,True,True
+synth_line_v2,images/0008757.png,Xarici keçidlər SSRİ film,False,True
+synth_line_v2,images/0008783.png,bəstəkarları,True,False
+synth_line_v2,images/0008860.png,dayandırmışdır.,False,True
+synth_line_v2,images/0008883.png,şəhərində anadan olmuşdur.,True,True
+synth_line_v2,images/0008910.png,təqdim etməkdədir.,True,False
+synth_line_v2,images/0008926.png,"Əbussuud Əfəndi, Osmanlı",False,True
+synth_line_v2,images/0008932.png,"(bütövün) hissəsini, ya da tam və",False,True
+synth_line_v2,images/0008937.png,yaradıcılığı haqqındadır.,False,True
+synth_line_v2,images/0008977.png,rəhbəri olub.,True,True
+synth_line_v2,images/0008982.png,tərəfindən 1949-cu ildə,False,True
+synth_line_v2,images/0009171.png,Azərbaycan SSR və Azərbaycan,True,False
+synth_line_v2,images/0009187.png,kilometrdir.,True,True
+synth_line_v2,images/0009251.png,ilin Azərbaycan filmləri Komediya,True,True
+synth_line_v2,images/0009284.png,tərəfindən ucaldılmışdır.,True,False
+synth_line_v2,images/0009432.png,"Karmen, operatorlar Cavanşir",True,False
+synth_line_v2,images/0009501.png,astronomiya və xarici dilləri,True,False
+synth_line_v2,images/0009543.png,"dərəcəli ""Vətənə xidmətə görə""",True,False
+synth_line_v2,images/0009551.png,Müsabiqəsidir.,True,False
+synth_line_v2,images/0009594.png,Əliyev tərəfindən Azərbaycan,True,True
+synth_line_v2,images/0009606.png,"Gədəbəyin sərvəti (film, 1950) Gənc",False,True
+synth_line_v2,images/0009832.png,olduqları ehtimal edilir.,False,True
+synth_line_v2,images/0009839.png,filmlər Ədəbi əsərlərin,True,True
+synth_line_v2,images/0009903.png,"adı - 1 dekabr 1982 ""Şöhrət"" ordeni",True,False
+synth_line_v2,images/0010012.png,mənşəyi haqqında müxtəlif fikirlər,False,True
+synth_line_v2,images/0010226.png,Əliyev tərəfindən Azərbaycan,True,True
+synth_line_v2,images/0010230.png,Cümədən başlayan uzun il.,False,True
+synth_line_v2,images/0010468.png,çağırış deputatları Azərbaycan SSR,True,False
+synth_line_v2,images/0010487.png,"Karmen, operatorlar Cavanşir",True,False
+synth_line_v2,images/0010512.png,idman jurnalistlərinin Ümumdünya,True,False
+synth_line_v2,images/0010573.png,İstinadlar Xarici keçidlər Şəxsi,True,True
+synth_line_v2,images/0010654.png,vacib deyil.,True,True
+synth_line_v2,images/0010682.png,qeyd edilir.,True,True
+synth_line_v2,images/0010690.png,quruluş verib.,False,True
+synth_line_v2,images/0010753.png,çatmışdılar.,False,True
+synth_line_v2,images/0010781.png,Azərbaycan Dövlət Elmi-Tədqiqat,True,False
+synth_line_v2,images/0010804.png,Azərbaycana aid hadisələr 2008 -,True,False
+synth_line_v2,images/0010866.png,da istifadə edilmişdir.,True,False
+synth_line_v2,images/0011011.png,Azərbaycana aid hadisələr 2008 -,True,False
+synth_line_v2,images/0011184.png,yaradılmışdır .,False,True
+synth_line_v2,images/0011328.png,kinooperatorları Ümumrusiya Dövlət,False,True
+synth_line_v2,images/0011352.png,"Parisi partladır (film, 1976)",False,True
+synth_line_v2,images/0011387.png,astronomiya və xarici dilləri,True,False
+synth_line_v2,images/0011389.png,çatmışdılar.,False,True
+synth_line_v2,images/0011396.png,İstinadlar Xarici keçidlər Maykl,True,False
+synth_line_v2,images/0011444.png,işləyənlər Rejissor: Zeynəb,False,True
+synth_line_v2,images/0011594.png,Quruluşçu operator: Yuri Varnovski,False,True
+synth_line_v2,images/0011654.png,idman jurnalistlərinin Ümumdünya,True,False
+synth_line_v2,images/0011750.png,parlamentinin 20 fevral 1988-ci,True,False
+synth_line_v2,images/0011813.png,ildə Azərbaycan Respublikasının,True,True
+synth_line_v2,images/0012007.png,"kəndinin, habelə Kilit kəndinin",True,False
+synth_line_v2,images/0012013.png,digərlərini qeyd etmək olar.,False,True
+synth_line_v2,images/0012043.png,"rəssamı, Azərbaycan və SSRİ Dövlət",True,False
+synth_line_v2,images/0012067.png,Quruluşçu operator: Yuri Varnovski,False,True
+synth_line_v2,images/0012137.png,Azərbaycan Dövlət Elmi-Tədqiqat,True,False
+synth_line_v2,images/0012194.png,gətirmişlər.,True,False
+synth_line_v2,images/0012215.png,Bayramlar və xüsusi günlər,True,True
+synth_line_v2,images/0012322.png,yaradıcılığı haqqındadır.,False,True
+synth_line_v2,images/0012336.png,"(bütövün) hissəsini, ya da tam və",False,True
+synth_line_v2,images/0012531.png,hüququ əldə edirlər.,True,False
+synth_line_v2,images/0012574.png,fakültəsinin magistratura,False,True
+synth_line_v2,images/0012670.png,Bayramlar və xüsusi günlər,True,True
+synth_line_v2,images/0012705.png,mübahisəli məsələdir.,False,True
+synth_line_v2,images/0012710.png,"polkovnik-leytenantı, Vətən",False,True
+synth_line_v2,images/0012753.png,təklif etmişdir.,False,True
+synth_line_v2,images/0012811.png,mükafatlandırıldı.,True,True
+synth_line_v2,images/0012930.png,"Filmoqrafiya Qafqaz (film, 2007)",False,True
+synth_line_v2,images/0012934.png,Nazirliyi tərəfindən,True,False
+synth_line_v2,images/0012940.png,İstinadlar Azərbaycan aktyorları,True,False
+synth_line_v2,images/0013009.png,Albaniya ilə həmsərhəddir.,True,False
+synth_line_v2,images/0013126.png,1991-ci ildə Sovet İttifaqının,True,False
+synth_line_v2,images/0013343.png,sintez edilmişdir.,True,False
+synth_line_v2,images/0013357.png,Bayramlar və xüsusi günlər,True,True
+synth_line_v2,images/0013413.png,izahlı lüğəti.,False,True
+synth_line_v2,images/0013467.png,daxil edilib.,False,True
+synth_line_v2,images/0013530.png,münasibətini bildirmişdi.,False,True
+synth_line_v2,images/0013554.png,Komediya filmləri Ramiz,False,True
+synth_line_v2,images/0013801.png,hansıki barbarlar kamos adlandırır,True,False
+synth_line_v2,images/0013827.png,məcburiyyətində qalmışdır.,True,False
+synth_line_v2,images/0013911.png,"Əkbərov, Azərbaycan baş çavuşu,",True,False
+synth_line_v2,images/0013969.png,təklif etmişdir.,False,True
+synth_line_v2,images/0014050.png,Qax Rayon İcra Hakimiyyətin,True,False
+synth_line_v2,images/0014061.png,düzənliklərdir.,False,True
+synth_line_v2,images/0014129.png,təmsil olunmuşdur.,False,True
+synth_line_v2,images/0014144.png,idman jurnalistlərinin Ümumdünya,True,False
+synth_line_v2,images/0014157.png,dastanının motivləri əsasında,True,False
+synth_line_v2,images/0014233.png,tərəfindən ucaldılmışdır.,True,False
+synth_line_v2,images/0014257.png,Televiziya tamaşası üzərində,False,True
+synth_line_v2,images/0014391.png,məcburiyyətində qalmışdır.,True,False
+synth_line_v2,images/0014441.png,Qax Rayon İcra Hakimiyyətin,True,False
+synth_line_v2,images/0014473.png,quruluş verib.,False,True
+synth_line_v2,images/0014606.png,təmsil olunmuşdur.,False,True
+synth_line_v2,images/0014647.png,Quruluşçu operator: Yuri Varnovski,False,True
+synth_line_v2,images/0014840.png,İstinadlar Azərbaycan aktyorları,True,False
+synth_line_v2,images/0014903.png,yaradılmışdır .,False,True
+synth_line_v2,images/0015022.png,İstinadlar Xarici keçidlər Şəxsi,True,True
+synth_line_v2,images/0015065.png,filmlər Ədəbi əsərlərin,True,True
+synth_line_v2,images/0015115.png,digərlərini qeyd etmək olar.,False,True
+synth_line_v2,images/0015124.png,şəhərində anadan olmuşdur.,True,True
+synth_line_v2,images/0015174.png,mübahisəli məsələdir.,False,True
+synth_line_v2,images/0015178.png,çətinlik çəkir.,True,False
+synth_line_v2,images/0015213.png,İstinadlar Azərbaycan,True,True
+synth_line_v2,images/0015220.png,"Filmoqrafiya Nəğməkar torpaq (film,",True,False
+synth_line_v2,images/0015244.png,(titrlərdə yoxdur) Sadıq Hüseynov -,True,False
+synth_line_v2,images/0015308.png,Azərbaycan Mədəniyyət Nazirliyinin,True,True
+synth_line_v2,images/0015477.png,"Qara Mustafayev, Azərbaycan bioloqu",False,True
+synth_line_v2,images/0015528.png,gətirmişlər.,True,False
+synth_line_v2,images/0015534.png,mənşəyi haqqında müxtəlif fikirlər,False,True
+synth_line_v2,images/0015556.png,"""Qoca"", ""Torpaqlarımız uğrunda"",",True,False
+synth_line_v2,images/0015636.png,da istifadə edilmişdir.,True,False
+synth_line_v2,images/0015650.png,"Filmoqrafiya Nəğməkar torpaq (film,",True,False
+synth_line_v2,images/0015655.png,daxil edilib.,False,True
+synth_line_v2,images/0015659.png,dəyərləndirdi.,True,False
+synth_line_v2,images/0015686.png,"(bütövün) hissəsini, ya da tam və",False,True
+synth_line_v2,images/0015708.png,"kəndinin, habelə Kilit kəndinin",True,False
+synth_line_v2,images/0015825.png,uğursuzluqla nəticələnmişdir.,True,False
+synth_line_v2,images/0015975.png,keçirməyi qərara aldı.,True,False

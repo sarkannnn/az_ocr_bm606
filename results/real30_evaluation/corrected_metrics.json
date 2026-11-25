@@ -1,0 +1,369 @@
+{
+  "audit_meta": {
+    "title": "P01-P30 Real Smartphone Photos Standardized Evaluation Audit",
+    "date": "2026-11-24",
+    "total_pages": 30,
+    "total_gt_lines": 421,
+    "total_detected_crops": 690,
+    "unified_matched_lines": 405,
+    "unsegmented_missed_lines": 16,
+    "extra_noise_crops": 285
+  },
+  "crnn_page_cer_decomposition": {
+    "total_crnn_predicted_chars": 36063,
+    "real_crop_chars": 24702,
+    "noise_crop_inserted_chars": 11361,
+    "noise_crop_char_ratio_pct": 31.5,
+    "explanation": "CRNN lacks blank/noise rejection, generating ~100 characters per shadow/desk crop, which inflates page CER by ~35% absolute insertion error."
+  },
+  "standardized_models_summary": {
+    "CRNN-V2_Raw": {
+      "evaluated_gt_lines": 421,
+      "unified_matched_lines": 405,
+      "exact_matches": 41,
+      "exact_match_rate_pct": 9.74,
+      "matched_exact_match_rate_pct": 10.12,
+      "line_cer_micro_pct": 34.01,
+      "line_wer_micro_pct": 43.96,
+      "page_cer_micro_pct": 68.83,
+      "page_wer_micro_pct": 60.02,
+      "page_cer_macro_pct": 68.85,
+      "page_wer_macro_pct": 59.77
+    },
+    "Tesseract5_PSM7": {
+      "evaluated_gt_lines": 421,
+      "unified_matched_lines": 405,
+      "exact_matches": 61,
+      "exact_match_rate_pct": 14.49,
+      "matched_exact_match_rate_pct": 15.06,
+      "line_cer_micro_pct": 32.26,
+      "line_wer_micro_pct": 40.47,
+      "page_cer_micro_pct": 35.81,
+      "page_wer_micro_pct": 47.05,
+      "page_cer_macro_pct": 35.64,
+      "page_wer_macro_pct": 46.93
+    },
+    "EasyOCR": {
+      "evaluated_gt_lines": 421,
+      "unified_matched_lines": 405,
+      "exact_matches": 16,
+      "exact_match_rate_pct": 3.8,
+      "matched_exact_match_rate_pct": 3.95,
+      "line_cer_micro_pct": 31.76,
+      "line_wer_micro_pct": 47.82,
+      "page_cer_micro_pct": 47.75,
+      "page_wer_micro_pct": 66.45,
+      "page_cer_macro_pct": 47.67,
+      "page_wer_macro_pct": 66.31
+    },
+    "PaddleOCR": {
+      "evaluated_gt_lines": 421,
+      "unified_matched_lines": 405,
+      "exact_matches": 51,
+      "exact_match_rate_pct": 12.11,
+      "matched_exact_match_rate_pct": 12.59,
+      "line_cer_micro_pct": 31.33,
+      "line_wer_micro_pct": 42.36,
+      "page_cer_micro_pct": 32.92,
+      "page_wer_micro_pct": 43.42,
+      "page_cer_macro_pct": 32.75,
+      "page_wer_macro_pct": 43.21
+    }
+  },
+  "character_confusions_fixed_gt": {
+    "CRNN-V2_Raw": {
+      "ə": {
+        "gt_occurrences_total_421": 2907,
+        "correct_in_matched": 2044,
+        "accuracy_against_total_gt": "70.31%",
+        "accuracy_num": 70.31,
+        "deletions": 652,
+        "top_substitutions": {
+          "a": 34,
+          "ı": 16,
+          "e": 14,
+          "r": 11,
+          "s": 9
+        }
+      },
+      "Ə": {
+        "gt_occurrences_total_421": 8,
+        "correct_in_matched": 6,
+        "accuracy_against_total_gt": "75.0%",
+        "accuracy_num": 75.0,
+        "deletions": 1,
+        "top_substitutions": {
+          "ə": 1
+        }
+      },
+      "ı": {
+        "gt_occurrences_total_421": 1111,
+        "correct_in_matched": 800,
+        "accuracy_against_total_gt": "72.01%",
+        "accuracy_num": 72.01,
+        "deletions": 214,
+        "top_substitutions": {
+          "n": 7,
+          "t": 6,
+          "ə": 6,
+          "a": 6,
+          "m": 6
+        }
+      },
+      "i": {
+        "gt_occurrences_total_421": 2349,
+        "correct_in_matched": 1671,
+        "accuracy_against_total_gt": "71.14%",
+        "accuracy_num": 71.14,
+        "deletions": 483,
+        "top_substitutions": {
+          "ı": 28,
+          "a": 24,
+          "r": 10,
+          "e": 9,
+          "s": 9
+        }
+      },
+      "İ": {
+        "gt_occurrences_total_421": 26,
+        "correct_in_matched": 16,
+        "accuracy_against_total_gt": "61.54%",
+        "accuracy_num": 61.54,
+        "deletions": 4,
+        "top_substitutions": {
+          "i": 2,
+          "I": 1,
+          "1": 1,
+          "T": 1,
+          "e": 1
+        }
+      },
+      "I": {
+        "gt_occurrences_total_421": 0,
+        "correct_in_matched": 0,
+        "accuracy_against_total_gt": "N/A",
+        "accuracy_num": null,
+        "deletions": 0,
+        "top_substitutions": {}
+      }
+    },
+    "Tesseract5_PSM7": {
+      "ə": {
+        "gt_occurrences_total_421": 2907,
+        "correct_in_matched": 1965,
+        "accuracy_against_total_gt": "67.6%",
+        "accuracy_num": 67.6,
+        "deletions": 768,
+        "top_substitutions": {
+          "a": 17,
+          "ı": 8,
+          "i": 8,
+          "n": 7,
+          "Ə": 7
+        }
+      },
+      "Ə": {
+        "gt_occurrences_total_421": 8,
+        "correct_in_matched": 7,
+        "accuracy_against_total_gt": "87.5%",
+        "accuracy_num": 87.5,
+        "deletions": 1,
+        "top_substitutions": {}
+      },
+      "ı": {
+        "gt_occurrences_total_421": 1111,
+        "correct_in_matched": 718,
+        "accuracy_against_total_gt": "64.63%",
+        "accuracy_num": 64.63,
+        "deletions": 310,
+        "top_substitutions": {
+          "i": 9,
+          "ə": 5,
+          "r": 4,
+          "ü": 4,
+          " ": 3
+        }
+      },
+      "i": {
+        "gt_occurrences_total_421": 2349,
+        "correct_in_matched": 1621,
+        "accuracy_against_total_gt": "69.01%",
+        "accuracy_num": 69.01,
+        "deletions": 603,
+        "top_substitutions": {
+          ".": 8,
+          "t": 6,
+          ":": 5,
+          "ə": 5,
+          "l": 4
+        }
+      },
+      "İ": {
+        "gt_occurrences_total_421": 26,
+        "correct_in_matched": 18,
+        "accuracy_against_total_gt": "69.23%",
+        "accuracy_num": 69.23,
+        "deletions": 6,
+        "top_substitutions": {
+          "T": 1,
+          "i": 1
+        }
+      },
+      "I": {
+        "gt_occurrences_total_421": 0,
+        "correct_in_matched": 0,
+        "accuracy_against_total_gt": "N/A",
+        "accuracy_num": null,
+        "deletions": 0,
+        "top_substitutions": {}
+      }
+    },
+    "EasyOCR": {
+      "ə": {
+        "gt_occurrences_total_421": 2907,
+        "correct_in_matched": 1975,
+        "accuracy_against_total_gt": "67.94%",
+        "accuracy_num": 67.94,
+        "deletions": 682,
+        "top_substitutions": {
+          "a": 50,
+          "o": 15,
+          "s": 13,
+          " ": 10,
+          "Ə": 8
+        }
+      },
+      "Ə": {
+        "gt_occurrences_total_421": 8,
+        "correct_in_matched": 7,
+        "accuracy_against_total_gt": "87.5%",
+        "accuracy_num": 87.5,
+        "deletions": 1,
+        "top_substitutions": {}
+      },
+      "ı": {
+        "gt_occurrences_total_421": 1111,
+        "correct_in_matched": 751,
+        "accuracy_against_total_gt": "67.6%",
+        "accuracy_num": 67.6,
+        "deletions": 267,
+        "top_substitutions": {
+          "1": 7,
+          "i": 7,
+          "n": 6,
+          "e": 5,
+          "o": 5
+        }
+      },
+      "i": {
+        "gt_occurrences_total_421": 2349,
+        "correct_in_matched": 1680,
+        "accuracy_against_total_gt": "71.52%",
+        "accuracy_num": 71.52,
+        "deletions": 490,
+        "top_substitutions": {
+          "a": 11,
+          " ": 10,
+          "ı": 10,
+          "s": 10,
+          "l": 8
+        }
+      },
+      "İ": {
+        "gt_occurrences_total_421": 26,
+        "correct_in_matched": 11,
+        "accuracy_against_total_gt": "42.31%",
+        "accuracy_num": 42.31,
+        "deletions": 4,
+        "top_substitutions": {
+          "I": 6,
+          "i": 2,
+          "1": 1,
+          "<": 1,
+          "o": 1
+        }
+      },
+      "I": {
+        "gt_occurrences_total_421": 0,
+        "correct_in_matched": 0,
+        "accuracy_against_total_gt": "N/A",
+        "accuracy_num": null,
+        "deletions": 0,
+        "top_substitutions": {}
+      }
+    },
+    "PaddleOCR": {
+      "ə": {
+        "gt_occurrences_total_421": 2907,
+        "correct_in_matched": 1980,
+        "accuracy_against_total_gt": "68.11%",
+        "accuracy_num": 68.11,
+        "deletions": 775,
+        "top_substitutions": {
+          "a": 36,
+          "e": 10,
+          "i": 9,
+          "s": 5,
+          "ı": 5
+        }
+      },
+      "Ə": {
+        "gt_occurrences_total_421": 8,
+        "correct_in_matched": 2,
+        "accuracy_against_total_gt": "25.0%",
+        "accuracy_num": 25.0,
+        "deletions": 1,
+        "top_substitutions": {
+          "ə": 5
+        }
+      },
+      "ı": {
+        "gt_occurrences_total_421": 1111,
+        "correct_in_matched": 549,
+        "accuracy_against_total_gt": "49.41%",
+        "accuracy_num": 49.41,
+        "deletions": 326,
+        "top_substitutions": {
+          "i": 181,
+          "n": 4,
+          "ə": 3,
+          "l": 2,
+          "r": 2
+        }
+      },
+      "i": {
+        "gt_occurrences_total_421": 2349,
+        "correct_in_matched": 1679,
+        "accuracy_against_total_gt": "71.48%",
+        "accuracy_num": 71.48,
+        "deletions": 574,
+        "top_substitutions": {
+          "n": 5,
+          "l": 5,
+          " ": 5,
+          "a": 4,
+          "r": 3
+        }
+      },
+      "İ": {
+        "gt_occurrences_total_421": 26,
+        "correct_in_matched": 5,
+        "accuracy_against_total_gt": "19.23%",
+        "accuracy_num": 19.23,
+        "deletions": 6,
+        "top_substitutions": {
+          "i": 13,
+          "I": 2
+        }
+      },
+      "I": {
+        "gt_occurrences_total_421": 0,
+        "correct_in_matched": 0,
+        "accuracy_against_total_gt": "N/A",
+        "accuracy_num": null,
+        "deletions": 0,
+        "top_substitutions": {}
+      }
+    }
+  }
+}

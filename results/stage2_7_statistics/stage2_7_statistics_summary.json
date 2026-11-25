@@ -1,0 +1,286 @@
+{
+  "status": "COMPLETED",
+  "near_duplicate_audit": {
+    "clean_corpus": {
+      "train_val_case_variations": 5,
+      "train_test_case_variations": 4,
+      "train_val_punct_variations": 12,
+      "train_test_punct_variations": 11,
+      "exact_overlap": 0,
+      "nfc_overlap": 0
+    }
+  },
+  "character_class_wilson_ci_table6b": [
+    {
+      "class": "Lowercase Special (ə,ı,ö,ğ,ü,ş,ç)",
+      "n": 7774,
+      "v2_errors": 21,
+      "v2_error_pct": 0.27,
+      "v2_wilson_ci95": "[0.18%, 0.41%]",
+      "v2_low_pct": 0.177,
+      "v2_high_pct": 0.413,
+      "tess_errors": 15,
+      "tess_error_pct": 0.19,
+      "tess_wilson_ci95": "[0.12%, 0.32%]",
+      "tess_low_pct": 0.117,
+      "tess_high_pct": 0.318,
+      "fisher_p_value": 0.4044843482782378,
+      "significant_at_05": false
+    },
+    {
+      "class": "Uppercase Special (Ə,İ,Ö,Ğ,Ü,Ş,Ç,I)",
+      "n": 244,
+      "v2_errors": 6,
+      "v2_error_pct": 2.46,
+      "v2_wilson_ci95": "[1.13%, 5.26%]",
+      "v2_low_pct": 1.132,
+      "v2_high_pct": 5.26,
+      "tess_errors": 9,
+      "tess_error_pct": 3.69,
+      "tess_wilson_ci95": "[1.95%, 6.86%]",
+      "tess_low_pct": 1.952,
+      "tess_high_pct": 6.86,
+      "fisher_p_value": 0.6014867361147318,
+      "significant_at_05": false
+    },
+    {
+      "class": "Standard Lowercase (a–z)",
+      "n": 38073,
+      "v2_errors": 91,
+      "v2_error_pct": 0.24,
+      "v2_wilson_ci95": "[0.19%, 0.29%]",
+      "v2_low_pct": 0.195,
+      "v2_high_pct": 0.293,
+      "tess_errors": 175,
+      "tess_error_pct": 0.46,
+      "tess_wilson_ci95": "[0.40%, 0.53%]",
+      "tess_low_pct": 0.397,
+      "tess_high_pct": 0.533,
+      "fisher_p_value": 2.761033330237856e-07,
+      "significant_at_05": true
+    },
+    {
+      "class": "Standard Uppercase (A–Z)",
+      "n": 2020,
+      "v2_errors": 15,
+      "v2_error_pct": 0.74,
+      "v2_wilson_ci95": "[0.45%, 1.22%]",
+      "v2_low_pct": 0.451,
+      "v2_high_pct": 1.222,
+      "tess_errors": 23,
+      "tess_error_pct": 1.14,
+      "tess_wilson_ci95": "[0.76%, 1.70%]",
+      "tess_low_pct": 0.76,
+      "tess_high_pct": 1.703,
+      "fisher_p_value": 0.2536231557820638,
+      "significant_at_05": false
+    },
+    {
+      "class": "Grapheme i (lower dotted)",
+      "n": 4386,
+      "v2_errors": 16,
+      "v2_error_pct": 0.36,
+      "v2_wilson_ci95": "[0.22%, 0.59%]",
+      "v2_low_pct": 0.225,
+      "v2_high_pct": 0.592,
+      "tess_errors": 11,
+      "tess_error_pct": 0.25,
+      "tess_wilson_ci95": "[0.14%, 0.45%]",
+      "tess_low_pct": 0.14,
+      "tess_high_pct": 0.449,
+      "fisher_p_value": 0.4413583161436118,
+      "significant_at_05": false
+    },
+    {
+      "class": "Grapheme ı (lower dotless)",
+      "n": 1688,
+      "v2_errors": 10,
+      "v2_error_pct": 0.59,
+      "v2_wilson_ci95": "[0.32%, 1.09%]",
+      "v2_low_pct": 0.322,
+      "v2_high_pct": 1.087,
+      "tess_errors": 5,
+      "tess_error_pct": 0.3,
+      "tess_wilson_ci95": "[0.13%, 0.69%]",
+      "tess_low_pct": 0.127,
+      "tess_high_pct": 0.692,
+      "fisher_p_value": 0.30066972351169885,
+      "significant_at_05": false
+    },
+    {
+      "class": "Grapheme İ (upper dotted)",
+      "n": 74,
+      "v2_errors": 2,
+      "v2_error_pct": 2.7,
+      "v2_wilson_ci95": "[0.74%, 9.33%]",
+      "v2_low_pct": 0.744,
+      "v2_high_pct": 9.329,
+      "tess_errors": 2,
+      "tess_error_pct": 2.7,
+      "tess_wilson_ci95": "[0.74%, 9.33%]",
+      "tess_low_pct": 0.744,
+      "tess_high_pct": 9.329,
+      "fisher_p_value": 1.0,
+      "significant_at_05": false
+    },
+    {
+      "class": "Grapheme I (upper dotless)",
+      "n": 22,
+      "v2_errors": 1,
+      "v2_error_pct": 4.55,
+      "v2_wilson_ci95": "[0.81%, 21.80%]",
+      "v2_low_pct": 0.807,
+      "v2_high_pct": 21.798,
+      "tess_errors": 1,
+      "tess_error_pct": 4.55,
+      "tess_wilson_ci95": "[0.81%, 21.80%]",
+      "tess_low_pct": 0.807,
+      "tess_high_pct": 21.798,
+      "fisher_p_value": 1.0,
+      "significant_at_05": false
+    }
+  ],
+  "uppercase_special_6_vs_9_analysis": {
+    "sample_size": 244,
+    "v2_errors": 6,
+    "v2_err_pct": 2.46,
+    "v2_wilson_ci95": "[1.13%, 5.26%]",
+    "tess_errors": 9,
+    "tess_err_pct": 3.69,
+    "tess_wilson_ci95": "[1.95%, 6.86%]",
+    "absolute_diff_pp": -1.23,
+    "fisher_exact_p_value": 0.6014867361147318,
+    "is_significant_at_05": false,
+    "conclusion": "The difference of 3 errors (6 vs 9) in n=244 is not statistically significant (p=0.60 > 0.05). Confidence intervals heavily overlap."
+  },
+  "benchmark_295_character_class_real_vs_sim": [
+    {
+      "class": "Lowercase Special (ə,ı,ö,ğ,ü,ş,ç)",
+      "real_n": 668,
+      "real_err": 2,
+      "real_pct": 0.3,
+      "real_ci95": "[0.08%, 1.09%]",
+      "sim_n": 3761,
+      "sim_err": 7,
+      "sim_pct": 0.19,
+      "sim_ci95": "[0.09%, 0.38%]"
+    },
+    {
+      "class": "Uppercase Special (Ə,İ,Ö,Ğ,Ü,Ş,Ç,I)",
+      "real_n": 5,
+      "real_err": 0,
+      "real_pct": 0.0,
+      "real_ci95": "[0.00%, 43.45%]",
+      "sim_n": 53,
+      "sim_err": 0,
+      "sim_pct": 0.0,
+      "sim_ci95": "[0.00%, 6.76%]"
+    },
+    {
+      "class": "Standard Lowercase (a-z)",
+      "real_n": 2580,
+      "real_err": 7,
+      "real_pct": 0.27,
+      "real_ci95": "[0.13%, 0.56%]",
+      "sim_n": 15963,
+      "sim_err": 39,
+      "sim_pct": 0.24,
+      "sim_ci95": "[0.18%, 0.33%]"
+    },
+    {
+      "class": "Standard Uppercase (A-Z)",
+      "real_n": 50,
+      "real_err": 0,
+      "real_pct": 0.0,
+      "real_ci95": "[0.00%, 7.13%]",
+      "sim_n": 298,
+      "sim_err": 0,
+      "sim_pct": 0.0,
+      "sim_ci95": "[0.00%, 1.27%]"
+    },
+    {
+      "class": "Digits & Punctuation",
+      "real_n": 94,
+      "real_err": 6,
+      "real_pct": 6.38,
+      "real_ci95": "[2.96%, 13.23%]",
+      "sim_n": 294,
+      "sim_err": 12,
+      "sim_pct": 4.08,
+      "sim_ci95": "[2.35%, 7.00%]"
+    }
+  ],
+  "benchmark_295_i_family_confusion": {
+    "i": {
+      "total": 2403,
+      "correct": 2380,
+      "errors": 23,
+      "all_confusions": {
+        "i": 2380,
+        "[SUB]": 1,
+        "l": 14,
+        "İ": 3,
+        "ı": 2,
+        "[DEL]": 3
+      },
+      "real_confusions": {
+        "i": 294,
+        "[SUB]": 1
+      },
+      "sim_confusions": {
+        "i": 2086,
+        "l": 14,
+        "İ": 3,
+        "ı": 2,
+        "[DEL]": 3
+      }
+    },
+    "ı": {
+      "total": 962,
+      "correct": 955,
+      "errors": 7,
+      "all_confusions": {
+        "ı": 955,
+        "[DEL]": 6,
+        "[SUB]": 1
+      },
+      "real_confusions": {
+        "ı": 147,
+        "[DEL]": 1,
+        "[SUB]": 1
+      },
+      "sim_confusions": {
+        "ı": 808,
+        "[DEL]": 5
+      }
+    },
+    "İ": {
+      "total": 13,
+      "correct": 13,
+      "errors": 0,
+      "all_confusions": {
+        "İ": 13
+      },
+      "real_confusions": {},
+      "sim_confusions": {
+        "İ": 13
+      }
+    },
+    "I": {
+      "total": 4,
+      "correct": 4,
+      "errors": 0,
+      "all_confusions": {
+        "I": 4
+      },
+      "real_confusions": {},
+      "sim_confusions": {
+        "I": 4
+      }
+    }
+  },
+  "methodological_disclosures": {
+    "six_cluster_bootstrap_limitation": "When clustered bootstrap is conducted with only k=5 or k=6 document clusters, the asymptotic assumptions of cluster-robust standard errors fail. Downward bias of standard errors is well-documented (Cameron et al. 2008 recommends k>=30-50). Confidence intervals from such small clusters can be overly narrow.",
+    "seen_font_in_distribution_clarification": "All real physical documents (Photos 1-5, B1-B3) were printed in Arial, Calibri, or Times New Roman, which were explicitly included in the training fonts of V1 and V2. Demonstrating near-zero error on seen fonts validates in-distribution parameter fitting, not universal out-of-distribution OCR superiority."
+  }
+}

@@ -1,0 +1,1531 @@
+{
+  "tesseract_version": "5.4.0.20240606",
+  "total_lines": 295,
+  "conditions_evaluated": [
+    "raw_psm7",
+    "raw_psm13",
+    "pad10_psm7",
+    "pad10_psm13",
+    "pad10_scale15_psm7",
+    "pad10_scale15_psm13",
+    "rule_apriori"
+  ],
+  "overall_295": {
+    "raw_psm7": {
+      "n_lines": 295,
+      "cer_pct": 0.31,
+      "accuracy_char_pct": 99.69,
+      "wer_pct": 1.55,
+      "accuracy_word_pct": 98.45,
+      "exact_match": "250/295 (84.7%)",
+      "exact_count": 250,
+      "empty_outputs": 0,
+      "mean_latency_ms": 137.1
+    },
+    "raw_psm13": {
+      "n_lines": 295,
+      "cer_pct": 0.47,
+      "accuracy_char_pct": 99.53,
+      "wer_pct": 2.4,
+      "accuracy_word_pct": 97.6,
+      "exact_match": "230/295 (78.0%)",
+      "exact_count": 230,
+      "empty_outputs": 0,
+      "mean_latency_ms": 134.8
+    },
+    "pad10_psm7": {
+      "n_lines": 295,
+      "cer_pct": 2.01,
+      "accuracy_char_pct": 97.99,
+      "wer_pct": 5.07,
+      "accuracy_word_pct": 94.93,
+      "exact_match": "236/295 (80.0%)",
+      "exact_count": 236,
+      "empty_outputs": 3,
+      "mean_latency_ms": 133.8
+    },
+    "pad10_psm13": {
+      "n_lines": 295,
+      "cer_pct": 2.88,
+      "accuracy_char_pct": 97.12,
+      "wer_pct": 14.02,
+      "accuracy_word_pct": 85.98,
+      "exact_match": "92/295 (31.2%)",
+      "exact_count": 92,
+      "empty_outputs": 0,
+      "mean_latency_ms": 124.2
+    },
+    "pad10_scale15_psm7": {
+      "n_lines": 295,
+      "cer_pct": 1.92,
+      "accuracy_char_pct": 98.08,
+      "wer_pct": 4.8,
+      "accuracy_word_pct": 95.2,
+      "exact_match": "241/295 (81.7%)",
+      "exact_count": 241,
+      "empty_outputs": 3,
+      "mean_latency_ms": 165.1
+    },
+    "pad10_scale15_psm13": {
+      "n_lines": 295,
+      "cer_pct": 2.74,
+      "accuracy_char_pct": 97.26,
+      "wer_pct": 12.72,
+      "accuracy_word_pct": 87.28,
+      "exact_match": "98/295 (33.2%)",
+      "exact_count": 98,
+      "empty_outputs": 0,
+      "mean_latency_ms": 154.4
+    },
+    "rule_apriori": {
+      "n_lines": 295,
+      "cer_pct": 1.13,
+      "accuracy_char_pct": 98.87,
+      "wer_pct": 4.67,
+      "accuracy_word_pct": 95.33,
+      "exact_match": "236/295 (80.0%)",
+      "exact_count": 236,
+      "empty_outputs": 0,
+      "mean_latency_ms": 0.0
+    }
+  },
+  "real_photos_55": {
+    "raw_psm7": {
+      "n_lines": 55,
+      "cer_pct": 0.54,
+      "accuracy_char_pct": 99.46,
+      "wer_pct": 2.47,
+      "accuracy_word_pct": 97.53,
+      "exact_match": "46/55 (83.6%)",
+      "exact_count": 46,
+      "empty_outputs": 0,
+      "mean_latency_ms": 137.1
+    },
+    "raw_psm13": {
+      "n_lines": 55,
+      "cer_pct": 1.61,
+      "accuracy_char_pct": 98.39,
+      "wer_pct": 7.07,
+      "accuracy_word_pct": 92.93,
+      "exact_match": "28/55 (50.9%)",
+      "exact_count": 28,
+      "empty_outputs": 0,
+      "mean_latency_ms": 134.8
+    },
+    "pad10_psm7": {
+      "n_lines": 55,
+      "cer_pct": 0.38,
+      "accuracy_char_pct": 99.62,
+      "wer_pct": 1.77,
+      "accuracy_word_pct": 98.23,
+      "exact_match": "46/55 (83.6%)",
+      "exact_count": 46,
+      "empty_outputs": 0,
+      "mean_latency_ms": 133.8
+    },
+    "pad10_psm13": {
+      "n_lines": 55,
+      "cer_pct": 2.65,
+      "accuracy_char_pct": 97.35,
+      "wer_pct": 11.66,
+      "accuracy_word_pct": 88.34,
+      "exact_match": "13/55 (23.6%)",
+      "exact_count": 13,
+      "empty_outputs": 0,
+      "mean_latency_ms": 124.2
+    },
+    "pad10_scale15_psm7": {
+      "n_lines": 55,
+      "cer_pct": 0.36,
+      "accuracy_char_pct": 99.64,
+      "wer_pct": 1.59,
+      "accuracy_word_pct": 98.41,
+      "exact_match": "48/55 (87.3%)",
+      "exact_count": 48,
+      "empty_outputs": 0,
+      "mean_latency_ms": 165.1
+    },
+    "pad10_scale15_psm13": {
+      "n_lines": 55,
+      "cer_pct": 2.45,
+      "accuracy_char_pct": 97.55,
+      "wer_pct": 10.07,
+      "accuracy_word_pct": 89.93,
+      "exact_match": "13/55 (23.6%)",
+      "exact_count": 13,
+      "empty_outputs": 0,
+      "mean_latency_ms": 154.4
+    },
+    "rule_apriori": {
+      "n_lines": 55,
+      "cer_pct": 0.38,
+      "accuracy_char_pct": 99.62,
+      "wer_pct": 1.77,
+      "accuracy_word_pct": 98.23,
+      "exact_match": "46/55 (83.6%)",
+      "exact_count": 46,
+      "empty_outputs": 0,
+      "mean_latency_ms": 0.0
+    }
+  },
+  "simulated_photos_240": {
+    "raw_psm7": {
+      "n_lines": 240,
+      "cer_pct": 0.27,
+      "accuracy_char_pct": 99.73,
+      "wer_pct": 1.36,
+      "accuracy_word_pct": 98.64,
+      "exact_match": "204/240 (85.0%)",
+      "exact_count": 204,
+      "empty_outputs": 0,
+      "mean_latency_ms": 137.1
+    },
+    "raw_psm13": {
+      "n_lines": 240,
+      "cer_pct": 0.28,
+      "accuracy_char_pct": 99.72,
+      "wer_pct": 1.43,
+      "accuracy_word_pct": 98.57,
+      "exact_match": "202/240 (84.2%)",
+      "exact_count": 202,
+      "empty_outputs": 0,
+      "mean_latency_ms": 134.8
+    },
+    "pad10_psm7": {
+      "n_lines": 240,
+      "cer_pct": 2.29,
+      "accuracy_char_pct": 97.71,
+      "wer_pct": 5.75,
+      "accuracy_word_pct": 94.25,
+      "exact_match": "190/240 (79.2%)",
+      "exact_count": 190,
+      "empty_outputs": 3,
+      "mean_latency_ms": 133.8
+    },
+    "pad10_psm13": {
+      "n_lines": 240,
+      "cer_pct": 2.92,
+      "accuracy_char_pct": 97.08,
+      "wer_pct": 14.51,
+      "accuracy_word_pct": 85.49,
+      "exact_match": "79/240 (32.9%)",
+      "exact_count": 79,
+      "empty_outputs": 0,
+      "mean_latency_ms": 124.2
+    },
+    "pad10_scale15_psm7": {
+      "n_lines": 240,
+      "cer_pct": 2.18,
+      "accuracy_char_pct": 97.82,
+      "wer_pct": 5.46,
+      "accuracy_word_pct": 94.54,
+      "exact_match": "193/240 (80.4%)",
+      "exact_count": 193,
+      "empty_outputs": 3,
+      "mean_latency_ms": 165.1
+    },
+    "pad10_scale15_psm13": {
+      "n_lines": 240,
+      "cer_pct": 2.79,
+      "accuracy_char_pct": 97.21,
+      "wer_pct": 13.26,
+      "accuracy_word_pct": 86.74,
+      "exact_match": "85/240 (35.4%)",
+      "exact_count": 85,
+      "empty_outputs": 0,
+      "mean_latency_ms": 154.4
+    },
+    "rule_apriori": {
+      "n_lines": 240,
+      "cer_pct": 1.26,
+      "accuracy_char_pct": 98.74,
+      "wer_pct": 5.28,
+      "accuracy_word_pct": 94.72,
+      "exact_match": "190/240 (79.2%)",
+      "exact_count": 190,
+      "empty_outputs": 0,
+      "mean_latency_ms": 0.0
+    }
+  },
+  "empty_outputs_count": {
+    "raw_psm7": 0,
+    "raw_psm13": 0,
+    "pad10_psm7": 3,
+    "pad10_psm13": 0,
+    "pad10_scale15_psm7": 3,
+    "pad10_scale15_psm13": 0,
+    "rule_apriori": 0
+  },
+  "empty_outputs_details": {
+    "raw_psm7": [],
+    "raw_psm13": [],
+    "pad10_psm7": [
+      {
+        "doc_id": "B12",
+        "img_code": "IMG_5132",
+        "line_idx": 0,
+        "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_00.png",
+        "original_h": 30,
+        "original_w": 1508,
+        "aspect_ratio": 50.27,
+        "gt_text": "Naxçıvan diyarı Azərbaycanın ən qədim dövlətçilik və memarlıq mərkəzlərindən biri kimi tanınır.",
+        "condition": "pad10_psm7"
+      },
+      {
+        "doc_id": "B12",
+        "img_code": "IMG_5132",
+        "line_idx": 10,
+        "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_10.png",
+        "original_h": 30,
+        "original_w": 1509,
+        "aspect_ratio": 50.3,
+        "gt_text": "Əshabi-Kəhf ziyarətgahı təbii mağara quruluşu və qədim rəvayətləri ilə minlərlə insanı qarşılayır.",
+        "condition": "pad10_psm7"
+      },
+      {
+        "doc_id": "B12",
+        "img_code": "IMG_5132",
+        "line_idx": 11,
+        "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_11.png",
+        "original_h": 30,
+        "original_w": 1409,
+        "aspect_ratio": 46.97,
+        "gt_text": "Duzdağ fizioterapiya mərkəzi yeraltı duz şaxtalarının müalicəvi mikroiqliminə əsaslanır.",
+        "condition": "pad10_psm7"
+      }
+    ],
+    "pad10_psm13": [],
+    "pad10_scale15_psm7": [
+      {
+        "doc_id": "B12",
+        "img_code": "IMG_5132",
+        "line_idx": 0,
+        "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_00.png",
+        "original_h": 30,
+        "original_w": 1508,
+        "aspect_ratio": 50.27,
+        "gt_text": "Naxçıvan diyarı Azərbaycanın ən qədim dövlətçilik və memarlıq mərkəzlərindən biri kimi tanınır.",
+        "condition": "pad10_scale15_psm7"
+      },
+      {
+        "doc_id": "B12",
+        "img_code": "IMG_5132",
+        "line_idx": 10,
+        "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_10.png",
+        "original_h": 30,
+        "original_w": 1509,
+        "aspect_ratio": 50.3,
+        "gt_text": "Əshabi-Kəhf ziyarətgahı təbii mağara quruluşu və qədim rəvayətləri ilə minlərlə insanı qarşılayır.",
+        "condition": "pad10_scale15_psm7"
+      },
+      {
+        "doc_id": "B12",
+        "img_code": "IMG_5132",
+        "line_idx": 11,
+        "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_11.png",
+        "original_h": 30,
+        "original_w": 1409,
+        "aspect_ratio": 46.97,
+        "gt_text": "Duzdağ fizioterapiya mərkəzi yeraltı duz şaxtalarının müalicəvi mikroiqliminə əsaslanır.",
+        "condition": "pad10_scale15_psm7"
+      }
+    ],
+    "pad10_scale15_psm13": [],
+    "rule_apriori": []
+  },
+  "per_document": {
+    "B1": {
+      "raw_psm7": {
+        "n_lines": 16,
+        "cer_pct": 1.32,
+        "accuracy_char_pct": 98.68,
+        "wer_pct": 5.07,
+        "accuracy_word_pct": 94.93,
+        "exact_match": "9/16 (56.2%)",
+        "exact_count": 9,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 16,
+        "cer_pct": 2.22,
+        "accuracy_char_pct": 97.78,
+        "wer_pct": 8.76,
+        "accuracy_word_pct": 91.24,
+        "exact_match": "4/16 (25.0%)",
+        "exact_count": 4,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 16,
+        "cer_pct": 0.9,
+        "accuracy_char_pct": 99.1,
+        "wer_pct": 3.23,
+        "accuracy_word_pct": 96.77,
+        "exact_match": "9/16 (56.2%)",
+        "exact_count": 9,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 16,
+        "cer_pct": 2.64,
+        "accuracy_char_pct": 97.36,
+        "wer_pct": 10.6,
+        "accuracy_word_pct": 89.4,
+        "exact_match": "3/16 (18.8%)",
+        "exact_count": 3,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 16,
+        "cer_pct": 0.83,
+        "accuracy_char_pct": 99.17,
+        "wer_pct": 2.76,
+        "accuracy_word_pct": 97.24,
+        "exact_match": "11/16 (68.8%)",
+        "exact_count": 11,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 16,
+        "cer_pct": 2.22,
+        "accuracy_char_pct": 97.78,
+        "wer_pct": 7.83,
+        "accuracy_word_pct": 92.17,
+        "exact_match": "4/16 (25.0%)",
+        "exact_count": 4,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 16,
+        "cer_pct": 0.9,
+        "accuracy_char_pct": 99.1,
+        "wer_pct": 3.23,
+        "accuracy_word_pct": 96.77,
+        "exact_match": "9/16 (56.2%)",
+        "exact_count": 9,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B2": {
+      "raw_psm7": {
+        "n_lines": 16,
+        "cer_pct": 0.14,
+        "accuracy_char_pct": 99.86,
+        "wer_pct": 1.42,
+        "accuracy_word_pct": 98.58,
+        "exact_match": "14/16 (87.5%)",
+        "exact_count": 14,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 16,
+        "cer_pct": 1.85,
+        "accuracy_char_pct": 98.15,
+        "wer_pct": 8.06,
+        "accuracy_word_pct": 91.94,
+        "exact_match": "5/16 (31.2%)",
+        "exact_count": 5,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 16,
+        "cer_pct": 0.14,
+        "accuracy_char_pct": 99.86,
+        "wer_pct": 1.42,
+        "accuracy_word_pct": 98.58,
+        "exact_match": "14/16 (87.5%)",
+        "exact_count": 14,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 16,
+        "cer_pct": 3.14,
+        "accuracy_char_pct": 96.86,
+        "wer_pct": 11.85,
+        "accuracy_word_pct": 88.15,
+        "exact_match": "1/16 (6.2%)",
+        "exact_count": 1,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 16,
+        "cer_pct": 0.14,
+        "accuracy_char_pct": 99.86,
+        "wer_pct": 1.42,
+        "accuracy_word_pct": 98.58,
+        "exact_match": "14/16 (87.5%)",
+        "exact_count": 14,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 16,
+        "cer_pct": 3.08,
+        "accuracy_char_pct": 96.92,
+        "wer_pct": 11.85,
+        "accuracy_word_pct": 88.15,
+        "exact_match": "0/16 (0.0%)",
+        "exact_count": 0,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 16,
+        "cer_pct": 0.14,
+        "accuracy_char_pct": 99.86,
+        "wer_pct": 1.42,
+        "accuracy_word_pct": 98.58,
+        "exact_match": "14/16 (87.5%)",
+        "exact_count": 14,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B3": {
+      "raw_psm7": {
+        "n_lines": 23,
+        "cer_pct": 0.0,
+        "accuracy_char_pct": 100.0,
+        "wer_pct": 0.0,
+        "accuracy_word_pct": 100.0,
+        "exact_match": "23/23 (100.0%)",
+        "exact_count": 23,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 23,
+        "cer_pct": 0.39,
+        "accuracy_char_pct": 99.61,
+        "wer_pct": 2.9,
+        "accuracy_word_pct": 97.1,
+        "exact_match": "19/23 (82.6%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 23,
+        "cer_pct": 0.0,
+        "accuracy_char_pct": 100.0,
+        "wer_pct": 0.0,
+        "accuracy_word_pct": 100.0,
+        "exact_match": "23/23 (100.0%)",
+        "exact_count": 23,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 23,
+        "cer_pct": 1.97,
+        "accuracy_char_pct": 98.03,
+        "wer_pct": 13.04,
+        "accuracy_word_pct": 86.96,
+        "exact_match": "9/23 (39.1%)",
+        "exact_count": 9,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 23,
+        "cer_pct": 0.0,
+        "accuracy_char_pct": 100.0,
+        "wer_pct": 0.0,
+        "accuracy_word_pct": 100.0,
+        "exact_match": "23/23 (100.0%)",
+        "exact_count": 23,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 23,
+        "cer_pct": 1.87,
+        "accuracy_char_pct": 98.13,
+        "wer_pct": 10.87,
+        "accuracy_word_pct": 89.13,
+        "exact_match": "9/23 (39.1%)",
+        "exact_count": 9,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 23,
+        "cer_pct": 0.0,
+        "accuracy_char_pct": 100.0,
+        "wer_pct": 0.0,
+        "accuracy_word_pct": 100.0,
+        "exact_match": "23/23 (100.0%)",
+        "exact_count": 23,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B4": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.15,
+        "accuracy_char_pct": 99.85,
+        "wer_pct": 1.29,
+        "accuracy_word_pct": 98.71,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.15,
+        "accuracy_char_pct": 99.85,
+        "wer_pct": 1.29,
+        "accuracy_word_pct": 98.71,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.21,
+        "accuracy_char_pct": 99.79,
+        "wer_pct": 1.72,
+        "accuracy_word_pct": 98.28,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.11,
+        "accuracy_char_pct": 97.89,
+        "wer_pct": 11.16,
+        "accuracy_word_pct": 88.84,
+        "exact_match": "7/20 (35.0%)",
+        "exact_count": 7,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.15,
+        "accuracy_char_pct": 99.85,
+        "wer_pct": 1.29,
+        "accuracy_word_pct": 98.71,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.06,
+        "accuracy_char_pct": 97.94,
+        "wer_pct": 9.87,
+        "accuracy_word_pct": 90.13,
+        "exact_match": "7/20 (35.0%)",
+        "exact_count": 7,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.21,
+        "accuracy_char_pct": 99.79,
+        "wer_pct": 1.72,
+        "accuracy_word_pct": 98.28,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B5": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.11,
+        "accuracy_char_pct": 99.89,
+        "wer_pct": 0.95,
+        "accuracy_word_pct": 99.05,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.11,
+        "accuracy_char_pct": 99.89,
+        "wer_pct": 0.95,
+        "accuracy_word_pct": 99.05,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.11,
+        "accuracy_char_pct": 99.89,
+        "wer_pct": 0.95,
+        "accuracy_word_pct": 99.05,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.27,
+        "accuracy_char_pct": 99.73,
+        "wer_pct": 2.38,
+        "accuracy_word_pct": 97.62,
+        "exact_match": "15/20 (75.0%)",
+        "exact_count": 15,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.11,
+        "accuracy_char_pct": 99.89,
+        "wer_pct": 0.95,
+        "accuracy_word_pct": 99.05,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.32,
+        "accuracy_char_pct": 99.68,
+        "wer_pct": 2.38,
+        "accuracy_word_pct": 97.62,
+        "exact_match": "15/20 (75.0%)",
+        "exact_count": 15,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.11,
+        "accuracy_char_pct": 99.89,
+        "wer_pct": 0.95,
+        "accuracy_word_pct": 99.05,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B6": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.85,
+        "accuracy_word_pct": 99.15,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.85,
+        "accuracy_word_pct": 99.15,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.85,
+        "accuracy_word_pct": 99.15,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.72,
+        "accuracy_char_pct": 98.28,
+        "wer_pct": 12.82,
+        "accuracy_word_pct": 87.18,
+        "exact_match": "6/20 (30.0%)",
+        "exact_count": 6,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.85,
+        "accuracy_word_pct": 99.15,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.46,
+        "accuracy_char_pct": 98.54,
+        "wer_pct": 8.97,
+        "accuracy_word_pct": 91.03,
+        "exact_match": "10/20 (50.0%)",
+        "exact_count": 10,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.85,
+        "accuracy_word_pct": 99.15,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B7": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.22,
+        "accuracy_char_pct": 99.78,
+        "wer_pct": 1.74,
+        "accuracy_word_pct": 98.26,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.22,
+        "accuracy_char_pct": 99.78,
+        "wer_pct": 1.74,
+        "accuracy_word_pct": 98.26,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.22,
+        "accuracy_char_pct": 99.78,
+        "wer_pct": 1.74,
+        "accuracy_word_pct": 98.26,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.17,
+        "accuracy_char_pct": 97.83,
+        "wer_pct": 10.87,
+        "accuracy_word_pct": 89.13,
+        "exact_match": "6/20 (30.0%)",
+        "exact_count": 6,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.22,
+        "accuracy_char_pct": 99.78,
+        "wer_pct": 1.74,
+        "accuracy_word_pct": 98.26,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.52,
+        "accuracy_char_pct": 98.48,
+        "wer_pct": 7.83,
+        "accuracy_word_pct": 92.17,
+        "exact_match": "10/20 (50.0%)",
+        "exact_count": 10,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.22,
+        "accuracy_char_pct": 99.78,
+        "wer_pct": 1.74,
+        "accuracy_word_pct": 98.26,
+        "exact_match": "16/20 (80.0%)",
+        "exact_count": 16,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B8": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.35,
+        "accuracy_word_pct": 98.65,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.35,
+        "accuracy_word_pct": 98.65,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.35,
+        "accuracy_word_pct": 98.65,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.44,
+        "accuracy_char_pct": 98.56,
+        "wer_pct": 8.07,
+        "accuracy_word_pct": 91.93,
+        "exact_match": "9/20 (45.0%)",
+        "exact_count": 9,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.35,
+        "accuracy_word_pct": 98.65,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.76,
+        "accuracy_char_pct": 98.24,
+        "wer_pct": 8.52,
+        "accuracy_word_pct": 91.48,
+        "exact_match": "7/20 (35.0%)",
+        "exact_count": 7,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.35,
+        "accuracy_word_pct": 98.65,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B9": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.78,
+        "accuracy_char_pct": 99.22,
+        "wer_pct": 1.49,
+        "accuracy_word_pct": 98.51,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.78,
+        "accuracy_char_pct": 99.22,
+        "wer_pct": 1.49,
+        "accuracy_word_pct": 98.51,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.78,
+        "accuracy_char_pct": 99.22,
+        "wer_pct": 1.49,
+        "accuracy_word_pct": 98.51,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.88,
+        "accuracy_char_pct": 98.12,
+        "wer_pct": 11.88,
+        "accuracy_word_pct": 88.12,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.78,
+        "accuracy_char_pct": 99.22,
+        "wer_pct": 1.49,
+        "accuracy_word_pct": 98.51,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.72,
+        "accuracy_char_pct": 98.28,
+        "wer_pct": 10.4,
+        "accuracy_word_pct": 89.6,
+        "exact_match": "5/20 (25.0%)",
+        "exact_count": 5,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.78,
+        "accuracy_char_pct": 99.22,
+        "wer_pct": 1.49,
+        "accuracy_word_pct": 98.51,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B10": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.0,
+        "accuracy_char_pct": 100.0,
+        "wer_pct": 0.0,
+        "accuracy_word_pct": 100.0,
+        "exact_match": "20/20 (100.0%)",
+        "exact_count": 20,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.0,
+        "accuracy_char_pct": 100.0,
+        "wer_pct": 0.0,
+        "accuracy_word_pct": 100.0,
+        "exact_match": "20/20 (100.0%)",
+        "exact_count": 20,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.37,
+        "accuracy_char_pct": 99.63,
+        "wer_pct": 1.69,
+        "accuracy_word_pct": 98.31,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.01,
+        "accuracy_char_pct": 97.99,
+        "wer_pct": 10.13,
+        "accuracy_word_pct": 89.87,
+        "exact_match": "8/20 (40.0%)",
+        "exact_count": 8,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.21,
+        "accuracy_char_pct": 99.79,
+        "wer_pct": 0.84,
+        "accuracy_word_pct": 99.16,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.12,
+        "accuracy_char_pct": 97.88,
+        "wer_pct": 10.13,
+        "accuracy_word_pct": 89.87,
+        "exact_match": "7/20 (35.0%)",
+        "exact_count": 7,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.37,
+        "accuracy_char_pct": 99.63,
+        "wer_pct": 1.69,
+        "accuracy_word_pct": 98.31,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B11": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.42,
+        "accuracy_char_pct": 99.58,
+        "wer_pct": 3.59,
+        "accuracy_word_pct": 96.41,
+        "exact_match": "13/20 (65.0%)",
+        "exact_count": 13,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.42,
+        "accuracy_char_pct": 99.58,
+        "wer_pct": 3.59,
+        "accuracy_word_pct": 96.41,
+        "exact_match": "13/20 (65.0%)",
+        "exact_count": 13,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.47,
+        "accuracy_char_pct": 99.53,
+        "wer_pct": 4.04,
+        "accuracy_word_pct": 95.96,
+        "exact_match": "13/20 (65.0%)",
+        "exact_count": 13,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 3.73,
+        "accuracy_char_pct": 96.27,
+        "wer_pct": 20.63,
+        "accuracy_word_pct": 79.37,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.47,
+        "accuracy_char_pct": 99.53,
+        "wer_pct": 4.04,
+        "accuracy_word_pct": 95.96,
+        "exact_match": "13/20 (65.0%)",
+        "exact_count": 13,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 3.52,
+        "accuracy_char_pct": 96.48,
+        "wer_pct": 19.28,
+        "accuracy_word_pct": 80.72,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.47,
+        "accuracy_char_pct": 99.53,
+        "wer_pct": 4.04,
+        "accuracy_word_pct": 95.96,
+        "exact_match": "13/20 (65.0%)",
+        "exact_count": 13,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B12": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 1.12,
+        "accuracy_char_pct": 98.88,
+        "wer_pct": 3.45,
+        "accuracy_word_pct": 96.55,
+        "exact_match": "12/20 (60.0%)",
+        "exact_count": 12,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.12,
+        "accuracy_char_pct": 98.88,
+        "wer_pct": 3.45,
+        "accuracy_word_pct": 96.55,
+        "exact_match": "12/20 (60.0%)",
+        "exact_count": 12,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 25.27,
+        "accuracy_char_pct": 74.73,
+        "wer_pct": 52.16,
+        "accuracy_word_pct": 47.84,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 3,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 13.49,
+        "accuracy_char_pct": 86.51,
+        "wer_pct": 53.45,
+        "accuracy_word_pct": 46.55,
+        "exact_match": "2/20 (10.0%)",
+        "exact_count": 2,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 24.25,
+        "accuracy_char_pct": 75.75,
+        "wer_pct": 50.0,
+        "accuracy_word_pct": 50.0,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 3,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 13.49,
+        "accuracy_char_pct": 86.51,
+        "wer_pct": 50.43,
+        "accuracy_word_pct": 49.57,
+        "exact_match": "2/20 (10.0%)",
+        "exact_count": 2,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 12.69,
+        "accuracy_char_pct": 87.31,
+        "wer_pct": 46.55,
+        "accuracy_word_pct": 53.45,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B13": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.83,
+        "accuracy_word_pct": 99.17,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.24,
+        "accuracy_word_pct": 98.76,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.24,
+        "accuracy_word_pct": 98.76,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.98,
+        "accuracy_char_pct": 97.02,
+        "wer_pct": 15.29,
+        "accuracy_word_pct": 84.71,
+        "exact_match": "3/20 (15.0%)",
+        "exact_count": 3,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.83,
+        "accuracy_word_pct": 99.17,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 2.88,
+        "accuracy_char_pct": 97.12,
+        "wer_pct": 15.29,
+        "accuracy_word_pct": 84.71,
+        "exact_match": "2/20 (10.0%)",
+        "exact_count": 2,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.16,
+        "accuracy_char_pct": 99.84,
+        "wer_pct": 1.24,
+        "accuracy_word_pct": 98.76,
+        "exact_match": "17/20 (85.0%)",
+        "exact_count": 17,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B14": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.46,
+        "accuracy_word_pct": 99.54,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.92,
+        "accuracy_word_pct": 99.08,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.46,
+        "accuracy_word_pct": 99.54,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.76,
+        "accuracy_char_pct": 98.24,
+        "wer_pct": 9.22,
+        "accuracy_word_pct": 90.78,
+        "exact_match": "7/20 (35.0%)",
+        "exact_count": 7,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.46,
+        "accuracy_word_pct": 99.54,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.61,
+        "accuracy_char_pct": 98.39,
+        "wer_pct": 8.76,
+        "accuracy_word_pct": 91.24,
+        "exact_match": "7/20 (35.0%)",
+        "exact_count": 7,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.46,
+        "accuracy_word_pct": 99.54,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    },
+    "B15": {
+      "raw_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.41,
+        "accuracy_word_pct": 99.59,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 137.1
+      },
+      "raw_psm13": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.41,
+        "accuracy_word_pct": 99.59,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 134.8
+      },
+      "pad10_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.41,
+        "accuracy_word_pct": 99.59,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 133.8
+      },
+      "pad10_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.69,
+        "accuracy_char_pct": 98.31,
+        "wer_pct": 6.91,
+        "accuracy_word_pct": 93.09,
+        "exact_match": "10/20 (50.0%)",
+        "exact_count": 10,
+        "empty_outputs": 0,
+        "mean_latency_ms": 124.2
+      },
+      "pad10_scale15_psm7": {
+        "n_lines": 20,
+        "cer_pct": 0.1,
+        "accuracy_char_pct": 99.9,
+        "wer_pct": 0.81,
+        "accuracy_word_pct": 99.19,
+        "exact_match": "18/20 (90.0%)",
+        "exact_count": 18,
+        "empty_outputs": 0,
+        "mean_latency_ms": 165.1
+      },
+      "pad10_scale15_psm13": {
+        "n_lines": 20,
+        "cer_pct": 1.28,
+        "accuracy_char_pct": 98.72,
+        "wer_pct": 6.1,
+        "accuracy_word_pct": 93.9,
+        "exact_match": "10/20 (50.0%)",
+        "exact_count": 10,
+        "empty_outputs": 0,
+        "mean_latency_ms": 154.4
+      },
+      "rule_apriori": {
+        "n_lines": 20,
+        "cer_pct": 0.05,
+        "accuracy_char_pct": 99.95,
+        "wer_pct": 0.41,
+        "accuracy_word_pct": 99.59,
+        "exact_match": "19/20 (95.0%)",
+        "exact_count": 19,
+        "empty_outputs": 0,
+        "mean_latency_ms": 0.0
+      }
+    }
+  },
+  "reference_crnn_v2": {
+    "overall_cer_pct": 0.3,
+    "overall_wer_pct": 1.64,
+    "exact_match": "253/295 (85.8%)",
+    "symspell_cer_pct": 0.29,
+    "symspell_wer_pct": 1.37,
+    "symspell_exact": "259/295 (87.8%)"
+  }
+}

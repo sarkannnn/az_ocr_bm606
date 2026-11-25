@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETED",
+  "timestamp": "2026-11-24T13:30:00+04:00",
+  "symspell_lexicon": {
+    "path": "data/az_lexicon.txt",
+    "sha256": "02c81ae2473a06a8396592f04467665a151549ce3efb091002246231c63cbaa8",
+    "entries_count": 116585,
+    "git_commit": "51e807e82f9a9af6b0eab64df8d39d2f44f0f19a",
+    "git_date": "2026-10-29 16:50:28 +0400",
+    "source_type": "Unigram word frequency dictionary (Wikipedia / general Azerbaijani corpus)"
+  },
+  "deduplication_breakdown": {
+    "train_val_duplicates": 100,
+    "train_test_duplicates": 84,
+    "train_val_and_train_test_overlap": 25,
+    "unique_lines_removed_from_train": 159,
+    "val_test_duplicates_removed_from_val": 2136
+  },
+  "sample_counts_before_after": {
+    "corpus_line": {
+      "train": {
+        "before": 10400,
+        "after": 10241,
+        "delta": -159
+      },
+      "val": {
+        "before": 95659,
+        "after": 93523,
+        "delta": -2136
+      },
+      "test": {
+        "before": 95906,
+        "after": 95906,
+        "delta": 0
+      }
+    },
+    "synth_line_v1": {
+      "train": {
+        "before": 10400,
+        "after": 10241,
+        "delta": -159
+      },
+      "val": {
+        "before": 1000,
+        "after": 1000,
+        "delta": 0
+      }
+    },
+    "synth_line_v2": {
+      "train": {
+        "before": 16000,
+        "after": 15754,
+        "delta": -246
+      },
+      "val": {
+        "before": 1000,
+        "after": 1000,
+        "delta": 0
+      },
+      "test": {
+        "before": 1000,
+        "after": 1000,
+        "delta": 0
+      }
+    }
+  },
+  "leakage_verification_after_cleaning": {
+    "corpus_train_val_overlap": 0,
+    "corpus_train_test_overlap": 0,
+    "corpus_val_test_overlap": 0,
+    "synth_v1_train_val_overlap": 0,
+    "synth_v2_train_val_overlap": 0,
+    "synth_v2_train_test_overlap": 0,
+    "synth_v2_val_test_overlap": 0
+  }
+}

@@ -1,0 +1,208 @@
+split_pair,match_type,line_text,train_count,other_count
+corpus_train_vs_val,exact,"""Qoca"", ""Torpaqlarımız uğrunda"",",1,1
+corpus_train_vs_val,exact,"(film, 1942) (qısametrajlı sənədli",1,1
+corpus_train_vs_val,exact,(titrlərdə yoxdur) Sadıq Hüseynov -,1,1
+corpus_train_vs_val,exact,"- ""Bibiheybətdə neft fontanı",1,1
+corpus_train_vs_val,exact,1947) (qısametrajlı sənədli film),1,1
+corpus_train_vs_val,exact,1962) (tammetrajlı bədii film),1,1
+corpus_train_vs_val,exact,1991-ci ildə Sovet İttifaqının,1,1
+corpus_train_vs_val,exact,2014.- 25 aprel.- S.,1,1
+corpus_train_vs_val,exact,9Eeirl C9 99ri 2C 20Hekay C9 99l C9,1,1
+corpus_train_vs_val,exact,Afrikada dövlət.,1,1
+corpus_train_vs_val,exact,Albaniya ilə həmsərhəddir.,1,1
+corpus_train_vs_val,exact,Azərbaycan Dövlət Elmi-Tədqiqat,1,1
+corpus_train_vs_val,exact,Azərbaycan Dövlət İncəsənət,1,1
+corpus_train_vs_val,exact,Azərbaycan Mədəniyyət Nazirliyinin,1,1
+corpus_train_vs_val,exact,Azərbaycan SSR və Azərbaycan,1,1
+corpus_train_vs_val,exact,"Azərbaycan SSR xalq artisti (1978),",1,1
+corpus_train_vs_val,exact,Azərbaycan filmləri Azərbaycanca,1,1
+corpus_train_vs_val,exact,Azərbaycan teatrının inkişafındakı,1,1
+corpus_train_vs_val,exact,Azərbaycana aid hadisələr 2008 -,1,1
+corpus_train_vs_val,exact,Azərbaycanın Milli Qəhrəmanı 1971 -,1,1
+corpus_train_vs_val,exact,Bayramlar və xüsusi günlər,1,1
+corpus_train_vs_val,exact,Beynəlxalq Memarlıq Akademiyasının,1,1
+corpus_train_vs_val,exact,Dünya müharibəsi haqqında filmlər,1,1
+corpus_train_vs_val,exact,Ermənistan Silahlı Qüvvələri,1,1
+corpus_train_vs_val,exact,"Filmoqrafiya Bismillah (film, 1925)",1,1
+corpus_train_vs_val,exact,"Filmoqrafiya Nəğməkar torpaq (film,",1,1
+corpus_train_vs_val,exact,Həmçinin bax Azərbaycan filmlərinin,1,1
+corpus_train_vs_val,exact,"Karmen, operatorlar Cavanşir",1,1
+corpus_train_vs_val,exact,Kontinental şelfin neftqaz,1,1
+corpus_train_vs_val,exact,Manuvaxova Quraşdırılmış səhnələrin,1,1
+corpus_train_vs_val,exact,Müsabiqəsidir.,1,1
+corpus_train_vs_val,exact,Məhəmməd Əmin Rəsulzadənin,1,1
+corpus_train_vs_val,exact,Nazirliyi tərəfindən,1,1
+corpus_train_vs_val,exact,"O, bu ada layiq görülən ilk",1,1
+corpus_train_vs_val,exact,Operator: Vaqif Behbudov Səs,1,1
+corpus_train_vs_val,exact,Partiyasının baş katibi Əli,1,1
+corpus_train_vs_val,exact,Qax Rayon İcra Hakimiyyətin,1,1
+corpus_train_vs_val,exact,Rusiya rejissorları Rusiya,1,1
+corpus_train_vs_val,exact,Tokioda keçən 2020 Yay Olimpiya,1,1
+corpus_train_vs_val,exact,"adı - 1 dekabr 1982 ""Şöhrət"" ordeni",1,1
+corpus_train_vs_val,exact,astronomiya və xarici dilləri,1,1
+corpus_train_vs_val,exact,açılış mərasimi olub.,1,1
+corpus_train_vs_val,exact,burada üç ayrı ailənin,1,1
+corpus_train_vs_val,exact,bəstəkarları,1,1
+corpus_train_vs_val,exact,da istifadə edilmişdir.,1,1
+corpus_train_vs_val,exact,dastanının motivləri əsasında,1,1
+corpus_train_vs_val,exact,"dərəcəli ""Vətənə xidmətə görə""",1,1
+corpus_train_vs_val,exact,dəyərləndirdi.,1,1
+corpus_train_vs_val,exact,etnik qruplar,1,1
+corpus_train_vs_val,exact,filmlər Ədəbi əsərlərin,1,1
+corpus_train_vs_val,exact,filmləri Bakı haqqında filmlər,1,1
+corpus_train_vs_val,exact,formalaşdırır.,1,1
+corpus_train_vs_val,exact,gətirmişlər.,1,1
+corpus_train_vs_val,exact,hansıki barbarlar kamos adlandırır,1,1
+corpus_train_vs_val,exact,hüququ əldə edirlər.,1,1
+corpus_train_vs_val,exact,idman jurnalistlərinin Ümumdünya,1,1
+corpus_train_vs_val,exact,ildə Azərbaycan Respublikasının,1,1
+corpus_train_vs_val,exact,ildən ömrünün sonunadək isə,1,1
+corpus_train_vs_val,exact,ilin Azərbaycan filmləri Komediya,1,1
+corpus_train_vs_val,exact,işləyənlər Rejissor: Ruslan,1,1
+corpus_train_vs_val,exact,keçirməyi qərara aldı.,1,1
+corpus_train_vs_val,exact,keçməli idi.,1,1
+corpus_train_vs_val,exact,kilometrdir.,1,1
+corpus_train_vs_val,exact,kimi qəbul oluna bilər.,1,1
+corpus_train_vs_val,exact,kitabın müəllifidir.,1,1
+corpus_train_vs_val,exact,konserti olub.,1,1
+corpus_train_vs_val,exact,kömək etməli idilər.,1,1
+corpus_train_vs_val,exact,kənarlaşdırdı.,1,1
+corpus_train_vs_val,exact,"kəndinin, habelə Kilit kəndinin",1,1
+corpus_train_vs_val,exact,mükafatlandırıldı.,1,1
+corpus_train_vs_val,exact,mükafatlandırılıb.,1,1
+corpus_train_vs_val,exact,məcburiyyətində qalmışdır.,1,1
+corpus_train_vs_val,exact,məktəbini bitirmişdir.,1,1
+corpus_train_vs_val,exact,parlamentinin 20 fevral 1988-ci,1,1
+corpus_train_vs_val,exact,qeyd edilir.,1,1
+corpus_train_vs_val,exact,rəhbəri olub.,1,1
+corpus_train_vs_val,exact,"rəssamı, Azərbaycan və SSRİ Dövlət",1,1
+corpus_train_vs_val,exact,rəğbətlə qarşılanmışdır.,1,1
+corpus_train_vs_val,exact,sahibi oldu.,1,1
+corpus_train_vs_val,exact,sintez edilmişdir.,1,1
+corpus_train_vs_val,exact,"style ""border:1px solid ddd;",1,1
+corpus_train_vs_val,exact,tamaşaçıların böyük rəğbətini,1,1
+corpus_train_vs_val,exact,təqdim etməkdədir.,1,1
+corpus_train_vs_val,exact,tərəfindən Sərdar Cəlaloğlunun,1,1
+corpus_train_vs_val,exact,tərəfindən ucaldılmışdır.,1,1
+corpus_train_vs_val,exact,uğursuzluqla nəticələnmişdir.,1,1
+corpus_train_vs_val,exact,vacib deyil.,1,1
+corpus_train_vs_val,exact,xadimi və diplomat Bencamin,1,1
+corpus_train_vs_val,exact,yaradıcılarındandır.,1,1
+corpus_train_vs_val,exact,çağırış deputatları Azərbaycan SSR,1,1
+corpus_train_vs_val,exact,çətinlik çəkir.,1,1
+corpus_train_vs_val,exact,İncəsənət Universitetini bitirib.,1,1
+corpus_train_vs_val,exact,İstinadlar Azərbaycan,1,1
+corpus_train_vs_val,exact,İstinadlar Azərbaycan aktyorları,1,1
+corpus_train_vs_val,exact,İstinadlar Xarici keçidlər Maykl,1,1
+corpus_train_vs_val,exact,İstinadlar Xarici keçidlər Şəxsi,1,1
+corpus_train_vs_val,exact,şəhərində anadan olmuşdur.,1,1
+corpus_train_vs_val,exact,"Əkbərov, Azərbaycan baş çavuşu,",1,1
+corpus_train_vs_val,exact,Əliyev tərəfindən Azərbaycan,1,1
+corpus_train_vs_val,exact,əhəmiyyətlidir.,1,1
+corpus_train_vs_test,exact,"(bütövün) hissəsini, ya da tam və",1,1
+corpus_train_vs_test,exact,1923-cü ildə Bakı şəhərində anadan,1,1
+corpus_train_vs_test,exact,2011-ci ildən Azərbaycan,1,1
+corpus_train_vs_test,exact,Azərbaycan Dövlət İncəsənət,1,1
+corpus_train_vs_test,exact,Azərbaycan Mədəniyyət Nazirliyinin,1,1
+corpus_train_vs_test,exact,Azərbaycan filmləri Azərbaycanca,1,1
+corpus_train_vs_test,exact,Bayramlar və xüsusi günlər,1,1
+corpus_train_vs_test,exact,Cümədən başlayan uzun il.,1,1
+corpus_train_vs_test,exact,Elə həmin ildən də Azərbaycan,1,1
+corpus_train_vs_test,exact,Ermənistan Silahlı Qüvvələri,1,1
+corpus_train_vs_test,exact,"Filmoqrafiya Qafqaz (film, 2007)",1,1
+corpus_train_vs_test,exact,"Gədəbəyin sərvəti (film, 1950) Gənc",1,1
+corpus_train_vs_test,exact,Hadisələr Monqolların Yaxın Şərq,1,1
+corpus_train_vs_test,exact,Həmçinin bax Azərbaycan filmlərinin,1,1
+corpus_train_vs_test,exact,III minilliyin sonu - II minilliyin,1,1
+corpus_train_vs_test,exact,Komediya filmləri Ramiz,1,1
+corpus_train_vs_test,exact,Mahmudbəyovun filmləri,1,1
+corpus_train_vs_test,exact,Materiklər Qitələr,1,1
+corpus_train_vs_test,exact,Məhəmməd Əmin Rəsulzadənin,1,1
+corpus_train_vs_test,exact,"Parisi partladır (film, 1976)",1,1
+corpus_train_vs_test,exact,Partiyasının baş katibi Əli,1,1
+corpus_train_vs_test,exact,"Qara Mustafayev, Azərbaycan bioloqu",1,1
+corpus_train_vs_test,exact,Quruluşçu operator: Yuri Varnovski,1,1
+corpus_train_vs_test,exact,Televiziya tamaşası üzərində,1,1
+corpus_train_vs_test,exact,Xarici keçidlər SSRİ film,1,1
+corpus_train_vs_test,exact,adına Azərbaycan Dövlət Akademik,1,1
+corpus_train_vs_test,exact,açılışı olub.,1,1
+corpus_train_vs_test,exact,bitkilərində 100 qram quru maddəyə,1,1
+corpus_train_vs_test,exact,daxil edilib.,1,1
+corpus_train_vs_test,exact,daxil edilir.,1,1
+corpus_train_vs_test,exact,dayandırmışdır.,1,1
+corpus_train_vs_test,exact,digərlərini qeyd etmək olar.,1,1
+corpus_train_vs_test,exact,düzənliklərdir.,1,1
+corpus_train_vs_test,exact,fakültəsinin magistratura,1,1
+corpus_train_vs_test,exact,filmlər Ədəbi əsərlərin,1,1
+corpus_train_vs_test,exact,filmləri 1997-ci ilin Azərbaycan,1,1
+corpus_train_vs_test,exact,formalaşdırmışlar.,1,1
+corpus_train_vs_test,exact,formalaşdırır.,1,1
+corpus_train_vs_test,exact,görə də fərqlənir.,1,1
+corpus_train_vs_test,exact,haqqında danışılır.,1,1
+corpus_train_vs_test,exact,heyvandarlıqla məşğul olmuşlar.,1,1
+corpus_train_vs_test,exact,ildə Azərbaycan Respublikasının,1,1
+corpus_train_vs_test,exact,ilin Azərbaycan filmləri Komediya,1,1
+corpus_train_vs_test,exact,izahlı lüğəti.,1,1
+corpus_train_vs_test,exact,işləyənlər Rejissor: Ruslan,1,1
+corpus_train_vs_test,exact,işləyənlər Rejissor: Zeynəb,1,1
+corpus_train_vs_test,exact,kafedrasının professoru vəzifəsində,1,1
+corpus_train_vs_test,exact,kilometrdir.,1,1
+corpus_train_vs_test,exact,kinooperator.,1,1
+corpus_train_vs_test,exact,kinooperatorları Ümumrusiya Dövlət,1,1
+corpus_train_vs_test,exact,kitabın müəllifidir.,1,1
+corpus_train_vs_test,exact,kompüterdir.,1,1
+corpus_train_vs_test,exact,maraq doğurur.,1,1
+corpus_train_vs_test,exact,mübahisəli məsələdir.,1,1
+corpus_train_vs_test,exact,mükafatlandırıldı.,1,1
+corpus_train_vs_test,exact,münasibətini bildirmişdi.,1,1
+corpus_train_vs_test,exact,müəyyən edilmişdi.,1,1
+corpus_train_vs_test,exact,məktəbini bitirmişdir.,1,1
+corpus_train_vs_test,exact,mənşəyi haqqında müxtəlif fikirlər,1,1
+corpus_train_vs_test,exact,məruz qaldılar.,1,1
+corpus_train_vs_test,exact,olduqları ehtimal edilir.,1,1
+corpus_train_vs_test,exact,olunurdular.,1,1
+corpus_train_vs_test,exact,"polkovnik-leytenantı, Vətən",1,1
+corpus_train_vs_test,exact,qeyd edilir.,1,1
+corpus_train_vs_test,exact,quruluş verib.,1,1
+corpus_train_vs_test,exact,rəhbəri olub.,1,1
+corpus_train_vs_test,exact,ssenaristləri Azərbaycan Dövlət,1,1
+corpus_train_vs_test,exact,təklif etmişdir.,1,1
+corpus_train_vs_test,exact,təmsil olunmuşdur.,1,1
+corpus_train_vs_test,exact,tərəfindən 1949-cu ildə,1,1
+corpus_train_vs_test,exact,vacib deyil.,1,1
+corpus_train_vs_test,exact,yaradıcılığı haqqındadır.,1,1
+corpus_train_vs_test,exact,yaradılmışdır .,1,1
+corpus_train_vs_test,exact,çatmışdılar.,1,1
+corpus_train_vs_test,exact,"İlyas Əfəndiyevin ""Sən həmişə",1,1
+corpus_train_vs_test,exact,İstinadlar Azərbaycan,1,1
+corpus_train_vs_test,exact,İstinadlar Mənbə Azərbaycanın Aşıq,1,1
+corpus_train_vs_test,exact,İstinadlar Xarici keçidlər Şəxsi,1,1
+corpus_train_vs_test,exact,İstinadlar Ədəbiyyat Həmçinin bax,1,1
+corpus_train_vs_test,exact,şəhərində anadan olmuşdur.,1,1
+corpus_train_vs_test,exact,"Əbussuud Əfəndi, Osmanlı",1,1
+corpus_train_vs_test,exact,Ədəmi-Mərkəziyyət Firqəsi ilə,1,1
+corpus_train_vs_test,exact,Əliyev tərəfindən Azərbaycan,1,1
+corpus_train_vs_test,exact,əhəmiyyətlidir.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: imperiyasının paytaxtı oldu. || Val: İmperiyasının paytaxtı oldu.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: yaradılmışdır . || Val: yaradılmışdır.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: İstinadlar Xarici keçidlər "" "" - : || Val: İstinadlar Xarici keçidlər",1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: Universitetinin professoru || Val: Universitetinin professoru,",1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: ""Dağlıq Qarabağ Muxtar Vilayəti || Val: Dağlıq Qarabağ Muxtar Vilayəti",1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: Azərbaycan SSR xalq artisti (1978), || Val: Azərbaycan SSR xalq artisti (1978).",1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: ""Azərbaycan dili və ədəbiyyatı"" || Val: Azərbaycan dili və ədəbiyyatı",1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: incəsənət xadimi fəxri adına layiq || Val: İncəsənət Xadimi fəxri adına layiq,1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: ""Dağlıq Qarabağ Respublikası""nın || Val: Dağlıq Qarabağ Respublikasının",1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: Ermənistan Silahlı Qüvvələri || Val: Ermənistan silahlı qüvvələri,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: etnik qruplar || Val: Etnik qruplar,1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: Komitəsi""-nin yaradılması. || Val: Komitəsi""nin yaradılması.",1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: incəsənət institutunun rejissorluq || Val: İncəsənət İnstitutunun rejissorluq,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: təşkil edirdilər . || Val: təşkil edirdilər.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: Şirvanşahlar dövləti || Val: Şirvanşahlar dövləti.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: işçi vəzifəsində çalışmışdır || Val: işçi vəzifəsində çalışmışdır.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: () - Azərbaycan teatr rejissoru, || Val: Azərbaycan teatr rejissoru,",1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: (Naxçıvan Muxtar Respublikası), || Val: Naxçıvan Muxtar Respublikası",1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: İkinci dünya müharibəsinin başa || Val: İkinci Dünya müharibəsinin başa,1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: prezidentidir. || Val: Prezidentidir.,1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: verməməlidir"". || Val: verməməlidir.",1,1
+corpus_train_vs_val,near_duplicate_punctuation,Train: əlaqələri haqqında. || Val: əlaqələri haqqında).,1,1
+corpus_train_vs_val,near_duplicate_punctuation,"Train: İstinadlar Xarici keçidlər "" "" - : || Val: İstinadlar Xarici keçidlər - , , -",1,1

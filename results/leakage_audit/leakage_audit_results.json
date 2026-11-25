@@ -1,0 +1,69 @@
+{
+  "corpus_counts": {
+    "train": 10400,
+    "val": 95659,
+    "test": 95906
+  },
+  "exact_duplicates": {
+    "train_val": 100,
+    "train_test": 84,
+    "val_test": 2136
+  },
+  "nfc_duplicates": {
+    "train_val": 100,
+    "train_test": 84,
+    "val_test": 2136
+  },
+  "near_duplicates": {
+    "train_val_alpha_punct": 23,
+    "train_test_alpha_punct": 18
+  },
+  "synthetic_datasets": {
+    "v1_train_samples": 10400,
+    "v1_train_unique_texts": 10400,
+    "v1_val_samples": 1000,
+    "v1_train_val_text_overlap": 1,
+    "v2_train_samples": 16000,
+    "v2_train_unique_texts": 10176,
+    "v2_val_samples": 1000,
+    "v2_test_samples": 1000,
+    "v2_train_val_text_overlap": 0,
+    "v2_train_test_text_overlap": 0,
+    "v2_val_test_text_overlap": 0,
+    "corpus_100_in_v1_train": 100,
+    "corpus_100_in_v2_train": 97,
+    "corpus_100_in_v1_val": 1,
+    "corpus_100_in_v2_val": 0,
+    "corpus_84_in_v1_train": 84,
+    "corpus_84_in_v2_train": 83,
+    "corpus_84_in_v2_test": 0
+  },
+  "benchmark_leakage": {
+    "benchmark_lines": 295,
+    "benchmark_unique_lines": 295,
+    "in_corpus_train": 0,
+    "in_corpus_val": 0,
+    "in_corpus_test": 0,
+    "in_synth_v1_train": 0,
+    "in_synth_v2_train": 0,
+    "in_synth_v2_val": 0,
+    "in_synth_v2_test": 0,
+    "high_fuzzy_bm_matches_jaccard_ge_70": 0,
+    "sample_fuzzy_bm": []
+  },
+  "symspell_lexicon": {
+    "path": "data/az_lexicon.txt",
+    "total_entries": 116585,
+    "valid_words": 116585,
+    "commit_hash": "51e807e82f9a9af6b0eab64df8d39d2f44f0f19a",
+    "commit_date": "2026-10-29 16:50:28 +0400",
+    "benchmark_creation_date": "2026-11-06 18:00:01 +0400",
+    "frozen_before_benchmark": true,
+    "benchmark_total_words": 3317,
+    "benchmark_unique_words": 2136,
+    "benchmark_words_in_lexicon": 1818,
+    "benchmark_words_oov": 318,
+    "benchmark_oov_rate_pct": 14.89,
+    "benchmark_full_lines_in_lexicon": 0
+  }
+}

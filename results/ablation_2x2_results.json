@@ -1,0 +1,38 @@
+{
+  "Group_A (8 V1 Fonts, V1 Basic Aug - Baseline)": {
+    "raw_cer_pct": 12.37,
+    "raw_wer_pct": 42.49,
+    "raw_exact": "37/295 (12.5%)",
+    "pp_cer_pct": 12.13,
+    "pp_wer_pct": 40.58,
+    "pp_exact": "39/295 (13.2%)",
+    "latency_ms_per_line": 95.7
+  },
+  "Group_B (8 V1 Fonts, V2 Photo Aug)": {
+    "raw_cer_pct": 0.59,
+    "raw_wer_pct": 3.85,
+    "raw_exact": "224/295 (75.9%)",
+    "pp_cer_pct": 0.5,
+    "pp_wer_pct": 2.91,
+    "pp_exact": "234/295 (79.3%)",
+    "latency_ms_per_line": 86.7
+  },
+  "Group_C (14 V2 Fonts, V1 Basic Aug)": {
+    "raw_cer_pct": 9.03,
+    "raw_wer_pct": 38.66,
+    "raw_exact": "44/295 (14.9%)",
+    "pp_cer_pct": 8.78,
+    "pp_wer_pct": 36.6,
+    "pp_exact": "47/295 (15.9%)",
+    "latency_ms_per_line": 87.4
+  },
+  "Group_D (14 V2 Fonts, V2 Photo Aug - Full V2)": {
+    "raw_cer_pct": 0.3,
+    "raw_wer_pct": 1.64,
+    "raw_exact": "253/295 (85.8%)",
+    "pp_cer_pct": 0.29,
+    "pp_wer_pct": 1.37,
+    "pp_exact": "259/295 (87.8%)",
+    "latency_ms_per_line": 91.2
+  }
+}

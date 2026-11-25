@@ -1,0 +1,97 @@
+gt_id,page_id,line_no,category,reference_crop,description,ground_truth_text
+P01_L00,P01,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P01  Rəqəmsal kitabxananın gündəliyi
+P01_L05,P01,5,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,suallarını diqqətlə qeydə alır.
+P01_L13,P01,13,captured_in_split_fragment,P01_crop25,Partially captured in oversegmented fragment (P01_crop25),"keyfiyyəti artır, həm də oxucuların məxfiliyi qorunur."
+P02_L00,P02,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P02  Naxçıvanda səhər marşrutu
+P02_L04,P02,4,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,dayanacaqları ardıcıl işarələyir.
+P02_L09,P02,9,captured_in_split_fragment,P02_crop09,Partially captured in oversegmented fragment (P02_crop09),bilər.
+P03_L00,P03,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P03  Mədəni irsin rəqəmsallaşdırılması
+P03_L04,P03,4,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,mürəkkəb və qırışmış kağız görünür.
+P03_L08,P03,8,captured_in_split_fragment,P03_crop12,Partially captured in oversegmented fragment (P03_crop12),qorunur.
+P03_L10,P03,10,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,mətn köçürməsini diqqətlə oxuyur. Mübahisəli sözlər üçün əsas qaynaq ilkin sənəd hesab edilir. Bu iş səbir
+P05_L00,P05,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P05  Şəhər nəqliyyatında məlumat axını
+P05_L05,P05,5,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,vaxtaşırı yenilənməlidir.
+P05_L10,P05,10,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,uyğunlaşdırılır.
+P05_L12,P05,12,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,göstərir. Lakin rəngləri ayırd edə bilməyən istifadəçilər üçün yazılı bildiriş də
+P06_L00,P06,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P06  Xəzər dənizinin ekoloji müşahidəsi
+P07_L08,P07,8,captured_in_split_fragment,P07_crop14,Partially captured in oversegmented fragment (P07_crop14),etiketlər cihazların yanında aydın görünməlidir.
+P07_L10,P07,10,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,"alınarsa, müəllim əvvəlcə ölçmə şəraitini soruşur. Səhv cavab təkbaşına uğursuzluq sayılmır;"
+P08_L00,P08,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P08  Arxiv sənədlərinin mühafizəsi
+P08_L05,P08,5,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,asanlaşdırır.
+P08_L13,P08,13,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,qeydiyyata düşməsi beləliklə azaldılır.
+P09_L11,P09,11,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,səhvə çevirə bilər.
+P09_L13,P09,13,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,cümləsi verilir. Siyahının yenilənmə tarixi ayrıca göstərilir və dəyişikliklər
+P10_L00,P10,0,captured_in_split_fragment,P10_crop08,Partially captured in oversegmented fragment (P10_crop08),P10  Qobustanda elmi səfər qeydləri
+P11_L10,P11,10,captured_in_split_fragment,P11_crop24,Partially captured in oversegmented fragment (P11_crop24),anlayış sayılmır.
+P12_L00,P12,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P12  Enerjiyə qənaət edən binalar
+P12_L04,P12,4,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,xərclərini aşağı salmaqdır.
+P12_L11,P12,11,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,əsaslanır.
+P13_L00,P13,0,engulfed_in_merged_block,P13_crop12,Engulfed in merged multiline block (P13_crop12),P13  Kitab sərgisinin təşkil olunması
+P13_L01,P13,1,engulfed_in_merged_block,P13_crop14,Engulfed in merged multiline block (P13_crop14),Payız kitab sərgisi üçün təşkilat qrupu əvvəlcə mövzuları və iştirakçı
+P13_L14,P13,14,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,edir.
+P14_L00,P14,0,engulfed_in_merged_block,P14_crop08,Engulfed in merged multiline block (P14_crop08),P14  Optik mətn tanımanın çətinlikləri
+P14_L01,P14,1,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,Telefon kamerası ilə çəkilmiş çap mətnində işıq qeyri-bərabər paylana bilər. Kağızın
+P14_L02,P14,2,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,"bükülməsi, lensin titrəməsi və kölgə xırda hərflərin formasını dəyişdirir. Optik mətn tanıma"
+P14_L07,P14,7,engulfed_in_merged_block,P14_crop15,Engulfed in merged multiline block (P14_crop15),"səviyyəsi bu fərqləri görünməz edə bilər. Buna görə sistem yalnız ümumi dəqiqliklə deyil,"
+P14_L08,P14,8,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,hərf səviyyəsində də yoxlanılmalıdır.
+P14_L10,P14,10,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,"müstəqil sənədlər kimi sayılmamalıdır, çünki hamısı eyni çap vərəqindən gəlir. Ölçmə"
+P14_L11,P14,11,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,zamanı səhifə və sətir səviyyəsində əlaqə qorunmalıdır. Aydın sınaq protokolu nəticələrin
+P14_L12,P14,12,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,elmi baxımdan başa düşülməsini asanlaşdırır.
+P15_L01,P15,1,engulfed_in_merged_block,P15_crop04,Engulfed in merged multiline block (P15_crop04),Robototexnika emalatxanasında kiçik komanda hərəkət edən qurğunun
+P15_L02,P15,2,engulfed_in_merged_block,P15_crop04,Engulfed in merged multiline block (P15_crop04),"yeni prototipini hazırlayır. Bir tələbə mexaniki hissələri yığır, digəri"
+P15_L03,P15,3,engulfed_in_merged_block,P15_crop04,Engulfed in merged multiline block (P15_crop04),sensorlardan gələn məlumatı yoxlayır. Proqram kodunun hər dəyişməsi
+P15_L04,P15,4,engulfed_in_merged_block,P15_crop04,Engulfed in merged multiline block (P15_crop04),ayrıca qeyd olunur. Cihaz düzgün işləməyəndə komanda əvvəlcə elektrik
+P15_L05,P15,5,engulfed_in_merged_block,P15_crop04,Engulfed in merged multiline block (P15_crop04),"bağlantılarını, sonra proqramın məntiqini yoxlayır."
+P15_L06,P15,6,engulfed_in_merged_block,P15_crop05,Engulfed in merged multiline block (P15_crop05),"Sınaq masasında işıq sensoru, məsafə ölçən modul və təkərləri idarə edən"
+P15_L07,P15,7,engulfed_in_merged_block,P15_crop05,Engulfed in merged multiline block (P15_crop05),"mühərrik var. Tələbələr 15, 30 və 45 santimetr məsafələr üçün hərəkət"
+P15_L08,P15,8,engulfed_in_merged_block,P15_crop05,Engulfed in merged multiline block (P15_crop05),"nəticələrini yazırlar. Ölçmələr arasında fərq yaranarsa, təcrübə eyni"
+P15_L09,P15,9,engulfed_in_merged_block,P15_crop05,Engulfed in merged multiline block (P15_crop05),"şəraitdə təkrarlanır. “Sürət”, “istiqamət”, “siqnal” və “gecikmə”"
+P15_L10,P15,10,engulfed_in_merged_block,P15_crop05,Engulfed in merged multiline block (P15_crop05),anlayışları dəqiq təsvir edilir.
+P15_L11,P15,11,engulfed_in_merged_block,P15_crop06,Engulfed in merged multiline block (P15_crop06),"Layihənin təqdimatında yalnız uğurlu nəticələr deyil, alınmayan sınaqlar"
+P15_L12,P15,12,engulfed_in_merged_block,P15_crop06,Engulfed in merged multiline block (P15_crop06),da göstərilir. Qrup üzvləri zəif batareyanın və sürüşkən səthin nə kimi
+P15_L13,P15,13,engulfed_in_merged_block,P15_crop06,Engulfed in merged multiline block (P15_crop06),problemlər yaratdığını izah edirlər. Təcrübənin şəkilləri tarixlə saxlanılır
+P15_L14,P15,14,engulfed_in_merged_block,P15_crop06,Engulfed in merged multiline block (P15_crop06),və hər versiyanın fərqi yazılır. Bu qayda gələcək tələbələrə əvvəlki həlləri
+P16_L08,P16,8,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,təqdim olunur.
+P18_L00,P18,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P18  Təhsil platformasında məlumatın idarəsi
+P18_L02,P18,2,captured_in_split_fragment,P18_crop09,Partially captured in oversegmented fragment (P18_crop09),"qeydlərini bir mühitdə birləşdirir. Müəllim mövzunu seçir, tələbələr isə"
+P18_L10,P18,10,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,hamı üçün eyni olmalıdır.
+P19_L05,P19,5,captured_in_split_fragment,P19_crop11,Partially captured in oversegmented fragment (P19_crop11),alınmalıdır.
+P20_L00,P20,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P20  İctimai parkın yenilənmə planı
+P21_L00,P21,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P21  Su anbarında ölçmə gündəliyi
+P21_L05,P21,5,captured_in_split_fragment,P21_crop18,Partially captured in oversegmented fragment (P21_crop18),olunur.
+P21_L06,P21,6,captured_in_split_fragment,P21_crop11,Partially captured in oversegmented fragment (P21_crop11),"Bazar ertəsi saat 08:35-də səviyyə 12,4 metr, çərşənbə günü isə 12,1 metr kimi qeydə"
+P21_L08,P21,8,captured_in_split_fragment,P21_crop13,Partially captured in oversegmented fragment (P21_crop13),"vərəqində ölçmə yeri, hava şəraiti və cihazın nömrəsi də göstərilir. Yazının üzərinə düşən"
+P21_L09,P21,9,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,su damcısı “1” və “7” rəqəmlərinin qarışmasına səbəb ola bilər.
+P21_L13,P21,13,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,"deyil, gələcək qərarlar üçün etibarlı tarixçə yaratmaqdır."
+P22_L13,P22,13,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,və keyfiyyətini daha aydın göstərir.
+P24_L00,P24,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P24  Xalq musiqisinin not arxivi
+P24_L06,P24,6,captured_in_split_fragment,P24_crop11,Partially captured in oversegmented fragment (P24_crop11),"Bir topluda tar, kamança, balaban və qaval haqqında qısa qeydlər var."
+P24_L15,P24,15,captured_in_split_fragment,P24_crop20,Partially captured in oversegmented fragment (P24_crop20),və məsul şəxsin təsdiqini saxlayır.
+P25_L00,P25,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P25  Şəhər bağında quş müşahidəsi
+P26_L00,P26,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P26  Kiçik emalatxanada sifariş uçotu
+P26_L05,P26,5,captured_in_split_fragment,P26_crop15,Partially captured in oversegmented fragment (P26_crop15),"Məsələn, 28 noyabr üçün 6 masa, 12 rəf və 4 kiçik dolab üzrə şərti sifariş siyahısı"
+P26_L08,P26,8,captured_in_split_fragment,P26_crop18,Partially captured in oversegmented fragment (P26_crop18),“dəyişiklik” sözlərinin başa düşülən yazılması anlaşılmazlığın qarşısını alır.
+P27_L00,P27,0,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,P27  Fövqəladə vəziyyət üzrə təlim qeydləri
+P27_L04,P27,4,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,müəyyən etməlidir. Təlimdən sonra qısa qiymətləndirmə aparılır.
+P27_L05,P27,5,captured_in_split_fragment,P27_crop12,Partially captured in oversegmented fragment (P27_crop12),"Sınaq ssenarisində xəbərdarlıq saat 10:05-də verilir. Birinci mərtəbədəki A çıxışı, ikinci"
+P27_L06,P27,6,captured_in_split_fragment,P27_crop13,Partially captured in oversegmented fragment (P27_crop13),mərtəbədəki B pilləkəni və həyətdəki toplanma sahəsi qeyd olunur. Bu məlumatlar real
+P27_L08,P27,8,captured_in_split_fragment,P27_crop15,Partially captured in oversegmented fragment (P27_crop15),aydın və səhvsiz yazılmalıdır. Xırda və zəif çaplı yazı panika zamanı oxunmaya bilər.
+P27_L12,P27,12,captured_in_split_fragment,P27_crop19,Partially captured in oversegmented fragment (P27_crop19),etibarlı məlumat bazası yaranır.
+P28_L05,P28,5,captured_in_split_fragment,P28_crop18,Partially captured in oversegmented fragment (P28_crop18),bir-birindən ayrılır.
+P28_L06,P28,6,captured_in_split_fragment,P28_crop15,Partially captured in oversegmented fragment (P28_crop15),Bir məşğələdə 10× və 40× obyektivlərdən istifadə olunduğunu fərz edək. Şüşə üzərində
+P28_L09,P28,9,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,hesabatın anlaşılması çətinləşə bilər.
+P29_L00,P29,0,engulfed_in_merged_block,P29_crop06,Engulfed in merged multiline block (P29_crop06),P29  Məhəllə kitab mübadiləsi guşəsi
+P29_L01,P29,1,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,Yaşayış məhəlləsində qurulan kitab mübadiləsi guşəsi oxucuların istifadə
+P29_L02,P29,2,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,etmədikləri nəşrləri paylaşmasına şərait yaradır. Könüllülər rəfləri
+P29_L03,P29,3,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,"mövzuya görə düzür, kitabların üz qabığını və səhifələrinin vəziyyətini"
+P29_L04,P29,4,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,yoxlayırlar. Məlumat lövhəsində istifadə qaydaları qısa cümlələrlə
+P29_L05,P29,5,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,yazılır. Məqsəd hər kəsin kitabları rahat tapması və səliqə ilə geri
+P29_L06,P29,6,captured_in_split_fragment,P29_crop16,Partially captured in oversegmented fragment (P29_crop16),qoymasıdır.
+P29_L08,P29,8,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,üçüncü rəfdə isə uşaqlar üçün kitablar yerləşir. Hər rəfin üzərində
+P29_L09,P29,9,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,aydın başlıq var. Bəzi köhnə nəşrlərdə müəllifin adı zəif çap olunduğuna
+P29_L10,P29,10,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,"görə könüllü məlumatı titul səhifəsi ilə də tutuşdurur. “Ədəbiyyat”,"
+P29_L12,P29,12,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,kömək edir.
+P29_L13,P29,13,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,İştirakçılar ayda bir dəfə guşənin vəziyyətini qiymətləndirir.
+P29_L14,P29,14,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,Çatışmayan kitablar və zədələnmiş rəflər barədə qısa qeyd yazılır. Şəxsi
+P29_L15,P29,15,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,məlumat toplanmadan yalnız ümumi istifadə sayı hesablanır. Nəticələr
+P29_L16,P29,16,completely_unsegmented_missed,None,Completely unsegmented / skipped by contour projection,sadə cədvəldə göstərilir və növbəti ay üçün kiçik yaxşılaşdırma planı

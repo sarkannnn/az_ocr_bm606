@@ -1,0 +1,567 @@
+{
+  "audit_metadata": {
+    "status": "final_consistent_reproducibility_audit",
+    "dataset": "Real30_P01_P30",
+    "total_pages": 30,
+    "total_ground_truth_lines": 421,
+    "total_segmented_crops": 690,
+    "crop_breakdown": {
+      "genuine_single_line": 325,
+      "merged_multiline": 9,
+      "split_fragment": 42,
+      "noise": 314
+    },
+    "selected_clean_lines_subcohort": 325,
+    "unsegmented_non_single_lines": 96
+  },
+  "visual_inspection_targets": {
+    "P13_crop12": {
+      "page_id": "P13",
+      "crop_id": 12,
+      "label": "Title Line + Next Line Bleed",
+      "bbox": [
+        140,
+        373,
+        1178,
+        442
+      ],
+      "height": 69,
+      "width": 1038,
+      "verified_crop_category": "merged_multiline",
+      "verified_matched_gt_line_no": 0,
+      "verified_ground_truth_text": "P13  Kitab sərgisinin təşkil olunması",
+      "paddleocr": "P13 Kitab sərgisinin təşkil olunmasi",
+      "tesseract5_psm7": "P13 Kitab sərgisinin təşkil olunmas:",
+      "crnn_v2_raw": "P13 Kitah sərgisinin təşkil olummaı",
+      "visual_determination": "merged_multiline"
+    },
+    "P13_crop14": {
+      "page_id": "P13",
+      "crop_id": 14,
+      "label": "Body Lines 1 & 2 Merged",
+      "bbox": [
+        137,
+        439,
+        1187,
+        503
+      ],
+      "height": 64,
+      "width": 1050,
+      "verified_crop_category": "merged_multiline",
+      "verified_matched_gt_line_no": 1,
+      "verified_ground_truth_text": "Payız kitab sərgisi üçün təşkilat qrupu əvvəlcə mövzuları və iştirakçı",
+      "paddleocr": "Payz kitab sərgisi üçün təşkilat qrupu əəleə mövzular a",
+      "tesseract5_psm7": "üririr dkiroi Sergist üçün təşkilat Uqrupu A mövzun və iştirakçı",
+      "crnn_v2_raw": "Tayır kırab sərgii üçün təşkılar qrupuı avvacə movrularvastraka",
+      "visual_determination": "merged_multiline"
+    },
+    "P14_crop08": {
+      "page_id": "P14",
+      "crop_id": 8,
+      "label": "Title Line + Next Line Bleed",
+      "bbox": [
+        103,
+        483,
+        1152,
+        558
+      ],
+      "height": 75,
+      "width": 1049,
+      "verified_crop_category": "merged_multiline",
+      "verified_matched_gt_line_no": 0,
+      "verified_ground_truth_text": "P14  Optik mətn tanımanın çətinlikləri",
+      "paddleocr": "P14 Optik matn tanimanin çatinliklari",
+      "tesseract5_psm7": "p14 Optik mətn tanımanın çətinlikləri",
+      "crnn_v2_raw": "\" oyit məan tənmənn çətinikləni",
+      "visual_determination": "merged_multiline"
+    },
+    "P14_crop15": {
+      "page_id": "P14",
+      "crop_id": 15,
+      "label": "Multiline Paragraph Block",
+      "bbox": [
+        81,
+        777,
+        1149,
+        846
+      ],
+      "height": 69,
+      "width": 1068,
+      "verified_crop_category": "merged_multiline",
+      "verified_matched_gt_line_no": 7,
+      "verified_ground_truth_text": "səviyyəsi bu fərqləri görünməz edə bilər. Buna görə sistem yalnız ümumi dəqiqliklə deyil,",
+      "paddleocr": "]",
+      "tesseract5_psm7": "qəknrx ərşə, gir ətə bır, Buna görə sistem yalnız ümumi dəqiqliklə deyil,",
+      "crnn_v2_raw": "\"rmmssrymımesrıar are rvssesmyançunvan dpos- ayı",
+      "visual_determination": "merged_multiline"
+    },
+    "P15_crop03": {
+      "page_id": "P15",
+      "crop_id": 3,
+      "label": "Genuine Single Title Line",
+      "bbox": [
+        174,
+        281,
+        1079,
+        358
+      ],
+      "height": 77,
+      "width": 905,
+      "verified_crop_category": "genuine_single_line",
+      "verified_matched_gt_line_no": 0,
+      "verified_ground_truth_text": "P15  Robototexnika emalatxanasında gün",
+      "paddleocr": "P15 Robototexnika emalatxanasinda gün",
+      "tesseract5_psm7": "P15 Robototexnika emalatxanasında gün İ",
+      "crnn_v2_raw": "\"1s Robətət-xnxa smaacıneımar vın ı",
+      "visual_determination": "genuine_single_line"
+    },
+    "P15_crop04": {
+      "page_id": "P15",
+      "crop_id": 4,
+      "label": "Paragraph 1 Merged Block (5 lines)",
+      "bbox": [
+        174,
+        324,
+        1112,
+        584
+      ],
+      "height": 260,
+      "width": 938,
+      "verified_crop_category": "merged_multiline",
+      "verified_matched_gt_line_no": 1,
+      "verified_ground_truth_text": "Robototexnika emalatxanasında kiçik komanda hərəkət edən qurğunun",
+      "paddleocr": "nan",
+      "tesseract5_psm7": "nan",
+      "crnn_v2_raw": "rasra\"",
+      "visual_determination": "merged_multiline"
+    },
+    "P29_crop06": {
+      "page_id": "P29",
+      "crop_id": 6,
+      "label": "Title Line 0 + Body Line 1 Merged",
+      "bbox": [
+        104,
+        436,
+        979,
+        528
+      ],
+      "height": 92,
+      "width": 875,
+      "verified_crop_category": "merged_multiline",
+      "verified_matched_gt_line_no": 0,
+      "verified_ground_truth_text": "P29  Məhəllə kitab mübadiləsi guşəsi",
+      "paddleocr": "P29 Mhll ilaba lsi gusi",
+      "tesseract5_psm7": "nan",
+      "crnn_v2_raw": "\"- va-vams vi",
+      "visual_determination": "merged_multiline"
+    }
+  },
+  "contingency_matrix_crops_and_chars": {
+    "crop_counts": {
+      "genuine_single_line": {
+        "extra_crop": 2,
+        "matched": 323,
+        "All": 325
+      },
+      "merged_multiline": {
+        "extra_crop": 0,
+        "matched": 9,
+        "All": 9
+      },
+      "noise": {
+        "extra_crop": 278,
+        "matched": 36,
+        "All": 314
+      },
+      "split_fragment": {
+        "extra_crop": 5,
+        "matched": 37,
+        "All": 42
+      },
+      "All": {
+        "extra_crop": 285,
+        "matched": 405,
+        "All": 690
+      }
+    },
+    "crnn_character_counts": {
+      "genuine_single_line": {
+        "extra_crop": 53.0,
+        "matched": 21601.0,
+        "All": 21654.0
+      },
+      "merged_multiline": {
+        "extra_crop": NaN,
+        "matched": 291.0,
+        "All": 291.0
+      },
+      "noise": {
+        "extra_crop": 11181.0,
+        "matched": 1678.0,
+        "All": 12859.0
+      },
+      "split_fragment": {
+        "extra_crop": 127.0,
+        "matched": 1132.0,
+        "All": 1259.0
+      },
+      "All": {
+        "extra_crop": 11361,
+        "matched": 24702,
+        "All": 36063
+      }
+    }
+  },
+  "selected_subcohort_325_metrics": {
+    "CRNN-V2_Raw": {
+      "evaluated_lines": 325,
+      "cohort_type": "selected_clean_subcohort_325",
+      "line_cer_micro_pct": 22.15,
+      "line_cer_macro_pct": 24.7,
+      "line_wer_micro_pct": 33.92,
+      "line_wer_macro_pct": 37.9,
+      "exact_matches": 41,
+      "exact_match_rate_pct": 12.62
+    },
+    "Tesseract5_PSM7": {
+      "evaluated_lines": 325,
+      "cohort_type": "selected_clean_subcohort_325",
+      "line_cer_micro_pct": 22.33,
+      "line_cer_macro_pct": 23.0,
+      "line_wer_micro_pct": 30.23,
+      "line_wer_macro_pct": 31.59,
+      "exact_matches": 62,
+      "exact_match_rate_pct": 19.08
+    },
+    "EasyOCR": {
+      "evaluated_lines": 325,
+      "cohort_type": "selected_clean_subcohort_325",
+      "line_cer_micro_pct": 21.81,
+      "line_cer_macro_pct": 22.5,
+      "line_wer_micro_pct": 38.25,
+      "line_wer_macro_pct": 40.23,
+      "exact_matches": 16,
+      "exact_match_rate_pct": 4.92
+    },
+    "PaddleOCR": {
+      "evaluated_lines": 325,
+      "cohort_type": "selected_clean_subcohort_325",
+      "line_cer_micro_pct": 21.08,
+      "line_cer_macro_pct": 24.83,
+      "line_wer_micro_pct": 32.76,
+      "line_wer_macro_pct": 34.8,
+      "exact_matches": 51,
+      "exact_match_rate_pct": 15.69
+    }
+  },
+  "character_analysis_325_lines": {
+    "CRNN-V2_Raw": {
+      "ə": {
+        "gt_count": 2434,
+        "correct": 1989,
+        "accuracy_pct": 81.72
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 6,
+        "accuracy_pct": 85.71
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 732,
+        "accuracy_pct": 80.79
+      },
+      "i": {
+        "gt_count": 1968,
+        "correct": 1600,
+        "accuracy_pct": 81.3
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 13,
+        "accuracy_pct": 54.17
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    },
+    "Tesseract5_PSM7": {
+      "ə": {
+        "gt_count": 2434,
+        "correct": 1918,
+        "accuracy_pct": 78.8
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 7,
+        "accuracy_pct": 100.0
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 704,
+        "accuracy_pct": 77.7
+      },
+      "i": {
+        "gt_count": 1968,
+        "correct": 1577,
+        "accuracy_pct": 80.13
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 17,
+        "accuracy_pct": 70.83
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    },
+    "EasyOCR": {
+      "ə": {
+        "gt_count": 2434,
+        "correct": 1928,
+        "accuracy_pct": 79.21
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 6,
+        "accuracy_pct": 85.71
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 730,
+        "accuracy_pct": 80.57
+      },
+      "i": {
+        "gt_count": 1968,
+        "correct": 1619,
+        "accuracy_pct": 82.27
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 7,
+        "accuracy_pct": 29.17
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    },
+    "PaddleOCR": {
+      "ə": {
+        "gt_count": 2434,
+        "correct": 1940,
+        "accuracy_pct": 79.7
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 2,
+        "accuracy_pct": 28.57
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 547,
+        "accuracy_pct": 60.38
+      },
+      "i": {
+        "gt_count": 1968,
+        "correct": 1619,
+        "accuracy_pct": 82.27
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 4,
+        "accuracy_pct": 16.67
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    }
+  },
+  "full_page_cer_evaluation": {
+    "primary_protocol_space_separated": {
+      "CRNN-V2_Raw": {
+        "page_cer_micro_pct": 68.48,
+        "page_cer_macro_pct": 68.5,
+        "page_wer_micro_pct": 60.02,
+        "page_wer_macro_pct": 59.77,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 20918
+      },
+      "Tesseract5_PSM7": {
+        "page_cer_micro_pct": 35.39,
+        "page_cer_macro_pct": 35.23,
+        "page_wer_micro_pct": 47.05,
+        "page_wer_macro_pct": 46.93,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 10812
+      },
+      "EasyOCR": {
+        "page_cer_micro_pct": 47.51,
+        "page_cer_macro_pct": 47.43,
+        "page_wer_micro_pct": 66.45,
+        "page_wer_macro_pct": 66.31,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 14513
+      },
+      "PaddleOCR": {
+        "page_cer_micro_pct": 32.69,
+        "page_cer_macro_pct": 32.52,
+        "page_wer_micro_pct": 43.42,
+        "page_wer_macro_pct": 43.21,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 9985
+      }
+    },
+    "sensitivity_protocol_newline_separated": {
+      "CRNN-V2_Raw": {
+        "page_cer_micro_pct": 68.83,
+        "page_cer_macro_pct": 68.85,
+        "page_wer_micro_pct": 60.02,
+        "page_wer_macro_pct": 59.77,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 21026
+      },
+      "Tesseract5_PSM7": {
+        "page_cer_micro_pct": 35.77,
+        "page_cer_macro_pct": 35.6,
+        "page_wer_micro_pct": 47.05,
+        "page_wer_macro_pct": 46.93,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 10927
+      },
+      "EasyOCR": {
+        "page_cer_micro_pct": 47.75,
+        "page_cer_macro_pct": 47.67,
+        "page_wer_micro_pct": 66.45,
+        "page_wer_macro_pct": 66.31,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 14586
+      },
+      "PaddleOCR": {
+        "page_cer_micro_pct": 32.7,
+        "page_cer_macro_pct": 32.54,
+        "page_wer_micro_pct": 43.42,
+        "page_wer_macro_pct": 43.21,
+        "total_gt_chars": 30548,
+        "total_edit_distance": 9990
+      }
+    },
+    "protocol_definition": {
+      "primary": "Space separator (\" \") with non-empty recognized text strips. Eliminates artificial consecutive newline insertion penalties from empty noise crops.",
+      "sensitivity": "Newline separator (\"\\n\") with all 690 crops included. Reflects strict line-break preservation including empty crop penalty."
+    }
+  },
+  "unsegmented_96_gt_lines_summary": {
+    "total_lines": 96,
+    "breakdown": {
+      "completely_unsegmented_missed": 55,
+      "captured_in_split_fragment": 22,
+      "engulfed_in_merged_block": 19
+    },
+    "unique_ids": [
+      "P01_L00",
+      "P01_L05",
+      "P01_L13",
+      "P02_L00",
+      "P02_L04",
+      "P02_L09",
+      "P03_L00",
+      "P03_L04",
+      "P03_L08",
+      "P03_L10",
+      "P05_L00",
+      "P05_L05",
+      "P05_L10",
+      "P05_L12",
+      "P06_L00",
+      "P07_L08",
+      "P07_L10",
+      "P08_L00",
+      "P08_L05",
+      "P08_L13",
+      "P09_L11",
+      "P09_L13",
+      "P10_L00",
+      "P11_L10",
+      "P12_L00",
+      "P12_L04",
+      "P12_L11",
+      "P13_L00",
+      "P13_L01",
+      "P13_L14",
+      "P14_L00",
+      "P14_L01",
+      "P14_L02",
+      "P14_L07",
+      "P14_L08",
+      "P14_L10",
+      "P14_L11",
+      "P14_L12",
+      "P15_L01",
+      "P15_L02",
+      "P15_L03",
+      "P15_L04",
+      "P15_L05",
+      "P15_L06",
+      "P15_L07",
+      "P15_L08",
+      "P15_L09",
+      "P15_L10",
+      "P15_L11",
+      "P15_L12",
+      "P15_L13",
+      "P15_L14",
+      "P16_L08",
+      "P18_L00",
+      "P18_L02",
+      "P18_L10",
+      "P19_L05",
+      "P20_L00",
+      "P21_L00",
+      "P21_L05",
+      "P21_L06",
+      "P21_L08",
+      "P21_L09",
+      "P21_L13",
+      "P22_L13",
+      "P24_L00",
+      "P24_L06",
+      "P24_L15",
+      "P25_L00",
+      "P26_L00",
+      "P26_L05",
+      "P26_L08",
+      "P27_L00",
+      "P27_L04",
+      "P27_L05",
+      "P27_L06",
+      "P27_L08",
+      "P27_L12",
+      "P28_L05",
+      "P28_L06",
+      "P28_L09",
+      "P29_L00",
+      "P29_L01",
+      "P29_L02",
+      "P29_L03",
+      "P29_L04",
+      "P29_L05",
+      "P29_L06",
+      "P29_L08",
+      "P29_L09",
+      "P29_L10",
+      "P29_L12",
+      "P29_L13",
+      "P29_L14",
+      "P29_L15",
+      "P29_L16"
+    ]
+  }
+}

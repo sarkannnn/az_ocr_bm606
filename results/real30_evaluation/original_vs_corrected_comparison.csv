@@ -1,0 +1,5 @@
+﻿model,orig_matched_lines,corr_matched_lines,orig_exact_matches,corr_exact_matches,orig_line_cer,corr_line_cer_micro,orig_line_wer,corr_line_wer_micro,orig_page_cer,corr_page_cer_micro,corr_page_cer_macro,explanation
+CRNN-V2_Raw,406,405,41,41,34.39,34.01,44.28,43.96,68.83,68.83,68.85,Original used model-dependent alignment (different lines per model). Corrected enforces identical unified lines across all models.
+Tesseract5_PSM7,399,405,61,61,30.84,32.26,39.18,40.47,35.81,35.81,35.64,Original used model-dependent alignment (different lines per model). Corrected enforces identical unified lines across all models.
+EasyOCR,397,405,16,16,30.62,31.76,47.66,47.82,47.75,47.75,47.67,Original used model-dependent alignment (different lines per model). Corrected enforces identical unified lines across all models.
+PaddleOCR,392,405,51,51,28.56,31.33,40.05,42.36,32.92,32.92,32.75,Original used model-dependent alignment (different lines per model). Corrected enforces identical unified lines across all models.

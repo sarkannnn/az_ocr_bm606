@@ -1,0 +1,178 @@
+{
+  "benchmark_info": {
+    "name": "Canonical 15-Document Smartphone Benchmark (B1–B15)",
+    "total_lines": 295,
+    "real_lines": 55,
+    "simulated_lines": 240,
+    "system_cpu": "Intel(R) Core(TM) 7 240H",
+    "logical_processors": 16,
+    "fixed_threads": 4,
+    "torch_version": "2.14.1+cpu",
+    "repetitions": 3,
+    "warmup_lines": 10
+  },
+  "models": {
+    "CRNN-V2_Raw": {
+      "engine": "PyTorch CRNN (Custom Line Model)",
+      "init_ms": 2209.9,
+      "invocation_type": "Direct in-memory C++ libtorch tensor call",
+      "mean_ms_per_line": 85.71,
+      "std_ms_per_line": 23.58,
+      "median_ms_per_line": 90.47,
+      "real_55_mean_ms": 79.55,
+      "sim_240_mean_ms": 87.12,
+      "run_durations_sec": [
+        26.35,
+        24.9,
+        24.61
+      ],
+      "throughput_lines_per_sec": 11.67
+    },
+    "CRNN-V2_SymSpell": {
+      "engine": "PyTorch CRNN + SymSpell C++ Extension",
+      "init_ms": 2209.9,
+      "invocation_type": "Direct in-memory Python/C++ call",
+      "mean_ms_per_line": 82.56,
+      "std_ms_per_line": 22.33,
+      "median_ms_per_line": 87.3,
+      "real_55_mean_ms": 75.07,
+      "sim_240_mean_ms": 84.28,
+      "run_durations_sec": [
+        24.46,
+        24.19,
+        24.42
+      ],
+      "throughput_lines_per_sec": 12.11
+    },
+    "Tesseract5_PSM7": {
+      "engine": "Tesseract OCR 5.4.0.20240606 (PSM 7)",
+      "invocation_type": "Windows CLI Subprocess (pytesseract -> tesseract.exe)",
+      "subprocess_overhead_per_call_ms": 64.82,
+      "mean_ms_per_line": 128.4,
+      "std_ms_per_line": 15.32,
+      "median_ms_per_line": 126.64,
+      "real_55_mean_ms": 130.94,
+      "sim_240_mean_ms": 127.82,
+      "run_durations_sec": [
+        38.06,
+        37.97,
+        37.6
+      ],
+      "throughput_lines_per_sec": 7.79
+    },
+    "Tesseract5_PSM13": {
+      "engine": "Tesseract OCR 5.4.0.20240606 (PSM 13)",
+      "invocation_type": "Windows CLI Subprocess (pytesseract -> tesseract.exe)",
+      "subprocess_overhead_per_call_ms": 64.82,
+      "mean_ms_per_line": 127.53,
+      "std_ms_per_line": 16.26,
+      "median_ms_per_line": 124.13,
+      "real_55_mean_ms": 133.61,
+      "sim_240_mean_ms": 126.14,
+      "run_durations_sec": [
+        37.85,
+        37.39,
+        37.63
+      ],
+      "throughput_lines_per_sec": 7.84
+    },
+    "EasyOCR_az": {
+      "engine": "EasyOCR 1.7.2 (PyTorch CPU)",
+      "init_ms": 1365.2,
+      "invocation_type": "Direct in-memory PyTorch call (recognize)",
+      "mean_ms_per_line": 141.59,
+      "std_ms_per_line": 34.71,
+      "median_ms_per_line": 139.57,
+      "real_55_mean_ms": 103.33,
+      "sim_240_mean_ms": 150.35,
+      "run_durations_sec": [
+        41.79,
+        41.72,
+        41.79
+      ],
+      "throughput_lines_per_sec": 7.06
+    },
+    "PaddleOCR_PP-OCRv6": {
+      "engine": "PaddleOCR PP-OCRv6_medium_rec (PaddlePaddle CPU oneDNN)",
+      "init_ms": 1277.6,
+      "invocation_type": "Direct in-memory PaddleX predictor call",
+      "mean_ms_per_line": 1972.82,
+      "std_ms_per_line": 448.58,
+      "median_ms_per_line": 1966.93,
+      "real_55_mean_ms": 1406.81,
+      "sim_240_mean_ms": 2102.53,
+      "run_durations_sec": [
+        563.93,
+        600.82,
+        581.2
+      ],
+      "throughput_lines_per_sec": 0.51
+    }
+  },
+  "paired_statistical_audit": {
+    "theoretical_critique": {
+      "fisher_limitation": "Fisher's exact test assumes two independent samples. When CRNN-V2 and Tesseract 5 are evaluated on the exact same 244 characters, the data is paired. The correct non-parametric test is McNemar's test on discordant pairs.",
+      "fallacy_of_proving_the_null": "Finding p > 0.05 fails to reject the null hypothesis of equal error rates; it does NOT prove that the systems are equivalent. Demonstrating equivalence requires specifying an equivalence margin (e.g. +/- 2.0%) and conducting Two One-Sided Tests (TOST)."
+    },
+    "mcnemar_scenarios": {
+      "joint_errors_a=0": {
+        "b_v2_only_errors": 6,
+        "c_tess_only_errors": 9,
+        "discordant_pairs": 15,
+        "mcnemar_exact_p_value": 0.6072,
+        "statistically_significant_05": false
+      },
+      "joint_errors_a=1": {
+        "b_v2_only_errors": 5,
+        "c_tess_only_errors": 8,
+        "discordant_pairs": 13,
+        "mcnemar_exact_p_value": 0.5811,
+        "statistically_significant_05": false
+      },
+      "joint_errors_a=2": {
+        "b_v2_only_errors": 4,
+        "c_tess_only_errors": 7,
+        "discordant_pairs": 11,
+        "mcnemar_exact_p_value": 0.5488,
+        "statistically_significant_05": false
+      },
+      "joint_errors_a=3": {
+        "b_v2_only_errors": 3,
+        "c_tess_only_errors": 6,
+        "discordant_pairs": 9,
+        "mcnemar_exact_p_value": 0.5078,
+        "statistically_significant_05": false
+      },
+      "joint_errors_a=4": {
+        "b_v2_only_errors": 2,
+        "c_tess_only_errors": 5,
+        "discordant_pairs": 7,
+        "mcnemar_exact_p_value": 0.4531,
+        "statistically_significant_05": false
+      },
+      "joint_errors_a=5": {
+        "b_v2_only_errors": 1,
+        "c_tess_only_errors": 4,
+        "discordant_pairs": 5,
+        "mcnemar_exact_p_value": 0.375,
+        "statistically_significant_05": false
+      },
+      "joint_errors_a=6": {
+        "b_v2_only_errors": 0,
+        "c_tess_only_errors": 3,
+        "discordant_pairs": 3,
+        "mcnemar_exact_p_value": 0.25,
+        "statistically_significant_05": false
+      }
+    },
+    "tost_equivalence_audit": {
+      "sample_size": 244,
+      "observed_diff_pct": -1.23,
+      "diff_95_ci": [
+        -4.51,
+        2.05
+      ],
+      "conclusion": "Because the 95% CI of the difference [-4.51%, +2.05%] exceeds typical strict equivalence bounds (+/-2%), the sample size n=244 is underpowered to establish equivalence."
+    }
+  }
+}

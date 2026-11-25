@@ -1,0 +1,198 @@
+{
+  "status": "COMPLETED",
+  "benchmark_lines": 295,
+  "auroc_results": {
+    "overall_295": {
+      "name": "Overall (295 Lines)",
+      "total_lines": 295,
+      "exact_lines": 253,
+      "error_lines": 42,
+      "exact_rate_pct": 85.76,
+      "mean_min_conf_exact": 0.6844,
+      "mean_min_conf_error": 0.6086,
+      "mean_mean_conf_exact": 0.9908,
+      "mean_mean_conf_error": 0.9868,
+      "auroc_min_conf": 0.6344,
+      "auroc_mean_conf": 0.6973
+    },
+    "real_55": {
+      "name": "Real Physical (55 Lines)",
+      "total_lines": 55,
+      "exact_lines": 44,
+      "error_lines": 11,
+      "exact_rate_pct": 80.0,
+      "mean_min_conf_exact": 0.7435,
+      "mean_min_conf_error": 0.661,
+      "mean_mean_conf_exact": 0.99,
+      "mean_mean_conf_error": 0.9894,
+      "auroc_min_conf": 0.6198,
+      "auroc_mean_conf": 0.5723
+    },
+    "sim_240": {
+      "name": "Simulated Phone (240 Lines)",
+      "total_lines": 240,
+      "exact_lines": 209,
+      "error_lines": 31,
+      "exact_rate_pct": 87.08,
+      "mean_min_conf_exact": 0.6719,
+      "mean_min_conf_error": 0.5899,
+      "mean_mean_conf_exact": 0.9909,
+      "mean_mean_conf_error": 0.9859,
+      "auroc_min_conf": 0.6592,
+      "auroc_mean_conf": 0.7469
+    }
+  },
+  "cascade_provenance_audit": {
+    "manuscript_threshold": "20% fallback (Table 8b, Section 6.8.1)",
+    "historical_calibration_data": "Photos 1-5 (n=111 real physical lines)",
+    "methodological_critique": "The 20% fallback threshold was selected post-hoc by sweeping [0, 5, 10, 15, 20, 25, 30%] directly on the test documents (Photos 1-5). It was not tuned on an independent validation set. In this audit, we freeze the 20% threshold without adaptation to the benchmark."
+  },
+  "cascade_evaluation_295": {
+    "parameter_sweep": [
+      {
+        "fallback_pct": 0,
+        "fallback_lines": 0,
+        "cutoff_min_conf": 0.0,
+        "cer_pct": 0.298,
+        "wer_pct": 1.64,
+        "exact_match_lines": "253/295",
+        "exact_match_pct": 85.76,
+        "effective_cpu_latency_ms": 85.71
+      },
+      {
+        "fallback_pct": 5,
+        "fallback_lines": 15,
+        "cutoff_min_conf": 0.5096,
+        "cer_pct": 0.269,
+        "wer_pct": 1.4,
+        "exact_match_lines": "257/295",
+        "exact_match_pct": 87.12,
+        "effective_cpu_latency_ms": 92.13
+      },
+      {
+        "fallback_pct": 10,
+        "fallback_lines": 30,
+        "cutoff_min_conf": 0.5233,
+        "cer_pct": 0.287,
+        "wer_pct": 1.49,
+        "exact_match_lines": "256/295",
+        "exact_match_pct": 86.78,
+        "effective_cpu_latency_ms": 98.55
+      },
+      {
+        "fallback_pct": 15,
+        "fallback_lines": 44,
+        "cutoff_min_conf": 0.5331,
+        "cer_pct": 0.284,
+        "wer_pct": 1.43,
+        "exact_match_lines": "257/295",
+        "exact_match_pct": 87.12,
+        "effective_cpu_latency_ms": 104.97
+      },
+      {
+        "fallback_pct": 20,
+        "fallback_lines": 59,
+        "cutoff_min_conf": 0.5435,
+        "cer_pct": 0.291,
+        "wer_pct": 1.49,
+        "exact_match_lines": "255/295",
+        "exact_match_pct": 86.44,
+        "effective_cpu_latency_ms": 111.39
+      },
+      {
+        "fallback_pct": 25,
+        "fallback_lines": 74,
+        "cutoff_min_conf": 0.5508,
+        "cer_pct": 0.28,
+        "wer_pct": 1.4,
+        "exact_match_lines": "257/295",
+        "exact_match_pct": 87.12,
+        "effective_cpu_latency_ms": 117.81
+      },
+      {
+        "fallback_pct": 30,
+        "fallback_lines": 88,
+        "cutoff_min_conf": 0.5647,
+        "cer_pct": 0.269,
+        "wer_pct": 1.31,
+        "exact_match_lines": "258/295",
+        "exact_match_pct": 87.46,
+        "effective_cpu_latency_ms": 124.23
+      },
+      {
+        "fallback_pct": 50,
+        "fallback_lines": 148,
+        "cutoff_min_conf": 0.6428,
+        "cer_pct": 0.272,
+        "wer_pct": 1.34,
+        "exact_match_lines": "257/295",
+        "exact_match_pct": 87.12,
+        "effective_cpu_latency_ms": 149.91
+      },
+      {
+        "fallback_pct": 100,
+        "fallback_lines": 295,
+        "cutoff_min_conf": 0.997,
+        "cer_pct": 0.31,
+        "wer_pct": 1.55,
+        "exact_match_lines": "250/295",
+        "exact_match_pct": 84.75,
+        "effective_cpu_latency_ms": 214.11
+      }
+    ],
+    "head_to_head": {
+      "crnn_v2_raw": {
+        "fallback_pct": 0,
+        "fallback_lines": 0,
+        "cutoff_min_conf": 0.0,
+        "cer_pct": 0.298,
+        "wer_pct": 1.64,
+        "exact_match_lines": "253/295",
+        "exact_match_pct": 85.76,
+        "effective_cpu_latency_ms": 85.71
+      },
+      "tesseract_5_psm7": {
+        "fallback_pct": 100,
+        "fallback_lines": 295,
+        "cutoff_min_conf": 0.997,
+        "cer_pct": 0.31,
+        "wer_pct": 1.55,
+        "exact_match_lines": "250/295",
+        "exact_match_pct": 84.75,
+        "effective_cpu_latency_ms": 214.11
+      },
+      "cascade_20pct_fallback": {
+        "fallback_pct": 20,
+        "fallback_lines": 59,
+        "cutoff_min_conf": 0.5435,
+        "cer_pct": 0.291,
+        "wer_pct": 1.49,
+        "exact_match_lines": "255/295",
+        "exact_match_pct": 86.44,
+        "effective_cpu_latency_ms": 111.39
+      },
+      "accuracy_comparison": "On the 295 benchmark lines, CRNN-V2 Raw achieves 0.298% CER (253/295 exact lines). Tesseract PSM 7 achieves 0.31% CER (250/295 exact lines). The 20% cascade achieves 0.291% CER (255/295 exact lines)."
+    }
+  },
+  "mcnemar_paired_analysis": {
+    "benchmark_line_level": {
+      "total_lines": 295,
+      "both_correct_a": 232,
+      "crnn_correct_tess_wrong_b": 21,
+      "tess_correct_crnn_wrong_c": 18,
+      "both_wrong_d": 24,
+      "discordant_pairs": 39,
+      "mcnemar_exact_p_value": 0.7493,
+      "is_significant_at_05": false
+    },
+    "historical_table6b_missing_data_disclosure": {
+      "sample_size": 244,
+      "missing_data": "Individual character-by-character paired binary prediction vector for the 244 historical uppercase specials was not preserved in raw logs (only aggregate error totals: V2=6, Tess=9). Consequently, exact discordant pair count (b, c) is bounded within [0, 6] shared errors, yielding p in [0.2500, 0.6072], none of which are statistically significant."
+    }
+  },
+  "stage2_8_report_corrections": {
+    "unit_correction": "In Stage 2.8 report Table 1, '2.210 ms' represented 2,209.9 ms (2.21 seconds). It has been corrected to '2.21 s (2,210 ms)'.",
+    "tesseract_api_speed_caveat": "The ~60-65 ms/line direct API figure was an unmeasured empirical estimate derived by subtracting the 64.8 ms subprocess spawn overhead from 127.5 ms. It is an unverified theoretical lower bound, not an actual C++ API benchmark.",
+    "standard_deviation_clarification": "The +/- 23.58 ms std for CRNN and +/- 15.32 ms for Tesseract reflect LINE-TO-LINE variation across lines of varying lengths and aspect ratios. The REPETITION-TO-REPETITION run standard deviation across the 3 benchmark passes is much tighter: +/- 0.95 s (+/- 3.2 ms/line) for CRNN and +/- 0.25 s (+/- 0.8 ms/line) for Tesseract."
+  }
+}

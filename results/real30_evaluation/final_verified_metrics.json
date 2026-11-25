@@ -1,0 +1,264 @@
+{
+  "audit_metadata": {
+    "status": "verified_methodology_audit",
+    "total_pages": 30,
+    "total_gt_lines": 421,
+    "total_crops": 690,
+    "crop_breakdown": {
+      "genuine_single_line": 326,
+      "split_fragment": 42,
+      "merged_multiline": 8,
+      "noise": 314
+    },
+    "unmatched_missing_gt_lines": 95,
+    "crnn_extra_characters_exact_breakdown": {
+      "border_desk_shadow_noise": {
+        "crop_count": 210,
+        "crnn_chars": 9086,
+        "percentage": 79.98
+      },
+      "interline_paper_texture": {
+        "crop_count": 70,
+        "crnn_chars": 2148,
+        "percentage": 18.91
+      },
+      "split_text_fragment": {
+        "crop_count": 5,
+        "crnn_chars": 127,
+        "percentage": 1.12
+      }
+    }
+  },
+  "genuine_single_line_metrics_326": {
+    "CRNN-V2_Raw": {
+      "matched_lines": 326,
+      "line_cer_micro_pct": 22.24,
+      "line_cer_macro_pct": 24.88,
+      "line_wer_micro_pct": 34.02,
+      "line_wer_macro_pct": 38.09,
+      "exact_matches": 41,
+      "exact_match_rate_pct": 12.58
+    },
+    "Tesseract5_PSM7": {
+      "matched_lines": 326,
+      "line_cer_micro_pct": 22.44,
+      "line_cer_macro_pct": 23.24,
+      "line_wer_micro_pct": 30.34,
+      "line_wer_macro_pct": 31.8,
+      "exact_matches": 62,
+      "exact_match_rate_pct": 19.02
+    },
+    "EasyOCR": {
+      "matched_lines": 326,
+      "line_cer_micro_pct": 21.82,
+      "line_cer_macro_pct": 22.52,
+      "line_wer_micro_pct": 38.28,
+      "line_wer_macro_pct": 40.3,
+      "exact_matches": 16,
+      "exact_match_rate_pct": 4.91
+    },
+    "PaddleOCR": {
+      "matched_lines": 326,
+      "line_cer_micro_pct": 21.11,
+      "line_cer_macro_pct": 24.89,
+      "line_wer_micro_pct": 32.84,
+      "line_wer_macro_pct": 34.94,
+      "exact_matches": 51,
+      "exact_match_rate_pct": 15.64
+    }
+  },
+  "all_valid_text_lines_metrics_368": {
+    "CRNN-V2_Raw": {
+      "matched_lines": 368,
+      "line_cer_micro_pct": 26.35,
+      "line_cer_macro_pct": 31.16,
+      "line_wer_micro_pct": 38.98,
+      "line_wer_macro_pct": 47.21,
+      "exact_matches": 41,
+      "exact_match_rate_pct": 11.14
+    },
+    "Tesseract5_PSM7": {
+      "matched_lines": 368,
+      "line_cer_micro_pct": 27.05,
+      "line_cer_macro_pct": 29.92,
+      "line_wer_micro_pct": 35.55,
+      "line_wer_macro_pct": 40.53,
+      "exact_matches": 62,
+      "exact_match_rate_pct": 16.85
+    },
+    "EasyOCR": {
+      "matched_lines": 368,
+      "line_cer_micro_pct": 26.18,
+      "line_cer_macro_pct": 28.79,
+      "line_wer_micro_pct": 42.51,
+      "line_wer_macro_pct": 46.48,
+      "exact_matches": 16,
+      "exact_match_rate_pct": 4.35
+    },
+    "PaddleOCR": {
+      "matched_lines": 368,
+      "line_cer_micro_pct": 25.44,
+      "line_cer_macro_pct": 30.96,
+      "line_wer_micro_pct": 37.36,
+      "line_wer_macro_pct": 41.34,
+      "exact_matches": 51,
+      "exact_match_rate_pct": 13.86
+    }
+  },
+  "page_full_text_metrics_30_pages": {
+    "CRNN-V2_Raw": {
+      "page_cer_micro_pct": 68.48,
+      "page_cer_macro_pct": 68.5,
+      "page_wer_micro_pct": 60.02,
+      "page_wer_macro_pct": 59.77
+    },
+    "Tesseract5_PSM7": {
+      "page_cer_micro_pct": 35.39,
+      "page_cer_macro_pct": 35.23,
+      "page_wer_micro_pct": 47.05,
+      "page_wer_macro_pct": 46.93
+    },
+    "EasyOCR": {
+      "page_cer_micro_pct": 47.51,
+      "page_cer_macro_pct": 47.43,
+      "page_wer_micro_pct": 66.45,
+      "page_wer_macro_pct": 66.31
+    },
+    "PaddleOCR": {
+      "page_cer_micro_pct": 32.69,
+      "page_cer_macro_pct": 32.52,
+      "page_wer_micro_pct": 43.42,
+      "page_wer_macro_pct": 43.21
+    }
+  },
+  "character_analysis_326_lines": {
+    "CRNN-V2_Raw": {
+      "ə": {
+        "gt_count": 2439,
+        "correct": 1989,
+        "accuracy_pct": 81.55
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 6,
+        "accuracy_pct": 85.71
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 732,
+        "accuracy_pct": 80.79
+      },
+      "i": {
+        "gt_count": 1972,
+        "correct": 1601,
+        "accuracy_pct": 81.19
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 13,
+        "accuracy_pct": 54.17
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    },
+    "Tesseract5_PSM7": {
+      "ə": {
+        "gt_count": 2439,
+        "correct": 1918,
+        "accuracy_pct": 78.64
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 7,
+        "accuracy_pct": 100.0
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 704,
+        "accuracy_pct": 77.7
+      },
+      "i": {
+        "gt_count": 1972,
+        "correct": 1577,
+        "accuracy_pct": 79.97
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 17,
+        "accuracy_pct": 70.83
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    },
+    "EasyOCR": {
+      "ə": {
+        "gt_count": 2439,
+        "correct": 1928,
+        "accuracy_pct": 79.05
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 6,
+        "accuracy_pct": 85.71
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 730,
+        "accuracy_pct": 80.57
+      },
+      "i": {
+        "gt_count": 1972,
+        "correct": 1622,
+        "accuracy_pct": 82.25
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 7,
+        "accuracy_pct": 29.17
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    },
+    "PaddleOCR": {
+      "ə": {
+        "gt_count": 2439,
+        "correct": 1940,
+        "accuracy_pct": 79.54
+      },
+      "Ə": {
+        "gt_count": 7,
+        "correct": 2,
+        "accuracy_pct": 28.57
+      },
+      "ı": {
+        "gt_count": 906,
+        "correct": 547,
+        "accuracy_pct": 60.38
+      },
+      "i": {
+        "gt_count": 1972,
+        "correct": 1622,
+        "accuracy_pct": 82.25
+      },
+      "İ": {
+        "gt_count": 24,
+        "correct": 4,
+        "accuracy_pct": 16.67
+      },
+      "I": {
+        "gt_count": 0,
+        "correct": 0,
+        "accuracy_pct": "N/A"
+      }
+    }
+  }
+}

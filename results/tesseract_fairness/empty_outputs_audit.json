@@ -1,0 +1,77 @@
+{
+  "raw_psm7": [],
+  "raw_psm13": [],
+  "pad10_psm7": [
+    {
+      "doc_id": "B12",
+      "img_code": "IMG_5132",
+      "line_idx": 0,
+      "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_00.png",
+      "original_h": 30,
+      "original_w": 1508,
+      "aspect_ratio": 50.27,
+      "gt_text": "Naxçıvan diyarı Azərbaycanın ən qədim dövlətçilik və memarlıq mərkəzlərindən biri kimi tanınır.",
+      "condition": "pad10_psm7"
+    },
+    {
+      "doc_id": "B12",
+      "img_code": "IMG_5132",
+      "line_idx": 10,
+      "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_10.png",
+      "original_h": 30,
+      "original_w": 1509,
+      "aspect_ratio": 50.3,
+      "gt_text": "Əshabi-Kəhf ziyarətgahı təbii mağara quruluşu və qədim rəvayətləri ilə minlərlə insanı qarşılayır.",
+      "condition": "pad10_psm7"
+    },
+    {
+      "doc_id": "B12",
+      "img_code": "IMG_5132",
+      "line_idx": 11,
+      "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_11.png",
+      "original_h": 30,
+      "original_w": 1409,
+      "aspect_ratio": 46.97,
+      "gt_text": "Duzdağ fizioterapiya mərkəzi yeraltı duz şaxtalarının müalicəvi mikroiqliminə əsaslanır.",
+      "condition": "pad10_psm7"
+    }
+  ],
+  "pad10_psm13": [],
+  "pad10_scale15_psm7": [
+    {
+      "doc_id": "B12",
+      "img_code": "IMG_5132",
+      "line_idx": 0,
+      "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_00.png",
+      "original_h": 30,
+      "original_w": 1508,
+      "aspect_ratio": 50.27,
+      "gt_text": "Naxçıvan diyarı Azərbaycanın ən qədim dövlətçilik və memarlıq mərkəzlərindən biri kimi tanınır.",
+      "condition": "pad10_scale15_psm7"
+    },
+    {
+      "doc_id": "B12",
+      "img_code": "IMG_5132",
+      "line_idx": 10,
+      "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_10.png",
+      "original_h": 30,
+      "original_w": 1509,
+      "aspect_ratio": 50.3,
+      "gt_text": "Əshabi-Kəhf ziyarətgahı təbii mağara quruluşu və qədim rəvayətləri ilə minlərlə insanı qarşılayır.",
+      "condition": "pad10_scale15_psm7"
+    },
+    {
+      "doc_id": "B12",
+      "img_code": "IMG_5132",
+      "line_idx": 11,
+      "crop_path": "D:\\laragon\\www\\az_ocr_bm606\\data\\phone_photos_15\\crops\\IMG_5132\\line_11.png",
+      "original_h": 30,
+      "original_w": 1409,
+      "aspect_ratio": 46.97,
+      "gt_text": "Duzdağ fizioterapiya mərkəzi yeraltı duz şaxtalarının müalicəvi mikroiqliminə əsaslanır.",
+      "condition": "pad10_scale15_psm7"
+    }
+  ],
+  "pad10_scale15_psm13": [],
+  "rule_apriori": []
+}
