@@ -1,0 +1,169 @@
+entry_type,model_or_group,group_id,font_name,n_lines,cer_micro_pct,wer_micro_pct,exact_matches,exact_match_pct,acc_ə_pct,acc_Ə_pct,acc_ı_pct,acc_i_pct,acc_İ_pct
+Baseline,Baseline_CRNN-V2_Raw,Baseline,ALL_5_FONTS,200,0.11,0.89,184,92.0,100.0,100.0,99.28,99.88,98.0
+Baseline,Baseline_CRNN-V2_Raw,Baseline,DejaVuSans,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_CRNN-V2_Raw,Baseline,DejaVuSerif,40,0.14,0.78,37,92.5,100.0,100.0,97.3,100.0,100.0
+Baseline,Baseline_CRNN-V2_Raw,Baseline,DejaVuSansMono,40,0.12,1.04,37,92.5,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_CRNN-V2_Raw,Baseline,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_CRNN-V2_Raw,Baseline,Raleway-Regular,40,0.26,2.34,31,77.5,100.0,100.0,99.1,99.41,90.0
+Baseline,Baseline_Tesseract5_PSM7,Baseline,ALL_5_FONTS,200,0.11,0.94,182,91.0,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_Tesseract5_PSM7,Baseline,DejaVuSans,40,0.09,0.78,37,92.5,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_Tesseract5_PSM7,Baseline,DejaVuSerif,40,0.12,1.04,36,90.0,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_Tesseract5_PSM7,Baseline,DejaVuSansMono,40,0.12,0.78,37,92.5,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_Tesseract5_PSM7,Baseline,Lato-Regular,40,0.09,0.78,37,92.5,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_Tesseract5_PSM7,Baseline,Raleway-Regular,40,0.14,1.3,35,87.5,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_EasyOCR,Baseline,ALL_5_FONTS,200,0.5,6.15,124,62.0,99.8,100.0,99.1,100.0,72.0
+Baseline,Baseline_EasyOCR,Baseline,DejaVuSans,40,0.4,6.25,27,67.5,100.0,100.0,100.0,100.0,60.0
+Baseline,Baseline_EasyOCR,Baseline,DejaVuSerif,40,0.43,3.39,27,67.5,98.98,100.0,98.2,100.0,90.0
+Baseline,Baseline_EasyOCR,Baseline,DejaVuSansMono,40,0.58,9.38,21,52.5,100.0,100.0,97.3,100.0,90.0
+Baseline,Baseline_EasyOCR,Baseline,Lato-Regular,40,0.26,3.65,31,77.5,100.0,100.0,100.0,100.0,70.0
+Baseline,Baseline_EasyOCR,Baseline,Raleway-Regular,40,0.81,8.07,18,45.0,100.0,100.0,100.0,100.0,50.0
+Baseline,Baseline_PaddleOCR,Baseline,ALL_5_FONTS,200,0.5,3.49,162,81.0,100.0,80.0,86.49,100.0,100.0
+Baseline,Baseline_PaddleOCR,Baseline,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_PaddleOCR,Baseline,DejaVuSerif,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_PaddleOCR,Baseline,DejaVuSansMono,40,2.37,16.41,6,15.0,100.0,0.0,33.33,100.0,100.0
+Baseline,Baseline_PaddleOCR,Baseline,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+Baseline,Baseline_PaddleOCR,Baseline,Raleway-Regular,40,0.12,1.04,36,90.0,100.0,100.0,99.1,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed42,Group_A_V1Clean_BasicAug,ALL_5_FONTS,200,1.94,14.48,108,54.0,99.12,94.29,96.22,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed42,Group_A_V1Clean_BasicAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed42,Group_A_V1Clean_BasicAug,DejaVuSerif,40,1.36,7.55,20,50.0,100.0,100.0,83.78,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed42,Group_A_V1Clean_BasicAug,DejaVuSansMono,40,6.71,51.3,0,0.0,100.0,71.43,97.3,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed42,Group_A_V1Clean_BasicAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed42,Group_A_V1Clean_BasicAug,Raleway-Regular,40,1.62,13.54,8,20.0,95.58,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed43,Group_A_V1Clean_BasicAug,ALL_5_FONTS,200,0.58,4.64,138,69.0,100.0,97.14,98.38,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed43,Group_A_V1Clean_BasicAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed43,Group_A_V1Clean_BasicAug,DejaVuSerif,40,0.49,3.65,27,67.5,100.0,100.0,93.69,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed43,Group_A_V1Clean_BasicAug,DejaVuSansMono,40,1.56,13.54,10,25.0,100.0,85.71,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed43,Group_A_V1Clean_BasicAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed43,Group_A_V1Clean_BasicAug,Raleway-Regular,40,0.84,5.99,21,52.5,100.0,100.0,98.2,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed44,Group_A_V1Clean_BasicAug,ALL_5_FONTS,200,1.92,14.48,105,52.5,100.0,97.14,94.95,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed44,Group_A_V1Clean_BasicAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed44,Group_A_V1Clean_BasicAug,DejaVuSerif,40,1.62,8.59,20,50.0,100.0,100.0,74.77,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed44,Group_A_V1Clean_BasicAug,DejaVuSansMono,40,5.95,46.09,0,0.0,100.0,85.71,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed44,Group_A_V1Clean_BasicAug,Lato-Regular,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_A_V1Clean_BasicAug_seed44,Group_A_V1Clean_BasicAug,Raleway-Regular,40,2.02,17.45,6,15.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed42,Group_B_V1Clean_PhotoAug,ALL_5_FONTS,200,0.83,6.82,126,63.0,100.0,97.14,99.1,99.94,70.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed42,Group_B_V1Clean_PhotoAug,DejaVuSans,40,0.14,1.3,35,87.5,100.0,100.0,100.0,100.0,50.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed42,Group_B_V1Clean_PhotoAug,DejaVuSerif,40,0.35,3.12,29,72.5,100.0,100.0,97.3,99.71,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed42,Group_B_V1Clean_PhotoAug,DejaVuSansMono,40,2.8,22.14,3,7.5,100.0,85.71,100.0,100.0,60.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed42,Group_B_V1Clean_PhotoAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed42,Group_B_V1Clean_PhotoAug,Raleway-Regular,40,0.84,7.55,19,47.5,100.0,100.0,98.2,100.0,40.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed43,Group_B_V1Clean_PhotoAug,ALL_5_FONTS,200,1.33,10.57,133,66.5,100.0,97.14,99.1,100.0,98.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed43,Group_B_V1Clean_PhotoAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed43,Group_B_V1Clean_PhotoAug,DejaVuSerif,40,0.06,0.52,38,95.0,100.0,100.0,98.2,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed43,Group_B_V1Clean_PhotoAug,DejaVuSansMono,40,5.49,42.45,1,2.5,100.0,85.71,97.3,100.0,90.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed43,Group_B_V1Clean_PhotoAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed43,Group_B_V1Clean_PhotoAug,Raleway-Regular,40,1.1,9.9,14,35.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed44,Group_B_V1Clean_PhotoAug,ALL_5_FONTS,200,0.61,5.0,149,74.5,99.93,97.14,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed44,Group_B_V1Clean_PhotoAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed44,Group_B_V1Clean_PhotoAug,DejaVuSerif,40,0.38,3.12,31,77.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed44,Group_B_V1Clean_PhotoAug,DejaVuSansMono,40,2.46,19.79,6,15.0,99.66,85.71,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed44,Group_B_V1Clean_PhotoAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_B_V1Clean_PhotoAug_seed44,Group_B_V1Clean_PhotoAug,Raleway-Regular,40,0.23,2.08,32,80.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed42,Group_C_V2Clean_BasicAug,ALL_5_FONTS,200,0.12,0.99,186,93.0,100.0,100.0,99.46,100.0,98.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed42,Group_C_V2Clean_BasicAug,DejaVuSans,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,90.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed42,Group_C_V2Clean_BasicAug,DejaVuSerif,40,0.43,2.86,31,77.5,100.0,100.0,97.3,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed42,Group_C_V2Clean_BasicAug,DejaVuSansMono,40,0.09,1.56,37,92.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed42,Group_C_V2Clean_BasicAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed42,Group_C_V2Clean_BasicAug,Raleway-Regular,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed43,Group_C_V2Clean_BasicAug,ALL_5_FONTS,200,0.26,2.4,167,83.5,99.52,100.0,99.64,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed43,Group_C_V2Clean_BasicAug,DejaVuSans,40,0.03,0.26,39,97.5,99.66,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed43,Group_C_V2Clean_BasicAug,DejaVuSerif,40,0.32,2.86,31,77.5,99.66,100.0,98.2,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed43,Group_C_V2Clean_BasicAug,DejaVuSansMono,40,0.12,1.56,36,90.0,99.66,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed43,Group_C_V2Clean_BasicAug,Lato-Regular,40,0.09,0.78,37,92.5,99.32,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed43,Group_C_V2Clean_BasicAug,Raleway-Regular,40,0.75,6.51,24,60.0,99.32,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed44,Group_C_V2Clean_BasicAug,ALL_5_FONTS,200,0.12,1.88,183,91.5,100.0,100.0,100.0,99.94,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed44,Group_C_V2Clean_BasicAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed44,Group_C_V2Clean_BasicAug,DejaVuSerif,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed44,Group_C_V2Clean_BasicAug,DejaVuSansMono,40,0.29,4.95,31,77.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed44,Group_C_V2Clean_BasicAug,Lato-Regular,40,0.06,1.04,38,95.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_C_V2Clean_BasicAug_seed44,Group_C_V2Clean_BasicAug,Raleway-Regular,40,0.26,3.39,34,85.0,100.0,100.0,100.0,99.71,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed42,Group_D_V2Clean_PhotoAug,ALL_5_FONTS,200,0.13,1.09,182,91.0,100.0,100.0,99.46,99.88,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed42,Group_D_V2Clean_PhotoAug,DejaVuSans,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed42,Group_D_V2Clean_PhotoAug,DejaVuSerif,40,0.17,1.56,35,87.5,100.0,100.0,98.2,99.71,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed42,Group_D_V2Clean_PhotoAug,DejaVuSansMono,40,0.06,0.52,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed42,Group_D_V2Clean_PhotoAug,Lato-Regular,40,0.06,0.52,38,95.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed42,Group_D_V2Clean_PhotoAug,Raleway-Regular,40,0.32,2.6,31,77.5,100.0,100.0,99.1,99.71,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed43,Group_D_V2Clean_PhotoAug,ALL_5_FONTS,200,0.19,1.67,174,87.0,100.0,100.0,100.0,100.0,72.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed43,Group_D_V2Clean_PhotoAug,DejaVuSans,40,0.17,1.56,34,85.0,100.0,100.0,100.0,100.0,40.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed43,Group_D_V2Clean_PhotoAug,DejaVuSerif,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed43,Group_D_V2Clean_PhotoAug,DejaVuSansMono,40,0.17,1.82,35,87.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed43,Group_D_V2Clean_PhotoAug,Lato-Regular,40,0.17,1.56,34,85.0,100.0,100.0,100.0,100.0,90.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed43,Group_D_V2Clean_PhotoAug,Raleway-Regular,40,0.43,3.39,31,77.5,100.0,100.0,100.0,100.0,30.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed44,Group_D_V2Clean_PhotoAug,ALL_5_FONTS,200,0.08,0.68,188,94.0,100.0,100.0,99.46,99.94,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed44,Group_D_V2Clean_PhotoAug,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed44,Group_D_V2Clean_PhotoAug,DejaVuSerif,40,0.12,0.78,37,92.5,100.0,100.0,98.2,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed44,Group_D_V2Clean_PhotoAug,DejaVuSansMono,40,0.03,0.52,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed44,Group_D_V2Clean_PhotoAug,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Group_D_V2Clean_PhotoAug_seed44,Group_D_V2Clean_PhotoAug,Raleway-Regular,40,0.23,2.08,32,80.0,100.0,100.0,99.1,99.71,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed42,Exp_RandomPadding_GroupD,ALL_5_FONTS,200,0.09,0.62,189,94.5,100.0,100.0,99.28,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed42,Exp_RandomPadding_GroupD,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed42,Exp_RandomPadding_GroupD,DejaVuSerif,40,0.35,2.08,32,80.0,100.0,100.0,96.4,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed42,Exp_RandomPadding_GroupD,DejaVuSansMono,40,0.03,0.52,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed42,Exp_RandomPadding_GroupD,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed42,Exp_RandomPadding_GroupD,Raleway-Regular,40,0.06,0.52,38,95.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed43,Exp_RandomPadding_GroupD,ALL_5_FONTS,200,0.27,2.45,163,81.5,100.0,100.0,100.0,99.82,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed43,Exp_RandomPadding_GroupD,DejaVuSans,40,0.14,1.3,35,87.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed43,Exp_RandomPadding_GroupD,DejaVuSerif,40,0.2,1.82,34,85.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed43,Exp_RandomPadding_GroupD,DejaVuSansMono,40,0.2,2.34,36,90.0,100.0,100.0,100.0,99.12,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed43,Exp_RandomPadding_GroupD,Lato-Regular,40,0.14,1.04,36,90.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed43,Exp_RandomPadding_GroupD,Raleway-Regular,40,0.64,5.73,22,55.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed44,Exp_RandomPadding_GroupD,ALL_5_FONTS,200,0.1,0.89,185,92.5,100.0,100.0,99.28,100.0,90.0
+GPU_Model,Exp_RandomPadding_GroupD_seed44,Exp_RandomPadding_GroupD,DejaVuSans,40,0.09,0.78,37,92.5,100.0,100.0,100.0,100.0,70.0
+GPU_Model,Exp_RandomPadding_GroupD_seed44,Exp_RandomPadding_GroupD,DejaVuSerif,40,0.29,1.82,33,82.5,100.0,100.0,96.4,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed44,Exp_RandomPadding_GroupD,DejaVuSansMono,40,0.06,0.78,38,95.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_RandomPadding_GroupD_seed44,Exp_RandomPadding_GroupD,Lato-Regular,40,0.06,0.52,38,95.0,100.0,100.0,100.0,100.0,80.0
+GPU_Model,Exp_RandomPadding_GroupD_seed44,Exp_RandomPadding_GroupD,Raleway-Regular,40,0.03,0.52,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed42,Exp_VariableWidth_GroupD,ALL_5_FONTS,200,0.03,0.31,195,97.5,100.0,100.0,100.0,100.0,98.0
+GPU_Model,Exp_VariableWidth_GroupD_seed42,Exp_VariableWidth_GroupD,DejaVuSans,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed42,Exp_VariableWidth_GroupD,DejaVuSerif,40,0.09,0.78,37,92.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed42,Exp_VariableWidth_GroupD,DejaVuSansMono,40,0.03,0.52,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed42,Exp_VariableWidth_GroupD,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed42,Exp_VariableWidth_GroupD,Raleway-Regular,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,90.0
+GPU_Model,Exp_VariableWidth_GroupD_seed43,Exp_VariableWidth_GroupD,ALL_5_FONTS,200,0.14,1.46,180,90.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed43,Exp_VariableWidth_GroupD,DejaVuSans,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed43,Exp_VariableWidth_GroupD,DejaVuSerif,40,0.06,0.52,38,95.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed43,Exp_VariableWidth_GroupD,DejaVuSansMono,40,0.17,2.34,35,87.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed43,Exp_VariableWidth_GroupD,Lato-Regular,40,0.03,0.26,39,97.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed43,Exp_VariableWidth_GroupD,Raleway-Regular,40,0.43,3.91,29,72.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed44,Exp_VariableWidth_GroupD,ALL_5_FONTS,200,0.29,2.92,158,79.0,100.0,97.14,100.0,100.0,76.0
+GPU_Model,Exp_VariableWidth_GroupD_seed44,Exp_VariableWidth_GroupD,DejaVuSans,40,0.17,1.56,34,85.0,100.0,85.71,100.0,100.0,50.0
+GPU_Model,Exp_VariableWidth_GroupD_seed44,Exp_VariableWidth_GroupD,DejaVuSerif,40,0.09,0.78,37,92.5,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed44,Exp_VariableWidth_GroupD,DejaVuSansMono,40,0.17,3.12,34,85.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed44,Exp_VariableWidth_GroupD,Lato-Regular,40,0.0,0.0,40,100.0,100.0,100.0,100.0,100.0,100.0
+GPU_Model,Exp_VariableWidth_GroupD_seed44,Exp_VariableWidth_GroupD,Raleway-Regular,40,1.01,9.11,13,32.5,100.0,100.0,100.0,100.0,30.0
+GPU_Group_Mean_SD,Group A (V1Clean + BasicAug) (n=3),Group_A_V1Clean_BasicAug,ALL_5_FONTS,200,1.48 ± 0.78,11.20 ± 5.68,117.00 ± 18.25,58.50 ± 9.12,99.71 ± 0.51,96.19 ± 1.65,96.52 ± 1.73,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group A (V1Clean + BasicAug) (n=3),Group_A_V1Clean_BasicAug,DejaVuSans,40,0.00 ± 0.00,0.00 ± 0.00,40.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group A (V1Clean + BasicAug) (n=3),Group_A_V1Clean_BasicAug,DejaVuSerif,40,1.16 ± 0.59,6.60 ± 2.60,22.33 ± 4.04,55.83 ± 10.10,100.00 ± 0.00,100.00 ± 0.00,84.08 ± 9.46,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group A (V1Clean + BasicAug) (n=3),Group_A_V1Clean_BasicAug,DejaVuSansMono,40,4.74 ± 2.78,36.98 ± 20.46,3.33 ± 5.77,8.33 ± 14.43,100.00 ± 0.00,80.95 ± 8.24,99.10 ± 1.56,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group A (V1Clean + BasicAug) (n=3),Group_A_V1Clean_BasicAug,Lato-Regular,40,0.01 ± 0.02,0.09 ± 0.15,39.67 ± 0.58,99.17 ± 1.44,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group A (V1Clean + BasicAug) (n=3),Group_A_V1Clean_BasicAug,Raleway-Regular,40,1.49 ± 0.60,12.33 ± 5.83,11.67 ± 8.14,29.17 ± 20.36,98.53 ± 2.55,100.00 ± 0.00,99.40 ± 1.04,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group B (V1Clean + PhotoAug) (n=3),Group_B_V1Clean_PhotoAug,ALL_5_FONTS,200,0.92 ± 0.37,7.46 ± 2.84,136.00 ± 11.79,68.00 ± 5.89,99.98 ± 0.04,97.14 ± 0.00,99.40 ± 0.52,99.98 ± 0.03,89.33 ± 16.77
+GPU_Group_Mean_SD,Group B (V1Clean + PhotoAug) (n=3),Group_B_V1Clean_PhotoAug,DejaVuSans,40,0.05 ± 0.08,0.43 ± 0.75,38.33 ± 2.89,95.83 ± 7.22,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,83.33 ± 28.87
+GPU_Group_Mean_SD,Group B (V1Clean + PhotoAug) (n=3),Group_B_V1Clean_PhotoAug,DejaVuSerif,40,0.26 ± 0.18,2.25 ± 1.50,32.67 ± 4.73,81.67 ± 11.81,100.00 ± 0.00,100.00 ± 0.00,98.50 ± 1.37,99.90 ± 0.17,100.00 ± 0.00
+GPU_Group_Mean_SD,Group B (V1Clean + PhotoAug) (n=3),Group_B_V1Clean_PhotoAug,DejaVuSansMono,40,3.58 ± 1.66,28.13 ± 12.46,3.33 ± 2.52,8.33 ± 6.29,99.89 ± 0.20,85.71 ± 0.00,99.10 ± 1.56,100.00 ± 0.00,83.33 ± 20.82
+GPU_Group_Mean_SD,Group B (V1Clean + PhotoAug) (n=3),Group_B_V1Clean_PhotoAug,Lato-Regular,40,0.00 ± 0.00,0.00 ± 0.00,40.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group B (V1Clean + PhotoAug) (n=3),Group_B_V1Clean_PhotoAug,Raleway-Regular,40,0.72 ± 0.45,6.51 ± 4.01,21.67 ± 9.29,54.17 ± 23.23,100.00 ± 0.00,100.00 ± 0.00,99.40 ± 1.04,100.00 ± 0.00,80.00 ± 34.64
+GPU_Group_Mean_SD,Group C (V2Clean + BasicAug) (n=3),Group_C_V2Clean_BasicAug,ALL_5_FONTS,200,0.17 ± 0.08,1.76 ± 0.71,178.67 ± 10.21,89.33 ± 5.11,99.84 ± 0.28,100.00 ± 0.00,99.70 ± 0.27,99.98 ± 0.03,99.33 ± 1.15
+GPU_Group_Mean_SD,Group C (V2Clean + BasicAug) (n=3),Group_C_V2Clean_BasicAug,DejaVuSans,40,0.02 ± 0.02,0.17 ± 0.15,39.33 ± 0.58,98.33 ± 1.44,99.89 ± 0.20,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,96.67 ± 5.77
+GPU_Group_Mean_SD,Group C (V2Clean + BasicAug) (n=3),Group_C_V2Clean_BasicAug,DejaVuSerif,40,0.25 ± 0.22,1.91 ± 1.65,34.00 ± 5.20,85.00 ± 12.99,99.89 ± 0.20,100.00 ± 0.00,98.50 ± 1.37,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group C (V2Clean + BasicAug) (n=3),Group_C_V2Clean_BasicAug,DejaVuSansMono,40,0.17 ± 0.11,2.69 ± 1.96,34.67 ± 3.21,86.67 ± 8.04,99.89 ± 0.20,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group C (V2Clean + BasicAug) (n=3),Group_C_V2Clean_BasicAug,Lato-Regular,40,0.05 ± 0.05,0.61 ± 0.54,38.33 ± 1.53,95.83 ± 3.82,99.77 ± 0.39,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group C (V2Clean + BasicAug) (n=3),Group_C_V2Clean_BasicAug,Raleway-Regular,40,0.35 ± 0.37,3.39 ± 3.13,32.33 ± 7.64,80.83 ± 19.09,99.77 ± 0.39,100.00 ± 0.00,100.00 ± 0.00,99.90 ± 0.17,100.00 ± 0.00
+GPU_Group_Mean_SD,Group D (V2Clean + PhotoAug) (n=3),Group_D_V2Clean_PhotoAug,ALL_5_FONTS,200,0.13 ± 0.06,1.15 ± 0.50,181.33 ± 7.02,90.67 ± 3.51,100.00 ± 0.00,100.00 ± 0.00,99.64 ± 0.31,99.94 ± 0.06,90.67 ± 16.17
+GPU_Group_Mean_SD,Group D (V2Clean + PhotoAug) (n=3),Group_D_V2Clean_PhotoAug,DejaVuSans,40,0.07 ± 0.09,0.61 ± 0.84,37.67 ± 3.21,94.17 ± 8.04,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,80.00 ± 34.64
+GPU_Group_Mean_SD,Group D (V2Clean + PhotoAug) (n=3),Group_D_V2Clean_PhotoAug,DejaVuSerif,40,0.10 ± 0.09,0.78 ± 0.78,37.33 ± 2.52,93.33 ± 6.29,100.00 ± 0.00,100.00 ± 0.00,98.80 ± 1.04,99.90 ± 0.17,100.00 ± 0.00
+GPU_Group_Mean_SD,Group D (V2Clean + PhotoAug) (n=3),Group_D_V2Clean_PhotoAug,DejaVuSansMono,40,0.09 ± 0.07,0.95 ± 0.75,37.67 ± 2.31,94.17 ± 5.77,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,Group D (V2Clean + PhotoAug) (n=3),Group_D_V2Clean_PhotoAug,Lato-Regular,40,0.08 ± 0.09,0.69 ± 0.79,37.33 ± 3.06,93.33 ± 7.64,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,96.67 ± 5.77
+GPU_Group_Mean_SD,Group D (V2Clean + PhotoAug) (n=3),Group_D_V2Clean_PhotoAug,Raleway-Regular,40,0.33 ± 0.10,2.69 ± 0.66,31.33 ± 0.58,78.33 ± 1.44,100.00 ± 0.00,100.00 ± 0.00,99.40 ± 0.52,99.81 ± 0.17,76.67 ± 40.41
+GPU_Group_Mean_SD,RandomPadding (Group D) (n=3),Exp_RandomPadding_GroupD,ALL_5_FONTS,200,0.15 ± 0.10,1.32 ± 0.99,179.00 ± 14.00,89.50 ± 7.00,100.00 ± 0.00,100.00 ± 0.00,99.52 ± 0.42,99.94 ± 0.10,96.67 ± 5.77
+GPU_Group_Mean_SD,RandomPadding (Group D) (n=3),Exp_RandomPadding_GroupD,DejaVuSans,40,0.08 ± 0.07,0.69 ± 0.65,37.33 ± 2.52,93.33 ± 6.29,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,90.00 ± 17.32
+GPU_Group_Mean_SD,RandomPadding (Group D) (n=3),Exp_RandomPadding_GroupD,DejaVuSerif,40,0.28 ± 0.08,1.91 ± 0.15,33.00 ± 1.00,82.50 ± 2.50,100.00 ± 0.00,100.00 ± 0.00,97.60 ± 2.08,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,RandomPadding (Group D) (n=3),Exp_RandomPadding_GroupD,DejaVuSansMono,40,0.10 ± 0.09,1.21 ± 0.98,37.67 ± 1.53,94.17 ± 3.82,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,99.71 ± 0.51,100.00 ± 0.00
+GPU_Group_Mean_SD,RandomPadding (Group D) (n=3),Exp_RandomPadding_GroupD,Lato-Regular,40,0.07 ± 0.07,0.52 ± 0.52,38.00 ± 2.00,95.00 ± 5.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,93.33 ± 11.55
+GPU_Group_Mean_SD,RandomPadding (Group D) (n=3),Exp_RandomPadding_GroupD,Raleway-Regular,40,0.24 ± 0.34,2.26 ± 3.01,33.00 ± 9.54,82.50 ± 23.85,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,"VariableWidth (Group D, Tesla T4) (n=3)",Exp_VariableWidth_GroupD,ALL_5_FONTS,200,0.15 ± 0.13,1.56 ± 1.31,177.67 ± 18.61,88.83 ± 9.31,100.00 ± 0.00,99.05 ± 1.65,100.00 ± 0.00,100.00 ± 0.00,91.33 ± 13.32
+GPU_Group_Mean_SD,"VariableWidth (Group D, Tesla T4) (n=3)",Exp_VariableWidth_GroupD,DejaVuSans,40,0.07 ± 0.09,0.61 ± 0.84,37.67 ± 3.21,94.17 ± 8.04,100.00 ± 0.00,95.24 ± 8.25,100.00 ± 0.00,100.00 ± 0.00,83.33 ± 28.87
+GPU_Group_Mean_SD,"VariableWidth (Group D, Tesla T4) (n=3)",Exp_VariableWidth_GroupD,DejaVuSerif,40,0.08 ± 0.02,0.69 ± 0.15,37.33 ± 0.58,93.33 ± 1.44,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,"VariableWidth (Group D, Tesla T4) (n=3)",Exp_VariableWidth_GroupD,DejaVuSansMono,40,0.12 ± 0.08,1.99 ± 1.33,36.00 ± 2.65,90.00 ± 6.61,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,"VariableWidth (Group D, Tesla T4) (n=3)",Exp_VariableWidth_GroupD,Lato-Regular,40,0.01 ± 0.02,0.09 ± 0.15,39.67 ± 0.58,99.17 ± 1.44,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00
+GPU_Group_Mean_SD,"VariableWidth (Group D, Tesla T4) (n=3)",Exp_VariableWidth_GroupD,Raleway-Regular,40,0.49 ± 0.49,4.43 ± 4.45,27.00 ± 13.11,67.50 ± 32.79,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,100.00 ± 0.00,73.33 ± 37.86

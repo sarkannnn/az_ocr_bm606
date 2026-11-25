@@ -1,0 +1,133 @@
+model_name,target_char,gt_count_clean325,correct_count,accuracy_pct,top_error_confusions,noise314_fp_rate_pct,noise314_total_chars,noise_share_of_output_pct
+Baseline_CRNN-V2_Raw,ə,2434,1987,81.64,<DEL>:391; a:12; ı:7,99.36,12859,35.66
+Baseline_CRNN-V2_Raw,Ə,7,6,85.71,ə:1,99.36,12859,35.66
+Baseline_CRNN-V2_Raw,ı,906,726,80.13,<DEL>:153; I:4; n:4,99.36,12859,35.66
+Baseline_CRNN-V2_Raw,i,1968,1597,81.15,<DEL>:313; ı:13; ü:4,99.36,12859,35.66
+Baseline_CRNN-V2_Raw,İ,24,14,58.33,<DEL>:5; i:2; I:1,99.36,12859,35.66
+Baseline_CRNN-V2_Raw,I,0,N/A,N/A,N/A,99.36,12859,35.66
+Baseline_Tesseract5_PSM7,ə,2434,1918,78.8,<DEL>:441; a:13; Ə:6,65.61,1765,7.51
+Baseline_Tesseract5_PSM7,Ə,7,7,100.0,,65.61,1765,7.51
+Baseline_Tesseract5_PSM7,ı,906,702,77.48,<DEL>:173; i:8; ə:3,65.61,1765,7.51
+Baseline_Tesseract5_PSM7,i,1968,1575,80.03,<DEL>:352; .:6; ::4,65.61,1765,7.51
+Baseline_Tesseract5_PSM7,İ,24,17,70.83,<DEL>:5; T:1; i:1,65.61,1765,7.51
+Baseline_Tesseract5_PSM7,I,0,N/A,N/A,N/A,65.61,1765,7.51
+Baseline_EasyOCR,ə,2434,1928,79.21,<DEL>:405; a:41; Ə:8,99.36,5778,20.22
+Baseline_EasyOCR,Ə,7,7,100.0,,99.36,5778,20.22
+Baseline_EasyOCR,ı,906,728,80.35,<DEL>:147; 1:5; i:5,99.36,5778,20.22
+Baseline_EasyOCR,i,1968,1615,82.06,<DEL>:301; l:8; ı:7,99.36,5778,20.22
+Baseline_EasyOCR,İ,24,9,37.5,I:6; <DEL>:5; i:2,99.36,5778,20.22
+Baseline_EasyOCR,I,0,N/A,N/A,N/A,99.36,5778,20.22
+Baseline_PaddleOCR,ə,2434,1939,79.66,<DEL>:433; a:24; e:7,7.01,192,0.86
+Baseline_PaddleOCR,Ə,7,2,28.57,ə:5,7.01,192,0.86
+Baseline_PaddleOCR,ı,906,544,60.04,<DEL>:178; i:170; l:2,7.01,192,0.86
+Baseline_PaddleOCR,i,1968,1622,82.42,<DEL>:320; u:4; a:3,7.01,192,0.86
+Baseline_PaddleOCR,İ,24,4,16.67,i:13; <DEL>:5; I:2,7.01,192,0.86
+Baseline_PaddleOCR,I,0,N/A,N/A,N/A,7.01,192,0.86
+Group_A_V1Clean_BasicAug_seed42,ə,2434,1274,52.34,ğ:319; j:309; <DEL>:293,100.0,2575,9.64
+Group_A_V1Clean_BasicAug_seed42,Ə,7,1,14.29,j:2; ə:2; ş:1,100.0,2575,9.64
+Group_A_V1Clean_BasicAug_seed42,ı,906,4,0.44,j:259; i:190; ğ:182,100.0,2575,9.64
+Group_A_V1Clean_BasicAug_seed42,i,1968,841,42.73,j:502; ğ:283; <DEL>:216,100.0,2575,9.64
+Group_A_V1Clean_BasicAug_seed42,İ,24,0,0.0,j:6; <DEL>:6; ğ:5,100.0,2575,9.64
+Group_A_V1Clean_BasicAug_seed42,I,0,N/A,N/A,N/A,100.0,2575,9.64
+Group_A_V1Clean_BasicAug_seed43,ə,2434,993,40.8,<DEL>:589; ğ:234; f:194,99.68,3152,13.41
+Group_A_V1Clean_BasicAug_seed43,Ə,7,2,28.57,ə:3; ş:1; B:1,99.68,3152,13.41
+Group_A_V1Clean_BasicAug_seed43,ı,906,0,0.0,<DEL>:324; i:248; f:111,99.68,3152,13.41
+Group_A_V1Clean_BasicAug_seed43,i,1968,1195,60.72,<DEL>:322; f:169; ğ:118,99.68,3152,13.41
+Group_A_V1Clean_BasicAug_seed43,İ,24,10,41.67,<DEL>:7; i:4; f:3,99.68,3152,13.41
+Group_A_V1Clean_BasicAug_seed43,I,0,N/A,N/A,N/A,99.68,3152,13.41
+Group_A_V1Clean_BasicAug_seed44,ə,2434,41,1.68,ğ:1392; j:541; <DEL>:356,100.0,13084,34.39
+Group_A_V1Clean_BasicAug_seed44,Ə,7,0,0.0,ğ:6; j:1,100.0,13084,34.39
+Group_A_V1Clean_BasicAug_seed44,ı,906,0,0.0,ğ:477; j:219; <DEL>:128,100.0,13084,34.39
+Group_A_V1Clean_BasicAug_seed44,i,1968,318,16.16,ğ:919; j:466; <DEL>:226,100.0,13084,34.39
+Group_A_V1Clean_BasicAug_seed44,İ,24,0,0.0,ğ:12; j:5; <DEL>:5,100.0,13084,34.39
+Group_A_V1Clean_BasicAug_seed44,I,0,N/A,N/A,N/A,100.0,13084,34.39
+Group_B_V1Clean_PhotoAug_seed42,ə,2434,1989,81.72,<DEL>:384; i:9; a:5,98.41,8093,25.96
+Group_B_V1Clean_PhotoAug_seed42,Ə,7,6,85.71,ə:1,98.41,8093,25.96
+Group_B_V1Clean_PhotoAug_seed42,ı,906,723,79.8,<DEL>:156; i:6; ə:5,98.41,8093,25.96
+Group_B_V1Clean_PhotoAug_seed42,i,1968,1621,82.37,<DEL>:294; ü:10; a:4,98.41,8093,25.96
+Group_B_V1Clean_PhotoAug_seed42,İ,24,10,41.67,<DEL>:6; i:5; F:1,98.41,8093,25.96
+Group_B_V1Clean_PhotoAug_seed42,I,0,N/A,N/A,N/A,98.41,8093,25.96
+Group_B_V1Clean_PhotoAug_seed43,ə,2434,1992,81.84,<DEL>:389; i:8; a:6,100.0,5017,18.04
+Group_B_V1Clean_PhotoAug_seed43,Ə,7,6,85.71,ə:1,100.0,5017,18.04
+Group_B_V1Clean_PhotoAug_seed43,ı,906,718,79.25,<DEL>:152; i:12; 1:7,100.0,5017,18.04
+Group_B_V1Clean_PhotoAug_seed43,i,1968,1631,82.88,<DEL>:295;  :4; l:3,100.0,5017,18.04
+Group_B_V1Clean_PhotoAug_seed43,İ,24,12,50.0,<DEL>:5; i:3; ):1,100.0,5017,18.04
+Group_B_V1Clean_PhotoAug_seed43,I,0,N/A,N/A,N/A,100.0,5017,18.04
+Group_B_V1Clean_PhotoAug_seed44,ə,2434,1997,82.05,<DEL>:386; i:10; r:7,100.0,11952,33.88
+Group_B_V1Clean_PhotoAug_seed44,Ə,7,6,85.71,ə:1,100.0,11952,33.88
+Group_B_V1Clean_PhotoAug_seed44,ı,906,711,78.48,<DEL>:154; i:15; ə:5,100.0,11952,33.88
+Group_B_V1Clean_PhotoAug_seed44,i,1968,1664,84.55,<DEL>:266; u:4; t:4,100.0,11952,33.88
+Group_B_V1Clean_PhotoAug_seed44,İ,24,17,70.83,<DEL>:5; i:2,100.0,11952,33.88
+Group_B_V1Clean_PhotoAug_seed44,I,0,N/A,N/A,N/A,100.0,11952,33.88
+Group_C_V2Clean_BasicAug_seed42,ə,2434,2004,82.33,<DEL>:366; ö:13; Ə:9,99.36,3319,13.08
+Group_C_V2Clean_BasicAug_seed42,Ə,7,6,85.71,ə:1,99.36,3319,13.08
+Group_C_V2Clean_BasicAug_seed42,ı,906,603,66.56,<DEL>:184; i:76; ğ:6,99.36,3319,13.08
+Group_C_V2Clean_BasicAug_seed42,i,1968,1578,80.18,<DEL>:318; ö:14; ü:10,99.36,3319,13.08
+Group_C_V2Clean_BasicAug_seed42,İ,24,11,45.83,<DEL>:4; (:3; ö:2,99.36,3319,13.08
+Group_C_V2Clean_BasicAug_seed42,I,0,N/A,N/A,N/A,99.36,3319,13.08
+Group_C_V2Clean_BasicAug_seed43,ə,2434,1870,76.83,<DEL>:350; Ə:68; i:27,99.68,10442,27.9
+Group_C_V2Clean_BasicAug_seed43,Ə,7,7,100.0,,99.68,10442,27.9
+Group_C_V2Clean_BasicAug_seed43,ı,906,452,49.89,i:247; <DEL>:150; 5:6,99.68,10442,27.9
+Group_C_V2Clean_BasicAug_seed43,i,1968,1689,85.82,<DEL>:217; ü:7; 0:7,99.68,10442,27.9
+Group_C_V2Clean_BasicAug_seed43,İ,24,13,54.17,<DEL>:3; i:3; f:2,99.68,10442,27.9
+Group_C_V2Clean_BasicAug_seed43,I,0,N/A,N/A,N/A,99.68,10442,27.9
+Group_C_V2Clean_BasicAug_seed44,ə,2434,2002,82.25,<DEL>:379; a:5; İ:4,99.68,2658,10.37
+Group_C_V2Clean_BasicAug_seed44,Ə,7,7,100.0,,99.68,2658,10.37
+Group_C_V2Clean_BasicAug_seed44,ı,906,692,76.38,<DEL>:162; i:33; ə:5,99.68,2658,10.37
+Group_C_V2Clean_BasicAug_seed44,i,1968,1644,83.54,<DEL>:278; İ:5; ı:4,99.68,2658,10.37
+Group_C_V2Clean_BasicAug_seed44,İ,24,18,75.0,<DEL>:5; r:1,99.68,2658,10.37
+Group_C_V2Clean_BasicAug_seed44,I,0,N/A,N/A,N/A,99.68,2658,10.37
+Group_D_V2Clean_PhotoAug_seed42,ə,2434,2000,82.17,<DEL>:393;  :4; a:4,92.36,5990,20.85
+Group_D_V2Clean_PhotoAug_seed42,Ə,7,6,85.71,ə:1,92.36,5990,20.85
+Group_D_V2Clean_PhotoAug_seed42,ı,906,715,78.92,<DEL>:160; i:11; 1:5,92.36,5990,20.85
+Group_D_V2Clean_PhotoAug_seed42,i,1968,1620,82.32,<DEL>:301; a:6; ü:4,92.36,5990,20.85
+Group_D_V2Clean_PhotoAug_seed42,İ,24,15,62.5,"<DEL>:5; "":1; l:1",92.36,5990,20.85
+Group_D_V2Clean_PhotoAug_seed42,I,0,N/A,N/A,N/A,92.36,5990,20.85
+Group_D_V2Clean_PhotoAug_seed43,ə,2434,1994,81.92,<DEL>:389; a:8; l:7,100.0,10413,31.06
+Group_D_V2Clean_PhotoAug_seed43,Ə,7,7,100.0,,100.0,10413,31.06
+Group_D_V2Clean_PhotoAug_seed43,ı,906,721,79.58,<DEL>:150; i:7; 1:4,100.0,10413,31.06
+Group_D_V2Clean_PhotoAug_seed43,i,1968,1627,82.67,<DEL>:292; a:6; u:5,100.0,10413,31.06
+Group_D_V2Clean_PhotoAug_seed43,İ,24,10,41.67,<DEL>:5; i:5; I:2,100.0,10413,31.06
+Group_D_V2Clean_PhotoAug_seed43,I,0,N/A,N/A,N/A,100.0,10413,31.06
+Group_D_V2Clean_PhotoAug_seed44,ə,2434,1993,81.88,<DEL>:382; a:9; i:7,99.68,12467,34.85
+Group_D_V2Clean_PhotoAug_seed44,Ə,7,6,85.71,ə:1,99.68,12467,34.85
+Group_D_V2Clean_PhotoAug_seed44,ı,906,717,79.14,<DEL>:154; i:12; 1:4,99.68,12467,34.85
+Group_D_V2Clean_PhotoAug_seed44,i,1968,1640,83.33,<DEL>:283; u:6; a:4,99.68,12467,34.85
+Group_D_V2Clean_PhotoAug_seed44,İ,24,17,70.83,<DEL>:5; v:1; f:1,99.68,12467,34.85
+Group_D_V2Clean_PhotoAug_seed44,I,0,N/A,N/A,N/A,99.68,12467,34.85
+Exp_RandomPadding_GroupD_seed42,ə,2434,1992,81.84,<DEL>:384; a:8; ı:6,97.45,10351,30.86
+Exp_RandomPadding_GroupD_seed42,Ə,7,6,85.71,ə:1,97.45,10351,30.86
+Exp_RandomPadding_GroupD_seed42,ı,906,730,80.57,<DEL>:145; 1:12; i:6,97.45,10351,30.86
+Exp_RandomPadding_GroupD_seed42,i,1968,1624,82.52,<DEL>:295; d:6; t:5,97.45,10351,30.86
+Exp_RandomPadding_GroupD_seed42,İ,24,16,66.67,<DEL>:5; 1:2; ı:1,97.45,10351,30.86
+Exp_RandomPadding_GroupD_seed42,I,0,N/A,N/A,N/A,97.45,10351,30.86
+Exp_RandomPadding_GroupD_seed43,ə,2434,1984,81.51,<DEL>:397; a:9; Ə:4,92.36,3467,13.18
+Exp_RandomPadding_GroupD_seed43,Ə,7,5,71.43,ə:2,92.36,3467,13.18
+Exp_RandomPadding_GroupD_seed43,ı,906,714,78.81,<DEL>:159; 1:8; I:7,92.36,3467,13.18
+Exp_RandomPadding_GroupD_seed43,i,1968,1607,81.66,<DEL>:308; ı:10; r:4,92.36,3467,13.18
+Exp_RandomPadding_GroupD_seed43,İ,24,10,41.67,I:5; <DEL>:5; i:2,92.36,3467,13.18
+Exp_RandomPadding_GroupD_seed43,I,0,N/A,N/A,N/A,92.36,3467,13.18
+Exp_RandomPadding_GroupD_seed44,ə,2434,2010,82.58,<DEL>:378; i:10; a:7,96.5,7603,24.82
+Exp_RandomPadding_GroupD_seed44,Ə,7,5,71.43,ə:2,96.5,7603,24.82
+Exp_RandomPadding_GroupD_seed44,ı,906,721,79.58,<DEL>:150; i:12; ə:4,96.5,7603,24.82
+Exp_RandomPadding_GroupD_seed44,i,1968,1638,83.23,<DEL>:284; a:5; ı:4,96.5,7603,24.82
+Exp_RandomPadding_GroupD_seed44,İ,24,9,37.5,i:9; <DEL>:6,96.5,7603,24.82
+Exp_RandomPadding_GroupD_seed44,I,0,N/A,N/A,N/A,96.5,7603,24.82
+Exp_VariableWidth_GroupD_seed42,ə,2434,1999,82.13,<DEL>:385; i:8; a:6,93.63,9171,28.67
+Exp_VariableWidth_GroupD_seed42,Ə,7,5,71.43,ə:2,93.63,9171,28.67
+Exp_VariableWidth_GroupD_seed42,ı,906,732,80.79,<DEL>:146; i:6; ə:3,93.63,9171,28.67
+Exp_VariableWidth_GroupD_seed42,i,1968,1630,82.83,<DEL>:298; u:5;  :4,93.63,9171,28.67
+Exp_VariableWidth_GroupD_seed42,İ,24,12,50.0,<DEL>:6; i:3; I:2,93.63,9171,28.67
+Exp_VariableWidth_GroupD_seed42,I,0,N/A,N/A,N/A,93.63,9171,28.67
+Exp_VariableWidth_GroupD_seed43,ə,2434,1997,82.05,<DEL>:383; i:10; a:5,99.68,9709,29.66
+Exp_VariableWidth_GroupD_seed43,Ə,7,6,85.71,ə:1,99.68,9709,29.66
+Exp_VariableWidth_GroupD_seed43,ı,906,717,79.14,<DEL>:159; i:9; 1:5,99.68,9709,29.66
+Exp_VariableWidth_GroupD_seed43,i,1968,1634,83.03,<DEL>:291; r:4;  :4,99.68,9709,29.66
+Exp_VariableWidth_GroupD_seed43,İ,24,14,58.33,<DEL>:6; i:3; I:1,99.68,9709,29.66
+Exp_VariableWidth_GroupD_seed43,I,0,N/A,N/A,N/A,99.68,9709,29.66
+Exp_VariableWidth_GroupD_seed44,ə,2434,2028,83.32,<DEL>:361; i:5;  :5,100.0,15517,38.83
+Exp_VariableWidth_GroupD_seed44,Ə,7,6,85.71,ə:1,100.0,15517,38.83
+Exp_VariableWidth_GroupD_seed44,ı,906,725,80.02,<DEL>:135; ə:12; i:8,100.0,15517,38.83
+Exp_VariableWidth_GroupD_seed44,i,1968,1624,82.52,<DEL>:280; ə:19; ı:7,100.0,15517,38.83
+Exp_VariableWidth_GroupD_seed44,İ,24,11,45.83,i:5; <DEL>:4; ə:2,100.0,15517,38.83
+Exp_VariableWidth_GroupD_seed44,I,0,N/A,N/A,N/A,100.0,15517,38.83

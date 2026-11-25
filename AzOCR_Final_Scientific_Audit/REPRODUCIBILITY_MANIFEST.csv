@@ -1,0 +1,20 @@
+artifact_type,name,source_path,size_bytes,sha256
+code_snapshot,model.py,D:\laragon\www\az_ocr_bm606\model.py,2137,65fc0b3876746332c3a9126cc172e830acfc49b7ee78e26cffa7554f74909338
+code_snapshot,common.py,D:\laragon\www\az_ocr_bm606\common.py,17661,0742c8b475401ace472989ad7d3a6a5a0cec2b88343514afb44fb5a7bef27932
+code_snapshot,train_v2.py,D:\laragon\www\az_ocr_bm606\train_v2.py,14762,ee8597208ae8103199790f8a7c4d9f64072b5b0a144b661d44cb285cfb3a1de5
+code_snapshot,dataset.py,D:\laragon\www\az_ocr_bm606\staging\AzOCR_GPU_Training_Package\dataset.py,10782,56585f5437e0d9075231ba50f03cf548c923070e57af5be791ccc8b42287f4bb
+code_snapshot,train_gpu.py,C:\Users\serxan.m\Desktop\AzOCR_Trained_Runs_Results\AzOCR_Trained_Runs_Results\code\train_gpu.py,17505,6dd91de5393ccca2e2542ac68d85a0e33578664c79b62da41a71ba08e85b00f9
+code_snapshot,run_experiments.py,C:\Users\serxan.m\Desktop\AzOCR_Trained_Runs_Results\AzOCR_Trained_Runs_Results\code\run_experiments.py,12767,c4b8587d1e87af1b64f4d7faf08938fda2734e71b79731c99bfe8c08c698470b
+code_snapshot,requirements.txt,D:\laragon\www\az_ocr_bm606\requirements.txt,804,75b963ba35510cb1b069da3fcf5c9efb0b5b1c7330907f905996fc01f48c7440
+data_or_result,ground_truth_lines.csv,D:\laragon\www\az_ocr_bm606\data\real30_evaluation\ground_truth_lines.csv,54028,5978c2042f895fa10c887610fed61e40acf0bf34432950c8a9bf0029ef06fd4b
+data_or_result,verified_alignment.csv,D:\laragon\www\az_ocr_bm606\results\real30_evaluation\verified_alignment.csv,237286,7012256e36c2a13b22df871c437c096ddc4486bf32775b94f48f0dd4917a9518
+data_or_result,gpu18_per_model_summary.csv,D:\laragon\www\az_ocr_bm606\Real30_GPU18_Final_Evaluation\per_model_summary.csv,5420,633ab3abc5903a05744cb20b247e4f982932aacec451b38b89a210c466f40933
+data_or_result,gpu18_checkpoint_sha256_manifest.csv,D:\laragon\www\az_ocr_bm606\Real30_GPU18_Final_Evaluation\checkpoint_sha256_manifest.csv,5668,a36cd8cccf597d00616aaa8463b4ff50a5aae36987a22daff4c779e704b80c4d
+environment_or_protocol,python,3.13.9,0,N/A
+environment_or_protocol,pytorch,2.14.1+cpu (local eval),0,N/A
+environment_or_protocol,opencv,4.10.0,0,N/A
+environment_or_protocol,tesseract,v5.4.0.20240606 (--psm 7 -l aze),0,N/A
+environment_or_protocol,easyocr,1.7.2,0,N/A
+environment_or_protocol,paddleocr_paddlex,3.7.0 / 3.7.2 (PP-OCRv6_medium_rec),0,N/A
+environment_or_protocol,model_selection_criterion,Validation CER on synthetic validation split (no Real30 tuning),0,N/A
+environment_or_protocol,real30_device_provenance,EXIF Make/Model stripped in PDF; no per-page phone model mapping verified,0,N/A

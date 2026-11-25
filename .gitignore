@@ -33,6 +33,11 @@ archive/scratch/
 # Staging & transfer packages
 staging/
 AzOCR_ChatGPT_Transfer/
+AzOCR_Zenodo_v1_DRAFT/
+AzOCR_Zenodo_v1_Release/
+Real30_GPU18_Final_Evaluation/extracted_photos/
+R23_R59_Audit/r59_dataset/
+R23_R59_Audit/fonts_open/
 
 # Heavy generated test/train datasets (keep repo lightweight)
 data/diag*/
