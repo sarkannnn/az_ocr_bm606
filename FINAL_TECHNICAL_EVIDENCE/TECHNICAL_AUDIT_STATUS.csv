@@ -1,0 +1,19 @@
+task_id,task_title,verification_status,primary_evidence_file,notes
+T01,Model architecture and parameter count,VERIFIED,MODEL_ARCHITECTURE_VERIFIED.csv,"8,225,815 trainable/total params; 86 chars + CTC blank=0 (87 classes); 31.40 MiB FP32 weights; best.pt ~94.20 MiB with Adam state"
+T02,GPU18 training configuration and hyperparameters,PARTIALLY_VERIFIED,GPU18_FULL_CONFIGURATION_VERIFIED.csv,"All optimizer/LR/loss/seed/hardware params verified; Python version during GPU training not logged in run_summary.json (eval env: Python 3.13.9)"
+T03,GPU18 checkpoint SHA-256 integrity,VERIFIED,GPU18_CHECKPOINT_SHA256.csv,18/18 official best.pt streamed from AzOCR_v1_Models_18Official.zip matched checkpoint_sha256_manifest.csv
+T04,Augmentation full specification (BasicAug & PhotoAug),VERIFIED,AUGMENTATION_FULL_SPECIFICATION_VERIFIED.csv,All 12 transforms verified across dataset.py (GPU) and train_v2.py (CPU)
+T05,RandomPadding implementation details,VERIFIED,RANDOM_PADDING_IMPLEMENTATION.md,"Discrete uniform {0..12} px per side, p=1.0, pure white [255,255,255], applied 1st before augment_photo and resize"
+T06,VariableWidth architecture and native inference,NEW_EXPLORATORY_EVALUATION,VARIABLE_WIDTH_INFERENCE_RESULTS.csv,"8 architecture questions answered; post-hoc exploratory native single-pass inference run on Real30 (seed42: 20.67% vs 20.88%)"
+T07,Photo 3 CER reconciliation (0.10% vs 0.00% vs 0.89%),VERIFIED,PHOTO3_CER_RECONCILIATION.md,Reconciled across photo3_metrics.json (v2_rule_chunk 1/1015) and unseen_metrics.json (v2_raw 0/1015; v2_pp 9/1015)
+T08,Legacy GT character counts (D1-D5 and B1-B15),VERIFIED,LEGACY_GT_CHARACTER_COUNTS.csv,"D1-D5=7,254; B1-B3=3,920; B1-B15=26,805 (NFC no newline). 7,245 and 3,911 were -9 errors from assigning D4 (1,006) to D3/B3 (1,015)"
+T09,Dataset count leakage and GPU font inventory,VERIFIED,DATASET_COUNT_RECONCILIATION.md,"10,400->10,241 V1Clean; 16,000->15,754 V2Clean (0 post-clean overlap); 16 .ttf files / 15 unique families (14 excluding 2 held-out)"
+T10,Tesseract version and fairness benchmark,VERIFIED,TESSERACT_FAIRNESS_RESULTS.csv,Tesseract v5.4.0.20240606 verified (5.5.0 absent); B1-B15 PSM7 orig 0.31% vs PSM7+10px 2.01% (3 empty on B12)
+T11,EasyOCR B1-B15 (295 lines) results,VERIFIED,EASYOCR_B295_RESULTS.csv,"Historical EasyOCR 1.7.2 (latin_g2) on 295 lines: CER 2.08%, WER 16.81%, Exact 80/295 (27.1%), latency 172.0 ms"
+T12,Confidence AUROC and cascade protocol,VERIFIED,CONFIDENCE_AUROC_VERIFIED.csv,111-line diagnostic (mean AUROC 0.8475 -> 0.47% CER) vs 295-line benchmark (mean AUROC 0.6973 -> 0.291% CER)
+T13,SymSpell lexicon provenance,VERIFIED,SYMSPELL_PROVENANCE_AUDIT.md,"116,585 entries/unique tokens frozen 2026-10-29 (51e807e8); 116,143 & 121,377 absent; 0 benchmark lines in lexicon; 14.89% OOV"
+T14,CPU runtime reconciliation,VERIFIED,CPU_RUNTIME_RECONCILIATION.csv,"Reconciled 85.71, 128.4, 86.3, 86.4, 182.2, 155.35, 127.59 ms; clarified libtorch label refers to PyTorch C++ backend"
+T15,Real30 Clean325 21-22% CER floor root cause,COMPUTED_FROM_EXISTING_DATA,CLEAN325_ERROR_ANALYSIS.md,"73.49%-84.30% of edits are deletions (55.40%-59.21% at left/right edges) due to segment_lines_with_boxes horizontal clipping"
+T16,Character-level 95% confidence intervals,COMPUTED_FROM_EXISTING_DATA,CHARACTER_CONFIDENCE_INTERVALS.csv,72 rows with Wilson & Clopper-Pearson 95% CIs for Real30_Clean325 and R59_Synthetic200
+T17,Zenodo DOI and archive reproducibility,VERIFIED,ZENODO_REPRODUCIBILITY_AUDIT.md,Both DOIs (24529456 & 24529882) HTTP 200 OK matching local byte sizes; Zenodo API reports MD5 vs local SHA-256
+T18,GPU18 training curves (S25-S30),VERIFIED,GPU18_TRAINING_CURVES_VERIFIED.csv,434 per-epoch records across 18 official runs mapped to Supplementary Figures S25-S30

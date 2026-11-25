@@ -1,0 +1,7 @@
+run_name,inference_mode,evaluation_status,clean325_cer_micro_pct,clean325_wer_micro_pct,clean325_exact_matches,clean325_exact_match_pct,page_primary_cer_micro_pct,page_primary_wer_micro_pct,mean_ms_per_crop
+Exp_VariableWidth_GroupD_seed42,Official_Fixed512_infer_line_smart,OFFICIAL_REAL30,20.88,32.67,40,12.31,56.98,57.14,92.28
+Exp_VariableWidth_GroupD_seed42,Exploratory_Native_VariableWidth_SinglePass,POST_HOC_EXPLORATORY,20.67,31.88,47,14.46,61.2,46.9,45.91
+Exp_VariableWidth_GroupD_seed43,Official_Fixed512_infer_line_smart,OFFICIAL_REAL30,21.72,36.03,29,8.92,58.51,66.4,92.9
+Exp_VariableWidth_GroupD_seed43,Exploratory_Native_VariableWidth_SinglePass,POST_HOC_EXPLORATORY,21.41,35.05,29,8.92,55.09,52.31,45.43
+Exp_VariableWidth_GroupD_seed44,Official_Fixed512_infer_line_smart,OFFICIAL_REAL30,24.36,33.98,44,13.54,77.78,62.76,73.41
+Exp_VariableWidth_GroupD_seed44,Exploratory_Native_VariableWidth_SinglePass,POST_HOC_EXPLORATORY,22.13,33.19,46,14.15,81.14,51.32,46.18

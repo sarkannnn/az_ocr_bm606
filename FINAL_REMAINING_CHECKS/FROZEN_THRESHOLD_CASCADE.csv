@@ -1,0 +1,11 @@
+rule_name,confidence_metric,frozen_threshold_from_d1_d5,d1_d5_routed_lines,d1_d5_routing_ratio_pct,d1_d5_cascade_cer_pct,b1_b15_routed_lines,b1_b15_routing_ratio_pct,b1_b15_cer_pct,b1_b15_wer_pct,b1_b15_exact_matches,b1_b15_exact_match_pct,b1_b15_effective_latency_ms,speedup_vs_tesseract_standalone,evaluation_status
+Baseline_CRNN_V2_Only (0% routing),none,N/A,0,0.0,1.075,0,0.0,0.298,1.64,253,85.76,85.71,1.5,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_5pct_min_conf_cutoff,min_conf,0.412707,6,5.41,0.8,4,1.36,0.28,1.49,256,86.78,87.45,1.47,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_10pct_min_conf_cutoff,min_conf,0.446454,11,9.91,0.703,4,1.36,0.28,1.49,256,86.78,87.45,1.47,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_15pct_min_conf_cutoff,min_conf,0.494742,17,15.32,0.538,7,2.37,0.269,1.4,257,87.12,88.76,1.45,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_20pct_min_conf_cutoff,min_conf,0.509835,22,19.82,0.469,15,5.08,0.269,1.4,257,87.12,92.24,1.39,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_25pct_min_conf_cutoff,min_conf,0.530081,28,25.23,0.427,41,13.9,0.284,1.43,257,87.12,103.56,1.24,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_30pct_min_conf_cutoff,min_conf,0.540676,33,29.73,0.469,53,17.97,0.287,1.46,256,86.78,108.78,1.18,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_YoudenJ_optimal_min_conf (J=0.531),min_conf,0.685063,62,55.86,0.276,177,60.0,0.272,1.31,257,87.12,162.75,0.79,RETROSPECTIVE_FROZEN_THRESHOLD
+D1-D5_YoudenJ_optimal_mean_conf (J=0.552),mean_conf,0.988943,58,52.25,0.276,111,37.63,0.276,1.37,256,86.78,134.02,0.96,RETROSPECTIVE_FROZEN_THRESHOLD
+Baseline_Tesseract5_PSM7_Standalone (100%),none,N/A,111,100.0,0.317,295,100.0,0.31,1.55,250,84.75,128.4,1.0,RETROSPECTIVE_FROZEN_THRESHOLD

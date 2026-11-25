@@ -1,0 +1,5 @@
+benchmark,condition,psm,padding_px,tesseract_version,clean325_cer_pct,clean325_wer_pct,clean325_exact_matches,clean325_exact_pct,clean325_empty_outputs,noise_total,noise_empty,noise_fp_count,noise_fp_rate_pct,page_primary_cer_pct,page_primary_wer_pct,mean_ms_per_crop,total_seconds,evaluation_status
+Real30 (690 crops; 325 Clean325; 314 Noise),PSM7_original_crop,7,0,5.4.0.20240606,22.33,30.23,62,19.08,7,314,108,206,65.61,35.37,47.05,155.74,123.4,POST_HOC_FAIRNESS_BENCHMARK
+Real30 (690 crops; 325 Clean325; 314 Noise),PSM13_original_crop,13,0,5.4.0.20240606,30.84,49.5,4,1.23,0,314,0,314,100.0,53.67,96.06,185.19,151.5,POST_HOC_FAIRNESS_BENCHMARK
+Real30 (690 crops; 325 Clean325; 314 Noise),PSM7_plus_10px_white,7,10,5.4.0.20240606,30.6,38.74,41,12.62,35,314,24,290,92.36,49.23,60.19,198.88,154.9,POST_HOC_FAIRNESS_BENCHMARK
+Real30 (690 crops; 325 Clean325; 314 Noise),PSM13_plus_10px_white,13,10,5.4.0.20240606,42.51,65.1,0,0.0,0,314,0,314,100.0,58.98,84.95,172.85,138.9,POST_HOC_FAIRNESS_BENCHMARK

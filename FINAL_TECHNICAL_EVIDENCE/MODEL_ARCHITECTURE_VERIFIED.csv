@@ -1,0 +1,24 @@
+parameter,verified_value,notes
+trainable_parameter_count,8225815,"Exact sum of p.numel() for CRNN(in_ch=1, num_classes=87)"
+total_parameter_count,8225815,All parameters are trainable (requires_grad=True)
+cnn_conv_layer_count,7,"6x Conv2d(3x3, pad=1, bias=False) + 1x Conv2d(2x1, bias=True)"
+cnn_kernel_sizes,"6x (3,3) + 1x (2,1)",Channels: 1->64->128->256->256->512->512->512
+batch_normalization,7x BatchNorm2d,"eps=1e-05, momentum=0.1, affine=True, track_running_stats=True"
+activation,7x ReLU(inplace=True),Applied after every Conv2d+BatchNorm2d
+vertical_downsampling,32x (H: 32 -> 1),"MaxPool2d: (2,2), (2,2), (2,1), (2,1) [16x] + Conv2d(2,1) [2x]"
+horizontal_downsampling,4x (W -> W/4),"First two MaxPool2d(2,2) layers; T = W/4 (128 steps for W=512)"
+bilstm_layer_count,2,"nn.LSTM(512, 256, num_layers=2, bidirectional=True, dropout=0.2)"
+bilstm_hidden_size,256 per direction (512 concat),"Followed by Dropout(0.2) and Linear(512, 87) + log_softmax(dim=2)"
+dropout,0.2,Both inter-layer LSTM dropout=0.2 and self.drop=nn.Dropout(0.2)
+ocr_character_count,86,AZ_LOWER(32) + AZ_UPPER(32) + DIGITS(10) + PUNCT(11) + SPACE(1)
+vocabulary_size_ctc_classes,87,86 characters + 1 CTC blank class
+ctc_blank_index,0,0 reserved for CTC blank; characters indexed 1..86
+input_normalization,"float32 / 255.0 in [0.0, 1.0]","Grayscale uint8 -> float32 / 255.0, right-side white pad (255)"
+model_input_geometry,"(B, 1, 32, W)",Fixed training/infer_single_crop W=512; dynamic W/4*4 in VariableWidth
+pure_tensor_weights_fp32,32921236 bytes (31.40 MiB),Params=32903260 B + BN buffers=17976 B
+pure_tensor_weights_fp16,16460646 bytes (15.70 MiB),Half-precision model parameters + buffers
+serialized_state_dict_fp32,32939820 bytes (31.41 MiB),torch.save(model.state_dict())
+serialized_state_dict_fp16,16479212 bytes (15.72 MiB),torch.save(model.half().state_dict())
+checkpoint_model_state_dict,32936921 bytes (31.41 MiB),ck['model'] inside best.pt
+checkpoint_optimizer_state,65838991 bytes (62.79 MiB),"ck['optimizer'] (Adam exp_avg & exp_avg_sq tensors, ~2x model weights)"
+full_best_pt_file_size,98779507 bytes (94.20 MiB),Includes model + optimizer + cfg + chars + metrics

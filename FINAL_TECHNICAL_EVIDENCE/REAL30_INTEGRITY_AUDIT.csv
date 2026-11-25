@@ -1,0 +1,6 @@
+model,clean325_lines,total_gt_chars,total_edits,cer_pct,substitutions,deletions,insertions,deletion_share_of_edits_pct,edge_deletions_first_or_last_15_ops,edge_share_of_deletions_pct
+Baseline_CRNN-V2_Raw,325,25180,5578,22.15,906,4099,573,73.49,2402,58.6
+Baseline_Tesseract5_PSM7,325,25180,5623,22.33,640,4740,243,84.3,2626,55.4
+Baseline_EasyOCR,325,25180,5491,21.81,891,4133,467,75.27,2414,58.41
+Baseline_PaddleOCR,325,25180,5308,21.08,753,4379,176,82.5,2533,57.84
+Exp_RandomPadding_GroupD_seed42,325,25180,5387,21.39,916,4011,460,74.46,2375,59.21

@@ -1,0 +1,9 @@
+dataset,split,total_samples,unique_texts,overlap_with_val,overlap_with_test
+corpus_line_clean,train,10241,10241,0,0
+corpus_line_clean,val,93523,93523,0,0
+corpus_line_clean,test,95906,95906,0,0
+synth_line_v1_clean,train,10241,10241,0,0
+synth_line_v1_clean,val,1000,1000,0,0
+synth_line_v2_clean,train,15754,10021,0,0
+synth_line_v2_clean,val,1000,1000,0,0
+synth_line_v2_clean,test,1000,1000,0,0

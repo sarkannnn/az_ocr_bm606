@@ -1,0 +1,4 @@
+source_label,easyocr_version,recognizer,n_lines,total_chars,cer_pct,wer_pct,exact_match,empty_predictions,mean_latency_ms_per_line
+HISTORICAL_EXISTING_RUN (results/easyocr_295),1.7.2,latin_g2,295,26805,2.08,16.81,80/295 (27.1%),0,172.0
+HISTORICAL_SUBSET_REAL_55,1.7.2,latin_g2,55,3920,1.84,9.89,21/55 (38.2%),0,N/A
+HISTORICAL_SUBSET_SIM_240,1.7.2,latin_g2,240,22885,2.12,18.25,59/240 (24.6%),0,N/A

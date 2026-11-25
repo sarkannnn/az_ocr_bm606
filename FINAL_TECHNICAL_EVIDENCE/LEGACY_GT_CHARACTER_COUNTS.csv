@@ -1,0 +1,21 @@
+tier,doc_id,original_filename,line_count,char_count_nfc,normalization,gt_source,file_sha256
+Diagnostic,D1,photo1_times.jpg,16,1442,"NFC, strip(), no newline",results/real_fix8/per_line_chunk_details.csv,7475f63e059850877a9e1b27d21cdaee416ec9f3c6da58ccf53d5871cea42ba2
+Diagnostic,D2,photo2_calibri.jpg,16,1463,"NFC, strip(), no newline",results/real_fix8/per_line_chunk_details.csv,d829f18b2ebc70f4e57fa0341618ba65dddbc762a4df86acaed7902676a0ec6d
+Diagnostic,D3,photo3_times.jpg,23,1015,"NFC, strip(), no newline",results/photo3_test/per_line_chunk_details.csv,cf290ff87deb8682595c4da7f69930b3546dc0a71c039d997a9ab6486bdb898f
+Diagnostic,D4,photo4_sans.jpg,23,1006,"NFC, strip(), no newline",results/photo4_sans/per_line_chunk_details.csv,d539c839ad37072a776e4529398a65cfdf718e739645fedf5c3348debfbbcb56
+Diagnostic,D5,IMG_5130.HEIC (photo5.jpg),33,2328,"NFC, strip(), no newline",results/real_fix9/per_line_chunk_details.csv,9fc6600e11918c91efd55d4cf2b8349aa74c02cc272eef3d948df39e042830f0
+Benchmark,B01,IMG_5121.jpg,16,1442,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,6296611508bb5463014d553a4c9928b19cd4564bb740e92b09dabffa81b9773b
+Benchmark,B02,IMG_5122.jpg,16,1463,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,a4422dea2ed1d6e0313ac95252eee8e8cffeb1263449a01cb2dedf45dcb9d7f9
+Benchmark,B03,IMG_5123.jpg,23,1015,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,c15e0ddaf095bab9f7b76f9d1c4e5993134ba1d8104b2bbeb79e8e318265beed
+Benchmark,B04,IMG_5124.jpg,20,1943,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,3f5a43f9dadb45244ffe959019b91613b13f27e10bb1ff03778eed039709da50
+Benchmark,B05,IMG_5125.jpg,20,1865,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,b373ef15dc3ff2a50f085f299804b2b45795676a2296209c56a4924beeb28f86
+Benchmark,B06,IMG_5126.jpg,20,1917,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,b8c23a2bb5ed828df77a8274efdbe69883707ab9f12a31c60fd21b49b9d98b4b
+Benchmark,B07,IMG_5127.jpg,20,1847,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,615b85fad8947667273ec94f6fce2069f98dacfcd337afac4a90fc647a1e9208
+Benchmark,B08,IMG_5128.jpg,20,1878,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,7171da95e139f740fa48a5029a25f488a8593814895342889752fb66d2c21e0e
+Benchmark,B09,IMG_5129.jpg,20,1919,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,c3b2917872fe9855953e5dc0822966469fb1469e93aace4d90c56d850937c043
+Benchmark,B10,IMG_5130.jpg,20,1891,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,fffd48363bba5562a10b4149ae359e13d348876ad28fab07ed01652b62ac2ca7
+Benchmark,B11,IMG_5131.jpg,20,1903,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,3048983fafc9a517a2f976e8c10b0ed325bac36710fb0c3ccf8af991615a86ce
+Benchmark,B12,IMG_5132.jpg,20,1868,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,b48ad123bef2157cf5f83a117f2712a2955a43d20af14d11d60d12556de928a4
+Benchmark,B13,IMG_5133.jpg,20,1910,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,a7830ade9c6e4ecbbb49d61b5875f2a79054d20597d683e97a96124559a8d32d
+Benchmark,B14,IMG_5134.jpg,20,1987,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,6eb14a78e3e5707bc2111d1565fd14b5741192503d757d6a0646f5be5e187ac5
+Benchmark,B15,IMG_5135.jpg,20,1957,"NFC, strip(), no newline",results/easyocr_295/easyocr_295_predictions.csv,ca56a260c723937a8edac29a38c4f459942d45b560c0ae60e0ee7a9d8203ad58

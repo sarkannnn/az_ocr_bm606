@@ -1,0 +1,3 @@
+dataset,threshold_method,mean_char_auroc,min_char_auroc,error_positive_n,error_negative_n,routing_rate_pct,fixed_conf_threshold,crnn_only_cer_pct,cascade_cer_pct,tesseract_only_cer_pct,cascade_latency_ms,speedup_vs_tesseract
+Diagnostic_111_Photos1to5,Post-hoc sweep on 111 test lines (calibration set),0.8475,0.8413,43,68,20,N/A (top-20% lowest min_conf),1.08,0.47,0.32,212.8,2.0
+Benchmark_295_B1toB15,"20% lowest min_conf routing (59/295 lines, cutoff=0.5435)",0.6973,0.6344,42,253,20,0.5435,0.298,0.291,0.31,111.39,1.92

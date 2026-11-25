@@ -1,0 +1,9 @@
+benchmark,condition,tesseract_version,cer_pct,wer_pct,exact_match,empty_outputs,noise_fp_rate_pct,mean_latency_ms
+B1-B15 (295 lines),PSM7_original_crop,v5.4.0.20240606,0.31,1.55,250/295 (84.7%),0,N/A (295 valid lines),137.1
+B1-B15 (295 lines),PSM13_original_crop,v5.4.0.20240606,0.47,2.4,230/295 (78.0%),0,N/A (295 valid lines),134.8
+B1-B15 (295 lines),PSM7_plus_10px_white_margin,v5.4.0.20240606,2.01,5.07,236/295 (80.0%),3,N/A (295 valid lines),133.8
+B1-B15 (295 lines),PSM13_plus_10px_white_margin,v5.4.0.20240606,2.88,14.02,92/295 (31.2%),0,N/A (295 valid lines),124.2
+B1-B15 (295 lines),PSM7_plus_10px_1.5x_scale,v5.4.0.20240606,1.92,4.8,241/295 (81.7%),3,N/A (295 valid lines),165.1
+B1-B15 (295 lines),PSM13_plus_10px_1.5x_scale,v5.4.0.20240606,2.74,12.72,98/295 (33.2%),0,N/A (295 valid lines),154.4
+B1-B15 (295 lines),A_Priori_Pad10_PSM7_fallback_PSM13,v5.4.0.20240606,1.13,4.67,236/295 (80.0%),0,N/A (295 valid lines),N/A
+Real30 Clean325 / FullPage (690 crops),PSM7_original_crop,v5.4.0.20240606,22.33 (Clean325) / 35.39 (Page),30.23 (Clean325) / 47.05 (Page),62/325 (19.08%),0 on Clean325; 108/314 empty on noise,65.61,N/A (precomputed in verified_alignment.csv)

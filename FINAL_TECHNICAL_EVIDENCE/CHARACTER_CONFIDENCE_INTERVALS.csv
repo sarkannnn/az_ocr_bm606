@@ -1,0 +1,73 @@
+benchmark,model_name,char,gt_count,correct_count,error_count,accuracy_pct,wilson_95_lo,wilson_95_hi,clopper_pearson_95_lo,clopper_pearson_95_hi,note
+Real30_Clean325 (325 independent crops),Baseline_CRNN-V2_Raw,ə,2434,1987,447,81.64,80.05,83.12,80.04,83.16,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_CRNN-V2_Raw,Ə,7,6,1,85.71,48.69,97.43,42.13,99.64,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_CRNN-V2_Raw,ı,906,726,180,80.13,77.41,82.6,77.38,82.68,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_CRNN-V2_Raw,i,1968,1597,371,81.15,79.36,82.82,79.35,82.85,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_CRNN-V2_Raw,İ,24,14,10,58.33,38.83,75.53,36.64,77.89,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_CRNN-V2_Raw,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+Real30_Clean325 (325 independent crops),Baseline_Tesseract5_PSM7,ə,2434,1918,516,78.8,77.13,80.38,77.12,80.41,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_Tesseract5_PSM7,Ə,7,7,0,100.0,64.57,100.0,59.04,100.0,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_Tesseract5_PSM7,ı,906,702,204,77.48,74.65,80.08,74.62,80.17,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_Tesseract5_PSM7,i,1968,1575,393,80.03,78.21,81.74,78.19,81.78,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_Tesseract5_PSM7,İ,24,17,7,70.83,50.83,85.09,48.91,87.38,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_Tesseract5_PSM7,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+Real30_Clean325 (325 independent crops),Baseline_EasyOCR,ə,2434,1928,506,79.21,77.55,80.78,77.54,80.81,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_EasyOCR,Ə,7,7,0,100.0,64.57,100.0,59.04,100.0,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_EasyOCR,ı,906,728,178,80.35,77.64,82.81,77.61,82.89,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_EasyOCR,i,1968,1615,353,82.06,80.31,83.7,80.3,83.73,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_EasyOCR,İ,24,9,15,37.5,21.16,57.29,18.8,59.41,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_EasyOCR,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+Real30_Clean325 (325 independent crops),Baseline_PaddleOCR,ə,2434,1939,495,79.66,78.02,81.21,78.01,81.25,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_PaddleOCR,Ə,7,2,5,28.57,8.22,64.11,3.67,70.96,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_PaddleOCR,ı,906,544,362,60.04,56.82,63.18,56.77,63.25,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_PaddleOCR,i,1968,1622,346,82.42,80.67,84.04,80.66,84.08,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_PaddleOCR,İ,24,4,20,16.67,6.68,35.85,4.74,37.38,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Baseline_PaddleOCR,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+Real30_Clean325 (325 independent crops),Group_D_V2Clean_PhotoAug_seed42,ə,2434,2000,434,82.17,80.6,83.64,80.59,83.67,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Group_D_V2Clean_PhotoAug_seed42,Ə,7,6,1,85.71,48.69,97.43,42.13,99.64,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Group_D_V2Clean_PhotoAug_seed42,ı,906,715,191,78.92,76.14,81.45,76.12,81.53,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Group_D_V2Clean_PhotoAug_seed42,i,1968,1620,348,82.32,80.57,83.94,80.56,83.98,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Group_D_V2Clean_PhotoAug_seed42,İ,24,15,9,62.5,42.71,78.84,40.59,81.2,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Group_D_V2Clean_PhotoAug_seed42,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+Real30_Clean325 (325 independent crops),Exp_RandomPadding_GroupD_seed42,ə,2434,1992,442,81.84,80.26,83.32,80.25,83.35,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_RandomPadding_GroupD_seed42,Ə,7,6,1,85.71,48.69,97.43,42.13,99.64,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_RandomPadding_GroupD_seed42,ı,906,730,176,80.57,77.87,83.02,77.84,83.1,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_RandomPadding_GroupD_seed42,i,1968,1624,344,82.52,80.78,84.13,80.77,84.17,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_RandomPadding_GroupD_seed42,İ,24,16,8,66.67,46.71,82.03,44.68,84.37,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_RandomPadding_GroupD_seed42,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+Real30_Clean325 (325 independent crops),Exp_VariableWidth_GroupD_seed42,ə,2434,1999,435,82.13,80.56,83.6,80.55,83.63,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_VariableWidth_GroupD_seed42,Ə,7,5,2,71.43,35.89,91.78,29.04,96.33,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_VariableWidth_GroupD_seed42,ı,906,732,174,80.79,78.1,83.23,78.08,83.31,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_VariableWidth_GroupD_seed42,i,1968,1630,338,82.83,81.1,84.43,81.08,84.47,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_VariableWidth_GroupD_seed42,İ,24,12,12,50.0,31.43,68.57,29.12,70.88,Single-model binomial CI; 3 seeds not pooled
+Real30_Clean325 (325 independent crops),Exp_VariableWidth_GroupD_seed42,I,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,n=0 in Clean325 GT; accuracy and CIs not applicable
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_CRNN-V2_Raw,ə,1470,1470,0,100.0,99.74,100.0,99.75,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_CRNN-V2_Raw,Ə,35,35,0,100.0,90.11,100.0,90.0,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_CRNN-V2_Raw,ı,555,551,4,99.28,98.16,99.72,98.17,99.8,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_CRNN-V2_Raw,i,1695,1693,2,99.88,99.57,99.97,99.57,99.99,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_CRNN-V2_Raw,İ,50,49,1,98.0,89.5,99.65,89.35,99.95,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_Tesseract5_PSM7,ə,1470,1470,0,100.0,99.74,100.0,99.75,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_Tesseract5_PSM7,Ə,35,35,0,100.0,90.11,100.0,90.0,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_Tesseract5_PSM7,ı,555,555,0,100.0,99.31,100.0,99.34,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_Tesseract5_PSM7,i,1695,1695,0,100.0,99.77,100.0,99.78,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_Tesseract5_PSM7,İ,50,50,0,100.0,92.87,100.0,92.89,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_EasyOCR,ə,1470,1467,3,99.8,99.4,99.93,99.4,99.96,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_EasyOCR,Ə,35,35,0,100.0,90.11,100.0,90.0,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_EasyOCR,ı,555,550,5,99.1,97.91,99.61,97.91,99.71,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_EasyOCR,i,1695,1695,0,100.0,99.77,100.0,99.78,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_EasyOCR,İ,50,36,14,72.0,58.33,82.53,57.51,83.77,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_PaddleOCR,ə,1470,1470,0,100.0,99.74,100.0,99.75,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_PaddleOCR,Ə,35,28,7,80.0,64.11,89.96,63.06,91.56,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_PaddleOCR,ı,555,480,75,86.49,83.39,89.08,83.36,89.22,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_PaddleOCR,i,1695,1695,0,100.0,99.77,100.0,99.78,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Baseline_PaddleOCR,İ,50,50,0,100.0,92.87,100.0,92.89,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Group_D_V2Clean_PhotoAug_seed42,ə,1470,1470,0,100.0,99.74,100.0,99.75,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Group_D_V2Clean_PhotoAug_seed42,Ə,35,35,0,100.0,90.11,100.0,90.0,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Group_D_V2Clean_PhotoAug_seed42,ı,555,552,3,99.46,98.42,99.82,98.43,99.89,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Group_D_V2Clean_PhotoAug_seed42,i,1695,1693,2,99.88,99.57,99.97,99.57,99.99,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Group_D_V2Clean_PhotoAug_seed42,İ,50,50,0,100.0,92.87,100.0,92.89,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Exp_VariableWidth_GroupD_seed42,ə,1470,1470,0,100.0,99.74,100.0,99.75,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Exp_VariableWidth_GroupD_seed42,Ə,35,35,0,100.0,90.11,100.0,90.0,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Exp_VariableWidth_GroupD_seed42,ı,555,555,0,100.0,99.31,100.0,99.34,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Exp_VariableWidth_GroupD_seed42,i,1695,1695,0,100.0,99.77,100.0,99.78,100.0,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
+R59_OpenFont (200 images = 40 sentences x 5 fonts),Exp_VariableWidth_GroupD_seed42,İ,50,49,1,98.0,89.5,99.65,89.35,99.95,"CAUTION: 200 images share 40 unique texts rendered in 5 fonts (clustered across fonts, not 200 independent text draws)"
